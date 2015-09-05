@@ -62,17 +62,25 @@ namespace MvcApplication2.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult SeleccionRotacionCarta(IPS_ESE s)
+        public ActionResult SeleccionRotacionCarta(IPS_ESE s,FormCollection value)
         {
 
             IPS_ESE ips = db.IPS_ESE.Find(s.IPS_ESEId);
 
-
-
+            int programaId =Int32.Parse( value["programaId"]);
+            int departamentoId = Int32.Parse(value["DepartamentoSaludId"]);
+            DepartamentoSalud ds = db.DepartamentoSaluds.Find(departamentoId);
+            int mesId = Int32.Parse(value["mesId"]);
+            int añoId = Int32.Parse(value["añoId"]);
+            var date = DateTime.MinValue;
+           DateTime.TryParse(añoId + "/" +mesId+ "/01", out date);
+         
+           DateTime date2 = new DateTime(añoId, mesId,
+                                     DateTime.DaysInMonth(añoId, mesId));
             ReportDocument rptH = new ReportDocument();
             string strRptPath = System.Web.HttpContext.Current.Server.MapPath("~/reporte.rpt");
             rptH.Load(strRptPath);
-            List<RotacionEstudiante> re = db.RotacionEstudiantes.Include(h => h.Docente).Where(r => r.IPS_ESEId == ips.IPS_ESEId).ToList();
+            List<RotacionEstudiante> re = db.RotacionEstudiantes.Include(h => h.Docente).Where(r => r.IPS_ESEId == ips.IPS_ESEId).Where(r => r.Estudiante.programaId == programaId).Where(r => r.Rotacion.fecha_inicio >= date).Where(r => r.Rotacion.fecha_terminacion <= date2).ToList();
             List<Docente> docentes = new List<Docente>();
             List<Estudiante> estudiantes = new List<Estudiante>();
             List<Rotacion> rotaciones = new List<Rotacion>();
@@ -108,11 +116,28 @@ namespace MvcApplication2.Controllers
 
 
 
+            if(re.Count>0)
+            {
+                Stream stream = rptH.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
 
+                return File(stream, "application/pdf");
+            }
+            else
+            {
+                var municipios = db.IPS_ESE.Include(h => h.Municipio);
+                List<IPS_ESE> lista = municipios.ToList();
 
-            Stream stream = rptH.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
+                ViewBag.IPS_ESEId = new SelectList(lista, "IPS_ESEId", "nombre");
 
-            return File(stream, "application/pdf");
+                ViewBag.programaId = new SelectList(db.Programas, "programaId", "nombre");
+
+                ViewBag.DepartamentoSaludId = new SelectList(db.DepartamentoSaluds, "DepartamentoSaludId", "nombre");
+            
+                ViewBag.AlertMessage = "No se encontrarón resultados";
+                return View();
+            }
+
+         
         }
 
 

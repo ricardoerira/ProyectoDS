@@ -1,0 +1,4 @@
+﻿DBCC CHECKIDENT ('Rotacions', RESEED, 0)
+DBCC CHECKIDENT ('Estudiantes', RESEED, 0)
+DBCC CHECKIDENT ('Docentes', RESEED, 0)
+DBCC CHECKIDENT ('RotacionEstudiantes', RESEED, 0)
