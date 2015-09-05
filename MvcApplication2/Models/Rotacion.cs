@@ -11,6 +11,9 @@ namespace MvcApplication2.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.Linq;
+    using System.Web;
     
     public partial class Rotacion
     {
@@ -22,8 +25,10 @@ namespace MvcApplication2.Models
          }
      
         public int rotacionId { get; set; }
-        public string grupo { get; set; }    
+        public string grupo { get; set; }
+        [DataType(DataType.Date)]
         public System.DateTime fecha_inicio { get; set; }
+        [DataType(DataType.Date)]
         public System.DateTime fecha_terminacion { get; set; }
         public string horario { get; set; }  
         public int year_academico { get; set; } 
