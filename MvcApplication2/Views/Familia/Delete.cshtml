@@ -1,0 +1,152 @@
+﻿@model MvcApplication2.Models.Familia
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Familia</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.primer_nombre_padre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.primer_nombre_padre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.segundo_nombre_padre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.segundo_nombre_padre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.primer_apellido_padre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.primer_apellido_padre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.segundo_apellido_padre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.segundo_apellido_padre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.direccion_padre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.direccion_padre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.telefono_padre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.telefono_padre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.primer_nombre_madre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.primer_nombre_madre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.segundo_nombre_madre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.segundo_nombre_madre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.primer_apellido_madre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.primer_apellido_madre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.segundo_apellido_madre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.segundo_apellido_madre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.direccion_madre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.direccion_madre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.telefono_madre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.telefono_madre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.primer_nombre_acudiente)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.primer_nombre_acudiente)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.segundo_nombre_acudiente)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.segundo_nombre_acudiente)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.primer_apellido_acudiente)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.primer_apellido_acudiente)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.segundo_apellido_acudiente)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.segundo_apellido_acudiente)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.direccion_acudiente)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.direccion_acudiente)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.telefono_acudiente)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.telefono_acudiente)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.celular_acudiente)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.celular_acudiente)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

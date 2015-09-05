@@ -1,0 +1,82 @@
+﻿@model MvcApplication2.Models.Vacuna
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Vacuna</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nombre_generico)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nombre_generico)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.antigenos_contenidos)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.antigenos_contenidos)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.lote)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.lote)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.lugar_anatomico)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.lugar_anatomico)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fecha_vacunacion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fecha_vacunacion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fecha_prox_vacunacion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fecha_prox_vacunacion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.laboratorio_vacunacion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.laboratorio_vacunacion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.observaciones)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.observaciones)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.HojaVida.primer_nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.HojaVida.primer_nombre)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

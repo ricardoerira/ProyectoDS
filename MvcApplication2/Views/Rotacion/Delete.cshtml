@@ -1,0 +1,82 @@
+﻿@model MvcApplication2.Models.Rotacion
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Rotacion</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.grupo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.grupo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fecha_inicio)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fecha_inicio)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fecha_terminacion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fecha_terminacion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.horario)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.horario)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.year_academico)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.year_academico)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.periodo_academico)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.periodo_academico)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.numero_estudiantes)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.numero_estudiantes)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IPS_ESE.origen)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IPS_ESE.origen)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ActividadAcademica.tipo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ActividadAcademica.tipo)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

@@ -1,0 +1,71 @@
+﻿@model MvcApplication2.Models.Equipo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Equipo</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.serial)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.serial)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cantidad)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cantidad)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.estado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.estado)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.costo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.costo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dependencia)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dependencia)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.recibido)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.recibido)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IPS_ESE.origen)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IPS_ESE.origen)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.equipoId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

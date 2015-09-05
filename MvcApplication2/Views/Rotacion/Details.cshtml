@@ -1,0 +1,78 @@
+﻿@model MvcApplication2.Models.Rotacion
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Rotacion</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.grupo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.grupo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fecha_inicio)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fecha_inicio)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fecha_terminacion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fecha_terminacion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.horario)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.horario)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.year_academico)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.year_academico)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.periodo_academico)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.periodo_academico)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.numero_estudiantes)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.numero_estudiantes)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IPS_ESE.origen)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IPS_ESE.origen)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ActividadAcademica.tipo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ActividadAcademica.tipo)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.rotacionId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

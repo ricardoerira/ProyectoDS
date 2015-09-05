@@ -1,0 +1,271 @@
+﻿@model MvcApplication2.Models.Estudiante
+<script>
+    $(document).ready(function () {
+        $("#submitButton").on("click", function () {
+            alert('Your Message');
+        });
+
+    });
+
+</script>
+
+
+
+<div class="row">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                    <li>@Html.ActionLink("IPS Universitaria", "VistaIPS_Universitaria/", "Vacuna")</li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Hoja de Vida<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Estudiante", "BuscarEnVacuna/", "Estudiante")</li>
+                            <li>@Html.ActionLink("Docente", "BuscarEnVacuna/", "Docente")</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Listado Hojas de Vida", "HV_IPS_Universitaria/", "HojaVida")</li>
+
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Vacunacion<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Esquema Obligatorio", "EsquemaObligatorio/", "Vacuna")</li>
+                            <li>@Html.ActionLink("Precios", "PreciosIpsU/", "Vacuna")</li>
+
+                        </ul>
+                    </li>
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</div>
+
+@using (Html.BeginForm("CarnetVacunacionDS", "Estudiante", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.estudianteId)
+
+    <div class="container">
+        <div class="row">
+            <fieldset>
+                <legend>Información Personal Estudiante</legend>
+
+                <!-- /.navbar-collapse aca va leyend -->
+
+
+                <div class="col-sm-2">
+                    <img src="@Url.Content(Model.HojaVida.imagen_DI)" alt="..." class="img-rounded" height="200px" width="150px"><br />
+
+                </div>
+
+                <div class="col-sm-8">
+
+                    <div class="row">
+
+                        <!-- Text input-->
+
+                        <fosrm class="form-horizontal" role="form">
+
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Código</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.codigo, new { @class = "form-control", @readonly = "readonly" })
+                                    @Html.ValidationMessageFor(model => model.codigo)
+                                </div>
+
+                                <label class="col-sm-2 control-label">Documento</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.num_documento, new { @class = "form-control", @readonly = "readonly" })
+                                    @Html.ValidationMessageFor(model => model.num_documento)
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Nombre </label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.HojaVida.primer_nombre, new { @class = "form-control", @readonly = "readonly" })
+                                    @Html.ValidationMessageFor(model => model.HojaVida.primer_nombre)
+                                </div>
+
+
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Primer Apellido </label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.HojaVida.primer_apellido, new { @class = "form-control", @readonly = "readonly" })
+                                    @Html.ValidationMessageFor(model => model.HojaVida.primer_apellido)
+                                </div>
+
+                                <label class="col-sm-2 control-label">Segundo Apellido</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.HojaVida.segundo_apellido, new { @class = "form-control", @readonly = "readonly" })
+                                    @Html.ValidationMessageFor(model => model.HojaVida.segundo_apellido)
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Dirección </label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.HojaVida.direccion_manizales, new { @class = "form-control", @readonly = "readonly" })
+                                    @Html.ValidationMessageFor(model => model.HojaVida.direccion_manizales)
+                                </div>
+
+                                <label class="col-sm-2 control-label">Teléfono</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.HojaVida.num_celular, new { @class = "form-control", @readonly = "readonly" })
+                                    @Html.ValidationMessageFor(model => model.HojaVida.num_celular)
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Email</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.HojaVida.correo, new { @class = "form-control", @readonly = "readonly" })
+                                    @Html.ValidationMessageFor(model => model.HojaVida.correo)
+                                </div>
+                                <label class="col-sm-2 control-label"></label>
+                                <div class="col-sm-4">
+                                    
+
+                                    <input type="submit" class="btn btn-lg btn-primary btn-block" value="Vacunar" />
+                                    
+                                </div>
+                            </div>
+
+                            
+
+
+
+
+
+
+
+
+
+                            <div class="form-group">
+                                <div class="col-sm-8">
+
+
+                                    <br>
+
+                                    <br>
+                                    <br>
+                                </div>
+                            </div>
+
+
+
+
+
+                    </div>
+
+                </div><!-- /.row -->
+
+
+
+                <div class="col-sm-3">
+
+                </div>
+
+
+                <div class="col-sm-8">
+                    <div class="row">
+                        <fdorm class="form-horizontal" role="form">
+
+
+
+
+
+
+
+
+
+
+
+
+                        </fdorm>
+
+                    </div><!-- /<div class="col-sm-offset-1"> y subo el div.row -->
+                </div>
+            </fieldset>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="col-sm-offset-1">
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+
+                <tr>
+                    <th>Biológico | Dosis</th>
+                    <th>Fecha de Aplicación    </th>
+                    <th>Proxima Vacuna</th>
+                    <th>Lote</th>
+                    <th>Lugar Anatómico</th>
+                    <th>Laboratorio</th>
+                    <th>Observaciones</th>
+
+                </tr>
+                @for (var i = 0; i < Model.HojaVida.Vacunas.Count; i++)
+                {
+
+                    <tr>
+
+                        <th>@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).nombre_generico)</th>
+                        @if (Model.HojaVida.Vacunas.ElementAt(i).fecha_vacunacion > DateTime.Now.Date.AddMonths(-20))
+                        {
+                            <td>@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).fecha_vacunacion)</td>
+                            <td>@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).fecha_prox_vacunacion)</td>
+                            <td>@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).lote)</td>
+                            <td>@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).lugar_anatomico)</td>
+                            <td>@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).laboratorio_vacunacion)</td>
+                            <td>@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).observaciones)</td>
+
+
+
+                        }
+                        else
+                        {
+
+                        }
+
+
+
+
+
+                    </tr>
+                }
+
+            </table>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+}
+
+
+
+

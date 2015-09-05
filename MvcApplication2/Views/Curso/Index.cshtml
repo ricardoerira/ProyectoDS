@@ -1,0 +1,107 @@
+﻿@model IEnumerable<MvcApplication2.Models.Curso>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="row">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Equipo", "", "Equipo")</li>
+                    <li>@Html.ActionLink("Cursos", "", "Curso")</li>
+                    <li>@Html.ActionLink("Inducciones", "", "Induccion")</li>
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</div>
+<p>
+    @Html.ActionLink("Crear Nuevo", "Create")
+</p>
+
+@using (Html.BeginForm())
+{
+
+
+    <p>
+        Buscar por IPS: @Html.TextBox("SearchString")
+        <input type="submit" value="Buscar" />
+    </p>
+}
+<div class="table-responsive">
+    <table class="table">
+        <tr>
+            <th>
+               Capacitacion
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre)
+            </th>
+            <th>
+               Observa.
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fechaInicio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fechaFin)
+            </th>
+            <th>
+              PorcentajeUniversidad
+            </th>
+            <th>
+               PorcentajePersonas
+            </th>
+            <th>
+             TotalContrapresta
+            </th>
+           
+            <th>
+               IPS
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tipo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.observaciones)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fechaInicio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fechaFin)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.porcentajeTotalUniversidad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.porcentajeTotalPersona)
+                </td><td>
+    @Html.DisplayFor(modelItem => item.totalContraprestacion)
+</td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IPS_ESE.nombre)
+                </td>
+                <td>
+                 
+                    @Html.ActionLink("Delete", "Delete", new { id = item.CursoId })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+

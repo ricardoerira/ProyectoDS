@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Estudiantes">
+    <Key>
+      <PropertyRef Name="estudianteId" />
+    </Key>
+    <Property Name="estudianteId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tipo_documento" Type="nvarchar(max)" />
+    <Property Name="num_documento" Type="nvarchar(max)" />
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="clave" Type="nvarchar(max)" />
+    <Property Name="programaId" Type="int" Nullable="false" />
+    <Property Name="hojaVidaId" Type="int" Nullable="false" />
+    <Property Name="rotacionId" Type="int" Nullable="false" />
+    <Property Name="direccion_procedencia" Type="nvarchar(max)" />
+    <Property Name="barrio_procedencia" Type="nvarchar(max)" />
+    <Property Name="telefono_procedencia" Type="nvarchar(max)" />
+    <Property Name="modalidad" Type="nvarchar(max)" />
+    <Property Name="semestre" Type="smallint" Nullable="false" />
+    <Property Name="estado_academico" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="HojaVidas">
+    <Key>
+      <PropertyRef Name="hojaVidaId" />
+    </Key>
+    <Property Name="hojaVidaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="primer_nombre" Type="nvarchar(max)" />
+    <Property Name="segundo_nombre" Type="nvarchar(max)" />
+    <Property Name="primer_apellido" Type="nvarchar(max)" />
+    <Property Name="segundo_apellido" Type="nvarchar(max)" />
+    <Property Name="fecha_nacimiento" Type="datetime" Nullable="false" />
+    <Property Name="hemoclasificacion" Type="nvarchar(max)" />
+    <Property Name="genero" Type="nvarchar(max)" />
+    <Property Name="estado_civil" Type="nvarchar(max)" />
+    <Property Name="hijos" Type="smallint" Nullable="false" />
+    <Property Name="imagen_DI" Type="nvarchar(max)" />
+    <Property Name="num_telefono" Type="bigint" Nullable="false" />
+    <Property Name="num_celular" Type="bigint" Nullable="false" />
+    <Property Name="correo" Type="nvarchar(max)" />
+    <Property Name="entidad_salud" Type="nvarchar(max)" />
+    <Property Name="estado_afiliacion" Type="nvarchar(max)" />
+    <Property Name="regimen" Type="nvarchar(max)" />
+    <Property Name="tipo_afiliacion" Type="nvarchar(max)" />
+    <Property Name="estado_HV" Type="bit" Nullable="false" />
+    <Property Name="ARL" Type="nvarchar(max)" />
+    <Property Name="certificado_ARL" Type="nvarchar(max)" />
+    <Property Name="familiaId" Type="int" />
+    <Property Name="facultad" Type="nvarchar(max)" />
+    <Property Name="departamento_procedencia" Type="nvarchar(max)" />
+    <Property Name="municipio_procedencia" Type="nvarchar(max)" />
+    <Property Name="direccion_manizales" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Rotacions">
+    <Key>
+      <PropertyRef Name="rotacionId" />
+    </Key>
+    <Property Name="rotacionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fecha_inicio" Type="datetime" Nullable="false" />
+    <Property Name="fecha_terminacion" Type="datetime" Nullable="false" />
+    <Property Name="horario" Type="nvarchar(max)" />
+    <Property Name="periodo_academico" Type="smallint" Nullable="false" />
+    <Property Name="IPS_ESEId" Type="int" Nullable="false" />
+    <Property Name="grupo" Type="nvarchar(max)" />
+    <Property Name="year_academico" Type="int" Nullable="false" />
+    <Property Name="numero_estudiantes" Type="int" Nullable="false" />
+    <Property Name="actividadacademicaId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_dbo_Estudiantes_dbo_HojaVidas_hojaVidaId">
+    <End Role="HojaVidas" Type="Self.HojaVidas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Estudiantes" Type="Self.Estudiantes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HojaVidas">
+        <PropertyRef Name="hojaVidaId" />
+      </Principal>
+      <Dependent Role="Estudiantes">
+        <PropertyRef Name="hojaVidaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Estudiantes_dbo_Rotacions_rotacionId">
+    <End Role="Rotacions" Type="Self.Rotacions" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Estudiantes" Type="Self.Estudiantes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rotacions">
+        <PropertyRef Name="rotacionId" />
+      </Principal>
+      <Dependent Role="Estudiantes">
+        <PropertyRef Name="rotacionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="Funcion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Parameter1" Type="int" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="num_documento" Type="nvarchar(max)" />
+          <Property Name="primer_nombre" Type="nvarchar(max)" />
+          <Property Name="primer_apellido" Type="nvarchar(max)" />
+          <Property Name="horario" Type="nvarchar(max)" />
+          <Property Name="fecha_inicio" Type="datetime" Nullable="false" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="Estudiantes" EntityType="Self.Estudiantes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HojaVidas" EntityType="Self.HojaVidas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rotacions" EntityType="Self.Rotacions" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_dbo_Estudiantes_dbo_HojaVidas_hojaVidaId" Association="Self.FK_dbo_Estudiantes_dbo_HojaVidas_hojaVidaId">
+      <End Role="HojaVidas" EntitySet="HojaVidas" />
+      <End Role="Estudiantes" EntitySet="Estudiantes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Estudiantes_dbo_Rotacions_rotacionId" Association="Self.FK_dbo_Estudiantes_dbo_Rotacions_rotacionId">
+      <End Role="Rotacions" EntitySet="Rotacions" />
+      <End Role="Estudiantes" EntitySet="Estudiantes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

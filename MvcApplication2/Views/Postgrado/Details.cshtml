@@ -1,0 +1,36 @@
+﻿@model MvcApplication2.Models.Postgrado
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Postgrado</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tipo_postgrado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tipo_postgrado)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.departamento_saludId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.departamento_saludId)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.postgradoId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

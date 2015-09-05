@@ -1,0 +1,43 @@
+﻿@model MvcApplication2.Models.Convenio_IES
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Convenio_IES</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.descripcion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.descripcion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.objeto_convenio)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.objeto_convenio)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IESId1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IESId1)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IESId2)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IESId2)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Convenio_IESID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,81 @@
+﻿@model IEnumerable<MvcApplication2.Models.Rotacion>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.grupo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha_inicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha_terminacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.horario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.year_academico)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.periodo_academico)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.numero_estudiantes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IPS_ESE.origen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ActividadAcademica.tipo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.grupo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha_inicio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha_terminacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.horario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.year_academico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.periodo_academico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.numero_estudiantes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IPS_ESE.origen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActividadAcademica.tipo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.rotacionId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.rotacionId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.rotacionId })
+        </td>
+    </tr>
+}
+
+</table>

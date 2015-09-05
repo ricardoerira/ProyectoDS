@@ -1,0 +1,60 @@
+﻿@model IEnumerable<MvcApplication2.Models.RotacionEstudiante>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2> @ViewBag.nombre                                        </h2>
+
+@Html.ActionLink("Regresar", "../Rotacion/SeleccionRotacion")  
+
+<table class="table">
+    <tr>
+        <th>
+          Grupo
+        </th>
+        <th>
+         Horario
+        </th>
+        <th>
+           Docente
+        </th>
+        <th>
+          Estudiante
+        </th>
+        <th>
+            IPS
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rotacion.grupo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rotacion.horario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Docente.HojaVida.primer_nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estudiante.HojaVida.primer_nombre)
+                @Html.DisplayFor(modelItem => item.Estudiante.HojaVida.primer_apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IPS_ESE.nombre)
+            </td>
+            <td>
+                @Html.ActionLink("Seleccionar", "/Edit", new { id = item.rotacionEstudianteId })
+
+
+            </td>
+
+
+        </tr>
+    }
+
+</table>

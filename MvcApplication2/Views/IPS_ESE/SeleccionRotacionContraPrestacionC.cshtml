@@ -1,0 +1,77 @@
+﻿@model MvcApplication2.Models.IPS_ESE
+@{
+    ViewBag.Title = "IPS";
+}
+<div class="row">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Inicio", "VistaODS/", "Rotacion")</li>
+                    <li>@Html.ActionLink("Rotación", "Create/", "Rotacion")</li>
+                    <li>@Html.ActionLink("Hojas de Vida", "VistaHV/", "HojaVida")</li>
+                    <li>@Html.ActionLink("Carta Presentación", "ConsultaRotacion", "Rotacion")</li>
+                    <li>@Html.ActionLink("Estudiante", "Buscar/", "Estudiante")</li>
+                    <li>@Html.ActionLink("Docente", "Buscar/", "Docente")</li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</div>
+
+<h2>Selecciona la IPS para generar informe de capacitaciones</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <div class="container">
+        <div class="row">
+            <fieldset>
+
+
+
+                <div class="col-sm-8">
+
+                    <div class="row">
+                        <fosrm class="form-horizontal" role="form">
+
+
+                            <div class="form-group">
+
+                                <label class="col-sm-2 control-label">IPS</label>
+                                <div class="col-sm-4">
+
+                                    @Html.DropDownList("IPS_ESEId", String.Empty)
+                                </div>
+
+
+
+                              
+
+                            </div>
+</div>
+
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <div class="pull-right">
+                                <button type="submit" class="btn btn-default">Cancelar</button>
+                                <button type="submit" class="btn btn-primary">Ver informe</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </fieldset>
+
+        </div>
+    </div>
+}

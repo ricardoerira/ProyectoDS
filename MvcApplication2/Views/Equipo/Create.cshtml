@@ -1,0 +1,92 @@
+﻿@model MvcApplication2.Models.Equipo
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Equipo</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.nombre)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.nombre)
+            @Html.ValidationMessageFor(model => model.nombre)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.serial)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.serial)
+            @Html.ValidationMessageFor(model => model.serial)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.cantidad)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.cantidad)
+            @Html.ValidationMessageFor(model => model.cantidad)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.estado)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.estado)
+            @Html.ValidationMessageFor(model => model.estado)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.costo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.costo)
+            @Html.ValidationMessageFor(model => model.costo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.observaciones)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.observaciones)
+            @Html.ValidationMessageFor(model => model.observaciones)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.recibido)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.recibido)
+            @Html.ValidationMessageFor(model => model.recibido)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IPS_ESEId, "IPS_ESE")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("IPS_ESEId", String.Empty)
+            @Html.ValidationMessageFor(model => model.IPS_ESEId)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

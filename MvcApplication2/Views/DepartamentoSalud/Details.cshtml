@@ -1,0 +1,36 @@
+﻿@model MvcApplication2.Models.DepartamentoSalud
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>DepartamentoSalud</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.correo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.correo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.director_departamento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.director_departamento)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.DepartamentoSaludId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

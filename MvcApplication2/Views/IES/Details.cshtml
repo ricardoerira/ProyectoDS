@@ -1,0 +1,113 @@
+﻿@model MvcApplication2.Models.IES
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>IES</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.representante_legal)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.representante_legal)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cargo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cargo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.origen)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.origen)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ciudad)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ciudad)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.direccion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.direccion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.telefono)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.telefono)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.correo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.correo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.representante_DS)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.representante_DS)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cargo_representanteDS)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cargo_representanteDS)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.representante_CODA)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.representante_CODA)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.coordinador_practica)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.coordinador_practica)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.caracter_academico)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.caracter_academico)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Municipio.nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Municipio.nombre)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.IESId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,512 @@
+﻿@{
+    ViewBag.Title = "InformacionDocente";
+}
+
+@model MvcApplication2.Models.Docente
+
+<div class="row">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>                    
+                    <li>@Html.ActionLink("Personales", "InformacionDocente/" + Model.docenteId, "Docente")</li>
+                    <li>@Html.ActionLink("Documentos", "Soportes/" + Model.docenteId, "Docente")</li>
+                    <li>@Html.ActionLink("Vacunación", "CarnetVacunacionDocente/" + Model.docenteId, "Docente")</li>
+                    <li>@Html.ActionLink("Reporte", "ReporteDocenteA/" + Model.docenteId, "Docente")</li>
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</div>
+@using (Html.BeginForm("InformacionDocente", "Docente", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <div class="container">
+
+
+        <div class="row">
+
+            <fieldset>
+                <legend>Información Personal Docente</legend>
+
+                <div class="col-sm-3">
+                    <img src="@Url.Content(Model.HojaVida.imagen_DI)" alt="..." class="img-rounded" height="200px" width="150px"><br />
+
+                </div>
+
+                <div class="col-sm-8">
+
+                    <div class="row">
+                        <fosrm class="form-horizontal" role="form">
+
+                            <!-- Text input-->
+                            <div class="form-group">
+                                @Html.HiddenFor(model => model.hojaVidaId)
+                                @Html.HiddenFor(model => model.rotacionId)
+                                @Html.HiddenFor(model => model.docenteId)
+                                @Html.HiddenFor(model => model.DepartamentoSaludId)
+                                @Html.HiddenFor(model => model.clave)
+
+
+
+
+
+                                <label class="col-sm-2 control-label">Tipo Documento</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.tipo_documento, new { @class = "form-control", @readonly = "readonly" })
+                                    @Html.ValidationMessageFor(model => model.tipo_documento)
+                                </div>
+
+                                <label class="col-sm-2 control-label">Número</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.num_documento, new { @class = "form-control", @readonly = "readonly" })
+                                    @Html.ValidationMessageFor(model => model.num_documento)
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Nombre</label>
+                                <div class="col-sm-6">
+                                    @Html.TextBoxFor(model => model.HojaVida.primer_nombre, new { @class = "form-control", @readonly = "readonly" })
+                                    @Html.ValidationMessageFor(model => model.HojaVida.primer_nombre)
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Tarjeta Profesional Departamental</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.certificado_TPDTS, new { @class = "form-control"})
+                                    @Html.ValidationMessageFor(model => model.certificado_TPDTS)
+                                </div>
+                                <label class="col-sm-2 control-label">Tarjeta Profesional Nacional</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.certificado_TPN, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.certificado_TPN)
+                                </div>
+
+                            </div>
+
+
+
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Fecha de Nacimiento</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.HojaVida.fecha_nacimiento, new { @class = "form-control", @readonly = "readonly" })
+                                    @Html.ValidationMessageFor(model => model.HojaVida.fecha_nacimiento)
+                                </div>
+
+
+                                <label class="col-sm-2 control-label">Edad</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.diploma_profesional, new { @class = "form-control", @readonly = "readonly" })
+                                    @Html.ValidationMessageFor(model => model.diploma_profesional)
+                                </div>
+                            </div>
+
+
+
+
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Lugar de Nacimiento</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.HojaVida.municipio_procedencia, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.HojaVida.municipio_procedencia)
+                                    <p class="help-block">Por favor agregue Departamento y Municipio</p>
+                                </div>
+
+
+                                <label class="col-sm-2 control-label">Num. Libreta Militar</label>
+                                <div class="col-sm-4">
+                                @Html.TextBoxFor(model => model.num_libreta_militar, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.num_libreta_militar)  
+                                    
+                                </div>
+
+
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Dirección</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.HojaVida.direccion_manizales, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.HojaVida.direccion_manizales)
+
+
+
+
+                                </div>
+                                <label class="col-sm-2 control-label">Correo</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.HojaVida.correo, new { @class = "form-control", @readonly = "readonly" })
+                                    @Html.ValidationMessageFor(model => model.HojaVida.correo)
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">EPS</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.HojaVida.entidad_salud, new { @class = "form-control", @readonly = "readonly" })
+                                    @Html.ValidationMessageFor(model => model.HojaVida.entidad_salud)
+                                </div>
+                                <label class="col-sm-2 control-label">ARL</label>
+                                <div class="col-sm-4">
+                                    @Html.DropDownList("HojaVida.ARL", new List<SelectListItem>() { new SelectListItem { Text = "POSITIVA COMPAÑIA DE SEGUROS S.A.", Value = "POSITIVA COMPAÑIA DE SEGUROS S.A." }, new SelectListItem { Text = "SEGUROS DE VIDA COLPATRIA S.A.", Value = "SEGUROS DE VIDA COLPATRIA S.A." }, new SelectListItem { Text = "COMPAÑÍA DE SEGUROS BOLIVAR S.A.", Value = "COMPAÑÍA DE SEGUROS BOLIVAR S.A." }, new SelectListItem { Text = "ARL SURA", Value = "ARL SURA" }, new SelectListItem { Text = "COMPAÑÍA DE SEGUROS DE VIDA ALFA S.A.", Value = "COMPAÑÍA DE SEGUROS DE VIDA ALFA S.A." }, new SelectListItem { Text = "LIBERTY SEGUROS DE VIDA S.A.", Value = "LIBERTY SEGUROS DE VIDA S.A." }, new SelectListItem { Text = "COMPAÑIA DE SEGUROS DE VIDA COLMENA S.A.", Value = "COMPAÑIA DE SEGUROS DE VIDA COLMENA S.A." }, new SelectListItem { Text = "LA EQUIDAD SEGUROS DE VIDA", Value = "LA EQUIDAD SEGUROS DE VIDA" }, new SelectListItem { Text = "MAPFRE COLOMBIA VIDA SEGUROS S.A.", Value = "MAPFRE COLOMBIA VIDA SEGUROS S.A." }, new SelectListItem { Text = "SEGUROS DE VIDA AURORA S.A.", Value = "SEGUROS DE VIDA AURORA S.A." }, new SelectListItem { Text = "OTRA", Value = "OTRA" } }, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.HojaVida.ARL)
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Teléfono  fijo</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.HojaVida.num_telefono, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.HojaVida.num_telefono)
+                                </div>
+                                <label class="col-sm-2 control-label">Celular</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.HojaVida.num_celular, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.HojaVida.num_celular)
+                                </div>
+                            </div>
+
+
+
+
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Estado Civil</label>
+                                <div class="col-sm-4">
+                                    @Html.DropDownList("HojaVida.estado_civil", new List<SelectListItem>() { new SelectListItem { Text = "Soltero/a", Value = "Soltero/a" }, new SelectListItem { Text = "Casado/a", Value = "Casado/a" }, new SelectListItem { Text = "Divorciado/a", Value = "Divorciado/a" }, new SelectListItem { Text = "Viudo/a", Value = "Viudo/a" }, new SelectListItem { Text = "Unión Libre", Value = "Unión Libre" } }, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.HojaVida.estado_civil)
+
+
+                                </div>
+                                <label class="col-sm-2 control-label">Numero de Hijos</label>
+                                <div class="col-sm-4">
+                                    @Html.DropDownList("HojaVida.hijos", new List<SelectListItem>() { new SelectListItem { Text = "0", Value = "0" }, new SelectListItem { Text = "1", Value = "1" }, new SelectListItem { Text = "2", Value = "2" }, new SelectListItem { Text = "3", Value = "3" }, new SelectListItem { Text = "4", Value = "4" } }, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.HojaVida.hijos)
+                                </div>
+                            </div>
+
+
+
+
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">RH</label>
+                                <div class="col-sm-4">
+                                    
+                                    @Html.DropDownList("HojaVida.hemoclasificacion", new List<SelectListItem>() { new SelectListItem { Text = "AB+", Value = "AB+" }, new SelectListItem { Text = "AB-", Value = "AB-" }, new SelectListItem { Text = "A+", Value = "A+" }, new SelectListItem { Text = "A-", Value = "A-" }, new SelectListItem { Text = "B+", Value = "B+" }, new SelectListItem { Text = "B-", Value = "B-" }, new SelectListItem { Text = "O+", Value = "O+" }, new SelectListItem { Text = "O-", Value = "O-" } }, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.HojaVida.hemoclasificacion)
+                                </div>
+                                <label class="col-sm-2 control-label">Género</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.HojaVida.genero, new { @class = "form-control", @readonly = "readonly" })
+                                    @Html.ValidationMessageFor(model => model.HojaVida.genero)
+                                </div>
+
+
+                            </div>
+
+
+                        </fosrm>
+
+
+                    </div><!-- /.row -->
+                </div>
+
+                <legend>En caso de emergencia avisar a</legend>
+
+
+                <div class="col-sm-3">
+
+                </div>
+
+
+                <div class="col-sm-8">
+
+                    <div class="row">
+                        <fofrm class="form-horizontal" role="form">
+
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Nombre</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.HojaVida.Familia.primer_nombre_acudiente, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.HojaVida.Familia.primer_nombre_acudiente)
+                                </div>
+                                <label class="col-sm-2 control-label">Primer Apellido</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.HojaVida.Familia.primer_apellido_acudiente, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.HojaVida.Familia.primer_apellido_acudiente)
+                                </div>
+                            </div>
+                            <div class="form-group">
+
+
+                                <label class="col-sm-2 control-label">Segundo Apellido</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.HojaVida.Familia.segundo_apellido_acudiente, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.HojaVida.Familia.segundo_apellido_acudiente)
+                                </div>
+
+                                <label class="col-sm-2 control-label">Dirección</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.HojaVida.Familia.direccion_acudiente, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.HojaVida.Familia.direccion_acudiente)
+                                </div>
+
+
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Teléfono</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.HojaVida.Familia.telefono_acudiente, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.HojaVida.Familia.telefono_acudiente)
+
+
+                                </div>
+
+                                <label class="col-sm-2 control-label">Celular</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.HojaVida.Familia.celular_acudiente, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.HojaVida.Familia.celular_acudiente)
+                                </div>
+                            </div>
+
+                        </fofrm>
+
+                    </div><!-- /.row -->
+                </div>
+
+
+                <legend>Información Académica</legend>
+
+                <div class="col-sm-3">
+
+                </div>
+
+
+                <div class="col-sm-8">
+                    <fodrm class="form-horizontal" role="form">
+
+                        <div class="row">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Departamento</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.DepartamentoSalud.nombre, new { @class = "form-control", @readonly = "readonly" })
+                                    @Html.ValidationMessageFor(model => model.DepartamentoSalud.nombre)
+
+                                </div>
+                                <label class="col-sm-2 control-label">Tipo Vinculación</label>
+                                <div class="col-sm-4">
+                                    @Html.DropDownList("tipo_vinculacion", new List<SelectListItem>() { new SelectListItem { Text = "DOCENTE DE PLANTA", Value = "DOCENTE DE PLANTA" }, new SelectListItem { Text = "DOCENTE OCASIONAL", Value = "DOCENTE OCASIONAL" }, new SelectListItem { Text = "DOCENTE CATEDRÁTICO", Value = "DOCENTE CATEDRÁTICO" }, new SelectListItem { Text = "COMISION ADMINISTRATIVA", Value = "COMISION ADMINISTRATIVA" } }, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.tipo_vinculacion)
+                                </div>
+                            </div>
+                            
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Título Pregrado</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.titulo_pregrado, new { @class = "form-control", @readonly = "readonly" })
+                                    @Html.ValidationMessageFor(model => model.titulo_pregrado)
+                                </div>
+
+                                <label class="col-sm-2 control-label">Dedicación</label>
+                                <div class="col-sm-4">
+                                    @Html.DropDownList("dedicacion", new List<SelectListItem>() { new SelectListItem { Text = "TIEMPO COMPLETO", Value = "TIEMPO COMPLETO" }, new SelectListItem { Text = "MEDIO TIEMPO", Value = "MEDIO TIEMPO" }, new SelectListItem { Text = "HORAS", Value = "HORAS" } }, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.tipo_vinculacion)
+                                </div>
+
+                            </div>
+
+
+                            
+
+                            <div class="form-group">
+                                
+                                <label class="col-sm-2 control-label">Máximo nivel de formación</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.maximo_nivel_formacion, new { @class = "form-control", @readonly = "readonly" })
+                                    @Html.ValidationMessageFor(model => model.maximo_nivel_formacion)
+                                </div>
+
+                                <label class="col-sm-2 control-label">Categoria Escalafón Docente</label>
+                                <div class="col-sm-4">
+                                    @Html.DropDownList("categoria_escalafon_docente", new List<SelectListItem>() { new SelectListItem { Text = "Auxiliar", Value = "Auxiliar" }, new SelectListItem { Text = "Asistente", Value = "Asistente" }, new SelectListItem { Text = "Asociado", Value = "Asociado" }, new SelectListItem { Text = "Titular", Value = "Titular" } }, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.tipo_vinculacion)
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+
+                                <label class="col-sm-2 control-label">Título Postgrado</label>
+                                <div class="col-sm-8">
+                                    
+                                    @Html.DropDownList("certificado_DPE", new List<SelectListItem>() { new SelectListItem { Text = "Geriatría clínica", Value = "Geriatría clínica" }, new SelectListItem { Text = "Magister en Gerontología Envejecimiento y Vejez", Value = "Magister en Gerontología Envejecimiento y Vejez" }, new SelectListItem { Text = "Asociado", Value = "Asociado" }, new SelectListItem { Text = "Titular", Value = "Titular" } }, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.tipo_vinculacion)
+                                </div>
+
+                                
+                            </div>
+                        </div>
+                    </fodrm>
+
+                </div><!-- /.row -->
+
+
+                <legend>Documentos</legend>
+
+                <div class="col-sm-3">
+
+                </div>
+
+                <div class="col-sm-8">
+
+                    <div class="row">
+
+                        <table class="table table-striped table-hover">
+
+                            <tr>
+                                <th>Tipo Documento</th>
+                                <th>Acción</th>
+                                <th>Archivo</th>
+                            </tr>
+                            <tr>
+                                <td>Documento de identidad</td>
+                                <td>
+                                    <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
+                                </td>
+                                <td>
+
+                                    <img src='~/Uploads/doc_identidad@(Model.num_documento).jpg' alt="..." class="img-rounded" height="50px" width="50px"><br />
+
+                                </td>
+
+
+                            </tr>
+
+                            <tr>
+                                <td>Acta de grado</td>
+                                <td>
+                                    <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
+
+                                </td>
+                                <td>
+
+                                    <img src='~/Uploads/acta_grado@(Model.num_documento).jpg' alt="..." class="img-rounded" height="50px" width="50px"><br />
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Diploma de Profesional</td>
+                                <td>
+                                    <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
+
+                                </td>
+                                <td>
+
+                                    <img src='~/Uploads/dip_prof@(Model.num_documento).jpg' alt="..." class="img-rounded" height="50px" width="50px"><br />
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Diploma de Especialista</td>
+                                <td>
+                                    <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
+
+                                </td>
+                                <td>
+
+                                    <img src='~/Uploads/dip_espe@(Model.num_documento).jpg' alt="..." class="img-rounded" height="50px" width="50px"><br />
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Tp de la Dirección Territorial de Salud</td>
+                                <td>
+                                    <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
+
+                                </td>
+                                <td>
+
+                                    <img src='~/Uploads/tp_terr@(Model.num_documento).jpg' alt="..." class="img-rounded" height="50px" width="50px"><br />
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Tarjeta de profesional Departamental</td>
+                                <td>
+                                    <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
+
+                                </td>
+                                <td>
+
+                                    <img src='~/Uploads/tp_dept@(Model.num_documento).jpg' alt="..." class="img-rounded" height="50px" width="50px"><br />
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Tarjeta de profesional Nacional</td>
+                                <td>
+                                    <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
+
+                                </td>
+                                <td>
+
+                                    <img src='~/Uploads/tp_nal@(Model.num_documento).jpg' alt="..." class="img-rounded" height="50px" width="50px"><br />
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Otro</td>
+                                <td>
+                                    <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
+
+                                </td>
+                                <td>
+
+                                    <img src='~/Uploads/otro@(Model.num_documento).jpg' alt="..." class="img-rounded" height="50px" width="50px"><br />
+
+                                </td>
+                            </tr>
+
+
+                        </table>
+
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <div class="pull-right">
+                                    <button type="submit" class="btn btn-default">Cancelar</button>
+                                    <button type="submit" class="btn btn-primary">Guardar</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </fieldset>
+        </div>
+    </div>
+
+
+}
+

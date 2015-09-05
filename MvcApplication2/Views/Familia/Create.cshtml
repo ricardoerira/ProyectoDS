@@ -1,0 +1,180 @@
+﻿@model MvcApplication2.Models.Familia
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Familia</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.primer_nombre_padre)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.primer_nombre_padre)
+            @Html.ValidationMessageFor(model => model.primer_nombre_padre)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.segundo_nombre_padre)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.segundo_nombre_padre)
+            @Html.ValidationMessageFor(model => model.segundo_nombre_padre)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.primer_apellido_padre)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.primer_apellido_padre)
+            @Html.ValidationMessageFor(model => model.primer_apellido_padre)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.segundo_apellido_padre)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.segundo_apellido_padre)
+            @Html.ValidationMessageFor(model => model.segundo_apellido_padre)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.direccion_padre)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.direccion_padre)
+            @Html.ValidationMessageFor(model => model.direccion_padre)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.telefono_padre)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.telefono_padre)
+            @Html.ValidationMessageFor(model => model.telefono_padre)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.primer_nombre_madre)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.primer_nombre_madre)
+            @Html.ValidationMessageFor(model => model.primer_nombre_madre)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.segundo_nombre_madre)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.segundo_nombre_madre)
+            @Html.ValidationMessageFor(model => model.segundo_nombre_madre)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.primer_apellido_madre)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.primer_apellido_madre)
+            @Html.ValidationMessageFor(model => model.primer_apellido_madre)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.segundo_apellido_madre)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.segundo_apellido_madre)
+            @Html.ValidationMessageFor(model => model.segundo_apellido_madre)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.direccion_madre)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.direccion_madre)
+            @Html.ValidationMessageFor(model => model.direccion_madre)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.telefono_madre)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.telefono_madre)
+            @Html.ValidationMessageFor(model => model.telefono_madre)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.primer_nombre_acudiente)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.primer_nombre_acudiente)
+            @Html.ValidationMessageFor(model => model.primer_nombre_acudiente)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.segundo_nombre_acudiente)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.segundo_nombre_acudiente)
+            @Html.ValidationMessageFor(model => model.segundo_nombre_acudiente)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.primer_apellido_acudiente)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.primer_apellido_acudiente)
+            @Html.ValidationMessageFor(model => model.primer_apellido_acudiente)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.segundo_apellido_acudiente)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.segundo_apellido_acudiente)
+            @Html.ValidationMessageFor(model => model.segundo_apellido_acudiente)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.direccion_acudiente)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.direccion_acudiente)
+            @Html.ValidationMessageFor(model => model.direccion_acudiente)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.telefono_acudiente)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.telefono_acudiente)
+            @Html.ValidationMessageFor(model => model.telefono_acudiente)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.celular_acudiente)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.celular_acudiente)
+            @Html.ValidationMessageFor(model => model.celular_acudiente)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

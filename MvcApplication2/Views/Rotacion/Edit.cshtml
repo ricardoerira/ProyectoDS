@@ -1,0 +1,97 @@
+﻿@model MvcApplication2.Models.Rotacion
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="row">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Departamento", "VistaDepartamentoSalud/", "DepartamentoSalud")</li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Hoja de Vida<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Estudiante", "BuscarEnVacuna/", "Estudiante")</li>
+                            <li>@Html.ActionLink("Docente", "BuscarEnVacuna/", "Docente")</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Listado Hojas de Vida", "HV_IPS_Universitaria/", "HojaVida")</li>
+
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("Rotación", "SeleccionRotacion/", "Rotacion")</li>
+                    <li>@Html.ActionLink("Carta Presentación", "SeleccionRotacionCarta/", "IPS_ESE")</li>
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</div>
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Rotacion</legend>
+
+        @Html.HiddenFor(model => model.rotacionId)
+
+        @Html.HiddenFor(model => model.IPS_ESEId)
+
+
+
+        @Html.HiddenFor(model => model.actividadacademicaId)
+
+
+
+
+       
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.fecha_inicio)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.fecha_inicio)
+            @Html.ValidationMessageFor(model => model.fecha_inicio)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.fecha_terminacion)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.fecha_terminacion)
+            @Html.ValidationMessageFor(model => model.fecha_terminacion)
+        </div>
+
+
+      
+        <div class="editor-label">
+            @Html.LabelFor(model => model.numero_estudiantes)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.numero_estudiantes)
+            @Html.ValidationMessageFor(model => model.numero_estudiantes)
+        </div>
+
+       
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Regresar", "SeleccionRotacion")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

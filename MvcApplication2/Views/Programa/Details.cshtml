@@ -1,0 +1,50 @@
+﻿@model MvcApplication2.Models.Programa
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Programa</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nivel_formacion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nivel_formacion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.director_programa)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.director_programa)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tipo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tipo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.modalidad)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.modalidad)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.programaId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

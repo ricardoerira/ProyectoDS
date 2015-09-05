@@ -1,0 +1,118 @@
+﻿@model MvcApplication2.Models.IPS_ESE
+@{
+    ViewBag.Title = "IPS";
+}
+<div class="row">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Docencia Servicio", "VistaODS/", "Rotacion")</li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Contraprestación<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Inventario Equipos", "SeleccionRotacionContraPrestacionE/", "IPS_ESE")</li>
+                            <li>@Html.ActionLink("Informe Capacitacioness", "SeleccionRotacionContraPrestacion/", "IPS_ESE")</li>
+                            <li>@Html.ActionLink("Informe Inducciones", "SeleccionRotacionContraPrestacion/", "IPS_ESE")</li>
+                            <li class="divider"></li>
+                            <li><a href="http://cvirtual.campusvirtualudecaldas.edu.co/moodle/login/index.php">Administrar Inducción</a></li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Crear Curso/Inducción/Inventario", "Create/", "Curso")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Hoja de Vida<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Estudiante", "Buscar/", "Estudiante")</li>
+                            <li>@Html.ActionLink("Docente", "Buscar/", "Docente")</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Listado Hojas de Vida", "VistaHV/", "HojaVida")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Rotación<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Rotación", "Create/", "Rotacion")</li>
+                            <li>@Html.ActionLink("Carta Presentación", "ConsultaRotacion/", "Rotacion")</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</div>
+
+<h2>Selecciona la IPS para generar carta de presentación</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <div class="container">
+        <div class="row">
+            <fieldset>
+
+
+
+                <div class="col-sm-8">
+
+                    <div class="row">
+                        <fosrm class="form-horizontal" role="form">
+
+
+                            <div class="form-group">
+
+                                <label class="col-sm-2 control-label">IPS</label>
+                                <div class="col-sm-4">
+
+                                    @Html.DropDownList("IPS_ESEId", String.Empty)
+                                </div>
+
+
+
+                                <label class="col-sm-2 control-label">Fecha</label>
+
+
+                                <div class="col-sm-4">
+
+                                    <input type="text" class="form-control" maxlength="11" id="fecha" placeholder="dd/mm/aa"
+                                           name="fecha" value="@(ViewBag.fecha ?? String.Empty)">
+
+
+
+
+                                </div>
+
+                            </div>
+</div>
+
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <div class="pull-right">
+                                <button type="submit" class="btn btn-default">Cancelar</button>
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </fieldset>
+
+        </div>
+    </div>
+}

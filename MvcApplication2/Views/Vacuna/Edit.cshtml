@@ -1,0 +1,102 @@
+﻿@model MvcApplication2.Models.Vacuna
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Vacuna</legend>
+
+        @Html.HiddenFor(model => model.vacunaId)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.nombre_generico)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.nombre_generico)
+            @Html.ValidationMessageFor(model => model.nombre_generico)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.antigenos_contenidos)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.antigenos_contenidos)
+            @Html.ValidationMessageFor(model => model.antigenos_contenidos)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.lote)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.lote)
+            @Html.ValidationMessageFor(model => model.lote)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.lugar_anatomico)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.lugar_anatomico)
+            @Html.ValidationMessageFor(model => model.lugar_anatomico)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.fecha_vacunacion)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.fecha_vacunacion)
+            @Html.ValidationMessageFor(model => model.fecha_vacunacion)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.fecha_prox_vacunacion)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.fecha_prox_vacunacion)
+            @Html.ValidationMessageFor(model => model.fecha_prox_vacunacion)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.laboratorio_vacunacion)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.laboratorio_vacunacion)
+            @Html.ValidationMessageFor(model => model.laboratorio_vacunacion)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.observaciones)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.observaciones)
+            @Html.ValidationMessageFor(model => model.observaciones)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.hojaVidaId, "HojaVida")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("hojaVidaId", String.Empty)
+            @Html.ValidationMessageFor(model => model.hojaVidaId)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

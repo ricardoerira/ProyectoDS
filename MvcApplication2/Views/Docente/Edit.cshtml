@@ -1,0 +1,174 @@
+﻿@model MvcApplication2.Models.Docente
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Docente</legend>
+
+        @Html.HiddenFor(model => model.docenteId)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.tipo_documento)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.tipo_documento)
+            @Html.ValidationMessageFor(model => model.tipo_documento)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.num_documento)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.num_documento)
+            @Html.ValidationMessageFor(model => model.num_documento)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.num_libreta_militar)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.num_libreta_militar)
+            @Html.ValidationMessageFor(model => model.num_libreta_militar)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.clave)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.clave)
+            @Html.ValidationMessageFor(model => model.clave)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.titulo_pregrado)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.titulo_pregrado)
+            @Html.ValidationMessageFor(model => model.titulo_pregrado)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.maximo_nivel_formacion)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.maximo_nivel_formacion)
+            @Html.ValidationMessageFor(model => model.maximo_nivel_formacion)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.dedicacion)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.dedicacion)
+            @Html.ValidationMessageFor(model => model.dedicacion)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.tipo_vinculacion)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.tipo_vinculacion)
+            @Html.ValidationMessageFor(model => model.tipo_vinculacion)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.categoria_escalafon_docente)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.categoria_escalafon_docente)
+            @Html.ValidationMessageFor(model => model.categoria_escalafon_docente)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.imagen_acta_grado)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.imagen_acta_grado)
+            @Html.ValidationMessageFor(model => model.imagen_acta_grado)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.diploma_profesional)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.diploma_profesional)
+            @Html.ValidationMessageFor(model => model.diploma_profesional)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.certificado_DPE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.certificado_DPE)
+            @Html.ValidationMessageFor(model => model.certificado_DPE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.certificado_TPDTS)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.certificado_TPDTS)
+            @Html.ValidationMessageFor(model => model.certificado_TPDTS)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.certificado_TPN)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.certificado_TPN)
+            @Html.ValidationMessageFor(model => model.certificado_TPN)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.otro_certificado)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.otro_certificado)
+            @Html.ValidationMessageFor(model => model.otro_certificado)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.hojaVidaId, "HojaVida")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("hojaVidaId", String.Empty)
+            @Html.ValidationMessageFor(model => model.hojaVidaId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DepartamentoSaludId, "DepartamentoSalud")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("DepartamentoSaludId", String.Empty)
+            @Html.ValidationMessageFor(model => model.DepartamentoSaludId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.rotacionId, "Rotacion")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("rotacionId", String.Empty)
+            @Html.ValidationMessageFor(model => model.rotacionId)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

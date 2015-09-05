@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="DefaultConnection" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DefaultConnection (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.DefaultConnection.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Vista" msprop:Generator_TableClassName="VistaDataTable" msprop:Generator_TableVarName="tableVista" msprop:Generator_TablePropName="Vista" msprop:Generator_RowDeletingName="VistaRowDeleting" msprop:Generator_RowChangingName="VistaRowChanging" msprop:Generator_RowEvHandlerName="VistaRowChangeEventHandler" msprop:Generator_RowDeletedName="VistaRowDeleted" msprop:Generator_UserTableName="Vista" msprop:Generator_RowChangedName="VistaRowChanged" msprop:Generator_RowEvArgName="VistaRowChangeEvent" msprop:Generator_RowClassName="VistaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="num_documento" msprop:Generator_ColumnVarNameInTable="columnnum_documento" msprop:Generator_ColumnPropNameInRow="num_documento" msprop:Generator_ColumnPropNameInTable="num_documentoColumn" msprop:Generator_UserColumnName="num_documento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="primer_nombre" msprop:Generator_ColumnVarNameInTable="columnprimer_nombre" msprop:Generator_ColumnPropNameInRow="primer_nombre" msprop:Generator_ColumnPropNameInTable="primer_nombreColumn" msprop:Generator_UserColumnName="primer_nombre" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="primer_apellido" msprop:Generator_ColumnVarNameInTable="columnprimer_apellido" msprop:Generator_ColumnPropNameInRow="primer_apellido" msprop:Generator_ColumnPropNameInTable="primer_apellidoColumn" msprop:Generator_UserColumnName="primer_apellido" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="horario" msprop:Generator_ColumnVarNameInTable="columnhorario" msprop:Generator_ColumnPropNameInRow="horario" msprop:Generator_ColumnPropNameInTable="horarioColumn" msprop:Generator_UserColumnName="horario" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fecha_inicio" msprop:Generator_ColumnVarNameInTable="columnfecha_inicio" msprop:Generator_ColumnPropNameInRow="fecha_inicio" msprop:Generator_ColumnPropNameInTable="fecha_inicioColumn" msprop:Generator_UserColumnName="fecha_inicio" type="xs:dateTime" />
+              <xs:element name="rotacionId" msprop:Generator_ColumnVarNameInTable="columnrotacionId" msprop:Generator_ColumnPropNameInRow="rotacionId" msprop:Generator_ColumnPropNameInTable="rotacionIdColumn" msprop:Generator_UserColumnName="rotacionId" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

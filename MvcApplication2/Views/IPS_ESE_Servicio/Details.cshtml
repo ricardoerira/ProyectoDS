@@ -1,0 +1,29 @@
+﻿@model MvcApplication2.Models.IPS_ESE_Servicio
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>IPS_ESE_Servicio</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IPS_ESE.origen)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IPS_ESE.origen)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Servicio.nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Servicio.nombre)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.IPS_ESE_ServicioId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

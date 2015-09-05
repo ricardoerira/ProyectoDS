@@ -1,0 +1,47 @@
+﻿@model MvcApplication2.Models.Convenio_IES
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Convenio_IES</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.descripcion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.descripcion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.objeto_convenio)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.objeto_convenio)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IESId1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IESId1)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IESId2)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IESId2)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

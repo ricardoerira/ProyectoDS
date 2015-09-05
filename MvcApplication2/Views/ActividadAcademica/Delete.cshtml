@@ -1,0 +1,47 @@
+﻿@model MvcApplication2.Models.RotacionEstudiante
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>RotacionEstudiante</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Rotacion.grupo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Rotacion.grupo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IPS_ESE.origen)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IPS_ESE.origen)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Docente.tipo_documento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Docente.tipo_documento)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Estudiante.tipo_documento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Estudiante.tipo_documento)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

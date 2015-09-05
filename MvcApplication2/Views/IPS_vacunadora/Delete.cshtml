@@ -1,0 +1,82 @@
+﻿@model MvcApplication2.Models.IPS_vacunadora
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>IPS_vacunadora</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.responsable)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.responsable)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cargo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cargo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.direccion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.direccion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.telefono)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.telefono)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.correo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.correo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.corregimiento_o_vereda)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.corregimiento_o_vereda)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Municipio.nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Municipio.nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Laboratorio.responsable)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Laboratorio.responsable)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

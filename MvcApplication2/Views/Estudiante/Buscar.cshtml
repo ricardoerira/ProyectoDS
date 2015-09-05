@@ -1,0 +1,113 @@
+﻿@model MvcApplication2.Models.Estudiante
+
+@{
+    ViewBag.Title = "Buscar";
+    Layout = "~/Views/Shared/_Layout.cshtml";}
+
+<div class="row">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Docencia Servicio", "VistaODS/", "Rotacion")</li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Hoja de Vida<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Estudiante", "Buscar/", "Estudiante")</li>
+                            <li>@Html.ActionLink("Docente", "Buscar/", "Docente")</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Listado Hojas de Vida", "VistaHV/", "HojaVida")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Contraprestación<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Inventario Equipos", "SeleccionRotacionContraPrestacionE/", "IPS_ESE")</li>
+                            <li>@Html.ActionLink("Informe Capacitacioness", "SeleccionRotacionContraPrestacionC/", "IPS_ESE")</li>
+                            <li>@Html.ActionLink("Informe Inducciones", "SeleccionRotacionContraPrestacionI/", "IPS_ESE")</li>
+                            <li class="divider"></li>
+                            <li><a href="http://cvirtual.campusvirtualudecaldas.edu.co/moodle/login/index.php">Administrar Inducción</a></li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Crear Curso/Inducción/Inventario", "Create/", "Curso")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Documentos<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="http://localhost:8888/OpenKM/frontend/index.jsp">Administrar</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Rotación<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Rotación", "Create/", "Rotacion")</li>
+                            <li>@Html.ActionLink("Carta Presentación", "ConsultaRotacion/", "Rotacion")</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</div>
+
+
+
+    <fieldset>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-4 col-md-offset-4" align="center">
+                    <br />
+                    <br />
+                    <legend>Buscar Estudiante</legend>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+
+
+
+    
+     <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <form class="form-horizontal" role="form">
+            <fieldset>                          
+                    <div class="form-group">
+                        <!-- /.row <input type="text" class="form-control" placeholder="Username" required autofocus>-->
+                        <!-- /.row <input type="password" class="form-control" placeholder="Password" required>Sign In-->
+                        @Html.TextBoxFor(model => model.num_documento, new { @class = "form-control", @placeholder = "Cédula" })                    
+                    </div>
+                    <div class="form-group">
+                        @Html.TextBoxFor(model => model.codigo, new { @class = "form-control", @placeholder = "Código" })
+                    </div>
+                    <input type="submit" class="btn btn-lg btn-primary btn-block" value="Buscar" />
+               
+
+                
+            </fieldset>
+        </form>
+    </div><!-- /.col-lg-12 -->
+</div><!-- /.row -->
+
+
+
+    }
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

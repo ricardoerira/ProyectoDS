@@ -1,0 +1,187 @@
+﻿@model MvcApplication2.Models.Rotacion
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="row">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Inicio", "VistaODS/", "Rotacion")</li>
+                    <li>@Html.ActionLink("Rotación", "Create/", "Rotacion")</li>
+                    <li>@Html.ActionLink("Hojas de Vida", "VistaHV/", "HojaVida")</li>
+                    <li>@Html.ActionLink("Carta Presentación", "ConsultaRotacion", "Rotacion")</li>
+                    <li>@Html.ActionLink("Estudiante", "Buscar/", "Estudiante")</li>
+                    <li>@Html.ActionLink("Docente", "Buscar/", "Docente")</li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</div>
+
+
+
+
+<div class="container">
+    <div class="row">
+        <fieldset>
+            <legend>Información Rotacion</legend>
+            <div class="col-sm-8">
+
+                <div class="row">
+
+                    <!-- Text input-->
+
+                    <fosrm class="form-horizontal" role="form">
+
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Tipo</label>
+                            <div class="col-sm-4">
+                                @Html.DisplayFor(model => model.ActividadAcademica.tipo)
+                            </div>
+                            <label class="col-sm-2 control-label">Nombre</label>
+                            <div class="col-sm-4">
+                                @Html.DisplayFor(model => model.ActividadAcademica.nombre)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Fecha de Inicio</label>
+                            <div class="col-sm-4">
+                                @Html.DisplayFor(model => model.fecha_inicio)
+                            </div>
+                            <label class="col-sm-2 control-label">Fecha de Terminacion</label>
+                            <div class="col-sm-4">
+                                @Html.DisplayFor(model => model.fecha_terminacion)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Numero de Cupos</label>
+                            <div class="col-sm-4">
+                                @Html.DisplayFor(model => model.ActividadAcademica.max_estudiantes_rotacion)
+                            </div>
+                            <label class="col-sm-2 control-label">Numero de Estudiantes</label>
+                            <div class="col-sm-4">
+                                @Html.DisplayFor(model => model.numero_estudiantes)
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Horario</label>
+                            <div class="col-sm-4">
+                                @Html.DisplayFor(model => model.horario)
+                            </div>
+                            <label class="col-sm-2 control-label">Periodo</label>
+                            <div class="col-sm-4">
+                                @Html.DisplayFor(model => model.periodo_academico)
+                            </div>
+                        </div>
+                       
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Docente</label>
+                            <div class="col-sm-4">
+                                @Html.DisplayFor(model => model.Docente.ElementAt(0).HojaVida.primer_nombre)
+                                @Html.DisplayFor(model => model.Docente.ElementAt(0).HojaVida.primer_apellido)
+                            </div>
+                            <label class="col-sm-2 control-label">Departamento de Salud</label>
+                            <div class="col-sm-4">
+                                <select class="form-control">
+                                    <option value="0">Hospital de Caldas</option>
+                                    <option value="1">Clinica Versalles</option>
+                                    <option value="2">San Juan de Dios</option>
+                                    <option value="3" selected>Hospital Santa Sofia</option>
+                                    
+                                </select>
+
+                            </div>
+                            
+                          
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Agregar Estudiantes</label>
+                            <div class="col-sm-4">
+                                @Html.ActionLink("Seleccionar", "../Estudiante/RotacionEstudiante", new { id = 7 })
+                            </div>
+                            <label class="col-sm-2 control-label">Cambiar Docente</label>
+                            <div>
+                                @Html.ActionLink("Seleccionar", "../Estudiante/RotacionEstudiante", new { id = 7 })
+
+                            </div>
+                           
+
+                        </div>
+
+                        
+                       
+        </fieldset>
+    </div>
+</div>
+
+
+
+<form class="form-inline">
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Agregar Estudiante</button>
+    </div>
+    <button type="submit" class="btn btn-primary">Agregar Docente</button>
+</form>
+
+
+
+<table class="table">
+
+    <tr>
+
+        <th>
+            Num Documento
+        </th>
+        <th>
+            Codigo
+        </th>
+
+
+
+        <th>
+            Nombres
+        </th>
+        <th>
+            Apellidos
+        </th>
+        <th></th>
+    </tr>
+    @for (int i = 0; i < Model.Estudiante.Count(); i++)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => Model.Estudiante.ElementAt(i).num_documento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.Estudiante.ElementAt(i).codigo)
+            </td>
+
+
+
+
+
+            <td>
+                @Html.DisplayFor(modelItem => Model.Estudiante.ElementAt(i).HojaVida.primer_nombre)
+                @Html.DisplayFor(modelItem => Model.Estudiante.ElementAt(i).HojaVida.segundo_nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.Estudiante.ElementAt(i).HojaVida.primer_apellido)
+                @Html.DisplayFor(modelItem => Model.Estudiante.ElementAt(i).HojaVida.segundo_apellido)
+            </td>
+
+        </tr>
+
+    }
+
+</table>
+
+
+
+
+

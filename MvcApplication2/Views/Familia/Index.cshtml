@@ -1,0 +1,141 @@
+﻿@model IEnumerable<MvcApplication2.Models.Familia>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.primer_nombre_padre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.segundo_nombre_padre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.primer_apellido_padre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.segundo_apellido_padre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.direccion_padre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.telefono_padre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.primer_nombre_madre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.segundo_nombre_madre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.primer_apellido_madre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.segundo_apellido_madre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.direccion_madre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.telefono_madre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.primer_nombre_acudiente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.segundo_nombre_acudiente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.primer_apellido_acudiente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.segundo_apellido_acudiente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.direccion_acudiente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.telefono_acudiente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.celular_acudiente)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.primer_nombre_padre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.segundo_nombre_padre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.primer_apellido_padre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.segundo_apellido_padre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.direccion_padre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.telefono_padre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.primer_nombre_madre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.segundo_nombre_madre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.primer_apellido_madre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.segundo_apellido_madre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.direccion_madre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.telefono_madre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.primer_nombre_acudiente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.segundo_nombre_acudiente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.primer_apellido_acudiente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.segundo_apellido_acudiente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.direccion_acudiente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.telefono_acudiente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.celular_acudiente)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.familiaId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.familiaId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.familiaId })
+        </td>
+    </tr>
+}
+
+</table>

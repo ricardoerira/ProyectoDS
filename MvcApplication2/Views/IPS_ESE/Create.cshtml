@@ -1,0 +1,124 @@
+﻿@model MvcApplication2.Models.IPS_ESE
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>IPS_ESE</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.origen)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.origen)
+            @Html.ValidationMessageFor(model => model.origen)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.nombre)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.nombre)
+            @Html.ValidationMessageFor(model => model.nombre)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.representante_legal)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.representante_legal)
+            @Html.ValidationMessageFor(model => model.representante_legal)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.cargo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.cargo)
+            @Html.ValidationMessageFor(model => model.cargo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.correo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.correo)
+            @Html.ValidationMessageFor(model => model.correo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.naturaleza_juridica)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.naturaleza_juridica)
+            @Html.ValidationMessageFor(model => model.naturaleza_juridica)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.nivel_complejidad)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.nivel_complejidad)
+            @Html.ValidationMessageFor(model => model.nivel_complejidad)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.representanteDS)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.representanteDS)
+            @Html.ValidationMessageFor(model => model.representanteDS)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.cargo_representanteDS)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.cargo_representanteDS)
+            @Html.ValidationMessageFor(model => model.cargo_representanteDS)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.corregimiento_o_vereda)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.corregimiento_o_vereda)
+            @Html.ValidationMessageFor(model => model.corregimiento_o_vereda)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.objeto_convenio)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.objeto_convenio)
+            @Html.ValidationMessageFor(model => model.objeto_convenio)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.municipioId, "Municipio")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("municipioId", String.Empty)
+            @Html.ValidationMessageFor(model => model.municipioId)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,102 @@
+﻿@model IEnumerable<MvcApplication2.Models.Estudiante>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Inicio", "VistaODS/", "Rotacion")</li>
+                    <li>@Html.ActionLink("Rotación", "Create/", "Rotacion")</li>
+                    <li>@Html.ActionLink("Hojas de Vida", "VistaHV/", "HojaVida")</li>
+                    <li>@Html.ActionLink("Carta Presentación", "ConsultaRotacion", "Rotacion")</li>
+                    <li>@Html.ActionLink("Estudiante", "Buscar/", "Estudiante")</li>
+                    <li>@Html.ActionLink("Docente", "Buscar/", "Docente")</li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</div>
+
+<h2>Estudiantes</h2>
+
+@using (Html.BeginForm())
+{
+
+
+    <p>
+        Buscar por Codigo: @Html.TextBox("SearchString")
+        <input type="submit" value="Buscar" />
+    </p>
+}
+<table class="table">
+   
+    <tr>
+       
+        <th>
+           Num Documento
+        </th>
+        <th>
+         Codigo
+        </th>
+       
+     
+       
+        <th>
+           Nombres
+        </th>
+        <th>
+          Apellidos
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            @Html.HiddenFor(modelItem => item.hojaVidaId)
+
+            @Html.HiddenFor(modelItem => item.estudianteId)
+            @Html.HiddenFor(modelItem => item.programaId)
+
+         
+            <td>
+                @Html.DisplayFor(modelItem => item.num_documento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.codigo)
+            </td>
+           
+           
+           
+        
+          
+            <td>
+                @Html.DisplayFor(modelItem => item.HojaVida.primer_nombre)
+                @Html.DisplayFor(modelItem => item.HojaVida.segundo_nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HojaVida.primer_apellido)
+                @Html.DisplayFor(modelItem => item.HojaVida.segundo_apellido)
+            </td>
+            <td>
+                @Html.ActionLink("Seleccionar", actionName: "RotacionEstudiante2",
+    controllerName: "Estudiante",
+    routeValues: new
+    {
+        id = item.estudianteId,
+        rotacion =@ViewBag.id
+        
+    },
+    htmlAttributes: null
+)                                 
+               
+            </td>
+        </tr>
+
+    }
+
+</table>

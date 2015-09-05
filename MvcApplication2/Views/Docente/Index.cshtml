@@ -1,0 +1,131 @@
+﻿@model IEnumerable<MvcApplication2.Models.Docente>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.tipo_documento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.num_documento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.num_libreta_militar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.clave)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.titulo_pregrado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.maximo_nivel_formacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dedicacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tipo_vinculacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.categoria_escalafon_docente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.imagen_acta_grado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.diploma_profesional)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.certificado_DPE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.certificado_TPDTS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.certificado_TPN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.otro_certificado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HojaVida.primer_nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartamentoSalud.nombre)
+        </th>
+     
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.tipo_documento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.num_documento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.num_libreta_militar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.clave)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.titulo_pregrado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.maximo_nivel_formacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dedicacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tipo_vinculacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.categoria_escalafon_docente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.imagen_acta_grado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.diploma_profesional)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.certificado_DPE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.certificado_TPDTS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.certificado_TPN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.otro_certificado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HojaVida.primer_nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DepartamentoSalud.nombre)
+        </td>
+      
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.docenteId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.docenteId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.docenteId })
+        </td>
+    </tr>
+}
+
+</table>

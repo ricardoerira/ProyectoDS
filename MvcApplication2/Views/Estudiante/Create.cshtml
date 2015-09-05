@@ -1,0 +1,132 @@
+﻿@model MvcApplication2.Models.Estudiante
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Estudiante</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.tipo_documento)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.tipo_documento)
+            @Html.ValidationMessageFor(model => model.tipo_documento)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.num_documento)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.num_documento)
+            @Html.ValidationMessageFor(model => model.num_documento)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.codigo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.codigo)
+            @Html.ValidationMessageFor(model => model.codigo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.direccion_procedencia)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.direccion_procedencia)
+            @Html.ValidationMessageFor(model => model.direccion_procedencia)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.barrio_procedencia)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.barrio_procedencia)
+            @Html.ValidationMessageFor(model => model.barrio_procedencia)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.telefono_procedencia)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.telefono_procedencia)
+            @Html.ValidationMessageFor(model => model.telefono_procedencia)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.clave)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.clave)
+            @Html.ValidationMessageFor(model => model.clave)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.modalidad)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.modalidad)
+            @Html.ValidationMessageFor(model => model.modalidad)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.programaId, "Programa")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("programaId", String.Empty)
+            @Html.ValidationMessageFor(model => model.programaId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.semestre)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.semestre)
+            @Html.ValidationMessageFor(model => model.semestre)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.estado_academico)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.estado_academico)
+            @Html.ValidationMessageFor(model => model.estado_academico)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.hojaVidaId, "HojaVida")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("hojaVidaId", String.Empty)
+            @Html.ValidationMessageFor(model => model.hojaVidaId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.rotacionId, "Rotacion")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("rotacionId", String.Empty)
+            @Html.ValidationMessageFor(model => model.rotacionId)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

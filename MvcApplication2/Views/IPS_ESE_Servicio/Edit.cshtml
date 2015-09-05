@@ -1,0 +1,46 @@
+﻿@model MvcApplication2.Models.IPS_ESE_Servicio
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>IPS_ESE_Servicio</legend>
+
+        @Html.HiddenFor(model => model.IPS_ESE_ServicioId)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IPS_ESEId, "IPS_ESE")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("IPS_ESEId", String.Empty)
+            @Html.ValidationMessageFor(model => model.IPS_ESEId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.servicioId, "Servicio")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("servicioId", String.Empty)
+            @Html.ValidationMessageFor(model => model.servicioId)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

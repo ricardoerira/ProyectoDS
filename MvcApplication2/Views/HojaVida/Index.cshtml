@@ -1,0 +1,177 @@
+﻿@model IEnumerable<MvcApplication2.Models.HojaVida>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.primer_nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.segundo_nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.primer_apellido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.segundo_apellido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.facultad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.departamento_procedencia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.municipio_procedencia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.direccion_manizales)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha_nacimiento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hemoclasificacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.genero)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estado_civil)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hijos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.imagen_DI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.num_telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.num_celular)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.correo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.entidad_salud)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estado_afiliacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.regimen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tipo_afiliacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estado_HV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ARL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.certificado_ARL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Familia.primer_nombre_padre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.primer_nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.segundo_nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.primer_apellido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.segundo_apellido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.facultad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.departamento_procedencia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.municipio_procedencia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.direccion_manizales)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha_nacimiento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hemoclasificacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.genero)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado_civil)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hijos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.imagen_DI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.num_telefono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.num_celular)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.correo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.entidad_salud)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado_afiliacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.regimen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tipo_afiliacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado_HV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ARL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.certificado_ARL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Familia.primer_nombre_padre)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.hojaVidaId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.hojaVidaId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.hojaVidaId })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="getEstudiantesMatriculados">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cod_carrera" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getEstudiantesMatriculadosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getEstudiantesMatriculadosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getProfesoresActivos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cod_depto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getProfesoresActivosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getProfesoresActivosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDatosEstudiante">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="num_doc" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDatosEstudianteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDatosEstudianteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDatosProfesor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="num_doc" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDatosProfesorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDatosProfesorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMaterias">
+        <s:complexType />
+      </s:element>
+      <s:element name="getMateriasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getMateriasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getGruposMateria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cod_materia" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getGruposMateriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getGruposMateriaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getInscritosGrupo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cod_materia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="grupo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ano" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="periodo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getInscritosGrupoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getInscritosGrupoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getEstudiantesMatriculadosSoapIn">
+    <wsdl:part name="parameters" element="tns:getEstudiantesMatriculados" />
+  </wsdl:message>
+  <wsdl:message name="getEstudiantesMatriculadosSoapOut">
+    <wsdl:part name="parameters" element="tns:getEstudiantesMatriculadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProfesoresActivosSoapIn">
+    <wsdl:part name="parameters" element="tns:getProfesoresActivos" />
+  </wsdl:message>
+  <wsdl:message name="getProfesoresActivosSoapOut">
+    <wsdl:part name="parameters" element="tns:getProfesoresActivosResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDatosEstudianteSoapIn">
+    <wsdl:part name="parameters" element="tns:getDatosEstudiante" />
+  </wsdl:message>
+  <wsdl:message name="getDatosEstudianteSoapOut">
+    <wsdl:part name="parameters" element="tns:getDatosEstudianteResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDatosProfesorSoapIn">
+    <wsdl:part name="parameters" element="tns:getDatosProfesor" />
+  </wsdl:message>
+  <wsdl:message name="getDatosProfesorSoapOut">
+    <wsdl:part name="parameters" element="tns:getDatosProfesorResponse" />
+  </wsdl:message>
+  <wsdl:message name="getMateriasSoapIn">
+    <wsdl:part name="parameters" element="tns:getMaterias" />
+  </wsdl:message>
+  <wsdl:message name="getMateriasSoapOut">
+    <wsdl:part name="parameters" element="tns:getMateriasResponse" />
+  </wsdl:message>
+  <wsdl:message name="getGruposMateriaSoapIn">
+    <wsdl:part name="parameters" element="tns:getGruposMateria" />
+  </wsdl:message>
+  <wsdl:message name="getGruposMateriaSoapOut">
+    <wsdl:part name="parameters" element="tns:getGruposMateriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="getInscritosGrupoSoapIn">
+    <wsdl:part name="parameters" element="tns:getInscritosGrupo" />
+  </wsdl:message>
+  <wsdl:message name="getInscritosGrupoSoapOut">
+    <wsdl:part name="parameters" element="tns:getInscritosGrupoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSFacultadSaludSoap">
+    <wsdl:operation name="getEstudiantesMatriculados">
+      <wsdl:input message="tns:getEstudiantesMatriculadosSoapIn" />
+      <wsdl:output message="tns:getEstudiantesMatriculadosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getProfesoresActivos">
+      <wsdl:input message="tns:getProfesoresActivosSoapIn" />
+      <wsdl:output message="tns:getProfesoresActivosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDatosEstudiante">
+      <wsdl:input message="tns:getDatosEstudianteSoapIn" />
+      <wsdl:output message="tns:getDatosEstudianteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDatosProfesor">
+      <wsdl:input message="tns:getDatosProfesorSoapIn" />
+      <wsdl:output message="tns:getDatosProfesorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMaterias">
+      <wsdl:input message="tns:getMateriasSoapIn" />
+      <wsdl:output message="tns:getMateriasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getGruposMateria">
+      <wsdl:input message="tns:getGruposMateriaSoapIn" />
+      <wsdl:output message="tns:getGruposMateriaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getInscritosGrupo">
+      <wsdl:input message="tns:getInscritosGrupoSoapIn" />
+      <wsdl:output message="tns:getInscritosGrupoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSFacultadSaludSoap" type="tns:WSFacultadSaludSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getEstudiantesMatriculados">
+      <soap:operation soapAction="http://tempuri.org/getEstudiantesMatriculados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProfesoresActivos">
+      <soap:operation soapAction="http://tempuri.org/getProfesoresActivos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatosEstudiante">
+      <soap:operation soapAction="http://tempuri.org/getDatosEstudiante" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatosProfesor">
+      <soap:operation soapAction="http://tempuri.org/getDatosProfesor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMaterias">
+      <soap:operation soapAction="http://tempuri.org/getMaterias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGruposMateria">
+      <soap:operation soapAction="http://tempuri.org/getGruposMateria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInscritosGrupo">
+      <soap:operation soapAction="http://tempuri.org/getInscritosGrupo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSFacultadSaludSoap12" type="tns:WSFacultadSaludSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getEstudiantesMatriculados">
+      <soap12:operation soapAction="http://tempuri.org/getEstudiantesMatriculados" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProfesoresActivos">
+      <soap12:operation soapAction="http://tempuri.org/getProfesoresActivos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatosEstudiante">
+      <soap12:operation soapAction="http://tempuri.org/getDatosEstudiante" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDatosProfesor">
+      <soap12:operation soapAction="http://tempuri.org/getDatosProfesor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMaterias">
+      <soap12:operation soapAction="http://tempuri.org/getMaterias" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGruposMateria">
+      <soap12:operation soapAction="http://tempuri.org/getGruposMateria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInscritosGrupo">
+      <soap12:operation soapAction="http://tempuri.org/getInscritosGrupo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSFacultadSalud">
+    <wsdl:port name="WSFacultadSaludSoap" binding="tns:WSFacultadSaludSoap">
+      <soap:address location="http://acadtest.ucaldas.edu.co:8084/WsFacultadSalud.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSFacultadSaludSoap12" binding="tns:WSFacultadSaludSoap12">
+      <soap12:address location="http://acadtest.ucaldas.edu.co:8084/WsFacultadSalud.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

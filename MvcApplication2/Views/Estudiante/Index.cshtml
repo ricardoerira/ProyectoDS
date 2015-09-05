@@ -1,0 +1,105 @@
+﻿@model IEnumerable<MvcApplication2.Models.Estudiante>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.tipo_documento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.num_documento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.codigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.direccion_procedencia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.barrio_procedencia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.telefono_procedencia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.clave)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.modalidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Programa.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.semestre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estado_academico)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HojaVida.primer_nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rotacion.ActividadAcademica.nombre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.tipo_documento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.num_documento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.codigo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.direccion_procedencia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.barrio_procedencia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.telefono_procedencia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.clave)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.modalidad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Programa.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.semestre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado_academico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HojaVida.primer_nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rotacion.ActividadAcademica.nombre)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.estudianteId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.estudianteId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.estudianteId })
+        </td>
+    </tr>
+}
+
+</table>

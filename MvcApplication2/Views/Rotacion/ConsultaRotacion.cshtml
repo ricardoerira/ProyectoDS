@@ -1,0 +1,158 @@
+﻿@model IEnumerable<MvcApplication2.Models.Rotacion>
+
+@{
+    ViewBag.Title = "Rotacion";
+}
+
+<div class="row">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Inicio", "VistaODS/", "Rotacion")</li>
+                    <li>@Html.ActionLink("Rotación", "Create/", "Rotacion")</li>
+                    <li>@Html.ActionLink("Hojas de Vida", "VistaHV/", "HojaVida")</li>
+                    <li>@Html.ActionLink("Carta Presentación", "ConsultaRotacion", "Rotacion")</li>
+                    <li>@Html.ActionLink("Estudiante", "Buscar/", "Estudiante")</li>
+                    <li>@Html.ActionLink("Docente", "Buscar/", "Docente")</li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</div>
+
+<h2>Consulta Rotacion</h2>
+<div class="form-group">
+    
+
+    <label class="col-sm-2 control-label">Departamento de Salud</label>
+    <div class="col-sm-4">
+        <select class="form-control">
+            <option value="0">Salud Pública</option>
+            <option value="1">Acción Física Humana</option>
+            <option value="2">Ciencias Básicas para la Salud</option>
+            <option value="3" selected>Materno Infantil</option>
+            <option value="4">Salud mental y comportamiento humano</option>
+            <option value="4">Clínico</option>
+            <option value="4">Quirurgico</option>
+            <option value="4">Basico Clínico</option>
+        </select>
+
+    </div>
+    <label class="col-sm-2 control-label">Rotación</label>
+    <div class="col-sm-4">
+        <select class="form-control">
+            <option value="0">Cuidado Básico</option>
+            <option value="1">Cuidado Prenatal</option>
+            <option value="2">Enfereria Pediatrica</option>
+            <option value="3" selected>anestesiología</option>
+           </select>
+
+    </div>
+</div>
+
+
+<table class="table">
+    <tr>
+        
+    </tr>
+</table>     
+           
+
+
+    
+
+    
+          
+
+
+            
+        
+    
+
+
+
+
+<table class="table">
+    <tr>
+
+        <th>
+            Nombre
+        </th>
+        <th>
+            Fecha Inicio
+        </th>
+        <th>
+            Fecha Terminacion
+        </th>
+        <th>
+            Cupos Rotacion
+        </th>
+        <th>
+            Numero Inscritos
+        </th>
+        <th>
+            Horario
+        </th>
+
+        <th>
+            Periodo
+        </th>
+        <th>
+            Ips
+        </th>
+        <th>
+            Departamento
+        </th>
+        <th>
+            Modalidad
+        </th>
+
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.ActividadAcademica.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecha_inicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecha_terminacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActividadAcademica.max_estudiantes_rotacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.numero_estudiantes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.horario)
+            </td>
+
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.periodo_academico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IPS_ESE.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActividadAcademica.DepartamentoSalud.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActividadAcademica.modalidad_practica)
+            </td>
+
+            <td>
+
+                @Html.ActionLink("Consultar", "/ConsultaEstudiantes", new { id = item.rotacionId })
+            </td>
+        </tr>
+    }
+
+</table>

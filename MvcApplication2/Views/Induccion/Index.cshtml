@@ -1,0 +1,93 @@
+﻿@model IEnumerable<MvcApplication2.Models.Induccion>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="row">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Equipo", "", "Equipo")</li>
+                    <li>@Html.ActionLink("Cursos", "", "Curso")</li>
+                    <li>@Html.ActionLink("Inducciones", "", "Induccion")</li>
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</div>
+<p>
+    @Html.ActionLink("Crear Nuevo", "Create")
+</p>
+@using (Html.BeginForm())
+{
+
+
+    <p>
+        Buscar por IPS: @Html.TextBox("SearchString")
+        <input type="submit" value="Buscar" />
+    </p>
+}
+<div class="table-responsive">
+    <table class="table">
+
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.observaciones)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.numeroEstudiantes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.frecuencia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.responsable)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.correo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.valor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IPS_ESE.nombre)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.observaciones)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.numeroEstudiantes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.frecuencia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.responsable)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.correo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.valor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IPS_ESE.nombre)
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.InduccionId })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

@@ -1,0 +1,57 @@
+﻿@model MvcApplication2.Models.Induccion
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Induccion</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.observaciones)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.observaciones)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.numeroEstudiantes)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.numeroEstudiantes)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.frecuencia)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.frecuencia)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.responsable)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.responsable)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.correo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.correo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IPS_ESE.origen)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IPS_ESE.origen)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.InduccionId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

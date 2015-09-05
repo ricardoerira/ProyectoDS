@@ -1,0 +1,145 @@
+﻿@model MvcApplication2.Models.Docente
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Docente</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tipo_documento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tipo_documento)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.num_documento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.num_documento)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.num_libreta_militar)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.num_libreta_militar)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.clave)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.clave)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.titulo_pregrado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.titulo_pregrado)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.maximo_nivel_formacion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.maximo_nivel_formacion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dedicacion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dedicacion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tipo_vinculacion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tipo_vinculacion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.categoria_escalafon_docente)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.categoria_escalafon_docente)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.imagen_acta_grado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.imagen_acta_grado)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.diploma_profesional)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.diploma_profesional)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.certificado_DPE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.certificado_DPE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.certificado_TPDTS)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.certificado_TPDTS)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.certificado_TPN)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.certificado_TPN)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.otro_certificado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.otro_certificado)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.HojaVida.primer_nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.HojaVida.primer_nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DepartamentoSalud.nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DepartamentoSalud.nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ActividadAcademica.nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ActividadAcademica.nombre)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

@@ -1,0 +1,96 @@
+﻿@model MvcApplication2.Models.RotacionEstudiante
+
+@{
+    ViewBag.Title = "Edit";
+}
+<div class="row">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Departamento", "VistaDepartamentoSalud/", "DepartamentoSalud")</li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Hoja de Vida<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Estudiante", "BuscarEnVacuna/", "Estudiante")</li>
+                            <li>@Html.ActionLink("Docente", "BuscarEnVacuna/", "Docente")</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Listado Hojas de Vida", "HV_IPS_Universitaria/", "HojaVida")</li>
+
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("Rotación", "SeleccionRotacion/", "Rotacion")</li>
+                    <li>@Html.ActionLink("Carta Presentación", "SeleccionRotacionCarta/", "IPS_ESE")</li>
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</div>
+
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>RotacionEstudiante</legend>
+
+        @Html.HiddenFor(model => model.rotacionEstudianteId)
+
+        @Html.HiddenFor(model => model.rotacionId)
+
+        @Html.HiddenFor(model => model.estudianteId)
+
+       
+
+
+
+
+      
+        <div class="editor-label">
+           IPS
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("IPS_ESEId", String.Empty)
+            @Html.ValidationMessageFor(model => model.IPS_ESEId)
+        </div>
+
+        <div class="editor-label">
+            Docente
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("docenteId", String.Empty)
+            @Html.ValidationMessageFor(model => model.IPS_ESEId)
+        </div>
+        <div class="editor-label">
+            Horarios
+        </div>
+        <div class="col-sm-4">
+            @Html.TextBoxFor(model => model.horario, new { @class = "form-control" })
+
+
+
+            @Html.ValidationMessageFor(model => model.Rotacion.horario)
+
+        </div>
+        <br>
+        <br>
+
+        <p>
+            <input type="submit" value="Guardar" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index/" )
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

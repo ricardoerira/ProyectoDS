@@ -1,0 +1,72 @@
+﻿@model MvcApplication2.Models.LoginModel
+
+
+
+<hgroup class="title">
+    <h1>@ViewBag.Title</h1>
+</hgroup>
+
+<fieldset>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-md-offset-4" align="center">
+                <br />
+                <br />
+                <legend>Docencia Servicio</legend>
+            </div>
+        </div>
+    </div>
+</fieldset>
+
+<section id="loginForm">
+    @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+    <div class="container" >
+        <div class="col-sm-6 col-md-4 col-md-offset-4" align="center">
+            <div class="login-panel panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Iniciar sesión</h3>
+                </div>
+                <div class="panel-body">
+                    <form role="form">
+                        <fieldset>
+                            <div class="form-group">
+
+                                @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", @placeholder = "Username" })
+                                @Html.ValidationMessageFor(model => model.UserName)
+
+                            </div>
+                            <div class="form-group">
+
+                                @Html.PasswordFor(model => model.Password, new { @class = "form-control", @placeholder = "Password" })
+                                @Html.ValidationMessageFor(model => model.Password)
+
+
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    @Html.CheckBoxFor(m => m.RememberMe)
+                                    @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+                                </label>
+                            </div>
+                            <!-- Change this to a button or input when using this as a form -->
+                            <input type="submit" value="Iniciar sesión" class="btn btn-sm btn-success" />
+
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                
+
+                }
+    </section>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

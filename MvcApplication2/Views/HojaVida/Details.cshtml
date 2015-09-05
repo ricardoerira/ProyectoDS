@@ -1,0 +1,190 @@
+﻿@model MvcApplication2.Models.HojaVida
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>HojaVida</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.primer_nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.primer_nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.segundo_nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.segundo_nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.primer_apellido)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.primer_apellido)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.segundo_apellido)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.segundo_apellido)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.facultad)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.facultad)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.departamento_procedencia)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.departamento_procedencia)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.municipio_procedencia)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.municipio_procedencia)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.direccion_manizales)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.direccion_manizales)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fecha_nacimiento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fecha_nacimiento)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.hemoclasificacion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.hemoclasificacion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.genero)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.genero)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.estado_civil)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.estado_civil)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.hijos)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.hijos)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.imagen_DI)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.imagen_DI)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.num_telefono)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.num_telefono)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.num_celular)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.num_celular)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.correo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.correo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.entidad_salud)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.entidad_salud)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.estado_afiliacion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.estado_afiliacion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.regimen)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.regimen)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tipo_afiliacion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tipo_afiliacion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.estado_HV)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.estado_HV)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ARL)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ARL)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.certificado_ARL)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.certificado_ARL)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Familia.primer_nombre_padre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Familia.primer_nombre_padre)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.hojaVidaId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

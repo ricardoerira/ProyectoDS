@@ -1,0 +1,61 @@
+﻿@model MvcApplication2.Models.RotacionEstudiante
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>RotacionEstudiante</legend>
+
+        @Html.HiddenFor(model => model.rotacionEstudianteId)
+
+        @Html.HiddenFor(model => model.rotacionId)
+
+        @Html.HiddenFor(model => model.estudianteId)
+
+        @Html.HiddenFor(model => model.docenteId)
+     
+
+
+
+
+      
+        <div class="editor-label">
+           IPS
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("IPS_ESEId", String.Empty)
+            @Html.ValidationMessageFor(model => model.IPS_ESEId)
+        </div>
+        <div class="editor-label">
+            Horarios
+        </div>
+        <div class="col-sm-4">
+            @Html.TextBoxFor(model => model.horario, new { @class = "form-control" })
+
+
+
+            @Html.ValidationMessageFor(model => model.horario)
+
+        </div>
+        <br>
+        <br>
+
+        <p>
+            <input type="submit" value="Guardar" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index/" )
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

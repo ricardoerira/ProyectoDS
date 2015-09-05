@@ -1,0 +1,439 @@
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\MvcApplication2.dll.config
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\MvcApplication2.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\MvcApplication2.pdb
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\Antlr3.Runtime.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.Core.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\EntityFramework.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\Microsoft.Data.Edm.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\Microsoft.Data.OData.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\Newtonsoft.Json.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Net.Http.Formatting.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Spatial.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.Helpers.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.Http.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.Http.OData.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.Http.WebHost.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.Mvc.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.Optimization.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.Razor.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.WebPages.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.WebPages.Razor.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\WebGrease.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\WebMatrix.Data.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\WebMatrix.WebData.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\EntityFramework.xml
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\Newtonsoft.Json.xml
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Net.Http.Formatting.xml
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.Helpers.xml
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.Http.xml
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.Http.WebHost.xml
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.Mvc.xml
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.Razor.xml
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.WebPages.xml
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.WebPages.Razor.xml
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\WebMatrix.Data.xml
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\WebMatrix.WebData.xml
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.Core.xml
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.Http.OData.xml
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\Microsoft.Data.Edm.xml
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\Microsoft.Data.OData.xml
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Spatial.xml
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\EntityFramework.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\System.Net.Http.Formatting.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\System.Web.Http.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\System.Web.Http.WebHost.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\System.Web.Optimization.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\System.Web.Razor.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\System.Web.WebPages.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\WebMatrix.Data.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\Microsoft.Web.WebPages.OAuth.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\WebMatrix.WebData.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\System.Web.Http.OData.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\de\Microsoft.Data.Edm.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\Microsoft.Data.Edm.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\it\Microsoft.Data.Edm.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\de\Microsoft.Data.OData.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\Microsoft.Data.OData.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\fr\Microsoft.Data.OData.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\it\Microsoft.Data.OData.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\ja\Microsoft.Data.OData.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\ko\Microsoft.Data.OData.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\ru\Microsoft.Data.OData.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\de\System.Spatial.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\System.Spatial.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\fr\System.Spatial.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\it\System.Spatial.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\ja\System.Spatial.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\ko\System.Spatial.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\ru\System.Spatial.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\zh-Hans\System.Spatial.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\zh-Hant\System.Spatial.resources.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.dll
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.pdb
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.csprojResolveAssemblyReference.cache
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\bin\Microsoft.ReportViewer.WebForms.DLL
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\MvcApplication2.dll.config
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\MvcApplication2.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\MvcApplication2.pdb
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\Antlr3.Runtime.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.AspNet.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.Core.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.OAuth.Consumer.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.OAuth.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.OpenId.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\EntityFramework.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\Microsoft.Data.Edm.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\Microsoft.Data.OData.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\Microsoft.ReportViewer.WebForms.DLL
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\Microsoft.Web.Infrastructure.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\Microsoft.Web.WebPages.OAuth.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\Newtonsoft.Json.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Net.Http.Formatting.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Spatial.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.Helpers.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.Http.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.Http.OData.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.Http.WebHost.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.Mvc.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.Optimization.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.Razor.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.WebPages.Deployment.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.WebPages.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.WebPages.Razor.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\WebGrease.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\WebMatrix.Data.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\WebMatrix.WebData.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\EntityFramework.xml
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\Newtonsoft.Json.xml
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Net.Http.Formatting.xml
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.Helpers.xml
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.Http.xml
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.Http.WebHost.xml
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.Mvc.xml
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.Razor.xml
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.WebPages.xml
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.WebPages.Deployment.xml
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.WebPages.Razor.xml
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\WebMatrix.Data.xml
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\Microsoft.Web.WebPages.OAuth.xml
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\WebMatrix.WebData.xml
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.AspNet.xml
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.Core.xml
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.OAuth.Consumer.xml
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.OAuth.xml
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.OpenId.xml
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.Http.OData.xml
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\Microsoft.Data.Edm.xml
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\Microsoft.Data.OData.xml
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Spatial.xml
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\EntityFramework.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\System.Net.Http.Formatting.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\System.Web.Helpers.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\System.Web.Http.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\System.Web.Http.WebHost.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\System.Web.Mvc.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\System.Web.Optimization.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\System.Web.Razor.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\System.Web.WebPages.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\System.Web.WebPages.Deployment.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\System.Web.WebPages.Razor.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\Microsoft.Web.WebPages.OAuth.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\WebMatrix.WebData.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\System.Web.Http.OData.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\de\Microsoft.Data.Edm.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\Microsoft.Data.Edm.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\fr\Microsoft.Data.Edm.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\it\Microsoft.Data.Edm.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\ja\Microsoft.Data.Edm.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\ko\Microsoft.Data.Edm.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\ru\Microsoft.Data.Edm.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\de\Microsoft.Data.OData.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\Microsoft.Data.OData.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\fr\Microsoft.Data.OData.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\it\Microsoft.Data.OData.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\ja\Microsoft.Data.OData.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\ko\Microsoft.Data.OData.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\ru\Microsoft.Data.OData.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\de\System.Spatial.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\System.Spatial.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\fr\System.Spatial.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\it\System.Spatial.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\ja\System.Spatial.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\ko\System.Spatial.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\ru\System.Spatial.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\zh-Hans\System.Spatial.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\bin\zh-Hant\System.Spatial.resources.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.csprojResolveAssemblyReference.cache
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.Migrations.sfdg.resources
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.Migrations.xsdfs.resources
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.csproj.GenerateResource.Cache
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.dll
+E:\Versiones\domingo 19 abril\Proyecto DS\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.pdb
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.Migrations.asd.resources
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.csproj.GenerateResource.Cache
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.Migrations.sdfgsg.resources
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.Migrations.sd.resources
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.Migrations.asdfad.resources
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.Migrations.dfads.resources
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.Migrations.sf.resources
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\MvcApplication2.dll.config
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\MvcApplication2.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\MvcApplication2.pdb
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\Antlr3.Runtime.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.AspNet.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.Core.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.OAuth.Consumer.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.OAuth.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.OpenId.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\EntityFramework.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\Microsoft.Data.Edm.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\Microsoft.Data.OData.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\Microsoft.ReportViewer.WebForms.DLL
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\Microsoft.Web.Infrastructure.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\Microsoft.Web.WebPages.OAuth.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\Newtonsoft.Json.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Net.Http.Formatting.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Spatial.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.Helpers.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.Http.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.Http.OData.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.Http.WebHost.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.Mvc.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.Optimization.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.Razor.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.WebPages.Deployment.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.WebPages.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.WebPages.Razor.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\WebGrease.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\WebMatrix.Data.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\WebMatrix.WebData.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\EntityFramework.xml
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\Newtonsoft.Json.xml
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Net.Http.Formatting.xml
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.Helpers.xml
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.Http.xml
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.Http.WebHost.xml
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.Mvc.xml
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.Razor.xml
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.WebPages.xml
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.WebPages.Deployment.xml
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.WebPages.Razor.xml
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\WebMatrix.Data.xml
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\Microsoft.Web.WebPages.OAuth.xml
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\WebMatrix.WebData.xml
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.AspNet.xml
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.Core.xml
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.OAuth.Consumer.xml
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.OAuth.xml
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.OpenId.xml
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Web.Http.OData.xml
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\Microsoft.Data.Edm.xml
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\Microsoft.Data.OData.xml
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\System.Spatial.xml
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\EntityFramework.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\System.Net.Http.Formatting.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\System.Web.Helpers.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\System.Web.Http.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\System.Web.Http.WebHost.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\System.Web.Mvc.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\System.Web.Optimization.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\System.Web.Razor.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\System.Web.WebPages.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\System.Web.WebPages.Deployment.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\System.Web.WebPages.Razor.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\Microsoft.Web.WebPages.OAuth.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\WebMatrix.WebData.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\System.Web.Http.OData.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\de\Microsoft.Data.Edm.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\Microsoft.Data.Edm.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\fr\Microsoft.Data.Edm.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\it\Microsoft.Data.Edm.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\ja\Microsoft.Data.Edm.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\ko\Microsoft.Data.Edm.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\ru\Microsoft.Data.Edm.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\de\Microsoft.Data.OData.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\Microsoft.Data.OData.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\fr\Microsoft.Data.OData.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\it\Microsoft.Data.OData.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\ja\Microsoft.Data.OData.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\ko\Microsoft.Data.OData.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\ru\Microsoft.Data.OData.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\de\System.Spatial.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\es\System.Spatial.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\fr\System.Spatial.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\it\System.Spatial.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\ja\System.Spatial.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\ko\System.Spatial.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\ru\System.Spatial.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\zh-Hans\System.Spatial.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\bin\zh-Hant\System.Spatial.resources.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.csprojResolveAssemblyReference.cache
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.Migrations.asd.resources
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.Migrations.sdfgsg.resources
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.Migrations.sd.resources
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.Migrations.asdfad.resources
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.Migrations.dfads.resources
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.Migrations.sf.resources
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.csproj.GenerateResource.Cache
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.dll
+E:\Versiones segunda fase\Proyecto DS\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.pdb
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.Migrations.liliteamo.resources
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.Migrations.deell.resources
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.Migrations.nada.resources
+C:\Users\Ricardo Erira\Documents\Proyecto DS\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.Migrations.ad.resources
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\MvcApplication2.dll.config
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\MvcApplication2.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\MvcApplication2.pdb
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\Antlr3.Runtime.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.AspNet.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.Core.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.OAuth.Consumer.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.OAuth.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.OpenId.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\EntityFramework.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\Microsoft.Data.Edm.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\Microsoft.Data.OData.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\Microsoft.ReportViewer.WebForms.DLL
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\Microsoft.Web.Infrastructure.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\Microsoft.Web.WebPages.OAuth.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\Newtonsoft.Json.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\System.Net.Http.Formatting.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\System.Spatial.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\System.Web.Helpers.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\System.Web.Http.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\System.Web.Http.OData.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\System.Web.Http.WebHost.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\System.Web.Mvc.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\System.Web.Optimization.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\System.Web.Razor.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\System.Web.WebPages.Deployment.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\System.Web.WebPages.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\System.Web.WebPages.Razor.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\WebGrease.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\WebMatrix.Data.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\WebMatrix.WebData.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\EntityFramework.xml
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\Newtonsoft.Json.xml
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\System.Net.Http.Formatting.xml
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\System.Web.Helpers.xml
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\System.Web.Http.xml
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\System.Web.Http.WebHost.xml
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\System.Web.Mvc.xml
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\System.Web.Razor.xml
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\System.Web.WebPages.xml
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\System.Web.WebPages.Deployment.xml
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\System.Web.WebPages.Razor.xml
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\WebMatrix.Data.xml
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\Microsoft.Web.WebPages.OAuth.xml
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\WebMatrix.WebData.xml
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.AspNet.xml
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.Core.xml
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.OAuth.Consumer.xml
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.OAuth.xml
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.OpenId.xml
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\System.Web.Http.OData.xml
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\Microsoft.Data.Edm.xml
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\Microsoft.Data.OData.xml
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\System.Spatial.xml
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\es\EntityFramework.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\es\System.Net.Http.Formatting.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\es\System.Web.Helpers.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\es\System.Web.Http.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\es\System.Web.Http.WebHost.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\es\System.Web.Mvc.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\es\System.Web.Optimization.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\es\System.Web.Razor.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\es\System.Web.WebPages.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\es\System.Web.WebPages.Deployment.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\es\System.Web.WebPages.Razor.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\es\Microsoft.Web.WebPages.OAuth.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\es\WebMatrix.WebData.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\es\System.Web.Http.OData.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\de\Microsoft.Data.Edm.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\es\Microsoft.Data.Edm.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\fr\Microsoft.Data.Edm.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\it\Microsoft.Data.Edm.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\ja\Microsoft.Data.Edm.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\ko\Microsoft.Data.Edm.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\ru\Microsoft.Data.Edm.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\de\Microsoft.Data.OData.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\es\Microsoft.Data.OData.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\fr\Microsoft.Data.OData.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\it\Microsoft.Data.OData.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\ja\Microsoft.Data.OData.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\ko\Microsoft.Data.OData.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\ru\Microsoft.Data.OData.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\de\System.Spatial.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\es\System.Spatial.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\fr\System.Spatial.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\it\System.Spatial.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\ja\System.Spatial.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\ko\System.Spatial.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\ru\System.Spatial.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\zh-Hans\System.Spatial.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\bin\zh-Hant\System.Spatial.resources.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.csprojResolveAssemblyReference.cache
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.Migrations.asd.resources
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.Migrations.sdfgsg.resources
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.Migrations.sd.resources
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.Migrations.asdfad.resources
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.Migrations.dfads.resources
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.Migrations.sf.resources
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.Migrations.liliteamo.resources
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.Migrations.deell.resources
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.Migrations.nada.resources
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.Migrations.ad.resources
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.csproj.GenerateResource.Cache
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.dll
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.pdb
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.Migrations.jhfg.resources
+E:\Versiones segunda fase\Proyecto DS vistas\MvcApplication2\MvcApplication2\obj\Debug\MvcApplication2.Migrations.hjyffd.resources

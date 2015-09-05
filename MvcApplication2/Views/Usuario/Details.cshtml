@@ -1,0 +1,120 @@
+﻿@model MvcApplication2.Models.Usuario
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Usuario</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tipo_documento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tipo_documento)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.num_documento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.num_documento)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.primer_nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.primer_nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.segundo_nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.segundo_nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.primer_apellido)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.primer_apellido)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.segundo_apellido)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.segundo_apellido)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fecha_nacimiento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fecha_nacimiento)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.direccion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.direccion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.telefono)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.telefono)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.celular)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.celular)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.genero)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.genero)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.correo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.correo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.clave)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.clave)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.username)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.username)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.rol)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.rol)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.usuarioId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

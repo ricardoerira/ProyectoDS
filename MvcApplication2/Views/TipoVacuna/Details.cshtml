@@ -1,0 +1,22 @@
+﻿@model MvcApplication2.Models.TipoVacuna
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>TipoVacuna</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nombre)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.tipovacunaId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

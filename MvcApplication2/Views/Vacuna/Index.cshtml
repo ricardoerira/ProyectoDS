@@ -1,0 +1,81 @@
+﻿@model IEnumerable<MvcApplication2.Models.Vacuna>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre_generico)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.antigenos_contenidos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lote)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lugar_anatomico)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha_vacunacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha_prox_vacunacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.laboratorio_vacunacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.observaciones)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HojaVida.primer_nombre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre_generico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.antigenos_contenidos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lote)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lugar_anatomico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha_vacunacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha_prox_vacunacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.laboratorio_vacunacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.observaciones)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HojaVida.primer_nombre)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.vacunaId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.vacunaId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.vacunaId })
+        </td>
+    </tr>
+}
+
+</table>

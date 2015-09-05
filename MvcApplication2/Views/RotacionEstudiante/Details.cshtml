@@ -1,0 +1,43 @@
+﻿@model MvcApplication2.Models.RotacionEstudiante
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>RotacionEstudiante</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Rotacion.grupo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Rotacion.grupo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IPS_ESE.origen)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IPS_ESE.origen)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Docente.tipo_documento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Docente.tipo_documento)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Estudiante.tipo_documento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Estudiante.tipo_documento)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.rotacionEstudianteId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
