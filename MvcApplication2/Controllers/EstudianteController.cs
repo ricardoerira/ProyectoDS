@@ -20,7 +20,7 @@ namespace MvcApplication2.Controllers
         private UsersContext2 db = new UsersContext2();
 
 
-        public ActionResult BuscarEnVacuna(Estudiante estudiante)
+        public ActionResult BuscarEnVacuna(Estudiante estudiante) 
         {
             var estudiantes = from b in db.Estudiantes
                               select b;
@@ -40,6 +40,31 @@ namespace MvcApplication2.Controllers
             else
             {
                 return RedirectToAction("../Estudiante/CarnetVacunacionDS/" + estudiante.estudianteId);
+            }
+        }
+
+
+
+public ActionResult BuscarEnDepartamento(Estudiante estudiante) 
+        {
+            var estudiantes = from b in db.Estudiantes
+                              select b;
+
+            foreach (var b in estudiantes)
+            {
+                if (b.codigo.Equals(estudiante.codigo))
+                {
+                    estudiante = b;
+                }
+
+            }
+            if (estudiante.estudianteId == 0)
+            {
+                return View(estudiante);
+            }
+            else
+            {
+                return RedirectToAction("../Estudiante/ReporteEstudianteA/" + estudiante.estudianteId);
             }
         }
 

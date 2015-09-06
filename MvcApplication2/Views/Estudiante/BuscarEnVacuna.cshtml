@@ -71,12 +71,8 @@
             <form class="form-horizontal" role="form">
                 <fieldset>
                     <div class="form-group">
-                        <!-- /.row <input type="text" class="form-control" placeholder="Username" required autofocus>-->
-                        <!-- /.row <input type="password" class="form-control" placeholder="Password" required>Sign In-->
-                        @Html.TextBoxFor(model => model.num_documento, new { @class = "form-control", @placeholder = "Número de Documento" })
-                    </div>
-                    <div class="form-group">
-                        @Html.TextBoxFor(model => model.codigo, new { @class = "form-control", @placeholder = "Código es" })
+                        @Html.TextBoxFor(model => model.codigo, new { @class = "form-control" })
+                        <span class="help-block">El criterio de búsqueda para los estudiantes es solo a través del código </span>
                     </div>
                     <input type="submit" class="btn btn-lg btn-primary btn-block" value="Buscar" />
 

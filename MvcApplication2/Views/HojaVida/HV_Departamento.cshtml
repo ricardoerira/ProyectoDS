@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "HV_Departamento";
+}
+ 
+
+
+<div class="row">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+
+                    <li>@Html.ActionLink("Inicio", "VistaDepartamentoSalud/", "DepartamentoSalud")</li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Hoja de Vida<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Estudiante", "BuscarEnDepartamento/", "Estudiante")</li>
+                            <li>@Html.ActionLink("Docente", "BuscarEnDepartamento/", "Docente")</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Listado Hojas de Vida", "HV_Departamento/", "HojaVida")</li>
+
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("Rotación", "SeleccionRotacion/", "Rotacion")</li>
+                    <li>@Html.ActionLink("Carta Presentación", "SeleccionRotacionCarta/", "IPS_ESE")</li>
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</div>
+
+
+<legend>Hojas de Vida</legend>
+
+<br>
+
+<div class="container">
+
+    <div class="alert alert-info">
+        <a href="#" class="btn btn-xs btn-primary pull-right">Revisar</a>
+        <strong>Medicina:</strong> Hojas de vida completas.
+    </div>
+
+    <div class="alert alert-info">
+        <a href="#" class="btn btn-xs btn-primary pull-right">Revisar</a>
+        <strong>Enfermería:</strong> Hojas de vida actualizadas.
+    </div>
+
+    <div class="alert alert-info">
+        <a href="#" class="btn btn-xs btn-primary pull-right">Revisar</a>
+        <strong>Docentes:</strong> Hojas de vida actualizadas.
+    </div>
+
+    @*<div class="alert alert-warning">
+        <a href="#" class="btn btn-xs btn-warning pull-right">Revisar</a>
+        <strong>Warning:</strong> you should do an action.
+    </div>*@
+
+    <div class="alert alert-danger">
+        <a href="#" class="btn btn-xs btn-danger pull-right">Revisar</a>
+        <strong>Medicina:</strong> Hojas de vida incompleta.
+    </div>
+
+    <div class="alert alert-danger">
+        <a href="#" class="btn btn-xs btn-danger pull-right">Revisar</a>
+        <strong>Enfermería:</strong> Hojas de vida incompleta.
+    </div>
+    <div class="alert alert-danger">
+        <a href="#" class="btn btn-xs btn-danger pull-right">Revisar</a>
+        <strong>Docentes:</strong> Hojas de vida incompleta.
+    </div>
+
+</div>

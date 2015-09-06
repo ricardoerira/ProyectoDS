@@ -38,9 +38,16 @@
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
     <p>
-        Buscar por Materia: @Html.TextBox("SearchString")
-        <input type="submit" value="Buscar" />
-    </p>
+        
+    Buscar por Materia:
+        <div class="col-md-4">
+            @Html.TextBox("SearchString", ViewBag.SearchFilter as string, new { @class = "form-control", onclick = "keystroke()", id = "search" })
+
+        </div>
+        <div class="col-md-6">
+            <input type="submit" class="btn btn-primary" value="Buscar" />
+        </div>
+</p>
 }
 
 
