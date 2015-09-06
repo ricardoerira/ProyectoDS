@@ -184,6 +184,30 @@ namespace MvcApplication2.Controllers
                 return RedirectToAction("../Docente/CarnetVacunacionDocenteDS/" + docente.docenteId);
             }
         }
+
+
+        public ActionResult BuscarEnDepartamento(Docente docente)
+        {
+            var docentes = from b in db.Docentes
+                           select b;
+
+            foreach (var b in docentes)
+            {
+                if (b.num_documento.Equals(docente.num_documento))
+                {
+                    docente = b;
+                }
+
+            }
+            if (docente.docenteId == 0)
+            {
+                return View(docente);
+            }
+            else
+            {
+                return RedirectToAction("../Docente/ReporteDocenteA/" + docente.docenteId);
+            }
+        }
         //
         // GET: /Docente/Details/5
 

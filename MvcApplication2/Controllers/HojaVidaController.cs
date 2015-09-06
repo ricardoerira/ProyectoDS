@@ -32,6 +32,13 @@ namespace MvcApplication2.Controllers
             return View();
 
         }
+
+    public ActionResult HV_Departamento()
+        {
+
+            return View();
+
+        }
         public void importaDocentes()
         {
 

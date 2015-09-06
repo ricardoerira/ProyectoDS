@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Edit";
 }
+
 <div class="row">
     <nav class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
@@ -33,62 +34,90 @@
 </div>
 
 
-@using (Html.BeginForm()) {
+@using (Html.BeginForm())
+{
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>RotacionEstudiante</legend>
+
 
         @Html.HiddenFor(model => model.rotacionEstudianteId)
 
         @Html.HiddenFor(model => model.rotacionId)
 
         @Html.HiddenFor(model => model.estudianteId)
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="well well-sm">
+                        <fosrm class="form-horizontal" action="" method="post">
+                            <fieldset>
+                                <legend class="text-center">Rotación Estudiante</legend>
 
-       
+                                <!-- Name input-->
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label" for="name">IPS/ESE</label>
+                                    <div class="col-md-9">
+                                        @Html.DropDownList("IPS_ESEId", (IEnumerable<SelectListItem>)ViewBag.IPS_ESEId, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.IPS_ESEId)
+                                        
+                                        
 
 
 
 
-      
-        <div class="editor-label">
-           IPS
+
+                                    </div>
+                                </div>
+
+                                <!-- Email input-->
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label" for="email">Docente</label>
+                                    <div class="col-md-9">
+                                        @Html.DropDownList("docenteId", (IEnumerable<SelectListItem>)ViewBag.docenteId, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.IPS_ESEId)
+
+                                    </div>
+                                </div>
+
+                                <!-- Message body -->
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label" for="message">Horario</label>
+                                    <div class="col-md-9">
+                                        @Html.TextBoxFor(model => model.horario, new { @class = "form-control" })
+
+
+
+                                        @Html.ValidationMessageFor(model => model.Rotacion.horario)
+                                        <span class="help-block">Ingrese el horario que le corresponde al estudiante</span>
+                                        
+                                    </div>
+                                    
+                                </div>
+                                
+
+                                    <!-- Form actions -->
+                                    <div class="form-group">
+                                        <div class="col-md-12 text-right">
+                                            <button type="submit" class="btn btn-primary btn-lg">Guardar</button>
+                                        </div>
+                                    </div>
+</fieldset>
+                        </fosrm>
+                    </div>
+                </div>
+                
+            </div>
+
         </div>
-        <div class="editor-field">
-            @Html.DropDownList("IPS_ESEId", String.Empty)
-            @Html.ValidationMessageFor(model => model.IPS_ESEId)
-        </div>
-
-        <div class="editor-label">
-            Docente
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("docenteId", String.Empty)
-            @Html.ValidationMessageFor(model => model.IPS_ESEId)
-        </div>
-        <div class="editor-label">
-            Horarios
-        </div>
-        <div class="col-sm-4">
-            @Html.TextBoxFor(model => model.horario, new { @class = "form-control" })
 
 
-
-            @Html.ValidationMessageFor(model => model.Rotacion.horario)
-
-        </div>
-        <br>
-        <br>
-
-        <p>
-            <input type="submit" value="Guardar" />
-        </p>
     </fieldset>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index/" )
+
 </div>
 
 @section Scripts {

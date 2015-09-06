@@ -338,6 +338,12 @@
     <Compile Include="reporteDocente.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="reporteDocente1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>reporteDocente.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ReporteEquipos.cs">
       <DependentUpon>ReporteEquipos.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -1253,7 +1259,7 @@
     <Content Include="Views\Docente\Soportes.cshtml" />
     <Content Include="Views\Curso\Date.cshtml" />
     <Content Include="Views\Docente\CarnetVacunacionDocente.cshtml" />
-    <Content Include="Views\Docente\BuscarEnVacuna.cshtml" />
+    <Content Include="Views\Docente\BuscarEnDepartamento.cshtml" />
     <Content Include="Views\Docente\CarnetVacunacionDocenteDS.cshtml" />
     <Content Include="Views\Vacuna\EsquemaVacunacionDocente.cshtml">
       <SubType>Code</SubType>
@@ -1277,6 +1283,9 @@
     <Content Include="Views\IPS_ESE\SeleccionRotacionContraPrestacionI.cshtml" />
     <Content Include="Views\IPS_ESE\VistaIPS_ESE.cshtml" />
     <Content Include="Views\DepartamentoSalud\VistaDepartamentoSalud.cshtml" />
+    <Content Include="Views\Estudiante\BuscarEnDepartamento.cshtml" />
+    <Content Include="Views\Docente\BuscarEnVacuna.cshtml" />
+    <Content Include="Views\HojaVida\HV_Departamento.cshtml" />
     <None Include="_aspnet_MvcApplication2_20141123095438DataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>_aspnet_MvcApplication2_20141123095438DataSet.Designer.cs</LastGenOutput>
