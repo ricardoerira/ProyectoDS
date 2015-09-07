@@ -1209,7 +1209,6 @@
     <Content Include="Views\Rotacion\ConsultaEstudiantes.cshtml" />
     <Content Include="Views\Estudiante\Buscar.cshtml" />
     <Content Include="Views\Docente\InformacionDocenteVista.cshtml" />
-    <Content Include="Views\Rotacion\GeneraReporte.cshtml" />
     <Content Include="_aspnet_MvcApplication2_20141123095438DataSet.xsc">
       <DependentUpon>_aspnet_MvcApplication2_20141123095438DataSet.xsd</DependentUpon>
     </Content>

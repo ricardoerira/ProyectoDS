@@ -27,8 +27,12 @@ namespace MvcApplication2.Models
         public int rotacionId { get; set; }
         public string grupo { get; set; }
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+
         public System.DateTime fecha_inicio { get; set; }
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+
         public System.DateTime fecha_terminacion { get; set; }
         public string horario { get; set; }  
         public int year_academico { get; set; } 

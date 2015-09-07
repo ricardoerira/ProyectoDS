@@ -70,6 +70,7 @@ namespace MvcApplication2.Controllers
             int programaId =Int32.Parse( value["programaId"]);
             int departamentoId = Int32.Parse(value["DepartamentoSaludId"]);
             DepartamentoSalud ds = db.DepartamentoSaluds.Find(departamentoId);
+            Programa pr= db.Programas.Find(programaId);
             int mesId = Int32.Parse(value["mesId"]);
             int añoId = Int32.Parse(value["añoId"]);
             var date = DateTime.MinValue;
@@ -80,7 +81,7 @@ namespace MvcApplication2.Controllers
             ReportDocument rptH = new ReportDocument();
             string strRptPath = System.Web.HttpContext.Current.Server.MapPath("~/reporte.rpt");
             rptH.Load(strRptPath);
-            List<RotacionEstudiante> re = db.RotacionEstudiantes.Include(h => h.Docente).Where(r => r.IPS_ESEId == ips.IPS_ESEId).Where(r => r.Estudiante.programaId == programaId).Where(r => r.Rotacion.fecha_inicio >= date).Where(r => r.Rotacion.fecha_terminacion <= date2).ToList();
+            List<RotacionEstudiante> re = db.RotacionEstudiantes.Include(h => h.Docente).Where(r => r.IPS_ESEId == ips.IPS_ESEId).Where(r => r.Estudiante.programaId == programaId).Where(r => r.Rotacion.fecha_inicio >= date).Where(r => r.Rotacion.fecha_terminacion <= date2).Where(r=>r.Rotacion.ActividadAcademica.DepartamentoSaludId==departamentoId).ToList();
             List<Docente> docentes = new List<Docente>();
             List<Estudiante> estudiantes = new List<Estudiante>();
             List<Rotacion> rotaciones = new List<Rotacion>();
@@ -107,11 +108,12 @@ namespace MvcApplication2.Controllers
 
 
 
-            rptH.SetParameterValue("presentacion", "A continuación le relaciono las rotaciones de los estudiantes que realizaran su rotación en su institución y los profesores con su horario.");
+            rptH.SetParameterValue("presentacion", "A continuación le relaciono las rotaciones de los estudiantes del Programa de "+pr.nombre+" Departamento "+ds.nombre+" que realizaran su rotación en su institución y los profesores con su horario.");
             rptH.SetParameterValue("fecha", "");
             rptH.SetParameterValue("dr", ips.representante_legal);
             rptH.SetParameterValue("cargo",ips.cargo);
             rptH.SetParameterValue("nombreIPS", ips.nombre);
+            
 
 
 
@@ -133,7 +135,7 @@ namespace MvcApplication2.Controllers
 
                 ViewBag.DepartamentoSaludId = new SelectList(db.DepartamentoSaluds, "DepartamentoSaludId", "nombre");
             
-                ViewBag.AlertMessage = "No se encontrarón resultados";
+                ViewBag.AlertMessage = "No se encontraron resultados";
                 return View();
             }
 
