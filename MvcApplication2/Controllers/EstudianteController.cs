@@ -101,10 +101,12 @@ public ActionResult BuscarEnDepartamento(Estudiante estudiante)
             Familia f = db.Familias.Find(hv.familiaId);
 
 
-            if ((hv.direccion_manizales != null) && (hv.num_celular != 0) &&
-                (hv.estado_civil != null) && (f.primer_nombre_acudiente != null) &&
+            if ((hv.municipio_procedencia != null) && (hv.direccion_manizales != null) &&
+                (hv.hemoclasificacion != "Sin Asignar") &&
+                (hv.num_celular != 0) &&
+                (hv.estado_civil != "Sin Asignar") && (f.primer_nombre_acudiente != null) &&
                 (f.primer_apellido_acudiente != null) && (f.direccion_acudiente != null) &&
-                (f.celular_acudiente != 0))
+                (f.telefono_acudiente != 0))
             {
                 return true;
             }
@@ -736,20 +738,6 @@ public ActionResult BuscarEnDepartamento(Estudiante estudiante)
                 return RedirectToAction("../Rotacion/VistaODS");
         }
 
-        public ActionResult PersonalesDSactualizada(int id = 0)
-        {
-            TempData["notice"] = null;
-
-            Estudiante estudiante = db.Estudiantes.Find(id);
-            if (estudiante == null)
-            {
-                return HttpNotFound();
-            }
-
-
-
-            return View(estudiante);
-        }
 
 
        

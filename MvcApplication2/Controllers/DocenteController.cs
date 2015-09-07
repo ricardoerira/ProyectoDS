@@ -471,14 +471,58 @@ namespace MvcApplication2.Controllers
         }
         public ActionResult InformacionDocenteVista(int id = 0)
         {
-            //TempData["notice"] = null;
+            TempData["notice"] = null;
+
+
 
             Docente docente = db.Docentes.Find(id);
+            HojaVida oHojaVida = db.HojaVidas.Find(docente.hojaVidaId);
+            try
+            {
+                var request = WebRequest.Create(oHojaVida.imagen_DI);
+                using (var response = request.GetResponse())
+                {
+                    using (var responseStream = response.GetResponseStream())
+                    {
+                        // Process the stream
+                    }
+                }
+            }
+            catch (WebException ex)
+            {
+                if (ex.Status == WebExceptionStatus.ProtocolError &&
+                    ex.Response != null)
+                {
+                    var resp = (HttpWebResponse)ex.Response;
+                    if (resp.StatusCode == HttpStatusCode.NotFound)
+                    {
+                        oHojaVida.imagen_DI = "http://www.tagetik.com/intouch2015/user.png";
+                    }
+                    else
+                    {
+                        // Do something else
+                    }
+                }
+                else
+                {
+                    // Do something else
+                }
+            }
             if (docente == null)
             {
                 return HttpNotFound();
             }
+            int edad = DateTime.Today.AddTicks(-docente.HojaVida.fecha_nacimiento.Ticks).Year - 1;
+            string edadDocente = edad.ToString();
+            docente.diploma_profesional = edadDocente;//Reemplaza edad
+
+            if (docente.HojaVida.genero.Equals("F"))
+            {
+                docente.num_libreta_militar = "NO APLICA";
+            }
             return View(docente);
+
+            
         }
 
         [HttpPost]

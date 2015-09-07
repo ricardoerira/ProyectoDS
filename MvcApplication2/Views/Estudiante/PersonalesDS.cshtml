@@ -17,8 +17,7 @@
         <div class="container-fluid">
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Docencia Servicio", "VistaODS", "Rotacion")</li>
+                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>                    
                     <li>@Html.ActionLink("Personales", "PersonalesDS/" + Model.estudianteId, "Estudiante")</li>
                     <li>@Html.ActionLink("Familiares", "FamiliaresDS/" + Model.estudianteId, "Estudiante")</li>
                     <li>@Html.ActionLink("Académicos", "AcademicosDS/" + Model.estudianteId, "Estudiante")</li>
@@ -44,7 +43,7 @@
 
 
                 <div class="col-sm-3">
-                    <img src="@Url.Content(Model.HojaVida.imagen_DI)" alt="..." class="img-rounded"><br />
+                    <img src="@Url.Content(Model.HojaVida.imagen_DI)" alt="..." class="img-rounded" height="200px" width="150px"><br />
 
                 </div>
 
@@ -58,36 +57,37 @@
 
 
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">Documento</label>
+                                <label class="col-sm-2 control-label">Tipo Documento</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.tipo_documento, new { @class = "form-control", @readonly = "readonly" })
+                                    @Html.ValidationMessageFor(model => model.tipo_documento)
+
+                                </div>
+
+                                <label class="col-sm-2 control-label">Número</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.num_documento, new { @class = "form-control", @readonly = "readonly" })
+                                    @Html.ValidationMessageFor(model => model.HojaVida.primer_nombre)
                                 </div>
-
-
-                                <label class="col-sm-2 control-label">Código</label>
-                                <div class="col-sm-4">
-                                    @Html.TextBoxFor(model => model.codigo, new { @class = "form-control", @readonly = "readonly" })
-                                </div>
-
                             </div>
 
 
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">Primer Nombre </label>
+                                <label class="col-sm-2 control-label">Código </label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.codigo, new { @class = "form-control", @readonly = "readonly" })
+                                    @Html.ValidationMessageFor(model => model.HojaVida.primer_apellido)
+                                </div>
+
+                                <label class="col-sm-2 control-label">Nombre</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.HojaVida.primer_nombre, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.primer_nombre)
                                 </div>
-
-                                <label class="col-sm-2 control-label">Segundo Nombre</label>
-                                <div class="col-sm-4">
-                                    @Html.TextBoxFor(model => model.HojaVida.segundo_nombre, new { @class = "form-control", @readonly = "readonly" })
-                                    @Html.ValidationMessageFor(model => model.HojaVida.segundo_nombre)
-                                </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">Primer Apellido </label>
+                                <label class="col-sm-2 control-label">Primer Apellido</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.HojaVida.primer_apellido, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.primer_apellido)
@@ -99,38 +99,74 @@
                                     @Html.ValidationMessageFor(model => model.HojaVida.segundo_apellido)
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">Lugar de Nacimiento</label>
-                                <div class="col-sm-4">
-                                    @Html.TextBoxFor(model => model.HojaVida.municipio_procedencia, new { @class = "form-control", @readonly = "readonly" })
-                                    @Html.ValidationMessageFor(model => model.HojaVida.municipio_procedencia)
-                                </div>
-                                <label class="col-sm-2 control-label">Fecha de Nacimiento</label>
-                                <div class="col-sm-4">
-                                    @Html.TextBoxFor(model => model.HojaVida.fecha_nacimiento, new { @class = "form-control", @readonly = "readonly" })
-                                    @Html.ValidationMessageFor(model => model.HojaVida.fecha_nacimiento)
-                                </div>
-                            </div>
-
-
-
 
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">Dirección Local</label>
-                                <div class="col-sm-4">
-                                    @Html.TextBoxFor(model => model.HojaVida.direccion_manizales, new { @class = "form-control", @readonly = "readonly" })
-                                    @Html.ValidationMessageFor(model => model.HojaVida.direccion_manizales)
-                                </div>
                                 <label class="col-sm-2 control-label">Correo</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.HojaVida.correo, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.correo)
                                 </div>
+
+                                <label class="col-sm-2 control-label">Genero</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.HojaVida.genero, new { @class = "form-control", @readonly = "readonly" })
+                                    @Html.ValidationMessageFor(model => model.HojaVida.genero)
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Fecha de Nacimiento</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.HojaVida.fecha_nacimiento, new { @class = "form-control", @readonly = "readonly" })
+                                    @Html.ValidationMessageFor(model => model.HojaVida.fecha_nacimiento)
+                                </div>
+                                <label class="col-sm-2 control-label">Edad</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.barrio_procedencia, new { @class = "form-control", @readonly = "readonly" })
+                                    @Html.ValidationMessageFor(model => model.barrio_procedencia)
+
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Lugar Nacimiento</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.HojaVida.municipio_procedencia, new { @class = "form-control", @readonly = "readonly" })
+                                    @Html.ValidationMessageFor(model => model.HojaVida.municipio_procedencia)
+                                </div>
+                                <label class="col-sm-2 control-label">Dirección Procedencia</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.direccion_procedencia, new { @class = "form-control", @readonly = "readonly" })
+                                    @Html.ValidationMessageFor(model => model.direccion_procedencia)
+                                </div>
+
+
                             </div>
 
 
+
+
+
+
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">Teléfono Fijo</label>
+                                <label class="col-sm-2 control-label">Dirección Manizales</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.HojaVida.direccion_manizales, new { @class = "form-control", @readonly = "readonly" })
+                                    @Html.ValidationMessageFor(model => model.HojaVida.direccion_manizales)
+                                </div>
+                                <label class="col-sm-2 control-label">RH</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.HojaVida.hemoclasificacion, new { @class = "form-control", @readonly = "readonly" })
+                                    @Html.ValidationMessageFor(model => model.HojaVida.hemoclasificacion)
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Teléfono Procedencia</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.HojaVida.num_telefono, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.num_telefono)
@@ -146,33 +182,21 @@
 
 
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">Estado civil</label>
+                                <label class="col-sm-2 control-label">Estado Civil</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.HojaVida.estado_civil, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.estado_civil)
+
+
+
                                 </div>
-                                <label class="col-sm-2 control-label">Hijos</label>
+                                <label class="col-sm-2 control-label">Numero de Hijos</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.HojaVida.hijos, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.hijos)
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">Dirección de Procedencia </label>
-
-                                <div class="col-sm-4">
-                                    @Html.TextBoxFor(model => model.direccion_procedencia, new { @class = "form-control", @readonly = "readonly" })
-                                    @Html.ValidationMessageFor(model => model.direccion_procedencia)
-                                </div>
-                                <label class="col-sm-2 control-label">RH</label>
-                                <div class="col-sm-4">
-                                    @Html.TextBoxFor(model => model.HojaVida.hemoclasificacion, new { @class = "form-control", @readonly = "readonly" })
-                                    @Html.ValidationMessageFor(model => model.HojaVida.hemoclasificacion)
-
-                                </div>
-
-                            </div>
 
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Estado </label>
@@ -273,7 +297,6 @@
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-10">
                                     <div class="pull-right">
-                                        <button type="submit" class="btn btn-default">Cancelar</button>
                                         <button type="submit" class="btn btn-primary">Guardar</button>
                                     </div>
                                 </div>

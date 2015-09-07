@@ -338,12 +338,6 @@
     <Compile Include="reporteDocente.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="reporteDocente1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>reporteDocente.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="ReporteEquipos.cs">
       <DependentUpon>ReporteEquipos.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -1214,7 +1208,6 @@
     <Content Include="Views\Rotacion\ConsultaRotacion.cshtml" />
     <Content Include="Views\Rotacion\ConsultaEstudiantes.cshtml" />
     <Content Include="Views\Estudiante\Buscar.cshtml" />
-    <Content Include="Views\Estudiante\PersonalesDSactualizada.cshtml" />
     <Content Include="Views\Docente\InformacionDocenteVista.cshtml" />
     <Content Include="Views\Rotacion\GeneraReporte.cshtml" />
     <Content Include="_aspnet_MvcApplication2_20141123095438DataSet.xsc">
