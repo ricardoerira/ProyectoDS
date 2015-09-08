@@ -8,9 +8,9 @@
 
 
 <div class="row">
-    <nav class="navbar navbar-default" role="navigation">
-        <div class="container-fluid">
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <nav class="navbar navbar-default" role="navigation" >
+        <div class="container-fluid" >
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Inicio", "VistaContraprestacion/", "Curso")</li>
                     <li class="dropdown">
@@ -69,164 +69,162 @@
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
-        <div class="col-sm-8" >
-            <legend>Educación Continuada - Crear Nuevo item</legend>
-            <div class="row" >
-
-                <fosrm class="form-horizontal" role="form" >
-                    
-                    <div class="form-group">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="well well-sm">
+            <legend class="text-center">Educación Continuada - Crear Nuevo item</legend>
 
 
-                        <label class="col-sm-2 control-label">Tipo</label>
-                        <div class="col-sm-4">
-                            @Html.DropDownList("tipo", new List<SelectListItem>() { new SelectListItem { Text = "Curso", Value = "Curso" }, new SelectListItem { Text = "Diplomado", Value = "Diplomado" }, new SelectListItem { Text = "Seminario", Value = "Seminario" } }, new { @class = "form-control" })
-                        </div>
-                        <label class="col-sm-2 control-label">Nombre</label>
-                        <div class="col-sm-4">
-                            @Html.DropDownList("nombre", new List<SelectListItem>() { new SelectListItem { Text = "Primeros Auxilios", Value = "Primeros Auxilios" }, new SelectListItem { Text = "Gases arteriales", Value = "Gases arteriales" }, new SelectListItem { Text = "Manejo del paciente crítico", Value = "Manejo del paciente crítico" }, new SelectListItem { Text = "Diplomado en Reanimación", Value = "Diplomado en Reanimación" } }, new { @class = "form-control" })
-                        </div>
+            <fosrm class="form-horizontal" role="form">
+
+                <div class="form-group">
 
 
-
-
-
+                    <label class="col-sm-2 control-label">Tipo</label>
+                    <div class="col-sm-4">
+                        @Html.DropDownList("tipo", new List<SelectListItem>() { new SelectListItem { Text = "Curso", Value = "Curso" }, new SelectListItem { Text = "Diplomado", Value = "Diplomado" }, new SelectListItem { Text = "Seminario", Value = "Seminario" } }, new { @class = "form-control" })
                     </div>
-
-
-
-
-                    <div class="form-group">
-
-                        <label class="col-sm-2 control-label">Cupos</label>
-                        <div class="col-sm-4">
-                            @Html.TextBoxFor(model => model.cupos, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.cupos)
-
-                        </div>
-                        <label class="col-sm-2 control-label">Num Asignados</label>
-                        <div class="col-sm-4">
-                            @Html.TextBoxFor(model => model.asignados, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.asignados)
-
-
-                        </div>
-                        
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">Fecha inicio</label>
-                        <div class="col-sm-4">
-                         @Html.EditorFor(m => m.fechaInicio)
-                        @Html.ValidationMessageFor(model => model.fechaInicio) 
-            
-                                           
-                        </div>
-                        <label class="col-sm-2 control-label">Fecha Fin</label>
-                        <div class="col-sm-4">
-                            @Html.EditorFor(m => m.fechaFin)
-                            @Html.ValidationMessageFor(model => model.fechaFin)
-                        </div>
-                     
+                    <label class="col-sm-2 control-label">Nombre</label>
+                    <div class="col-sm-4">
+                        @Html.DropDownList("nombre", new List<SelectListItem>() { new SelectListItem { Text = "Primeros Auxilios", Value = "Primeros Auxilios" }, new SelectListItem { Text = "Gases arteriales", Value = "Gases arteriales" }, new SelectListItem { Text = "Manejo del paciente crítico", Value = "Manejo del paciente crítico" }, new SelectListItem { Text = "Diplomado en Reanimación", Value = "Diplomado en Reanimación" } }, new { @class = "form-control" })
                     </div>
 
 
 
 
 
-                    <div class="form-group">
+                </div>
 
-                        <label class="col-sm-2 control-label">Periodo</label>
-                        <div class="col-sm-4">
-                            @Html.DropDownList("periodoAcademico", new List<SelectListItem>() { new SelectListItem { Text = "20151", Value = "20151" }, new SelectListItem { Text = "20152", Value = "20152" }, new SelectListItem { Text = "20161", Value = "20161" }, new SelectListItem { Text = "20162", Value = "20162" } }, new { @class = "form-control" })
-                            
-                        </div>
-                        <label class="col-sm-2 control-label">Observaciones</label>
-                        <div class="col-sm-4">
-                            @Html.TextAreaFor(model => model.observaciones, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.observaciones)
+
+
+
+
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Fecha inicio</label>
+                    <div class="col-sm-4">
+                        @Html.EditorFor(m => m.fechaInicio)
+                        @Html.ValidationMessageFor(model => model.fechaInicio)
+
+
+                    </div>
+                    <label class="col-sm-2 control-label">Fecha Fin</label>
+                    <div class="col-sm-4">
+                        @Html.EditorFor(m => m.fechaFin)
+                        @Html.ValidationMessageFor(model => model.fechaFin)
+                    </div>
+
+                </div>
+
+
+
+
+
+                <div class="form-group">
+
+                    <label class="col-sm-2 control-label">Periodo</label>
+                    <div class="col-sm-4">
+                        @Html.DropDownList("periodoAcademico", new List<SelectListItem>() { new SelectListItem { Text = "20151", Value = "20151" }, new SelectListItem { Text = "20152", Value = "20152" }, new SelectListItem { Text = "20161", Value = "20161" }, new SelectListItem { Text = "20162", Value = "20162" } }, new { @class = "form-control" })
+
+                    </div>
+                    <label class="col-sm-2 control-label">Observaciones</label>
+                    <div class="col-sm-4">
+                        @Html.TextAreaFor(model => model.observaciones, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.observaciones)
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label class="col-sm-2 control-label">Valor por Persona</label>
+                    <div class="col-sm-4">
+                        <div class="input-group">
+                            <div class="input-group-addon">$</div>
+                            @Html.TextBoxFor(model => model.valorParticipante, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.valorParticipante)
+                            <div class="input-group-addon">.00</div>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">Dirigido a</label>
-                        <div class="col-sm-4">
-                            @Html.DropDownList("dirigido", new List<SelectListItem>() { new SelectListItem { Text = "Medico/a", Value = "Medico/a" }, new SelectListItem { Text = "Enfermero/a", Value = "Enfermero/a" }, new SelectListItem { Text = "Aux.Enfermeria", Value = "Aux.Enfermeria" }, new SelectListItem { Text = "Medico/a y Enfermero/a", Value = "Medico/a y Enfermero/a" }, new SelectListItem { Text = "Especialista", Value = "Especialista" }, new SelectListItem { Text = "Otro", Value = "Otro" } }, new { @class = "form-control" })
-                            
-
-                        </div>
-                        <label class="col-sm-2 control-label">Otro</label>
-                        <div class="col-sm-4">
-                            @Html.TextBoxFor(model => model.observaciones, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.observaciones)
-                            <span class="help-block">En caso que no exista en el combobox el personal a quien va dirigido</span>
-                        </div>
-                        
-                    </div>
-
-                    <div class="form-group">
-
-                        <label class="col-sm-2 control-label">Valor por Persona</label>
-                        <div class="col-sm-4">
-                            <div class="input-group">
-                                <div class="input-group-addon">$</div>
-                                @Html.TextBoxFor(model => model.valorParticipante, new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.valorParticipante)
-                                <div class="input-group-addon">.00</div>
-                            </div>
-                        </div>
-
-                        <label class="col-sm-2 control-label">Valor asumido por Universidad</label>
-                        <div class="col-sm-4">
-                            <div class="input-group">
-                                <div class="input-group-addon">$</div>
-                                @Html.TextBoxFor(model => model.valorUnitarioUniversidad, new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.valorUnitarioUniversidad)
-                                <div class="input-group-addon">.00</div>
-                            </div>
+                    <label class="col-sm-2 control-label">Valor asumido por Universidad</label>
+                    <div class="col-sm-4">
+                        <div class="input-group">
+                            <div class="input-group-addon">$</div>
+                            @Html.TextBoxFor(model => model.valorUnitarioUniversidad, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.valorUnitarioUniversidad)
+                            <div class="input-group-addon">.00</div>
                         </div>
                     </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Dirigido a</label>
+                    <div class="col-sm-4">
+                        @Html.DropDownList("dirigido", new List<SelectListItem>() { new SelectListItem { Text = "Medico/a", Value = "Medico/a" }, new SelectListItem { Text = "Enfermero/a", Value = "Enfermero/a" }, new SelectListItem { Text = "Aux.Enfermeria", Value = "Aux.Enfermeria" }, new SelectListItem { Text = "Medico/a y Enfermero/a", Value = "Medico/a y Enfermero/a" }, new SelectListItem { Text = "Especialista", Value = "Especialista" }, new SelectListItem { Text = "Otro", Value = "Otro" } }, new { @class = "form-control" })
 
 
-
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">IPS/ESE</label>
-                        <div class="col-sm-4">
-
-                            @Html.DropDownList("IPS_ESEId", (IEnumerable<SelectListItem>)ViewBag.IPS_ESEId, new { @class = "form-control" })
-                            
-                            @Html.ValidationMessageFor(model => model.IPS_ESEId)
-
-
-                        </div>
-                        <label class="col-sm-2 control-label">Feche Creación</label>
-                        <div class="col-sm-4">
-                            @Html.EditorFor(m => m.fechaCreacion)
-
-                            @Html.ValidationMessageFor(model => model.fechaCreacion)
-
-                        </div>
+                    </div>
+                    <label class="col-sm-2 control-label">Otro</label>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.observaciones, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.observaciones)
+                        <span class="help-block">Dado el caso que el personal a quien va dirigido no se encuentre en el listado; <p>debe ser ingresado en esta caja de texto.</p></span>
                     </div>
 
+                </div>
 
+                <div class="form-group">
 
+                    <label class="col-sm-2 control-label">Cupos</label>
+                    <div class="col-sm-2">
+                        @Html.TextBoxFor(model => model.cupos, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.cupos)
 
-
-
-
-
-                    <div class="form-group">
-                        <div class="col-sm-offset-1 col-sm-10">
-                            <br>
-
-                            <br>
-
-                            <button type="submit" class="btn btn-primary">Guardar</button>
-
-                        </div>
                     </div>
-
+                    <label class="col-sm-2 control-label">Asignados</label>
+                    <div class="col-sm-2">
+                        @Html.TextBoxFor(model => model.asignados, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.asignados)
+                        <span class="help-block">Cupos asignados sólo a esta IPS/ESE</span>
 </div>
+
+                </div>
+
+
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">IPS/ESE</label>
+                    <div class="col-sm-6">
+
+                        @Html.DropDownList("IPS_ESEId", (IEnumerable<SelectListItem>)ViewBag.IPS_ESEId, new { @class = "form-control" })
+
+                        @Html.ValidationMessageFor(model => model.IPS_ESEId)
+
+
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
+
+                <div class="form-group">
+                    <div class="col-sm-offset-9 col-sm-10">
+                        <br>
+
+                        <br>
+
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+
+                    </div>
+                </div>
+
+        </div>
     </div>
 
 }
