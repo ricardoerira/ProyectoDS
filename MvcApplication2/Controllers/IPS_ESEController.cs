@@ -155,7 +155,7 @@ namespace MvcApplication2.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult SeleccionRotacionContraPrestacionC(IPS_ESE ipss)
+        public ActionResult SeleccionRotacionContraPrestacionC(IPS_ESE ipss, FormCollection value)
         {
 
             IPS_ESE ips = db.IPS_ESE.Find(ipss.IPS_ESEId);
@@ -163,40 +163,73 @@ namespace MvcApplication2.Controllers
 
 
             List<Curso> cursos = new List<Curso>();
-            cursos = db.Cursoes.ToList();
+            
             ReportDocument rptH = new ReportDocument();
             string strRptPath = System.Web.HttpContext.Current.Server.MapPath("~/ReporteContraPrestacionC.rpt");
             rptH.Load(strRptPath);
 
+            int mesId = Int32.Parse(value["mesId"]);
+            int añoId = Int32.Parse(value["añoId"]);
+            var date = DateTime.MinValue;
            
-     
-
-          
-            rptH.Database.Tables[0].SetDataSource(db.Cursoes.Where(d => d.IPS_ESEId == ips.IPS_ESEId).ToList());
-
-
-            rptH.SetParameterValue("ips", ips.nombre);
-            rptH.SetParameterValue("fecha", "");
-            int total = 0;
-         
-            if (db.Induccions.Where(d => d.IPS_ESEId == ips.IPS_ESEId).ToList().Count > 0)
+            if(mesId==13)
             {
-                total += db.Cursoes.Where(d => d.IPS_ESEId == ips.IPS_ESEId).Sum(d => d.totalCapacitacion);
-
+                DateTime.TryParse(añoId + "/01/01", out date);
+                DateTime date2 = new DateTime(añoId, 12,
+                                     DateTime.DaysInMonth(añoId, 12));
+                cursos = db.Cursoes.Where(r => r.IPS_ESEId == ips.IPS_ESEId).Where(r => r.fechaInicio >= date).Where(r => r.fechaFin <= date2).ToList();
+          
             }
+            else 
+            {
+                DateTime.TryParse(añoId + "/" + mesId + "/01", out date);
+
+                DateTime date2 = new DateTime(añoId, mesId,
+                                          DateTime.DaysInMonth(añoId, mesId));
+
+                cursos = db.Cursoes.Where(r => r.IPS_ESEId == ips.IPS_ESEId).Where(r => r.fechaInicio >= date).Where(r => r.fechaFin <= date2).ToList();
+       
+            }
+          
+           if(cursos.Count>0)
+           {
+               rptH.Database.Tables[0].SetDataSource(cursos);
+
+
+               rptH.SetParameterValue("ips", ips.nombre);
+               rptH.SetParameterValue("fecha", "");
+               int total = 0;
+
+               if (cursos.Count > 0)
+               {
+                   total += db.Cursoes.Where(d => d.IPS_ESEId == ips.IPS_ESEId).Sum(d => d.totalCapacitacion);
+
+               }
+
+               rptH.SetParameterValue("total", total);
+
+
+
+
+
+               Stream stream = rptH.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
+
+
+
+
+               return File(stream, "application/pdf");
+           }
+           else
+           {
+               ViewBag.AlertMessage = "No se encontraron resultados";
+
+               var municipios = db.IPS_ESE.Include(h => h.Municipio);
+               List<IPS_ESE> lista = municipios.ToList();
+               ViewBag.IPS_ESEId = new SelectList(lista, "IPS_ESEId", "nombre");
+
+               return View();
+           }
             
-            rptH.SetParameterValue("total", total);
-
-
-
-
-
-            Stream stream = rptH.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
-
-
-
-
-            return File(stream, "application/pdf");
           
         }
 
@@ -285,7 +318,7 @@ namespace MvcApplication2.Controllers
 
 
             int total =db.Equipoes.Sum((c => c.costo));
-            rptH.Database.Tables[0].SetDataSource(db.Equipoes.ToList());
+            rptH.Database.Tables[0].SetDataSource(db.Equipoes.Where(d => d.IPS_ESEId == ips.IPS_ESEId).ToList());
 
           
 
