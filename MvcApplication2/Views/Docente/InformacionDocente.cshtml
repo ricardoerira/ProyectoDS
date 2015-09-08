@@ -162,7 +162,7 @@
                                 </div>
                                 <label class="col-sm-2 control-label">ARL</label>
                                 <div class="col-sm-4">
-                                    @Html.DropDownList("HojaVida.ARL", new List<SelectListItem>() { new SelectListItem { Text = "POSITIVA COMPAÑIA DE SEGUROS S.A.", Value = "POSITIVA COMPAÑIA DE SEGUROS S.A." }, new SelectListItem { Text = "SEGUROS DE VIDA COLPATRIA S.A.", Value = "SEGUROS DE VIDA COLPATRIA S.A." }, new SelectListItem { Text = "COMPAÑÍA DE SEGUROS BOLIVAR S.A.", Value = "COMPAÑÍA DE SEGUROS BOLIVAR S.A." }, new SelectListItem { Text = "ARL SURA", Value = "ARL SURA" }, new SelectListItem { Text = "COMPAÑÍA DE SEGUROS DE VIDA ALFA S.A.", Value = "COMPAÑÍA DE SEGUROS DE VIDA ALFA S.A." }, new SelectListItem { Text = "LIBERTY SEGUROS DE VIDA S.A.", Value = "LIBERTY SEGUROS DE VIDA S.A." }, new SelectListItem { Text = "COMPAÑIA DE SEGUROS DE VIDA COLMENA S.A.", Value = "COMPAÑIA DE SEGUROS DE VIDA COLMENA S.A." }, new SelectListItem { Text = "LA EQUIDAD SEGUROS DE VIDA", Value = "LA EQUIDAD SEGUROS DE VIDA" }, new SelectListItem { Text = "MAPFRE COLOMBIA VIDA SEGUROS S.A.", Value = "MAPFRE COLOMBIA VIDA SEGUROS S.A." }, new SelectListItem { Text = "SEGUROS DE VIDA AURORA S.A.", Value = "SEGUROS DE VIDA AURORA S.A." }, new SelectListItem { Text = "OTRA", Value = "OTRA" } }, new { @class = "form-control" })
+                                    @Html.DropDownList("HojaVida.ARL", new List<SelectListItem>() { new SelectListItem { Text = "Sin Asignar", Value = "Sin Asignar" }, new SelectListItem { Text = "POSITIVA COMPAÑIA DE SEGUROS S.A.", Value = "POSITIVA COMPAÑIA DE SEGUROS S.A." }, new SelectListItem { Text = "SEGUROS DE VIDA COLPATRIA S.A.", Value = "SEGUROS DE VIDA COLPATRIA S.A." }, new SelectListItem { Text = "COMPAÑÍA DE SEGUROS BOLIVAR S.A.", Value = "COMPAÑÍA DE SEGUROS BOLIVAR S.A." }, new SelectListItem { Text = "ARL SURA", Value = "ARL SURA" }, new SelectListItem { Text = "COMPAÑÍA DE SEGUROS DE VIDA ALFA S.A.", Value = "COMPAÑÍA DE SEGUROS DE VIDA ALFA S.A." }, new SelectListItem { Text = "LIBERTY SEGUROS DE VIDA S.A.", Value = "LIBERTY SEGUROS DE VIDA S.A." }, new SelectListItem { Text = "COMPAÑIA DE SEGUROS DE VIDA COLMENA S.A.", Value = "COMPAÑIA DE SEGUROS DE VIDA COLMENA S.A." }, new SelectListItem { Text = "LA EQUIDAD SEGUROS DE VIDA", Value = "LA EQUIDAD SEGUROS DE VIDA" }, new SelectListItem { Text = "MAPFRE COLOMBIA VIDA SEGUROS S.A.", Value = "MAPFRE COLOMBIA VIDA SEGUROS S.A." }, new SelectListItem { Text = "SEGUROS DE VIDA AURORA S.A.", Value = "SEGUROS DE VIDA AURORA S.A." }, new SelectListItem { Text = "OTRA", Value = "OTRA" } }, new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.ARL)
                                 </div>
 
@@ -314,7 +314,7 @@
                                 </div>
                                 <label class="col-sm-2 control-label">Tipo Vinculación</label>
                                 <div class="col-sm-4">
-                                    @Html.DropDownList("tipo_vinculacion", new List<SelectListItem>() { new SelectListItem { Text = "DOCENTE DE PLANTA", Value = "DOCENTE DE PLANTA" }, new SelectListItem { Text = "DOCENTE OCASIONAL", Value = "DOCENTE OCASIONAL" }, new SelectListItem { Text = "DOCENTE CATEDRÁTICO", Value = "DOCENTE CATEDRÁTICO" }, new SelectListItem { Text = "COMISION ADMINISTRATIVA", Value = "COMISION ADMINISTRATIVA" } }, new { @class = "form-control" })
+                                    @Html.DropDownList("tipo_vinculacion", new List<SelectListItem>() { new SelectListItem { Text = "Sin Asignar", Value = "Sin Asignar" }, new SelectListItem { Text = "DOCENTE DE PLANTA", Value = "DOCENTE DE PLANTA" }, new SelectListItem { Text = "DOCENTE OCASIONAL", Value = "DOCENTE OCASIONAL" }, new SelectListItem { Text = "DOCENTE CATEDRÁTICO", Value = "DOCENTE CATEDRÁTICO" }, new SelectListItem { Text = "COMISION ADMINISTRATIVA", Value = "COMISION ADMINISTRATIVA" } }, new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.tipo_vinculacion)
                                 </div>
                             </div>
@@ -329,7 +329,7 @@
 
                                 <label class="col-sm-2 control-label">Dedicación</label>
                                 <div class="col-sm-4">
-                                    @Html.DropDownList("dedicacion", new List<SelectListItem>() { new SelectListItem { Text = "TIEMPO COMPLETO", Value = "TIEMPO COMPLETO" }, new SelectListItem { Text = "MEDIO TIEMPO", Value = "MEDIO TIEMPO" }, new SelectListItem { Text = "HORAS", Value = "HORAS" } }, new { @class = "form-control" })
+                                    @Html.DropDownList("dedicacion", new List<SelectListItem>() { new SelectListItem { Text = "Sin Asignar", Value = "Sin Asignar" }, new SelectListItem { Text = "TIEMPO COMPLETO", Value = "TIEMPO COMPLETO" }, new SelectListItem { Text = "MEDIO TIEMPO", Value = "MEDIO TIEMPO" }, new SelectListItem { Text = "HORAS", Value = "HORAS" } }, new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.tipo_vinculacion)
                                 </div>
 
@@ -348,7 +348,7 @@
 
                                 <label class="col-sm-2 control-label">Categoria Escalafón Docente</label>
                                 <div class="col-sm-4">
-                                    @Html.DropDownList("categoria_escalafon_docente", new List<SelectListItem>() { new SelectListItem { Text = "Auxiliar", Value = "Auxiliar" }, new SelectListItem { Text = "Asistente", Value = "Asistente" }, new SelectListItem { Text = "Asociado", Value = "Asociado" }, new SelectListItem { Text = "Titular", Value = "Titular" } }, new { @class = "form-control" })
+                                    @Html.DropDownList("categoria_escalafon_docente", new List<SelectListItem>() { new SelectListItem { Text = "Sin Asignar", Value = "Sin Asignar" }, new SelectListItem { Text = "Auxiliar", Value = "Auxiliar" }, new SelectListItem { Text = "Asistente", Value = "Asistente" }, new SelectListItem { Text = "Asociado", Value = "Asociado" }, new SelectListItem { Text = "Titular", Value = "Titular" } }, new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.tipo_vinculacion)
                                 </div>
                             </div>
@@ -358,7 +358,7 @@
                                 <label class="col-sm-2 control-label">Título Postgrado</label>
                                 <div class="col-sm-8">
                                     
-                                    @Html.DropDownList("certificado_DPE", new List<SelectListItem>() { new SelectListItem { Text = "Geriatría clínica", Value = "Geriatría clínica" }, new SelectListItem { Text = "Magister en Gerontología Envejecimiento y Vejez", Value = "Magister en Gerontología Envejecimiento y Vejez" }, new SelectListItem { Text = "Asociado", Value = "Asociado" }, new SelectListItem { Text = "Titular", Value = "Titular" } }, new { @class = "form-control" })
+                                    @Html.DropDownList("certificado_DPE", new List<SelectListItem>() { new SelectListItem { Text = "Sin Asignar", Value = "Sin Asignar" }, new SelectListItem { Text = "Geriatría clínica", Value = "Geriatría clínica" }, new SelectListItem { Text = "Magister en Gerontología Envejecimiento y Vejez", Value = "Magister en Gerontología Envejecimiento y Vejez" }, new SelectListItem { Text = "Asociado", Value = "Asociado" }, new SelectListItem { Text = "Titular", Value = "Titular" } }, new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.tipo_vinculacion)
                                 </div>
 
@@ -494,7 +494,6 @@
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
                                 <div class="pull-right">
-                                    <button type="submit" class="btn btn-default">Cancelar</button>
                                     <button type="submit" class="btn btn-primary">Guardar</button>
                                 </div>
                             </div>

@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "InformacionDocente";
+    ViewBag.Title = "InformacionDocenteVista";
 }
 
 @model MvcApplication2.Models.Docente
@@ -14,17 +14,13 @@
                     <li>@Html.ActionLink("Documentos", "SoportesDS/" + Model.docenteId, "Docente")</li>
                     <li>@Html.ActionLink("Vacunación", "CarnetVacunacionDocenteODS/" + Model.docenteId, "Docente")</li>
                     <li>@Html.ActionLink("Reporte", "ReporteDocenteA/" + Model.docenteId, "Docente")</li>
+
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
 </div>
-
-
-
-
-
-@using (Html.BeginForm("InformacionDocente", "Docente", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("InformacionDocenteVista", "Docente", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
 
     @Html.AntiForgeryToken()
@@ -53,6 +49,10 @@
                                 @Html.HiddenFor(model => model.rotacionId)
                                 @Html.HiddenFor(model => model.docenteId)
                                 @Html.HiddenFor(model => model.DepartamentoSaludId)
+                                @Html.HiddenFor(model => model.clave)
+
+
+
 
 
                                 <label class="col-sm-2 control-label">Tipo Documento</label>
@@ -117,6 +117,7 @@
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.HojaVida.municipio_procedencia, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.municipio_procedencia)
+                                    <p class="help-block">Por favor agregue Departamento y Municipio</p>
                                 </div>
 
 
@@ -191,8 +192,6 @@
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.HojaVida.estado_civil, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.estado_civil)
-
-
                                 </div>
                                 <label class="col-sm-2 control-label">Numero de Hijos</label>
                                 <div class="col-sm-4">
@@ -208,7 +207,6 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">RH</label>
                                 <div class="col-sm-4">
-
                                     @Html.TextBoxFor(model => model.HojaVida.hemoclasificacion, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.hemoclasificacion)
                                 </div>
@@ -220,6 +218,7 @@
 
 
                             </div>
+
 
                         </fosrm>
 
@@ -239,6 +238,7 @@
 
                     <div class="row">
                         <fofrm class="form-horizontal" role="form">
+
 
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Nombre</label>
@@ -302,9 +302,6 @@
                     <fodrm class="form-horizontal" role="form">
 
                         <div class="row">
-
-
-                            
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Departamento</label>
                                 <div class="col-sm-4">
@@ -349,7 +346,7 @@
                                 <label class="col-sm-2 control-label">Categoria Escalafón Docente</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.categoria_escalafon_docente, new { @class = "form-control", @readonly = "readonly" })
-                                    @Html.ValidationMessageFor(model => model.categoria_escalafon_docente)
+                                    @Html.ValidationMessageFor(model => model.maximo_nivel_formacion)
                                 </div>
                             </div>
 
@@ -357,29 +354,150 @@
 
                                 <label class="col-sm-2 control-label">Título Postgrado</label>
                                 <div class="col-sm-8">
+
                                     @Html.TextBoxFor(model => model.certificado_DPE, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.certificado_DPE)
                                 </div>
 
 
                             </div>
-
-                            <div class="form-group">
-
-
-                                <label class="col-sm-2 control-label"></label>
-                                <div class="col-sm-4">
-                                    <button type="button" class="alert-danger">Solicitar Actualizacion</button>
-                                </div>
-
-                            </div>
-
-
-
                         </div>
                     </fodrm>
 
                 </div><!-- /.row -->
+
+
+                <legend>Documentos</legend>
+
+                <div class="col-sm-3">
+
+                </div>
+
+                <div class="col-sm-8">
+
+                    <div class="row">
+
+                        <table class="table table-striped table-hover">
+
+                            <tr>
+                                <th>Tipo Documento</th>
+                                <th>Acción</th>
+                                <th>Archivo</th>
+                            </tr>
+                            <tr>
+                                <td>Documento de identidad</td>
+                                <td>
+                                    <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
+                                </td>
+                                <td>
+
+                                    <img src='~/Uploads/doc_identidad@(Model.num_documento).jpg' alt="..." class="img-rounded" height="50px" width="50px"><br />
+
+                                </td>
+
+
+                            </tr>
+
+                            <tr>
+                                <td>Acta de grado</td>
+                                <td>
+                                    <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
+
+                                </td>
+                                <td>
+
+                                    <img src='~/Uploads/acta_grado@(Model.num_documento).jpg' alt="..." class="img-rounded" height="50px" width="50px"><br />
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Diploma de Profesional</td>
+                                <td>
+                                    <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
+
+                                </td>
+                                <td>
+
+                                    <img src='~/Uploads/dip_prof@(Model.num_documento).jpg' alt="..." class="img-rounded" height="50px" width="50px"><br />
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Diploma de Especialista</td>
+                                <td>
+                                    <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
+
+                                </td>
+                                <td>
+
+                                    <img src='~/Uploads/dip_espe@(Model.num_documento).jpg' alt="..." class="img-rounded" height="50px" width="50px"><br />
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Tp de la Dirección Territorial de Salud</td>
+                                <td>
+                                    <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
+
+                                </td>
+                                <td>
+
+                                    <img src='~/Uploads/tp_terr@(Model.num_documento).jpg' alt="..." class="img-rounded" height="50px" width="50px"><br />
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Tarjeta de profesional Departamental</td>
+                                <td>
+                                    <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
+
+                                </td>
+                                <td>
+
+                                    <img src='~/Uploads/tp_dept@(Model.num_documento).jpg' alt="..." class="img-rounded" height="50px" width="50px"><br />
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Tarjeta de profesional Nacional</td>
+                                <td>
+                                    <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
+
+                                </td>
+                                <td>
+
+                                    <img src='~/Uploads/tp_nal@(Model.num_documento).jpg' alt="..." class="img-rounded" height="50px" width="50px"><br />
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Otro</td>
+                                <td>
+                                    <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
+
+                                </td>
+                                <td>
+
+                                    <img src='~/Uploads/otro@(Model.num_documento).jpg' alt="..." class="img-rounded" height="50px" width="50px"><br />
+
+                                </td>
+                            </tr>
+
+
+                        </table>
+
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <div class="pull-right">
+                                    <button type="submit" class="btn btn-primary">Guardar</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
 
             </fieldset>
         </div>
@@ -387,11 +505,6 @@
 
 
 }
-
-
-
-
-
 
 
 

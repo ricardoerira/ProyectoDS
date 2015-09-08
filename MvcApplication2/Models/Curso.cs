@@ -12,8 +12,8 @@ namespace MvcApplication2.Models
         public string tipo { get; set; }
         public string nombre { get; set; }
         public int cupos { get; set; }
-        [DataType(DataType.Date)]
 
+        [DataType(DataType.Date)]
         public DateTime fechaCreacion { get; set; }
         public string observaciones { get; set; }
         [DataType(DataType.Date)]
@@ -22,9 +22,11 @@ namespace MvcApplication2.Models
         [DataType(DataType.Date)]
 
         public DateTime fechaFin { get; set; }
-       
+
         public int periodoAcademico { get; set; }
-        public int dirigido { get; set; }
+        public string dirigido { get; set; }
+        public string dirigidoOtro { get; set; }
+
         public int asignados { get; set; }
         public int valorParticipante { get; set; }
         public int valorUnitarioPersona { get; set; }

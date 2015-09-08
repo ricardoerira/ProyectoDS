@@ -1,77 +1,173 @@
 ﻿@model MvcApplication2.Models.IPS_ESE
 @{
-    ViewBag.Title = "IPS";
+    ViewBag.Title = "InformeInduccion";
 }
 <div class="row">
     <nav class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Inicio", "VistaODS/", "Rotacion")</li>
-                    <li>@Html.ActionLink("Rotación", "Create/", "Rotacion")</li>
-                    <li>@Html.ActionLink("Hojas de Vida", "VistaHV/", "HojaVida")</li>
-                    <li>@Html.ActionLink("Carta Presentación", "ConsultaRotacion", "Rotacion")</li>
-                    <li>@Html.ActionLink("Estudiante", "Buscar/", "Estudiante")</li>
-                    <li>@Html.ActionLink("Docente", "Buscar/", "Docente")</li>
+                    <li>@Html.ActionLink("Inicio", "VistaContraprestacion/", "Curso")</li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Educación Continuada<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Crear", "Create/", "Curso")</li>
+                            <li>@Html.ActionLink("Ver Listado", "Index/", "Curso")</li>
+
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Inducción<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Crear", "Create/", "Induccion")</li>
+                            <li>@Html.ActionLink("Ver Listado", "Index/", "Induccion")</li>
+
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Equipo<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Crear", "Create/", "Equipo")</li>
+                            <li>@Html.ActionLink("Ver Listado", "Index/", "Equipo")</li>
+
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Informes<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Educación Continuada", "SeleccionRotacionContraPrestacionC/", "IPS_ESE")</li>
+                            <li>@Html.ActionLink("Inducciones", "SeleccionRotacionContraPrestacionI/", "IPS_ESE")</li>
+                            <li>@Html.ActionLink("Inventario", "SeleccionRotacionContraPrestacionE/", "IPS_ESE")</li>
+
+
+
+
+                        </ul>
+                    </li>
+
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
 </div>
 
-<h2>Selecciona la IPS para generar informe de inducciones</h2>
+
+
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
-    <div class="container">
+
+    if (!string.IsNullOrEmpty(ViewBag.AlertMessage))
+    {
+        <script>alert("@ViewBag.AlertMessage");</script>
+
+    }
+
+    <div class="container" id="wrap">
         <div class="row">
-            <fieldset>
+            <div class="col-md-6 col-md-offset-3">
+                <fieldset>
+
+                    <fosrm action="r" method="post" accept-charset="utf-8" class="form" role="form">
+                        <legend>Informe Inducción</legend>
 
 
-
-                <div class="col-sm-8">
-
-                    <div class="row">
-                        <fosrm class="form-horizontal" role="form">
-
+                        <h4>Seleccione los Campos:</h4>
+                        <div class="row">
 
                             <div class="form-group">
+                                <h5><label class="col-sm-2 control-label">IPS/ESE</label></h5>
+                                <div class="col-xs-6 col-md-6">
 
-                                <label class="col-sm-2 control-label">IPS</label>
-                                <div class="col-sm-4">
+                                    @Html.DropDownList("IPS_ESEId", (IEnumerable<SelectListItem>)ViewBag.IPS_ESEId, new { @class = "form-control input-lg" })
 
-                                    @Html.DropDownList("IPS_ESEId", String.Empty)
+
+
                                 </div>
-
-
-
-                               
-
-                            </div>
-</div>
-
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-
-                    <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <div class="pull-right">
-                                <button type="submit" class="btn btn-default">Cancelar</button>
-                                <button type="submit" class="btn btn-primary">Ver Informe</button>
                             </div>
                         </div>
-                    </div>
 
-                </div>
+                        <br />
+                        <label>Seleccione Mes y Año:</label>
+                        <div class="row">
+                            <div class="col-xs-4 col-md-4">
+                                <select name="mesId" id="mesId" class="form-control input-lg">
+                                    <option value="01">Enero</option>
+                                    <option value="02">Febrero</option>
+                                    <option value="03">Marzo</option>
+                                    <option value="04">Abril</option>
+                                    <option value="05">Mayo</option>
+                                    <option value="06">Junio</option>
+                                    <option value="07">Julio</option>
+                                    <option value="08">Agosto</option>
+                                    <option value="09">Septiembre</option>
+                                    <option value="10">Octubre</option>
+                                    <option value="11">Noviembre</option>
+                                    <option value="12">Diciembre</option>
+                                    <option value="13">Informe Anual</option>
+                                </select>
+                            </div>
+
+                            <div class="col-xs-4 col-md-4">
+                                <select name="añoId" class="form-control input-lg">
+                                    <option value="2015">2015</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2017">2017</option>
+
+
+                                </select>
+                            </div>
+                            <br />
+                            <br>
+                        </div>
+
+                        <span class="help-block">A través de este formulario podrá visualizar el informe de Inducciones. <p>Puede elegir por mes y año o simplemente por año.</p></span>
+                        <button class="btn btn-lg btn-primary btn-block signup-btn" type="submit">
+                            Ver
+                        </button>
 
 
 
-            </fieldset>
+
+                </fieldset>
+
+            </div>
+
+
+
 
         </div>
     </div>
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

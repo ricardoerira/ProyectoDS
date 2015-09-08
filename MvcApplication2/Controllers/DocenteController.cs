@@ -417,6 +417,11 @@ namespace MvcApplication2.Controllers
             int edad = DateTime.Today.AddTicks(-docente.HojaVida.fecha_nacimiento.Ticks).Year - 1;
             string edadDocente = edad.ToString();
             docente.diploma_profesional = edadDocente;//Reemplaza edad
+            if (docente.HojaVida.genero.Equals("F"))
+            {
+                docente.num_libreta_militar = "NO APLICA";
+            }
+           
             return View(docente);
 
             
@@ -525,6 +530,47 @@ namespace MvcApplication2.Controllers
             
         }
 
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult InformacionDocenteVista(Docente docente) {
+            int numFiles = Request.Files.Count;
+            if (Request != null)
+            {
+
+
+                int uploadedCount = 0;
+                string[] documentos = { "doc_identidad", "acta_grado", "dip_prof", "dip_espe", "tp_terr", "tp_dept", "tp_nal", "otro" };
+                for (int i = 0; i < numFiles; i++)
+                {
+                    HttpPostedFileBase file = Request.Files[i];
+                    if (file.ContentLength > 0)
+                    {
+                        string fileName = file.FileName;
+                        string fileContentType = file.ContentType;
+                        byte[] fileBytes = new byte[file.ContentLength];
+                        file.InputStream.Read(fileBytes, 0, Convert.ToInt32(file.ContentLength));
+                        string path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[i] + docente.num_documento, ".jpg");
+                        if (System.IO.File.Exists(path1))
+                            System.IO.File.Delete(path1);
+
+                        file.SaveAs(path1);
+                        uploadedCount++;
+                    }
+                }
+            }
+
+             docente = db.Docentes.Find(docente.docenteId);
+            return View(docente);
+           
+
+            }
+        
+
+
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult InformacionDocente(Docente docente)
@@ -606,6 +652,30 @@ namespace MvcApplication2.Controllers
             }
             return View(docente);
         }
+
+
+        public Boolean ValidarCamposDocente(Docente docente)
+        {
+            HojaVida hv = db.HojaVidas.Find(docente.hojaVidaId);
+            Docente d = db.Docentes.Find(docente.docenteId);
+            Familia f = db.Familias.Find(hv.familiaId);
+
+
+            if ((d.certificado_TPDTS !=null) && (hv.municipio_procedencia != null) && (hv.direccion_manizales != null) &&
+                (hv.ARL != "Sin Asignar") && (hv.hemoclasificacion != "Sin Asignar") &&
+                (hv.num_celular != 0) &&
+                (hv.estado_civil != "Sin Asignar") && (f.primer_nombre_acudiente != null) &&
+                (f.primer_apellido_acudiente != null) && (f.direccion_acudiente != null) &&
+                (f.celular_acudiente != 0) && (d.tipo_vinculacion !="Sin Asignar") &&
+                (d.dedicacion !=null) && (d.categoria_escalafon_docente!="Sin Asignar"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        } 
 
 
 

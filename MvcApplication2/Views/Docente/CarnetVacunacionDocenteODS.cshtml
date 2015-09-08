@@ -18,7 +18,6 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Docencia Servicio", "VistaODS", "Rotacion")</li>
                     <li>@Html.ActionLink("Personales", "InformacionDocenteVista/" + Model.docenteId, "Docente")</li>
                     <li>@Html.ActionLink("Documentos", "SoportesDS/" + Model.docenteId, "Docente")</li>
                     <li>@Html.ActionLink("Vacunación", "CarnetVacunacionDocenteODS/" + Model.docenteId, "Docente")</li>

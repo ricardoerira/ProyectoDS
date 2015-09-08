@@ -79,6 +79,9 @@ namespace MvcApplication2.Controllers
              
                 curso.porcentajeTotalPersona = (curso.valorTotalPersona * 100) / curso.totalCapacitacion;
                 curso.porcentajeTotalUniversidad = (curso.valorTotalUniversidad * 100) / curso.totalCapacitacion;
+
+                curso.dirigido = curso.dirigido;
+                curso.periodoAcademico = curso.periodoAcademico;
              
                 db.Cursoes.Add(curso);
                 db.SaveChanges();

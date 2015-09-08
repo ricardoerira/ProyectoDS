@@ -666,3 +666,4 @@ C:\Users\Lili\Desktop\ProyectoDS\ProyectoDS\MvcApplication2\obj\Debug\MvcApplica
 C:\Users\Lili\Desktop\ProyectoDS\ProyectoDS\MvcApplication2\obj\Debug\MvcApplication2.csproj.GenerateResource.Cache
 C:\Users\Lili\Desktop\ProyectoDS\ProyectoDS\MvcApplication2\obj\Debug\MvcApplication2.dll
 C:\Users\Lili\Desktop\ProyectoDS\ProyectoDS\MvcApplication2\obj\Debug\MvcApplication2.pdb
+C:\Users\Lili\Desktop\ProyectoDS\ProyectoDS\MvcApplication2\obj\Debug\MvcApplication2.Migrations.lilianita.resources

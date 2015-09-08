@@ -5,17 +5,58 @@
 }
 
 
-  
 
-   
+
 <div class="row">
     <nav class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Equipo", "", "Equipo")</li>
-                    <li>@Html.ActionLink("Cursos", "", "Curso")</li>
-                    <li>@Html.ActionLink("Inducciones", "", "Induccion")</li>
+                    <li>@Html.ActionLink("Inicio", "VistaContraprestacion/", "Curso")</li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Educación Continuada<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Crear", "Create/", "Curso")</li>
+                            <li>@Html.ActionLink("Ver Listado", "Index/", "Curso")</li>
+
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Inducción<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Crear", "Create/", "Induccion")</li>
+                            <li>@Html.ActionLink("Ver Listado", "Index/", "Induccion")</li>
+
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Equipo<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Crear", "Equipo/", "Equipo")</li>
+                            <li>@Html.ActionLink("Ver Listado", "Index/", "Equipo")</li>
+
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Informes<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Educación Continuada", "SeleccionRotacionContraPrestacionC/", "IPS_ESE")</li>
+                            <li>@Html.ActionLink("Inducciones", "SeleccionRotacionContraPrestacionI/", "IPS_ESE")</li>
+                            <li>@Html.ActionLink("Inventario", "SeleccionRotacionContraPrestacionE/", "IPS_ESE")</li>
+
+
+
+
+                        </ul>
+                    </li>
 
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -23,28 +64,27 @@
     </nav>
 </div>
 
-<h2>Crear Curso</h2>
-
 @using (Html.BeginForm("Create", "Curso", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
-        <div class="col-sm-8">
+        <div class="col-sm-8" >
+            <legend>Educación Continuada - Crear Nuevo item</legend>
+            <div class="row" >
 
-            <div class="row">
-                <fosrm class="form-horizontal" role="form">
-
+                <fosrm class="form-horizontal" role="form" >
+                    
                     <div class="form-group">
 
 
-                        <label class="col-sm-2 control-label">Capacitacion</label>
+                        <label class="col-sm-2 control-label">Tipo</label>
                         <div class="col-sm-4">
-                            @Html.DropDownList("tipo", new List<SelectListItem>() { new SelectListItem { Text = "Curso", Value = "Curso" }, new SelectListItem { Text = "Diplomado", Value = "Diplomado" }, new SelectListItem { Text = "Seminario", Value = "Seminario" } })
+                            @Html.DropDownList("tipo", new List<SelectListItem>() { new SelectListItem { Text = "Curso", Value = "Curso" }, new SelectListItem { Text = "Diplomado", Value = "Diplomado" }, new SelectListItem { Text = "Seminario", Value = "Seminario" } }, new { @class = "form-control" })
                         </div>
-                        <label class="col-sm-2 control-label">Nombre Curso</label>
+                        <label class="col-sm-2 control-label">Nombre</label>
                         <div class="col-sm-4">
-                            @Html.DropDownList("nombre", new List<SelectListItem>() { new SelectListItem { Text = "Primeros Auxilios", Value = "Primeros Auxilios" }, new SelectListItem { Text = "Gases arteriales", Value = "Gases arteriales" }, new SelectListItem { Text = "Manejo del paciente crítico", Value = "Manejo del paciente crítico" } })
+                            @Html.DropDownList("nombre", new List<SelectListItem>() { new SelectListItem { Text = "Primeros Auxilios", Value = "Primeros Auxilios" }, new SelectListItem { Text = "Gases arteriales", Value = "Gases arteriales" }, new SelectListItem { Text = "Manejo del paciente crítico", Value = "Manejo del paciente crítico" }, new SelectListItem { Text = "Diplomado en Reanimación", Value = "Diplomado en Reanimación" } }, new { @class = "form-control" })
                         </div>
 
 
@@ -64,27 +104,28 @@
                             @Html.ValidationMessageFor(model => model.cupos)
 
                         </div>
-                        <label class="col-sm-2 control-label">Fecha Creacion</label>
+                        <label class="col-sm-2 control-label">Num Asignados</label>
                         <div class="col-sm-4">
-                            @Html.EditorFor(m => m.fechaCreacion)
+                            @Html.TextBoxFor(model => model.asignados, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.asignados)
 
-                              @Html.ValidationMessageFor(model => model.fechaCreacion)
-                           
+
                         </div>
+                        
                     </div>
 
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Fecha inicio</label>
                         <div class="col-sm-4">
-                            @Html.EditorFor(m => m.fechaInicio)
-                             @Html.ValidationMessageFor(model => model.fechaInicio)
-
-                          
+                         @Html.EditorFor(m => m.fechaInicio)
+                        @Html.ValidationMessageFor(model => model.fechaInicio) 
+            
+                                           
                         </div>
                         <label class="col-sm-2 control-label">Fecha Fin</label>
                         <div class="col-sm-4">
                             @Html.EditorFor(m => m.fechaFin)
-    @Html.ValidationMessageFor(model => model.fechaFin)
+                            @Html.ValidationMessageFor(model => model.fechaFin)
                         </div>
                      
                     </div>
@@ -97,12 +138,12 @@
 
                         <label class="col-sm-2 control-label">Periodo</label>
                         <div class="col-sm-4">
-                            @Html.TextBoxFor(model => model.periodoAcademico, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.periodoAcademico)
+                            @Html.DropDownList("periodoAcademico", new List<SelectListItem>() { new SelectListItem { Text = "20151", Value = "20151" }, new SelectListItem { Text = "20152", Value = "20152" }, new SelectListItem { Text = "20161", Value = "20161" }, new SelectListItem { Text = "20162", Value = "20162" } }, new { @class = "form-control" })
+                            
                         </div>
                         <label class="col-sm-2 control-label">Observaciones</label>
                         <div class="col-sm-4">
-                            @Html.TextBoxFor(model => model.observaciones, new { @class = "form-control" })
+                            @Html.TextAreaFor(model => model.observaciones, new { @class = "form-control" })
                             @Html.ValidationMessageFor(model => model.observaciones)
                         </div>
                     </div>
@@ -110,17 +151,17 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Dirigido a</label>
                         <div class="col-sm-4">
-                            @Html.DropDownList("dirigido", new List<SelectListItem>() { new SelectListItem { Text = "Medico", Value = "Medico" }, new SelectListItem { Text = "Enfermero", Value = "Enfermero" }, new SelectListItem { Text = "Aux.Enfermeria", Value = "Aux.Enfermeria" }, new SelectListItem { Text = "Medico y Enfermeria", Value = "Medico y Enfermeria" }, new SelectListItem { Text = "Otros", Value = "Otros" }, new SelectListItem { Text = "Especialista", Value = "Especialista" } })
-
+                            @Html.DropDownList("dirigido", new List<SelectListItem>() { new SelectListItem { Text = "Medico/a", Value = "Medico/a" }, new SelectListItem { Text = "Enfermero/a", Value = "Enfermero/a" }, new SelectListItem { Text = "Aux.Enfermeria", Value = "Aux.Enfermeria" }, new SelectListItem { Text = "Medico/a y Enfermero/a", Value = "Medico/a y Enfermero/a" }, new SelectListItem { Text = "Especialista", Value = "Especialista" }, new SelectListItem { Text = "Otro", Value = "Otro" } }, new { @class = "form-control" })
+                            
 
                         </div>
-                        <label class="col-sm-2 control-label">Num Asignados</label>
+                        <label class="col-sm-2 control-label">Otro</label>
                         <div class="col-sm-4">
-                            @Html.TextBoxFor(model => model.asignados, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.asignados)
-
-
+                            @Html.TextBoxFor(model => model.observaciones, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.observaciones)
+                            <span class="help-block">En caso que no exista en el combobox el personal a quien va dirigido</span>
                         </div>
+                        
                     </div>
 
                     <div class="form-group">
@@ -149,12 +190,20 @@
 
 
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">IPS</label>
+                        <label class="col-sm-2 control-label">IPS/ESE</label>
                         <div class="col-sm-4">
 
-                            @Html.DropDownList("IPS_ESEId", String.Empty)
+                            @Html.DropDownList("IPS_ESEId", (IEnumerable<SelectListItem>)ViewBag.IPS_ESEId, new { @class = "form-control" })
+                            
                             @Html.ValidationMessageFor(model => model.IPS_ESEId)
 
+
+                        </div>
+                        <label class="col-sm-2 control-label">Feche Creación</label>
+                        <div class="col-sm-4">
+                            @Html.EditorFor(m => m.fechaCreacion)
+
+                            @Html.ValidationMessageFor(model => model.fechaCreacion)
 
                         </div>
                     </div>

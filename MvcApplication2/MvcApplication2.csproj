@@ -280,6 +280,10 @@
     <Compile Include="Migrations\201508280114312_hjyffd.Designer.cs">
       <DependentUpon>201508280114312_hjyffd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201509080112390_lilianita.cs" />
+    <Compile Include="Migrations\201509080112390_lilianita.Designer.cs">
+      <DependentUpon>201509080112390_lilianita.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -1338,6 +1342,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201508280114312_hjyffd.resx">
       <DependentUpon>201508280114312_hjyffd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509080112390_lilianita.resx">
+      <DependentUpon>201509080112390_lilianita.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="reporte.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
