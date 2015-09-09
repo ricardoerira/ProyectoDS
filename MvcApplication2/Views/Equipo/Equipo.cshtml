@@ -34,7 +34,7 @@
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            Equipo<b class="caret"></b>
+                            Inventario<b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
                             <li>@Html.ActionLink("Crear", "Equipo/", "Equipo")</li>
@@ -63,106 +63,88 @@
     </nav>
 </div>
 
-<h2>Ingresar Equipo</h2>
-
 
 @using (Html.BeginForm("Equipo", "Equipo", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
-   
-    <div class="col-sm-9 col-md-9">
-        <div class="form-group">
-            <label class="col-sm-9 control-label">Nombre</label>
-            <div class="col-sm-4">
+
+    <div class="col-md-6 col-md-offset-3">
+        <div class="well well-sm">
+            <legend class="text-center">Inventario - Crear nuevo item</legend>
 
 
+            <fosrm class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Serial o Código</label>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.serial, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.serial)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Nombre</label>
+                    <div class="col-sm-9">
+                        @Html.TextBoxFor(model => model.nombre, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.nombre)
+                    </div>
+                </div>
 
-                @Html.TextBoxFor(model => model.nombre, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.nombre)
-            </div>
-            <label class="col-sm-10 control-label">Serial o Codigo</label>
-            <div class="col-sm-4">
-                @Html.TextBoxFor(model => model.serial, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.serial)
-            </div>
-        </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Estado</label>
+                    <div class="col-sm-4">
+                        @Html.ValidationMessageFor(model => model.estado)
+                        @Html.DropDownList("estado", new List<SelectListItem>() { new SelectListItem { Text = "Excelente", Value = "Excelente" }, new SelectListItem { Text = "Bueno", Value = "Bueno" }, new SelectListItem { Text = "Regular", Value = "Regular" }, new SelectListItem { Text = "Malo", Value = "Malo" } }, new { @class = "form-control" })
 
-        <div class="form-group">
-            <label class="col-sm-9 control-label">Cantidad</label>
-            <div class="col-sm-4">
-                @Html.TextBoxFor(model => model.cantidad, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.cantidad)
-            </div>
+                    </div>
+                    <label class="col-sm-1 control-label">Valor</label>
+                    <div class="col-sm-4">
+                        <div class="input-group">
+                            <div class="input-group-addon">$</div>
+                            @Html.TextBoxFor(model => model.costo, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.costo)
+                            <div class="input-group-addon">.00</div>
+                        </div>
+                    </div>
+                    </div>
 
-        </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Cantidad</label>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.cantidad, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.cantidad)
+                    </div>
+                    <label class="col-sm-1 control-label">IPS/ESE</label>
+                    <div class="col-sm-4">
+                        @Html.DropDownList("IPS_ESEId", (IEnumerable<SelectListItem>)ViewBag.IPS_ESEId, new { @class = "form-control" })
+                    </div>
 
-        <div class="form-group">
-            <label class="col-sm-9 control-label">Estado</label>
-            <div class="col-sm-4">
-                 @Html.ValidationMessageFor(model => model.estado)
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Observaciones</label>
+                    <div class="col-sm-9">
+                        @Html.TextAreaFor(model => model.observaciones, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.observaciones)
+                    </div>
+
+                </div>
 
 
-                  
                
 
-                @Html.DropDownList("estado", new List<SelectListItem>() { new SelectListItem { Text = "Excelente", Value = "Excelente" }, new SelectListItem { Text = "Bueno", Value = "Bueno" }, new SelectListItem { Text = "Regular", Value = "Regular" }, new SelectListItem { Text = "Malo", Value = "Malo" } })
 
-                <br>
-                <br>
+                <div class="form-group">
+                    <div class="col-sm-offset-5 col-sm-5">
+                        <br>
 
+                        <br>
 
-            </div>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
 
-        </div>
-        <div class="form-group">
-            <label class="col-sm-9 control-label">Costo</label>
-            <div class="col-sm-4">
-                <div class="input-group">
-                    <div class="input-group-addon">$</div>
-                    @Html.TextBoxFor(model => model.costo, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.costo)
-                    <div class="input-group-addon">.00</div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-9 control-label">Observaciones</label>
-            <div class="col-sm-4">
-                @Html.TextAreaFor(model => model.observaciones, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.observaciones)
-            </div>
 
         </div>
-        
-    
-        <div class="form-group">
-            <label class="col-sm-9 control-label">IPS</label>
-            <div class="col-sm-4">
-
-               @Html.DropDownList("IPS_ESEId", String.Empty)
-            @Html.ValidationMessageFor(model => model.IPS_ESEId)
-                
-                 
-            </div>
-            <br>
-
-            <br>
-            <br>
-        </div>
-
-       
-        <div class="form-group">
-            <div class="col-sm-offset-1 col-sm-10">
-                   <br>
-
-                    <br>
-                  
-                    <button type="submit" class="btn btn-primary">Guardar</button>
-              
-            </div>
-        </div>
-
 
     </div>
 }

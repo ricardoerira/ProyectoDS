@@ -1,70 +1,68 @@
 ﻿@model MvcApplication2.Models.Equipo
-
 @{
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<div class="container" align="center">
+    <div class="col-md-8 col-md-offset-2">
+        <br>
+        <div class="alert alert-danger">¿Está seguro que desea eliminar este elemento de la base de datos?</div>
+        <br>
+        <legend class="text-center">Inventario</legend>
+    </div>
+</div>
 
-<h3>Are you sure you want to delete this?</h3>
-<fieldset>
-    <legend>Equipo</legend>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.nombre)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.nombre)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.serial)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.serial)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.cantidad)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.cantidad)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.estado)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.estado)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.costo)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.costo)
-    </div>
-
-    
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.recibido)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.recibido)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.IPS_ESE.origen)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.IPS_ESE.origen)
-    </div>
-</fieldset>
-@using (Html.BeginForm()) {
+@using (Html.BeginForm())
+{
     @Html.AntiForgeryToken()
-    <p>
-        <input type="submit" value="Delete" /> |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
+
+
+    <div class="container" align="center">
+        <div class="col-md-8 col-md-offset-2">
+
+            <fosrm class="form-horizontal" role="form">
+                <div class="form-group">
+                    <div class="col-md-6 col-md-offset-3">
+                        @Html.TextBoxFor(model => model.serial, new { @class = "form-control", @readonly = "readonly" })
+                        @Html.ValidationMessageFor(model => model.serial)
+                    </div>
+                </div>
+        </div>
+    </div>
+    <div class="container" align="center">
+        <div class="col-md-8 col-md-offset-2">
+
+            <fosrm class="form-horizontal" role="form">
+                <div class="form-group">
+                    <div class="col-md-6 col-md-offset-3">
+                        @Html.TextBoxFor(model => model.nombre, new { @class = "form-control", @readonly = "readonly" })
+                        @Html.ValidationMessageFor(model => model.nombre)
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <div class="container" align="center">
+        <div class="col-md-8 col-md-offset-2">
+
+            <fosrm class="form-horizontal" role="form">
+                <div class="form-group">
+                    <div class="col-md-6 col-md-offset-3">
+                        @Html.TextBoxFor(model => model.IPS_ESE.nombre, new { @class = "form-control", @readonly = "readonly" })
+                        @Html.ValidationMessageFor(model => model.IPS_ESE.nombre)
+                    </div>
+                </div>
+        </div>
+    </div>
+
+
+
+    <div class="col-md-10 col-md-offset-5">
+        <p>
+            <input type="submit" class="btn btn-primary" value=" Eliminar" /> |
+            @Html.ActionLink("Regresar", "Index")
+        </p>
+    </div>
 }
+

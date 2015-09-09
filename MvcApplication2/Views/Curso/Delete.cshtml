@@ -4,38 +4,65 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<div class="container" align="center">
+    <div class="col-md-8 col-md-offset-2">
+        <br>
+        <div class="alert alert-danger">¿Está seguro que desea eliminar este elemento de la base de datos?</div>
+        <br>
+            <legend class="text-center">Educación Continuada</legend>
+</div>
+</div>
 
-<h3>Are you sure you want to delete this?</h3>
-<fieldset>
-    <legend>Curso</legend>
+    
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.tipo)
+
+    <div class="container" align="center">
+        <div class="col-md-8 col-md-offset-2">
+
+            <fosrm class="form-horizontal" role="form">
+                <div class="form-group">
+                    <div class="col-md-6 col-md-offset-3">
+                        @Html.TextBoxFor(model => model.tipo, new { @class = "form-control", @readonly = "readonly" })
+                        @Html.ValidationMessageFor(model => model.tipo)
+                    </div>
+                </div>
+        </div>
     </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.tipo)
+        <div class="container" align="center">
+            <div class="col-md-8 col-md-offset-2">
+
+                <fosrm class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <div class="col-md-6 col-md-offset-3">
+                            @Html.TextBoxFor(model => model.nombre, new { @class = "form-control", @readonly = "readonly"  })
+                            @Html.ValidationMessageFor(model => model.nombre)
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+
+    <div class="container" align="center">
+        <div class="col-md-8 col-md-offset-2">
+
+            <fosrm class="form-horizontal" role="form">
+                <div class="form-group">
+                    <div class="col-md-6 col-md-offset-3">
+                        @Html.TextBoxFor(model => model.IPS_ESE.nombre, new { @class = "form-control", @readonly = "readonly"  })
+                        @Html.ValidationMessageFor(model => model.IPS_ESE.nombre)
+                    </div>
+                </div>
+        </div>
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.nombre)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.nombre)
-    </div>
 
-   
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.IPS_ESE.origen)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.IPS_ESE.origen)
-    </div>
-</fieldset>
-@using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
-    <p>
-        <input type="submit" value="Delete" /> |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
-}
+
+                    <div class="col-md-10 col-md-offset-5">
+                        <p>
+                            <input type="submit" class="btn btn-primary" value=" Eliminar" /> |
+                            @Html.ActionLink("Regresar", "Index")
+                        </p>
+                    </div>
+                    }
+

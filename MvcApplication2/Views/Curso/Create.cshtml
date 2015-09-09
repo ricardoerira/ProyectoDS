@@ -35,7 +35,7 @@
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            Equipo<b class="caret"></b>
+                            Inventario<b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
                             <li>@Html.ActionLink("Crear", "Equipo/", "Equipo")</li>
@@ -71,7 +71,7 @@
 
     <div class="col-md-8 col-md-offset-2">
         <div class="well well-sm">
-            <legend class="text-center">Educación Continuada - Crear Nuevo item</legend>
+            <legend class="text-center">Educación Continuada - Crear nuevo item</legend>
 
 
             <fosrm class="form-horizontal" role="form">
@@ -85,7 +85,7 @@
                     </div>
                     <label class="col-sm-2 control-label">Nombre</label>
                     <div class="col-sm-4">
-                        @Html.DropDownList("nombre", new List<SelectListItem>() { new SelectListItem { Text = "Primeros Auxilios", Value = "Primeros Auxilios" }, new SelectListItem { Text = "Gases arteriales", Value = "Gases arteriales" }, new SelectListItem { Text = "Manejo del paciente crítico", Value = "Manejo del paciente crítico" }, new SelectListItem { Text = "Diplomado en Reanimación", Value = "Diplomado en Reanimación" } }, new { @class = "form-control" })
+                        @Html.DropDownList("nombre", new List<SelectListItem>() { new SelectListItem { Text = "Primeros Auxilios", Value = "Primeros Auxilios" }, new SelectListItem { Text = "Gases arteriales", Value = "Gases arteriales" }, new SelectListItem { Text = "Manejo del paciente crítico", Value = "Manejo del paciente crítico" }, new SelectListItem { Text = "Diplomado en Reanimación", Value = "Diplomado en Reanimación" }, new SelectListItem { Text = "Seguridad del Paciente", Value = "Seguridad del Paciente" }, new SelectListItem { Text = "Cuidado intensivo del adulto", Value = "Cuidado intensivo del adulto" } }, new { @class = "form-control" })
                     </div>
 
 
@@ -161,14 +161,14 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Dirigido a</label>
                     <div class="col-sm-4">
-                        @Html.DropDownList("dirigido", new List<SelectListItem>() { new SelectListItem { Text = "Medico/a", Value = "Medico/a" }, new SelectListItem { Text = "Enfermero/a", Value = "Enfermero/a" }, new SelectListItem { Text = "Aux.Enfermeria", Value = "Aux.Enfermeria" }, new SelectListItem { Text = "Medico/a y Enfermero/a", Value = "Medico/a y Enfermero/a" }, new SelectListItem { Text = "Especialista", Value = "Especialista" }, new SelectListItem { Text = "Otro", Value = "Otro" } }, new { @class = "form-control" })
+                        @Html.DropDownList("dirigido", new List<SelectListItem>() { new SelectListItem { Text = "Estudiante", Value = "Estudiante" }, new SelectListItem { Text = "Medico/a", Value = "Medico/a" }, new SelectListItem { Text = "Enfermero/a", Value = "Enfermero/a" }, new SelectListItem { Text = "Aux.Enfermeria", Value = "Aux.Enfermeria" }, new SelectListItem { Text = "Medico/a y Enfermero/a", Value = "Medico/a y Enfermero/a" }, new SelectListItem { Text = "Especialista", Value = "Especialista" }, new SelectListItem { Text = "Otro", Value = "Otro" } }, new { @class = "form-control" })
 
 
                     </div>
                     <label class="col-sm-2 control-label">Otro</label>
                     <div class="col-sm-4">
-                        @Html.TextBoxFor(model => model.observaciones, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.observaciones)
+                        @Html.TextBoxFor(model => model.dirigidoOtro, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.dirigidoOtro)
                         <span class="help-block">Dado el caso que el personal a quien va dirigido no se encuentre en el listado; <p>debe ser ingresado en esta caja de texto.</p></span>
                     </div>
 

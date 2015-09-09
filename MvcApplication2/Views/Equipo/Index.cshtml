@@ -33,7 +33,7 @@
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            Equipo<b class="caret"></b>
+                            Inventario<b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
                             <li>@Html.ActionLink("Crear", "Equipo/", "Equipo")</li>
@@ -66,40 +66,44 @@
 </p>
 @using (Html.BeginForm())
 {
-
-
-    <p>
-        Buscar por IPS: @Html.TextBox("SearchString")
-        <input type="submit" value="Buscar" />
+    <p class="help-block">
+        Inventario - Buscar por Nombre:
     </p>
+    <div class="col-md-4">
+        @Html.TextBox("SearchString", ViewBag.SearchFilter as string, new { @class = "form-control", onclick = "keystroke()", id = "search" })
+
+    </div>
+    <div class="col-md-6">
+        <input type="submit" class="btn btn-primary" value="Buscar" />
+    </div>
 }
+<table class="table">
+    <tr></tr>
+</table>
 <div class="table-responsive">
-    <table class="table">
+    <table class="table-bordered table-striped ">
 
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.nombre)
+                Serial
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.serial)
+                Nombre
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.cantidad)
+                Cantidad
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.estado)
+                Estado
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.costo)
+               Costo
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.observaciones)
+                Observaciones
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.recibido)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IPS_ESE.nombre)
+                IPS/ESE
             </th>
 
         </tr>
@@ -109,10 +113,10 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.nombre)
+                    @Html.DisplayFor(modelItem => item.serial)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.serial)
+                    @Html.DisplayFor(modelItem => item.nombre)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.cantidad)
@@ -125,9 +129,6 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.observaciones)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.recibido)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.IPS_ESE.nombre)

@@ -33,7 +33,7 @@
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            Equipo<b class="caret"></b>
+                            Inventario<b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
                             <li>@Html.ActionLink("Crear", "Equipo/", "Equipo")</li>
@@ -66,34 +66,42 @@
 </p>
 @using (Html.BeginForm())
 {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
 
 
-    <p>
-        Buscar por IPS: @Html.TextBox("SearchString")
-        <input type="submit" value="Buscar" />
-    </p>
+    
+        <p class="help-block">Inducción - Buscar por Nombre</p>
+        <div class="col-md-4">
+            @Html.TextBox("SearchString", ViewBag.SearchFilter as string, new { @class = "form-control", onclick = "keystroke()", id = "search" })
+
+        </div>
+        <div class="col-md-6">
+            <input type="submit" class="btn btn-primary" value="Buscar" />
+        </div>
+    
+    <table class="table">
+        <tr></tr>
+    </table>
 }
 <div class="table-responsive">
-    <table class="table">
+    <table class="table-bordered table-striped ">
 
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.observaciones)
+                Nombre
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.numeroEstudiantes)
+                Frecuencia
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.frecuencia)
+                # Est
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.responsable)
+                Valor
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.correo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.valor)
+                Observaciones
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.IPS_ESE.nombre)
@@ -105,23 +113,21 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.observaciones)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.numeroEstudiantes)
+                    @Html.DisplayFor(modelItem => item.nombre)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.frecuencia)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.responsable)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.correo)
+                    @Html.DisplayFor(modelItem => item.numeroEstudiantes)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.valor)
                 </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.observaciones)
+                </td>
+                <td>
                 <td>
                     @Html.DisplayFor(modelItem => item.IPS_ESE.nombre)
                 </td>
