@@ -197,6 +197,7 @@ namespace MvcApplication2.Controllers
 
 
                rptH.SetParameterValue("ips", ips.nombre);
+               rptH.SetParameterValue("email", ips.correo);
                rptH.SetParameterValue("fecha", "");
                int total = 0;
 
@@ -268,6 +269,8 @@ namespace MvcApplication2.Controllers
 
             rptH.SetParameterValue("ips", ips.nombre);
             rptH.SetParameterValue("fecha", "");
+            //rptH.SetParameterValue("correo", ips.correo);
+
             int total = 0;
            
             if (db.Induccions.Where(d => d.IPS_ESEId == ips.IPS_ESEId).ToList().Count > 0)
