@@ -61,13 +61,14 @@ namespace MvcApplication2.Controllers
         {
             if (ModelState.IsValid)
             {
-                equipo.recibido= equipo.IPS_ESE.representante_legal;
+                IPS_ESE ips = db.IPS_ESE.Find(equipo.IPS_ESEId);
+                equipo.recibido= ips.representante_legal;
                 db.Equipoes.Add(equipo);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.IPS_ESEId = new SelectList(db.IPS_ESE, "IPS_ESEId", "origen", equipo.IPS_ESEId);
+            ViewBag.IPS_ESEId = new SelectList(db.IPS_ESE, "IPS_ESEId", "nombre", equipo.IPS_ESEId);
             return View(equipo);
         }
 
