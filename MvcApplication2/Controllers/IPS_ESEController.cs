@@ -203,7 +203,7 @@ namespace MvcApplication2.Controllers
 
                if (cursos.Count > 0)
                {
-                   total += db.Cursoes.Where(d => d.IPS_ESEId == ips.IPS_ESEId).Sum(d => d.totalCapacitacion);
+                   total += db.Cursoes.Where(d => d.IPS_ESEId == ips.IPS_ESEId).Sum(d => d.totalContraprestacion);
 
                }
 

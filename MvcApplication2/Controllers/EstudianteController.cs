@@ -157,11 +157,6 @@ public ActionResult BuscarEnDepartamento(Estudiante estudiante)
        
         public ActionResult ReporteEstudiante(string searchString, int id = 0)
         {
-
-           
-              
-
-            
             var estudiantes = from s in db.Estudiantes
                               select s;
             if (!String.IsNullOrEmpty(searchString))
@@ -392,12 +387,7 @@ public ActionResult BuscarEnDepartamento(Estudiante estudiante)
         //
         //--------------------- Vista para Logeo del estudiante
 
-        public ActionResult Pass()
-        {
-
-            return View();
-
-        }
+       
         
        
         public ActionResult Login()
@@ -406,14 +396,15 @@ public ActionResult BuscarEnDepartamento(Estudiante estudiante)
             return View();
 
         }
-
+        
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Login(Estudiante estudiante)
         {
             
-            var b = db.Estudiantes.Where(s => s.num_documento.Equals(estudiante.num_documento)).Where(s => s.clave.Equals(estudiante.clave));
+            
+            var b = db.Estudiantes.Where(s => s.codigo==estudiante.codigo).Where(s => s.clave==estudiante.clave);
             List<Estudiante> estudianteList = b.ToList();
            
           
@@ -431,10 +422,14 @@ public ActionResult BuscarEnDepartamento(Estudiante estudiante)
             }
         }
 
-        public ActionResult LoginCC()
+        public ActionResult LoginCC(int id=0)
         {
-
-            return View();
+            Estudiante estudiante = db.Estudiantes.Find(id);
+            if (estudiante == null)
+            {
+                return HttpNotFound();
+            }
+            return View(estudiante);
 
         }
 
@@ -443,10 +438,12 @@ public ActionResult BuscarEnDepartamento(Estudiante estudiante)
         public ActionResult LoginCC(Estudiante estudiante)
         {
 
-            var b = db.Estudiantes.Where(s => s.num_documento.Equals(estudiante.num_documento)).Where(s => s.clave.Equals(estudiante.clave));
+
+            var b = db.Estudiantes.Where(s => s.clave == estudiante.clave);
             List<Estudiante> estudianteList = b.ToList();
-                       
-            
+
+
+
             if (estudianteList.Count == 0)
             {
 
@@ -454,11 +451,43 @@ public ActionResult BuscarEnDepartamento(Estudiante estudiante)
             }
             else
             {
-                Estudiante estudiante_aux = estudianteList.ElementAt(0);
+                Estudiante docente_aux = estudianteList.ElementAt(0);
 
-                return RedirectToAction("../Estudiante/CambioContraseña/" + estudiante_aux.estudianteId);
+                return RedirectToAction("../Estudiante/Personales/" + docente_aux.estudianteId);
             }
         }
+
+        public ActionResult PaginaPrincipal(int id = 0)
+        {
+            Estudiante estudiante = db.Estudiantes.Find(id);
+            if (estudiante == null)
+            {
+                return HttpNotFound();
+            }
+            return View(estudiante);
+
+        }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult LoginCC(Estudiante estudiante)
+        //{
+
+        //    var b = db.Estudiantes.Where(s => s.num_documento.Equals(estudiante.num_documento)).Where(s => s.clave.Equals(estudiante.clave));
+        //    List<Estudiante> estudianteList = b.ToList();
+                       
+            
+        //    if (estudianteList.Count == 0)
+        //    {
+
+        //        return RedirectToAction("../Estudiante/LoginCC/");
+        //    }
+        //    else
+        //    {
+        //        Estudiante estudiante_aux = estudianteList.ElementAt(0);
+
+        //        return RedirectToAction("../Estudiante/CambioContraseña/" + estudiante_aux.estudianteId);
+        //    }
+        //}
 
         public ActionResult CambioContraseña(int id = 0)
         {

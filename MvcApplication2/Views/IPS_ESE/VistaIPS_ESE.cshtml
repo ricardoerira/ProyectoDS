@@ -1,6 +1,6 @@
-﻿@model MvcApplication2.Models.Rotacion
+﻿@model MvcApplication2.Models.IPS_ESE
 @{
-    ViewBag.Title = "VistaODS";
+    ViewBag.Title = "VistaIPS_ESE";
 }
 
 
@@ -9,42 +9,59 @@
         <div class="container-fluid">
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Docencia Servicio", "VistaODS/", "Rotacion")</li>
+                    <li>@Html.ActionLink("Inicio", "VistaIPS_ESE/", "IPS_ESE")</li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Pólizas<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Responsabilidad civil", "SeleccionRotacionContraPrestacionE/", "IPS_ESE")</li>
+                            <li>@Html.ActionLink("Accidentes", "SeleccionRotacionContraPrestacion/", "IPS_ESE")</li>
+                            
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Gestión Documental<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="http://localhost:8888/OpenKM/frontend/index.jsp">Administrar</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Inducción<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="http://cvirtual.campusvirtualudecaldas.edu.co/moodle/login/index.php">Administrar</a></li>
+
+                        </ul>
+                    </li>
+                    
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             Contraprestación<b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Inventario Equipos", "SeleccionRotacionContraPrestacionE/", "IPS_ESE")</li>
-                            <li>@Html.ActionLink("Informe Capacitacioness", "SeleccionRotacionContraPrestacion/", "IPS_ESE")</li>
-                            <li>@Html.ActionLink("Informe Inducciones", "SeleccionRotacionContraPrestacion/", "IPS_ESE")</li>
-                            <li class="divider"></li>
-                            <li><a href="http://cvirtual.campusvirtualudecaldas.edu.co/moodle/login/index.php">Administrar Inducción</a></li>
-                            <li class="divider"></li>
-                            <li>@Html.ActionLink("Crear Curso/Inducción/Inventario", "Create/", "Curso")</li>
+                            <li>@Html.ActionLink("Educación Continuada", "SeleccionRotacionContraPrestacionC/", "IPS_ESE")</li>
+                            <li>@Html.ActionLink("Inducciones", "SeleccionRotacionContraPrestacioni/", "IPS_ESE")</li>
+                            <li>@Html.ActionLink("Inventario", "SeleccionRotacionContraPrestacionE/", "IPS_ESE")</li>
+                            
                         </ul>
                     </li>
+
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            Hoja de Vida<b class="caret"></b>
+                            Carta Presentación<b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Estudiante", "Buscar/", "Estudiante")</li>
-                            <li>@Html.ActionLink("Docente", "Buscar/", "Docente")</li>
-                            <li class="divider"></li>
-                            <li>@Html.ActionLink("Listado Hojas de Vida", "VistaHV/", "HojaVida")</li>
+                            <li>@Html.ActionLink("Informe", "SeleccionRotacionContraPrestacionE/", "IPS_ESE")</li>
+
                         </ul>
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            Rotación<b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Rotación", "Create/", "Rotacion")</li>
-                            <li>@Html.ActionLink("Carta Presentación", "ConsultaRotacion/", "Rotacion")</li>
-                        </ul>
-                    </li>
+
+                    
+                    
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -97,7 +114,7 @@ Based on tutorial from: http://www.coders-guide.com/watch.php?v=53
 
 <div class="container">
 
-    <h2>EPS_IPS</h2>
+    <h2>EPS/ESE</h2>
 
 
     <div class="well well-sm">

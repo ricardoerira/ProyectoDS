@@ -41,8 +41,9 @@
                                 <div class="form-group">
                                     <!-- /.row <input type="text" class="form-control" placeholder="Username" required autofocus>-->
                                     <!-- /.row <input type="password" class="form-control" placeholder="Password" required>Sign In-->
-                                    @Html.TextBoxFor(model => model.num_documento, new { @class = "form-control", @placeholder = "Num. Documento" })
-                                    @Html.ValidationMessageFor(model => model.num_documento)
+                                    @Html.TextBoxFor(model => model.codigo, new { @class = "form-control", @placeholder = "Codigo" })
+                                    @Html.ValidationMessageFor(model => model.codigo)
+
 
                                     @Html.PasswordFor(model => model.clave, new { @class = "form-control", @placeholder = "Clave" })
                                     @Html.ValidationMessageFor(model => model.clave)

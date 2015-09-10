@@ -16,18 +16,24 @@ namespace MvcApplication2.Controllers
         //
         // GET: /Induccion/
 
-        public ActionResult Index(string searchString)
+        public ActionResult Index(string searchString, int id = 0)
         {
 
-
-
-            var cursoes = from s in db.Induccions
-                          select s;
             if (!String.IsNullOrEmpty(searchString))
             {
-                cursoes = cursoes.Where(s => s.IPS_ESE.nombre.Contains(searchString));
+                var inducciones = db.Induccions.Where(r => r.nombre.ToUpper().Contains(searchString.ToUpper()));
+                List<Induccion> listest = inducciones.ToList();
+
+                return View(inducciones.ToList());
             }
-            return View(cursoes.ToList());
+            else
+            {
+                if (id > 0)
+                {
+
+                }
+                return View(db.Induccions.ToList());
+            }
         }
 
         //

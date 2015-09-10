@@ -16,19 +16,28 @@ namespace MvcApplication2.Controllers
         //
         // GET: /Curso/
 
-        public ActionResult Index(string searchString)
+
+
+        public ActionResult Index(string searchString, int id = 0)
         {
 
-          
-
-            var cursoes = from s in db.Cursoes
-                              select s;
             if (!String.IsNullOrEmpty(searchString))
             {
-                cursoes = cursoes.Where(s => s.IPS_ESE.nombre.Contains(searchString));
+                var cursos = db.Cursoes.Where(r => r.nombre.ToUpper().Contains(searchString.ToUpper()));
+                List<Curso> listest = cursos.ToList();
+
+                return View(cursos.ToList());
             }
-            return View(cursoes.ToList());
+            else
+            {
+                if (id > 0)
+                {
+
+                }
+                return View(db.Cursoes.ToList());
+            }
         }
+        
 
         //
         // GET: /Curso/Details/5
@@ -71,15 +80,14 @@ namespace MvcApplication2.Controllers
         public ActionResult Create(Curso curso)
         {
 
-            curso.valorUnitarioPersona = curso.valorParticipante / curso.asignados;
+            
                 curso.totalCapacitacion = (curso.valorUnitarioPersona+curso.valorUnitarioUniversidad)*curso.asignados;
-                curso.valorTotalUniversidad = curso.valorUnitarioUniversidad * curso.asignados;
                 curso.valorTotalPersona = curso.valorUnitarioPersona * curso.asignados;
-                curso.totalContraprestacion = curso.valorTotalUniversidad;
-             
+                curso.totalContraprestacion = curso.valorUnitarioUniversidad*curso.asignados;
+                curso.valorTotalUniversidad = curso.valorUnitarioUniversidad * curso.asignados; 
                 curso.porcentajeTotalPersona = (curso.valorTotalPersona * 100) / curso.totalCapacitacion;
                 curso.porcentajeTotalUniversidad = (curso.valorTotalUniversidad * 100) / curso.totalCapacitacion;
-
+                
                 curso.fechaCreacion = DateTime.Now.Date;
              
                 db.Cursoes.Add(curso);

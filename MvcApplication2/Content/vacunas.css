@@ -143,3 +143,24 @@ login {
 .texto-centrado{
     text-align:center
 } 
+
+
+
+/* LoginCC
+----------------------------------------------------------*/
+.principal { 
+  background: url(../../images/uc_logoD.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.panel-default {
+opacity: 0.9;
+margin-top:200px;
+
+
+}
+.form-group.last { margin-bottom:0px; }
+
