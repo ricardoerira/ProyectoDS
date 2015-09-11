@@ -187,7 +187,8 @@ namespace MvcApplication2.Controllers
                 DateTime date2 = new DateTime(añoId, mesId,
                                           DateTime.DaysInMonth(añoId, mesId));
 
-                cursos = db.Cursoes.Where(r => r.IPS_ESEId == ips.IPS_ESEId).Where(r => r.fechaInicio >= date).Where(r => r.fechaFin <= date2).ToList();
+                cursos = db.Cursoes.Where(r => r.IPS_ESEId == ips.IPS_ESEId).Where(r => r.fechaInicio >= date)
+                    .Where(r => r.fechaFin <= date2 ).ToList();
        
             }
           
@@ -203,7 +204,7 @@ namespace MvcApplication2.Controllers
 
                if (cursos.Count > 0)
                {
-                   total += db.Cursoes.Where(d => d.IPS_ESEId == ips.IPS_ESEId).Sum(d => d.totalContraprestacion);
+                   total += cursos.Sum(d => d.totalContraprestacion);
 
                }
 

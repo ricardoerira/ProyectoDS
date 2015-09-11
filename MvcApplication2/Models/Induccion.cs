@@ -15,6 +15,8 @@ namespace MvcApplication2.Models
         public string responsable { get; set; }
         public string correo { get; set; }
         public int valor { get; set; }
+        public int año { get; set; }
+        public int periodo { get; set; }
         public int IPS_ESEId { get; set; }
         public virtual IPS_ESE IPS_ESE { get; set; }
 
