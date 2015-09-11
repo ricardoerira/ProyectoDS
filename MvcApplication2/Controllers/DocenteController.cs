@@ -326,6 +326,14 @@ namespace MvcApplication2.Controllers
 
         //
         //--------------------- Vista para Logeo del DOCENTE
+        public ActionResult Login()
+        {
+
+            return View();
+
+        }
+
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Login(Docente docente)
@@ -346,12 +354,74 @@ namespace MvcApplication2.Controllers
             }
         }
 
-        public ActionResult Login()
+        
+        public ActionResult CambioContraseña(int id = 0)
         {
+            TempData["notice"] = null;
+            Docente docente = db.Docentes.Find(id);
+            if (docente == null)
+            {
+                return HttpNotFound();
+            }
+            return View(docente);
+        }
 
-            return View();
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CambioContraseña(Docente docente)
+        {
+            if (ModelState.IsValid)
+            {
+                Docente doc = db.Docentes.Find(docente.docenteId);
+
+                if (docente.clave.Equals(docente.tipo_documento))
+                {
+                    doc.clave = docente.clave;
+
+
+                    db.Entry(doc).State = EntityState.Modified;
+
+
+
+                    db.SaveChanges();
+                    return RedirectToAction("../Docente/InformacionDocente/" + doc.docenteId);
+
+                }
+            }
+            return RedirectToAction("../Docente/CambioContraseña/" + docente.docenteId);
+        }
+
+
+
+        public ActionResult LoginCC(int id = 0)
+        {
+            Docente docente = db.Docentes.Find(id);
+            if (docente == null)
+            {
+                return HttpNotFound();
+            }
+            return View(docente);
 
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult LoginCC(Docente docente)
+        {
+            Docente docenteReal = db.Docentes.Find(docente.docenteId);
+            if (docente.clave.Equals(docenteReal.clave))
+            {
+                return RedirectToAction("../Docente/CambioContraseña/" + docenteReal.docenteId);
+            }
+            else
+            {
+
+                return RedirectToAction("../Docente/LoginCC/" + docenteReal.docenteId);
+
+            }
+        }
+
 
 
         //
