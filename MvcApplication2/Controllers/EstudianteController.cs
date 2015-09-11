@@ -437,36 +437,24 @@ public ActionResult BuscarEnDepartamento(Estudiante estudiante)
         [ValidateAntiForgeryToken]
         public ActionResult LoginCC(Estudiante estudiante)
         {
-
-
-            var b = db.Estudiantes.Where(s => s.clave == estudiante.clave);
-            List<Estudiante> estudianteList = b.ToList();
-
-
-
-            if (estudianteList.Count == 0)
+            Estudiante estudianteReal = db.Estudiantes.Find(estudiante.estudianteId);
+            if(estudiante.clave.Equals(estudianteReal.clave))
             {
-
-                return RedirectToAction("../Estudiante/LoginCC/");
+                return RedirectToAction("../Estudiante/CambioContraseña/" + estudianteReal.estudianteId);  
             }
             else
             {
-                Estudiante docente_aux = estudianteList.ElementAt(0);
 
-                return RedirectToAction("../Estudiante/Personales/" + docente_aux.estudianteId);
+                return RedirectToAction("../Estudiante/LoginCC/" + estudianteReal.estudianteId);
+                
             }
         }
 
-        public ActionResult PaginaPrincipal(int id = 0)
+        public ActionResult PaginaPrincipal()
         {
-            Estudiante estudiante = db.Estudiantes.Find(id);
-            if (estudiante == null)
-            {
-                return HttpNotFound();
-            }
-            return View(estudiante);
+                return View();
 
-        }
+            }
         //[HttpPost]
         //[ValidateAntiForgeryToken]
         //public ActionResult LoginCC(Estudiante estudiante)
@@ -511,17 +499,21 @@ public ActionResult BuscarEnDepartamento(Estudiante estudiante)
 
                 Estudiante est = db.Estudiantes.Find(estudiante.estudianteId);
 
-                est.clave = estudiante.clave;
-                             
-                                
-                db.Entry(est).State = EntityState.Modified;
+                if (estudiante.clave.Equals(estudiante.tipo_documento))
+                {
+                    est.clave = estudiante.clave;
 
-                
 
-                db.SaveChanges();
-                return View(estudiante);
+                    db.Entry(est).State = EntityState.Modified;
+
+
+
+                    db.SaveChanges();
+                    return RedirectToAction("../Estudiante/Personales/" + est.estudianteId);
+                    
+                }
             }
-            return View(estudiante);
+            return RedirectToAction("../Estudiante/CambioContraseña/" + estudiante.estudianteId);
         }
 
         

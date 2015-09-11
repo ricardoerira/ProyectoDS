@@ -1,5 +1,5 @@
 ﻿
-@model MvcApplication2.Models.Estudiante
+@model MvcApplication2.Models.Docente
 
 @using (Html.BeginForm())
 {
@@ -69,16 +69,11 @@
 
         <div class="col-sm-4">
 
-            @Html.HiddenFor(model => model.estudianteId)
+            @Html.HiddenFor(model => model.docenteId)
             @Html.HiddenFor(model => model.hojaVidaId)
-            @Html.HiddenFor(model => model.rotacionId)
-            @Html.HiddenFor(model => model.programaId)
+           
             @Html.HiddenFor(model => model.clave)
-            @Html.HiddenFor(model => model.modalidad)
-
-
-            @Html.HiddenFor(model => model.semestre)
-            @Html.HiddenFor(model => model.estado_academico)
+            
 
 
         </div>
