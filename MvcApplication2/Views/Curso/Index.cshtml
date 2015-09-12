@@ -5,6 +5,11 @@
 }
 
 
+   
+     
+
+
+
 <div class="row">
     <nav class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
@@ -61,17 +66,21 @@
         </div><!-- /.container-fluid -->
     </nav>
 </div>
-<p>
-    @Html.ActionLink("Crear Nuevo", "Create")
-</p>
-
-@using (Html.BeginForm())
-   
-        
-{
-    <p class="help-block"> 
-        Educación Continuada - Buscar por Nombre:
+<div class="ens">
+    <p>
+        @Html.ActionLink("Crear Nuevo", "Create")
     </p>
+    </div>
+
+    @using (Html.BeginForm())
+    {
+
+        <div class="ens">
+            <p class=" help-block">
+                <table></table>  Educación Continuada - Buscar por Nombre:
+            </p>
+        </div>
+
         <div class="col-md-4">
             @Html.TextBox("SearchString", ViewBag.SearchFilter as string, new { @class = "form-control", onclick = "keystroke()", id = "search" })
 
@@ -79,149 +88,83 @@
         <div class="col-md-6">
             <input type="submit" class="btn btn-primary" value="Buscar" />
         </div>
-}
-<table class="table">
-    <tr></tr>
-    </table>
-    <div class="table-responsive">
-        <table class="table-bordered table-striped ">
-            <tr>
-                <th>
-                    Tipo
-                </th>
-                <th>
-                    Nombre
-                </th>
-                <th>
-                    Perio.
-                </th>
-                <th>
-                    Creado
-                </th>
-                <th>
-                    Inicio
-                </th>
-                <th>
-                    Fin
-                </th>
-                <th>
-                    Diridido
-                </th>
-                <th>
-                    Cupos
-                </th>
-                <th>
-                    Asignados   
-                </th>
-                <th>
-                    Observación
-                </th>
-                <th>
-                    VP
-                </th>
-                 <th>
-                    %P
-                </th>
-                <th>
-                    VUP
-                </th>
-                <th>
-                    %U
-                </th>
-                <th>
-                    VUU
-                </th>
-                <th>
-                    VTAU
-                </th>
 
-                <th>
-                    VTAP
-                </th>
-                <th>
-                    TC
-                </th>
-                <th>
-                    VG
-                </th>
-                <th>
-                    EPS/ESE
-                </th>
-                <th></th>
-            </tr>
+    }
 
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.tipo)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.nombre)
-                    </td>
+    <div class="span7">
+        <div class="widget stacked widget-table action-table">
 
-                    <td>
-                        @Html.DisplayFor(modelItem => item.periodoAcademico)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(model => item.fechaCreacion)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.fechaInicio)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.fechaFin)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.dirigido)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.cupos)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.asignados)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.observaciones)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.valorParticipante)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.porcentajeTotalPersona)  
-                          
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.valorUnitarioPersona)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.porcentajeTotalUniversidad)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.valorUnitarioUniversidad)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.valorTotalUniversidad)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.valorTotalPersona)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.totalContraprestacion)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.totalCapacitacion)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.IPS_ESE.nombre)
-                    </td>
-                    <td>
+            <div class="widget-header">
+                <h4><i class="glyphicon-align-center glyphicon glyphicon-list"></i></h4>
+                <h3>Tabla Educación Continuada</h3>
+            </div> <!-- /widget-header -->
 
-                        @Html.ActionLink("Delete", "Delete", new { id = item.CursoId })
-                    </td>
-                </tr>
-            }
+            <div class="widget-content">
 
-        </table>
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Tipo</th>
+                            <th>Nombre</th>
+                            <th>Asignados</th>
+                            <th>Inicio</th>
+                            <th>Fin</th>
+                            <th>IPS/ESE</th>
+
+                            <th class="td-actions">Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.tipo)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.nombre)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.asignados)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.fechaInicio)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.fechaFin)
+                                </td>
+
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.IPS_ESE.nombre)
+                                </td>
+                                <td class="td-actions">  
+
+                                    <a href="javascript:;" class="btn btn-sm btn-default">
+                                        <i class="btn-icon-only glyphicon glyphicon-ok"></i>
+                                    </a>
+
+                                    <a href="javascript:;" class="btn btn-sm btn-danger">
+                                        <i class="btn-icon-only glyphicon glyphicon-remove"></i>
+                                    </a>
+
+                                    <a href="javascript:;" class="btn btn-sm btn-success">
+                                        <i class="btn-icon-only glyphicon glyphicon-pencil"></i>
+                                    </a>
+
+
+
+
+
+                                </td>
+                            </tr>
+
+                        }
+                    </tbody>
+                </table>
+
+            </div> <!-- /widget-content -->
+
+        </div> <!-- /widget -->
     </div>
-

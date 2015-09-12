@@ -4,72 +4,251 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
 
-@using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
 
-    <fieldset>
-        <legend>Curso</legend>
 
-        @Html.HiddenFor(model => model.CursoId)
+<div class="row">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Inicio", "VistaContraprestacion/", "Curso")</li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Educación Continuada<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Crear", "Create/", "Curso")</li>
+                            <li>@Html.ActionLink("Ver Listado", "Index/", "Curso")</li>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.tipo)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.tipo)
-            @Html.ValidationMessageFor(model => model.tipo)
-        </div>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Inducción<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Crear", "Create/", "Induccion")</li>
+                            <li>@Html.ActionLink("Ver Listado", "Index/", "Induccion")</li>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.nombre)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.nombre)
-            @Html.ValidationMessageFor(model => model.nombre)
-        </div>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Inventario<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Crear", "Equipo/", "Equipo")</li>
+                            <li>@Html.ActionLink("Ver Listado", "Index/", "Equipo")</li>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.numeroBeneficiados)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.numeroBeneficiados)
-            @Html.ValidationMessageFor(model => model.numeroBeneficiados)
-        </div>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Informes<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Educación Continuada", "SeleccionRotacionContraPrestacionC/", "IPS_ESE")</li>
+                            <li>@Html.ActionLink("Inducciones", "SeleccionRotacionContraPrestacionI/", "IPS_ESE")</li>
+                            <li>@Html.ActionLink("Inventario", "SeleccionRotacionContraPrestacionE/", "IPS_ESE")</li>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.fecha)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.fecha)
-            @Html.ValidationMessageFor(model => model.fecha)
-        </div>
 
-        <div class="editor-field">
-            @Html.EditorFor(model => model.valor)
-            @Html.ValidationMessageFor(model => model.valor)
-        </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.IPS_ESEId, "IPS_ESE")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("IPS_ESEId", String.Empty)
-            @Html.ValidationMessageFor(model => model.IPS_ESEId)
-        </div>
 
-        <p>
-            <input type="submit" value="Save" />
-        </p>
-    </fieldset>
-}
+                        </ul>
+                    </li>
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
 </div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    
+            @Html.HiddenFor(model => model.CursoId)
+        @Html.HiddenFor(model => model.fechaCreacion)
+        @Html.HiddenFor(model => model.fechaInicio)
+        @Html.HiddenFor(model => model.fechaFin)
+
+        <div class="col-md-8 col-md-offset-2">
+            <div class="well well-sm">
+                <legend class="text-center">Educación Continuada - Editar item</legend>
+
+
+                <fosrm class="form-horizontal" role="form">
+
+                    <div class="form-group">
+
+
+                        <label class="col-sm-2 control-label">Tipo</label>
+                        <div class="col-sm-4">
+                            @Html.DropDownList("tipo", new List<SelectListItem>() { new SelectListItem { Text = "Curso", Value = "Curso" }, new SelectListItem { Text = "Diplomado", Value = "Diplomado" }, new SelectListItem { Text = "Seminario", Value = "Seminario" } }, new { @class = "form-control" })
+                        </div>
+                        <label class="col-sm-2 control-label">Nombre</label>
+                        <div class="col-sm-4">
+                            @Html.DropDownList("nombre", new List<SelectListItem>() { new SelectListItem { Text = "Primeros Auxilios", Value = "Primeros Auxilios" }, new SelectListItem { Text = "Gases arteriales", Value = "Gases arteriales" }, new SelectListItem { Text = "Manejo del paciente crítico", Value = "Manejo del paciente crítico" }, new SelectListItem { Text = "Diplomado en Reanimación", Value = "Diplomado en Reanimación" }, new SelectListItem { Text = "Seguridad del Paciente", Value = "Seguridad del Paciente" }, new SelectListItem { Text = "Cuidado intensivo del adulto", Value = "Cuidado intensivo del adulto" } }, new { @class = "form-control" })
+                        </div>
+
+
+
+
+
+                    </div>
+
+
+
+
+
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Fecha inicio</label>
+                        <div class="col-sm-4">
+                            @Html.EditorFor(model => model.fechaInicio)
+                            @Html.ValidationMessageFor(model => model.fechaInicio)
+
+
+                        </div>
+                        <label class="col-sm-2 control-label">Fecha Fin</label>
+                        <div class="col-sm-4">
+                            @Html.EditorFor(m => m.fechaFin)
+                            @Html.ValidationMessageFor(model => model.fechaFin)
+                        </div>
+
+                    </div>
+
+
+
+
+
+                    <div class="form-group">
+
+                        <label class="col-sm-2 control-label">Periodo</label>
+                        <div class="col-sm-4">
+                            @Html.DropDownList("periodoAcademico", new List<SelectListItem>() { new SelectListItem { Text = "20151", Value = "20151" }, new SelectListItem { Text = "20152", Value = "20152" }, new SelectListItem { Text = "20161", Value = "20161" }, new SelectListItem { Text = "20162", Value = "20162" } }, new { @class = "form-control" })
+
+                        </div>
+                        <label class="col-sm-2 control-label">Observaciones</label>
+                        <div class="col-sm-4">
+                            @Html.EditorFor(model => model.observaciones)
+                            @Html.ValidationMessageFor(model => model.observaciones)
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label class="col-sm-2 control-label">Costo</label>
+                        <div class="col-sm-4">
+                            <div class="input-group">
+                                <div class="input-group-addon">$</div>
+                                @Html.EditorFor(model => model.valorParticipante)
+                                @Html.ValidationMessageFor(model => model.valorParticipante)
+
+                                <div class="input-group-addon">.00</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label class="col-sm-2 control-label">Valor asumido por persona</label>
+                        <div class="col-sm-4">
+                            <div class="input-group">
+                                <div class="input-group-addon">$</div>
+                                @Html.EditorFor(model => model.valorUnitarioPersona, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.valorUnitarioPersona)
+                                <div class="input-group-addon">.00</div>
+                            </div>
+                        </div>
+
+                        <label class="col-sm-2 control-label">Valor asumido por Universidad</label>
+                        <div class="col-sm-4">
+                            <div class="input-group">
+                                <div class="input-group-addon">$</div>
+                                @Html.EditorFor(model => model.valorUnitarioUniversidad, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.valorUnitarioUniversidad)
+                                <div class="input-group-addon">.00</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Dirigido a</label>
+                        <div class="col-sm-4">
+                            @Html.DropDownList("dirigido", new List<SelectListItem>() { new SelectListItem { Text = "Estudiante", Value = "Estudiante" }, new SelectListItem { Text = "Medico/a", Value = "Medico/a" }, new SelectListItem { Text = "Enfermero/a", Value = "Enfermero/a" }, new SelectListItem { Text = "Aux.Enfermeria", Value = "Aux.Enfermeria" }, new SelectListItem { Text = "Medico/a y Enfermero/a", Value = "Medico/a y Enfermero/a" }, new SelectListItem { Text = "Especialista", Value = "Especialista" }, new SelectListItem { Text = "Otro", Value = "Otro" } }, new { @class = "form-control" })
+
+
+                        </div>
+                        <label class="col-sm-2 control-label">Otro</label>
+                        <div class="col-sm-4">
+                            @Html.EditorFor(model => model.dirigidoOtro, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.dirigidoOtro)
+                            <span class="help-block">Dado el caso que el personal a quien va dirigido no se encuentre en el listado; <p>debe ser ingresado en esta caja de texto.</p></span>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label class="col-sm-2 control-label">Cupos</label>
+                        <div class="col-sm-2">
+                            @Html.EditorFor(model => model.cupos, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.cupos)
+
+                        </div>
+                        <label class="col-sm-2 control-label">Asignados</label>
+                        <div class="col-sm-2">
+                            @Html.EditorFor(model => model.asignados, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.asignados)
+                            <span class="help-block">Cupos asignados sólo a esta IPS/ESE</span>
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">IPS/ESE</label>
+                        <div class="col-sm-6">
+
+                            @Html.DropDownList("IPS_ESEId", (IEnumerable<SelectListItem>)ViewBag.IPS_ESEId, new { @class = "form-control" })
+
+                            @Html.ValidationMessageFor(model => model.IPS_ESEId)
+
+
+
+                        </div>
+
+                    </div>
+
+                    <p>
+                        <input type="submit" value="Save" />
+                    </p>
+
+
+
+
+
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-9 col-sm-10">
+                            <br>
+
+                            <br>
+
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+
+                        </div>
+                    </div>
+                    
+            </div>
+        </div>
+
+        }

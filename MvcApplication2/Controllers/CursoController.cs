@@ -109,9 +109,11 @@ namespace MvcApplication2.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.IPS_ESEId = new SelectList(db.IPS_ESE, "IPS_ESEId", "origen", curso.IPS_ESEId);
+            ViewBag.IPS_ESEId = new SelectList(db.IPS_ESE, "IPS_ESEId", "nombre", curso.IPS_ESEId);
             return View(curso);
         }
+
+
 
         //
         // POST: /Curso/Edit/5
@@ -126,9 +128,13 @@ namespace MvcApplication2.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.IPS_ESEId = new SelectList(db.IPS_ESE, "IPS_ESEId", "origen", curso.IPS_ESEId);
+            ViewBag.IPS_ESEId = new SelectList(db.IPS_ESE, "IPS_ESEId", "nombre", curso.IPS_ESEId);
             return View(curso);
         }
+
+
+
+
 
         //
         // GET: /Curso/Delete/5

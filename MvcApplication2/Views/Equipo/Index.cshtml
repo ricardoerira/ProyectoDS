@@ -61,14 +61,22 @@
         </div><!-- /.container-fluid -->
     </nav>
 </div>
-<p>
-    @Html.ActionLink("Crear Nuevo", "Equipo")
-</p>
+<div class="ens">
+    <p>
+        @Html.ActionLink("Crear Nuevo", "Create")
+    </p>
+</div>
 @using (Html.BeginForm())
 {
-    <p class="help-block">
-        Inventario - Buscar por Nombre:
-    </p>
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div class="ens">
+        <p class=" help-block">
+            <table></table>  Inventario - Buscar por Nombre:
+        </p>
+    </div>
+
     <div class="col-md-4">
         @Html.TextBox("SearchString", ViewBag.SearchFilter as string, new { @class = "form-control", onclick = "keystroke()", id = "search" })
 
@@ -76,67 +84,93 @@
     <div class="col-md-6">
         <input type="submit" class="btn btn-primary" value="Buscar" />
     </div>
+
 }
-<table class="table">
-    <tr></tr>
-</table>
-<div class="table-responsive">
-    <table class="table-bordered table-striped ">
+<div class="span7">
+    <div class="widget stacked widget-table action-table">
 
-        <tr>
-            <th>
-                Serial
-            </th>
-            <th>
-                Nombre
-            </th>
-            <th>
-                Cantidad
-            </th>
-            <th>
-                Estado
-            </th>
-            <th>
-               Costo
-            </th>
-            <th>
-                Observaciones
-            </th>
-            <th>
-                IPS/ESE
-            </th>
+        <div class="widget-header">
+            <h4><i class="glyphicon-align-center glyphicon glyphicon-list"></i></h4>
+            <h3>Inventario</h3>
+        </div> <!-- /widget-header -->
 
-        </tr>
-        <tr></tr>
+        <div class="widget-content">
 
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.serial)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.nombre)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.cantidad)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.estado)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.costo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.observaciones)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IPS_ESE.nombre)
-                </td>
-                <td>
-                    @Html.ActionLink("Delete", "Delete", new { id = item.equipoId })
-                </td>
-            </tr>
-        }
-    </table>
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>
+                            Serial
+                        </th>
+                        <th>
+                            Nombre
+                        </th>
+                        <th>
+                            Cantidad
+                        </th>
+                        <th>
+                            Estado
+                        </th>
+                        <th>
+                            Costo
+                        </th>
+                        <th>
+                            Observaciones
+                        </th>
+                        <th>
+                            IPS/ESE
+                        </th>
+
+                        <th class="td-actions">Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.serial)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.nombre)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.cantidad)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.estado)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.costo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.observaciones)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.IPS_ESE.nombre)
+                            </td>
+                            <td class="td-actions">
+
+                                <a href="javascript:;" class="btn btn-sm btn-default">
+                                    <i class="btn-icon-only glyphicon glyphicon-ok"></i>
+                                </a>
+
+                                <a href="javascript:;" class="btn btn-sm btn-danger">
+                                    <i class="btn-icon-only glyphicon glyphicon-remove"></i>
+                                </a>
+
+                                <a href="javascript:;" class="btn btn-sm btn-success">
+                                    <i class="btn-icon-only glyphicon glyphicon-pencil"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div> <!-- /widget-content -->
+
+    </div> <!-- /widget -->
 </div>
+
