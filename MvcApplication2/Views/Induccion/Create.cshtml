@@ -87,6 +87,18 @@
                 </div>
              </div>
 
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Año</label>
+                <div class="col-sm-4">
+                    @Html.DropDownList("año", new List<SelectListItem>() { new SelectListItem { Text = "2015", Value = "2015" }, new SelectListItem { Text = "2016", Value = "2016" }, new SelectListItem { Text = "2017", Value = "2017" } }, new { @class = "form-control" })
+                
+                </div>
+                <label class="col-sm-1 control-label">Periodo</label>
+                <div class="col-sm-4">
+                    @Html.DropDownList("periodo", new List<SelectListItem>() { new SelectListItem { Text = "1", Value = "1" }, new SelectListItem { Text = "2", Value = "2" } }, new { @class = "form-control" })
+                </div>
+            </div>
+
 
 
 
@@ -112,7 +124,7 @@
                     @Html.TextBoxFor(model => model.numeroEstudiantes, new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.numeroEstudiantes)
                 </div>
-                <label class="col-sm-2 control-label">IPS/ESE</label>
+                <label class="col-sm-1 control-label">IPS/ESE</label>
                 <div class="col-sm-4">
                     @Html.DropDownList("IPS_ESEId", (IEnumerable<SelectListItem>)ViewBag.IPS_ESEId, new { @class = "form-control" })
 
@@ -122,18 +134,7 @@
 
 
 
-            <div class="form-group">
-                <label class="col-sm-2 control-label">Año</label>
-                <div class="col-sm-4">
-                    @Html.TextBoxFor(model => model.año, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.año)
-                </div>
-                <label class="col-sm-2 control-label">Periodo</label>
-                <div class="col-sm-4">
-                    @Html.TextBoxFor(model => model.periodo, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.periodo)
-                </div>
-            </div>
+            
 
 
 
@@ -163,8 +164,8 @@
                     <br>
 
                     <br>
-
-                    <button type="submit" class="btn btn-primary">Guardar</button>
+@Html.ActionLink("Atras ", "Index", new { }, new { @class = "btn btn-primary" })
+<input type="submit" class="btn btn-primary" value=" Guardar" />
 
                 </div>
             </div>

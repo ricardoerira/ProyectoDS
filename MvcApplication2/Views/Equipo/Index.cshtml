@@ -63,7 +63,7 @@
 </div>
 <div class="ens">
     <p>
-        @Html.ActionLink("Crear Nuevo", "Create")
+        @Html.ActionLink("Crear Nuevo", "Equipo")
     </p>
 </div>
 @using (Html.BeginForm())
@@ -151,18 +151,10 @@
                                 @Html.DisplayFor(modelItem => item.IPS_ESE.nombre)
                             </td>
                             <td class="td-actions">
+                                @Html.ActionLink(" ", "Delete", new { id = item.equipoId }, new { @class = "btn btn-sm btn-danger btn-icon-only glyphicon glyphicon-remove" })
+                                @Html.ActionLink(" ", "Edit", new { id = item.equipoId}, new { @class = "btn btn-sm btn-success btn-icon-only glyphicon glyphicon-pencil" })
 
-                                <a href="javascript:;" class="btn btn-sm btn-default">
-                                    <i class="btn-icon-only glyphicon glyphicon-ok"></i>
-                                </a>
 
-                                <a href="javascript:;" class="btn btn-sm btn-danger">
-                                    <i class="btn-icon-only glyphicon glyphicon-remove"></i>
-                                </a>
-
-                                <a href="javascript:;" class="btn btn-sm btn-success">
-                                    <i class="btn-icon-only glyphicon glyphicon-pencil"></i>
-                                </a>
                             </td>
                         </tr>
                     }

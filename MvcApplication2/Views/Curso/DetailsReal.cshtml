@@ -1,0 +1,229 @@
+﻿@model MvcApplication2.Models.Curso
+
+@{
+    ViewBag.Title = "Curso";
+}
+
+
+
+
+<div class="row">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Inicio", "VistaContraprestacion/", "Curso")</li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Educación Continuada<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Crear", "Create/", "Curso")</li>
+                            <li>@Html.ActionLink("Ver Listado", "Index/", "Curso")</li>
+
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Inducción<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Crear", "Create/", "Induccion")</li>
+                            <li>@Html.ActionLink("Ver Listado", "Index/", "Induccion")</li>
+
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Inventario<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Crear", "Equipo/", "Equipo")</li>
+                            <li>@Html.ActionLink("Ver Listado", "Index/", "Equipo")</li>
+
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Informes<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Educación Continuada", "SeleccionRotacionContraPrestacionC/", "IPS_ESE")</li>
+                            <li>@Html.ActionLink("Inducciones", "SeleccionRotacionContraPrestacionI/", "IPS_ESE")</li>
+                            <li>@Html.ActionLink("Inventario", "SeleccionRotacionContraPrestacionE/", "IPS_ESE")</li>
+
+
+
+
+                        </ul>
+                    </li>
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</div>
+
+@using (Html.BeginForm("Create", "Curso", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div class="col-md-8 col-md-offset-2">
+        <div class="well well-sm">
+            <legend class="text-center">Educación Continuada</legend>
+
+
+            <fosrm class="form-horizontal" role="form">
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Tipo</label>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.tipo, new { @class = "form-control", @readonly = "readonly" })
+                      </div>
+                    <label class="col-sm-2 control-label">Nombre</label>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.nombre, new { @class = "form-control", @readonly = "readonly" })
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Fecha inicio</label>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.fechaInicio, new { @class = "form-control", @readonly = "readonly" })
+                    </div>
+                    <label class="col-sm-2 control-label">Fecha Fin</label>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.fechaFin, new { @class = "form-control", @readonly = "readonly" })
+                    </div>
+
+                </div>
+
+
+
+
+
+                <div class="form-group">
+
+                    <label class="col-sm-2 control-label">Periodo</label>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.periodoAcademico, new { @class = "form-control", @readonly = "readonly" })
+                    </div>
+                    <label class="col-sm-2 control-label">Observaciones</label>
+                    <div class="col-sm-4">
+                        @Html.TextAreaFor(model => model.observaciones, new { @class = "form-control", @readonly = "readonly" })
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label class="col-sm-2 control-label">Costo</label>
+                    <div class="col-sm-4">
+                        <div class="input-group">
+                            <div class="input-group-addon">$</div>
+                            @Html.TextBoxFor(model => model.valorParticipante, new { @class = "form-control", @readonly = "readonly" })
+                            @Html.ValidationMessageFor(model => model.valorParticipante)
+                            <div class="input-group-addon">.00</div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+
+                    <label class="col-sm-2 control-label">Valor asumido por persona</label>
+                    <div class="col-sm-4">
+                        <div class="input-group">
+                            <div class="input-group-addon">$</div>
+                            @Html.TextBoxFor(model => model.valorUnitarioPersona, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.valorUnitarioPersona)
+                            <div class="input-group-addon">.00</div>
+                        </div>
+                    </div>
+
+                    <label class="col-sm-2 control-label">Valor asumido por Universidad</label>
+                    <div class="col-sm-4">
+                        <div class="input-group">
+                            <div class="input-group-addon">$</div>
+                            @Html.TextBoxFor(model => model.valorUnitarioUniversidad, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.valorUnitarioUniversidad)
+                            <div class="input-group-addon">.00</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Dirigido a</label>
+                    <div class="col-sm-4">
+                        @Html.DropDownList("dirigido", new List<SelectListItem>() { new SelectListItem { Text = "Estudiante", Value = "Estudiante" }, new SelectListItem { Text = "Medico/a", Value = "Medico/a" }, new SelectListItem { Text = "Enfermero/a", Value = "Enfermero/a" }, new SelectListItem { Text = "Aux.Enfermeria", Value = "Aux.Enfermeria" }, new SelectListItem { Text = "Medico/a y Enfermero/a", Value = "Medico/a y Enfermero/a" }, new SelectListItem { Text = "Especialista", Value = "Especialista" }, new SelectListItem { Text = "Otro", Value = "Otro" } }, new { @class = "form-control" })
+
+
+                    </div>
+                    <label class="col-sm-2 control-label">Otro</label>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.dirigidoOtro, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.dirigidoOtro)
+                        <span class="help-block">Dado el caso que el personal a quien va dirigido no se encuentre en el listado; <p>debe ser ingresado en esta caja de texto.</p></span>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label class="col-sm-2 control-label">Cupos</label>
+                    <div class="col-sm-2">
+                        @Html.TextBoxFor(model => model.cupos, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.cupos)
+
+                    </div>
+                    <label class="col-sm-2 control-label">Asignados</label>
+                    <div class="col-sm-2">
+                        @Html.TextBoxFor(model => model.asignados, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.asignados)
+                        <span class="help-block">Cupos asignados sólo a esta IPS/ESE</span>
+                    </div>
+
+                </div>
+
+
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">IPS/ESE</label>
+                    <div class="col-sm-6">
+
+                        
+
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
+
+                <div class="form-group">
+                    <div class="col-sm-offset-9 col-sm-10">
+                        <br>
+
+                        <br>
+
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+
+                    </div>
+                </div>
+
+        </div>
+    </div>
+
+}

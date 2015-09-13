@@ -140,23 +140,10 @@
                                     @Html.DisplayFor(modelItem => item.IPS_ESE.nombre)
                                 </td>
                                 <td class="td-actions">  
-
-                                    <a href="javascript:;" class="btn btn-sm btn-default">
-                                        <i class="btn-icon-only glyphicon glyphicon-ok"></i>
-                                    </a>
-
-                                    <a href="javascript:;" class="btn btn-sm btn-danger">
-                                        <i class="btn-icon-only glyphicon glyphicon-remove"></i>
-                                    </a>
-
-                                    <a href="javascript:;" class="btn btn-sm btn-success">
-                                        <i class="btn-icon-only glyphicon glyphicon-pencil"></i>
-                                    </a>
-
-
-
-
-
+                                    @Html.ActionLink(" ", "Details", new { id = item.CursoId }, new { @class = "btn btn-sm btn-default btn-icon-only glyphicon glyphicon-ok" })
+                                    @Html.ActionLink(" ", "Delete", new { id = item.CursoId }, new { @class = "btn btn-sm btn-danger btn-icon-only glyphicon glyphicon-remove" })
+                                    @Html.ActionLink(" ", "Edit", new { id = item.CursoId }, new { @class = "btn btn-sm btn-success btn-icon-only glyphicon glyphicon-pencil" })
+                              
                                 </td>
                             </tr>
 

@@ -68,18 +68,18 @@
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
-    
-            @Html.HiddenFor(model => model.CursoId)
+    <fieldset>
+
+        @Html.HiddenFor(model => model.CursoId)
         @Html.HiddenFor(model => model.fechaCreacion)
-        @Html.HiddenFor(model => model.fechaInicio)
-        @Html.HiddenFor(model => model.fechaFin)
+     
 
         <div class="col-md-8 col-md-offset-2">
             <div class="well well-sm">
                 <legend class="text-center">Educación Continuada - Editar item</legend>
 
 
-                <fosrm class="form-horizontal" role="form">
+                <fosrm class="form-horizontal" action="" method="post">
 
                     <div class="form-group">
 
@@ -105,16 +105,17 @@
 
 
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">Fecha inicio</label>
+                        <label class="col-md-2 control-label" for="name">Fecha Inicio</label>
                         <div class="col-sm-4">
                             @Html.EditorFor(model => model.fechaInicio)
                             @Html.ValidationMessageFor(model => model.fechaInicio)
 
 
+
                         </div>
-                        <label class="col-sm-2 control-label">Fecha Fin</label>
+                        <label class="col-md-2 control-label" for="email">Fecha Terminación</label>
                         <div class="col-sm-4">
-                            @Html.EditorFor(m => m.fechaFin)
+                            @Html.EditorFor(model => model.fechaFin)
                             @Html.ValidationMessageFor(model => model.fechaFin)
                         </div>
 
@@ -133,7 +134,7 @@
                         </div>
                         <label class="col-sm-2 control-label">Observaciones</label>
                         <div class="col-sm-4">
-                            @Html.EditorFor(model => model.observaciones)
+                            @Html.TextAreaFor(model => model.observaciones, new { @class = "form-control" })
                             @Html.ValidationMessageFor(model => model.observaciones)
                         </div>
                     </div>
@@ -146,7 +147,7 @@
                         <div class="col-sm-4">
                             <div class="input-group">
                                 <div class="input-group-addon">$</div>
-                                @Html.EditorFor(model => model.valorParticipante)
+                                @Html.TextBoxFor(model => model.valorParticipante, new { @class = "form-control" })
                                 @Html.ValidationMessageFor(model => model.valorParticipante)
 
                                 <div class="input-group-addon">.00</div>
@@ -161,7 +162,7 @@
                         <div class="col-sm-4">
                             <div class="input-group">
                                 <div class="input-group-addon">$</div>
-                                @Html.EditorFor(model => model.valorUnitarioPersona, new { @class = "form-control" })
+                                @Html.TextBoxFor(model => model.valorUnitarioPersona, new { @class = "form-control" })
                                 @Html.ValidationMessageFor(model => model.valorUnitarioPersona)
                                 <div class="input-group-addon">.00</div>
                             </div>
@@ -171,7 +172,7 @@
                         <div class="col-sm-4">
                             <div class="input-group">
                                 <div class="input-group-addon">$</div>
-                                @Html.EditorFor(model => model.valorUnitarioUniversidad, new { @class = "form-control" })
+                                @Html.TextBoxFor(model => model.valorUnitarioUniversidad, new { @class = "form-control" })
                                 @Html.ValidationMessageFor(model => model.valorUnitarioUniversidad)
                                 <div class="input-group-addon">.00</div>
                             </div>
@@ -188,7 +189,7 @@
                         </div>
                         <label class="col-sm-2 control-label">Otro</label>
                         <div class="col-sm-4">
-                            @Html.EditorFor(model => model.dirigidoOtro, new { @class = "form-control" })
+                            @Html.TextBoxFor(model => model.dirigidoOtro, new { @class = "form-control" })
                             @Html.ValidationMessageFor(model => model.dirigidoOtro)
                             <span class="help-block">Dado el caso que el personal a quien va dirigido no se encuentre en el listado; <p>debe ser ingresado en esta caja de texto.</p></span>
                         </div>
@@ -199,13 +200,13 @@
 
                         <label class="col-sm-2 control-label">Cupos</label>
                         <div class="col-sm-2">
-                            @Html.EditorFor(model => model.cupos, new { @class = "form-control" })
+                            @Html.TextBoxFor(model => model.cupos, new { @class = "form-control" })
                             @Html.ValidationMessageFor(model => model.cupos)
 
                         </div>
                         <label class="col-sm-2 control-label">Asignados</label>
                         <div class="col-sm-2">
-                            @Html.EditorFor(model => model.asignados, new { @class = "form-control" })
+                            @Html.TextBoxFor(model => model.asignados, new { @class = "form-control" })
                             @Html.ValidationMessageFor(model => model.asignados)
                             <span class="help-block">Cupos asignados sólo a esta IPS/ESE</span>
                         </div>
@@ -215,22 +216,20 @@
 
 
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">IPS/ESE</label>
-                        <div class="col-sm-6">
-
+                        <label class="col-md-2 control-label" for="name">IPS/ESE</label>
+                        <div class="col-md-5">
                             @Html.DropDownList("IPS_ESEId", (IEnumerable<SelectListItem>)ViewBag.IPS_ESEId, new { @class = "form-control" })
-
                             @Html.ValidationMessageFor(model => model.IPS_ESEId)
-
-
-
                         </div>
+
+
+
+
+                        
 
                     </div>
 
-                    <p>
-                        <input type="submit" value="Save" />
-                    </p>
+
 
 
 
@@ -242,13 +241,14 @@
                             <br>
 
                             <br>
-
-                            <button type="submit" class="btn btn-primary">Guardar</button>
+                            @Html.ActionLink("Atras ", "Index", new { }, new { @class = "btn btn-primary" })
+                            <input type="submit" class="btn btn-primary" value=" Guardar" />
 
                         </div>
                     </div>
-                    
+
             </div>
         </div>
+        </fieldset>
 
         }

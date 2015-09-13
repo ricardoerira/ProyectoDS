@@ -434,4 +434,39 @@ vertical-align: middle;
 
 
 
+/* Curso/Detail
+----------------------------------------------------------*/
+
+.invoice-title h2, .invoice-title h3 {
+    display: inline-block;
+    width:100px;
+}
+
+.table > tbody > tr > .no-line {
+    border-top: none;
+    width:100px;
+}
+
+.table > thead > tr > .no-line {
+    border-bottom: none;
+    width:100px;
+}
+
+.table > tbody > tr > .thick-line {
+    border-top: 2px solid;
+    margin-top:50px;
+    width:100px;
+
+
+
+
+}
+    .panel-defaultD {
+opacity: 0.9;
+margin-top:5px;
+
+}
+
+
+
 
