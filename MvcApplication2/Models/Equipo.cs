@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -19,6 +20,8 @@ namespace MvcApplication2.Models
 
         public string recibido { get; set; }
 
+        [DataType(DataType.Date)]
+        public DateTime fechaPrestamo { get; set; }
         public int IPS_ESEId { get; set; }
         public virtual IPS_ESE IPS_ESE { get; set; }
 
