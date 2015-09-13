@@ -350,7 +350,7 @@ namespace MvcApplication2.Controllers
             {
                 Docente docente_aux = docenteList.ElementAt(0);
           
-                return RedirectToAction("../Docente/InformacionDocente/" + docente_aux.docenteId);
+                return RedirectToAction("../Docente/Personales/" + docente_aux.docenteId);
             }
         }
 
@@ -385,7 +385,7 @@ namespace MvcApplication2.Controllers
 
 
                     db.SaveChanges();
-                    return RedirectToAction("../Docente/InformacionDocente/" + doc.docenteId);
+                    return RedirectToAction("../Docente/Personales/" + doc.docenteId);
 
                 }
             }
@@ -441,7 +441,7 @@ namespace MvcApplication2.Controllers
         //    docente.diploma_profesional = edadDocente;//Reemplaza edad
         //    return View(docente);
         //}
-        public ActionResult InformacionDocente(int id = 0) {
+        public ActionResult Personales(int id = 0) {
 
             TempData["notice"] = null;
 
@@ -541,10 +541,10 @@ namespace MvcApplication2.Controllers
             }
             else
             {
-                return RedirectToAction("../Docente/InformacionDocenteVista/" + docente.docenteId);
+                return RedirectToAction("../Docente/PersonalesDS/" + docente.docenteId);
             }
         }
-        public ActionResult InformacionDocenteVista(int id = 0)
+        public ActionResult PersonalesDS(int id = 0)
         {
             TempData["notice"] = null;
 
@@ -604,7 +604,7 @@ namespace MvcApplication2.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult InformacionDocenteVista(Docente docente) {
+        public ActionResult PersonalesDS(Docente docente) {
             int numFiles = Request.Files.Count;
             if (Request != null)
             {
@@ -643,7 +643,7 @@ namespace MvcApplication2.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult InformacionDocente(Docente docente)
+        public ActionResult Personales(Docente docente)
         {
             if (ModelState.IsValid)
             {

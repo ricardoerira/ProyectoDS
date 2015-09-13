@@ -545,14 +545,14 @@ namespace MvcApplication2.Controllers
             }
         }
 
-        public ActionResult Index()
+        public ActionResult Index(int id = 0)
         {
 
 
 
             var hojavidas = db.HojaVidas.Include(h => h.Familia);
-            importaEstudiantes();
-            importaDocentes();
+          //  importaEstudiantes();
+           // importaDocentes();
             return View(hojavidas.ToList());
         }
 

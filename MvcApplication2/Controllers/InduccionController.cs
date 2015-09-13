@@ -66,7 +66,11 @@ namespace MvcApplication2.Controllers
         public ActionResult Create(Induccion induccion)
         {
             if (ModelState.IsValid)
+            
             {
+                IPS_ESE ips = db.IPS_ESE.Find(induccion.IPS_ESEId);
+                induccion.responsable = ips.representante_legal;
+                induccion.correo = ips.correo;
                 db.Induccions.Add(induccion);
                 db.SaveChanges();
                 return RedirectToAction("Index");

@@ -145,11 +145,40 @@ namespace MvcApplication2.Controllers
 
         public ActionResult SeleccionRotacionContraPrestacionC()
         {
-          
-            var municipios = db.IPS_ESE.Include(h => h.Municipio);
-            List<IPS_ESE> lista = municipios.ToList();
+
+            List<IPS_ESE> lista = null;
+            if (User.Identity.IsAuthenticated)
+            {
+                if (User.IsInRole("IPS"))
+                {
+                    int res = consultaIPS(User.Identity.Name);
+
+                    var municipios = db.IPS_ESE.Include(h => h.Municipio).Where(r => r.IPS_ESEId == res);
+
+                    lista = municipios.ToList();
+
+
+
+                }
+                else
+                {
+                    var municipios = db.IPS_ESE.Include(h => h.Municipio);
+                    lista = municipios.ToList();
+
+
+                }
+
+
+            }
+            else
+            {
+
+                var municipios = db.IPS_ESE.Include(h => h.Municipio);
+                lista = municipios.ToList();
+
+            }
             ViewBag.IPS_ESEId = new SelectList(lista, "IPS_ESEId", "nombre");
-            
+
             return View();
         }
 
@@ -238,9 +267,37 @@ namespace MvcApplication2.Controllers
 
         public ActionResult SeleccionRotacionContraPrestacionI()
         {
+            List<IPS_ESE> lista = null;
+            if (User.Identity.IsAuthenticated)
+            {
+                if (User.IsInRole("IPS"))
+                {
+                    int res = consultaIPS(User.Identity.Name);
 
-            var municipios = db.IPS_ESE.Include(h => h.Municipio);
-            List<IPS_ESE> lista = municipios.ToList();
+                    var municipios = db.IPS_ESE.Include(h => h.Municipio).Where(r => r.IPS_ESEId == res);
+
+                    lista = municipios.ToList();
+
+
+
+                }
+                else
+                {
+                    var municipios = db.IPS_ESE.Include(h => h.Municipio);
+                    lista = municipios.ToList();
+
+
+                }
+
+
+            }
+            else
+            {
+
+                var municipios = db.IPS_ESE.Include(h => h.Municipio);
+                lista = municipios.ToList();
+
+            }
             ViewBag.IPS_ESEId = new SelectList(lista, "IPS_ESEId", "nombre");
 
             return View();
@@ -248,23 +305,28 @@ namespace MvcApplication2.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult SeleccionRotacionContraPrestacionI(IPS_ESE ipss)
+        public ActionResult SeleccionRotacionContraPrestacionI(IPS_ESE ipss, FormCollection value)
         {
 
             IPS_ESE ips = db.IPS_ESE.Find(ipss.IPS_ESEId);
             string fecha = ViewBag.fecha;
 
 
-            List<Curso> cursos = new List<Curso>();
-            cursos = db.Cursoes.ToList();
+            List<Induccion> inducciones = new List<Induccion>();
+          
             ReportDocument rptH = new ReportDocument();
             string strRptPath = System.Web.HttpContext.Current.Server.MapPath("~/ReporteContraPrestacionI.rpt");
             rptH.Load(strRptPath);
 
+            int periodoId = Int32.Parse(value["periodoId"]);
+            int añoId = Int32.Parse(value["añoId"]);
+            var date = DateTime.MinValue;
+           
 
+           inducciones=  db.Induccions.Where(r => r.IPS_ESEId == ips.IPS_ESEId).Where(r => r.periodo == periodoId)
+                    .Where(r => r.año == añoId ).ToList();
 
-
-            rptH.Database.Tables[0].SetDataSource(db.Induccions.Where(d => d.IPS_ESEId == ips.IPS_ESEId).ToList());
+            rptH.Database.Tables[0].SetDataSource(inducciones);
 
            
 
@@ -274,32 +336,88 @@ namespace MvcApplication2.Controllers
 
             int total = 0;
            
-            if (db.Induccions.Where(d => d.IPS_ESEId == ips.IPS_ESEId).ToList().Count > 0)
+            if (inducciones.ToList().Count > 0)
             {
-                total += db.Induccions.Where(d => d.IPS_ESEId == ips.IPS_ESEId).Sum(d => d.valor);
+                total += inducciones.Sum(d => d.valor);
+                rptH.SetParameterValue("total", total);
 
+                 Stream stream = rptH.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
+                                
+                return File(stream, "application/pdf");
+            }
+            else
+            {
+                ViewBag.AlertMessage = "No se encontraron resultados";
+
+             
+                var municipios = db.IPS_ESE.Include(h => h.Municipio);
+                List<IPS_ESE> lista = municipios.ToList();
+                ViewBag.IPS_ESEId = new SelectList(lista, "IPS_ESEId", "nombre");
+
+                return View();
             }
 
-            rptH.SetParameterValue("total", total);
 
-
-
-
-
-            Stream stream = rptH.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
-
-
-
-
-            return File(stream, "application/pdf");
+          
 
         }
+       public int consultaIPS(string nombre)
+       
+       {
+      
+           if(User.Identity.Name.Equals("hcaldas"))
+      
+           {
 
+               return 1;
+           }
+           if (User.Identity.Name.Equals("cversalles"))
+           {
+
+               return 2;
+           }
+           if (User.Identity.Name.Equals("hsantasofia"))
+           {
+
+               return 15;
+           }
+           return -1;
+
+       }
         public ActionResult SeleccionRotacionContraPrestacionE()
         {
 
-            var municipios = db.IPS_ESE.Include(h => h.Municipio);
-            List<IPS_ESE> lista = municipios.ToList();
+            List<IPS_ESE> lista =null;
+            if (User.Identity.IsAuthenticated)
+            {
+                if (User.IsInRole("IPS"))
+                {
+                    int res=consultaIPS(User.Identity.Name);
+
+                        var municipios = db.IPS_ESE.Include(h => h.Municipio).Where(r => r.IPS_ESEId == res);
+                        
+                        lista = municipios.ToList();
+                    
+                    
+           
+                }
+                else
+                {
+                    var municipios = db.IPS_ESE.Include(h => h.Municipio);
+                    lista = municipios.ToList();
+
+
+                }
+               
+              
+            }
+            else
+            {
+
+               var municipios = db.IPS_ESE.Include(h => h.Municipio);
+               lista = municipios.ToList();
+           
+            }
             ViewBag.IPS_ESEId = new SelectList(lista, "IPS_ESEId", "nombre");
 
             return View();
@@ -307,13 +425,37 @@ namespace MvcApplication2.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult SeleccionRotacionContraPrestacionE(IPS_ESE ipss)
+        public ActionResult SeleccionRotacionContraPrestacionE(IPS_ESE ipss, FormCollection value)
         {
 
             IPS_ESE ips = db.IPS_ESE.Find(ipss.IPS_ESEId);
             string fecha = ViewBag.fecha;
+            List<Equipo> equipos = new List<Equipo>();
 
+            int mesId = Int32.Parse(value["mesId"]);
+            int añoId = Int32.Parse(value["añoId"]);
+            var date = DateTime.MinValue;
 
+            if (mesId == 13)
+            {
+                DateTime.TryParse(añoId + "/01/01", out date);
+                DateTime date2 = new DateTime(añoId, 12,
+                                     DateTime.DaysInMonth(añoId, 12));
+                equipos = db.Equipoes.Where(r => r.IPS_ESEId == ips.IPS_ESEId).Where(r => r.fechaPrestamo >= date).Where(r => r.fechaPrestamo <= date2).ToList();
+
+            }
+            else
+            {
+                DateTime.TryParse(añoId + "/" + mesId + "/01", out date);
+                DateTime date2 = new DateTime(añoId, mesId,
+                                          DateTime.DaysInMonth(añoId, mesId));
+                                equipos = db.Equipoes.Where(r => r.IPS_ESEId == ips.IPS_ESEId).Where(r => r.fechaPrestamo >= date).Where(r => r.fechaPrestamo <= date2).ToList();
+            }
+
+          
+                      
+            if (equipos.ToList().Count > 0)
+            {
 
             ReportDocument rptH = new ReportDocument();
             string strRptPath = System.Web.HttpContext.Current.Server.MapPath("~/ReporteEquipos.rpt");
@@ -321,15 +463,15 @@ namespace MvcApplication2.Controllers
 
 
 
-            int total =db.Equipoes.Sum((c => c.costo));
-            rptH.Database.Tables[0].SetDataSource(db.Equipoes.Where(d => d.IPS_ESEId == ips.IPS_ESEId).ToList());
+            int total = equipos.Sum((c => c.costo));
+            rptH.Database.Tables[0].SetDataSource(equipos.ToList());
 
           
 
 
             rptH.SetParameterValue("ips", ips.nombre);
             rptH.SetParameterValue("total", total+"");
-            rptH.SetParameterValue("fecha", "");
+            rptH.SetParameterValue("correo",ips.correo);
 
 
 
@@ -342,6 +484,18 @@ namespace MvcApplication2.Controllers
 
 
             return File(stream, "application/pdf");
+                
+            }
+                else
+            {
+                ViewBag.AlertMessage = "No se encontraron resultados";
+
+                var municipios = db.IPS_ESE.Include(h => h.Municipio);
+                List<IPS_ESE> lista = municipios.ToList();
+                ViewBag.IPS_ESEId = new SelectList(lista, "IPS_ESEId", "nombre");
+
+                return View();
+            }
 
         }
         public ActionResult GeneraReporte(int id = 0)

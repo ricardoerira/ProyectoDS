@@ -569,7 +569,17 @@ public ActionResult BuscarEnDepartamento(Estudiante estudiante)
             int edad = DateTime.Today.AddTicks(-estudiante.HojaVida.fecha_nacimiento.Ticks).Year - 1;
             string edadDocente = edad.ToString();
             estudiante.barrio_procedencia = edadDocente;//Reemplaza edad
-            
+            string path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), "cedula_" + estudiante.codigo, ".jpg");
+            if (System.IO.File.Exists(path1))
+            {
+
+                ViewBag.imagen="/Uploads/cedula_"+ estudiante.codigo+".jpg";
+            }
+            else
+            {
+                ViewBag.imagen = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+            }
             return View(estudiante);
             
         }   
@@ -690,8 +700,52 @@ public ActionResult BuscarEnDepartamento(Estudiante estudiante)
             }
 
 
-            //Boolean estado = ValidarCampos(estudiante);
-            //ViewBag.estado = false;
+            Boolean estado = ValidarCampos(estudiante);
+            ViewBag.estado = estado;
+            return View(estudiante);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult SolicitarActualizacion(Estudiante estudiante)
+        {
+            estudiante = db.Estudiantes.Find(estudiante.estudianteId);
+
+            try
+            {
+                var fromAddress = new MailAddress("ricardoerira@gmail.com", "From Name");
+                var toAddress = new MailAddress("ricardoerira@gmail.com", "To Name");
+                const string fromPassword = "Descargarre20";
+                const string subject = "Subject";
+                const string body = "Body";
+
+                var smtp = new SmtpClient
+                {
+                    Host = "smtp.gmail.com",
+                    Port = 587,
+                    EnableSsl = true,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    UseDefaultCredentials = false,
+
+                    Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+                };
+                using (var message = new MailMessage(fromAddress, toAddress)
+                {
+                    Subject = subject,
+                    Body = body
+                })
+                {
+
+                    smtp.Send(message);
+                }
+
+            }
+
+            catch (Exception e)
+            {
+                Console.WriteLine("Ouch!" + e.ToString());
+            }
+
             return View(estudiante);
         }
 
@@ -719,44 +773,9 @@ public ActionResult BuscarEnDepartamento(Estudiante estudiante)
                 }
 
 
-                estudiante = db.Estudiantes.Find(estudiante.estudianteId);
 
-                try
-                {
-                    var fromAddress = new MailAddress("ricardoerira@gmail.com", "From Name");
-                    var toAddress = new MailAddress("ricardoerira@gmail.com", "To Name");
-                    const string fromPassword = "Descargarre20";
-                    const string subject = "Subject";
-                    const string body = "Body";
-
-                    var smtp = new SmtpClient
-                    {
-                        Host = "smtp.gmail.com",
-                        Port = 587,
-                        EnableSsl = true,
-                        DeliveryMethod = SmtpDeliveryMethod.Network,
-                        UseDefaultCredentials = false,
-                        
-                        Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
-                    };
-                    using (var message = new MailMessage(fromAddress, toAddress)
-                    {
-                        Subject = subject,
-                        Body = body
-                    })
-                    {
-
-                        smtp.Send(message);
-                    }
-
-                }
-
-                catch (Exception e)
-                {
-                    Console.WriteLine("Ouch!" + e.ToString());
-                }
-
-                return RedirectToAction("../Rotacion/VistaODS");
+                return View(estudiante);
+                
         }
 
 

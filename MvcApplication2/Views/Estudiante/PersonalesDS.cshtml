@@ -17,7 +17,7 @@
         <div class="container-fluid">
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>                    
+                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
                     <li>@Html.ActionLink("Personales", "PersonalesDS/" + Model.estudianteId, "Estudiante")</li>
                     <li>@Html.ActionLink("Familiares", "FamiliaresDS/" + Model.estudianteId, "Estudiante")</li>
                     <li>@Html.ActionLink("Académicos", "AcademicosDS/" + Model.estudianteId, "Estudiante")</li>
@@ -30,7 +30,8 @@
     </nav>
 </div>
 
-@using (Html.BeginForm("PersonalesDS", "Estudiante", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("SolicitarActualizacion", "Estudiante", FormMethod.Post, new { enctype = "multipart/form-data" }))
+
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
@@ -202,17 +203,21 @@
                                 <label class="col-sm-2 control-label">Estado </label>
 
 
-                                @*@if (ViewBag.estado)
-                                {*@
-                                    <button type="submit" class="alert-info">Actualizada</button>
+                                @if (ViewBag.estado)
+                            
+                                {
+                                <button type="submit" class="alert-info">Actualizada</button>
 
-                                @*}
+                                }
+                           
                                 else
-                                {*@
-                                    <button type="submit" class="alert-danger">Solicitar Actualizacion</button>
+                            
+                           
+                                {
+                                <button type="submit" class="alert-danger">Solicitar Actualizacion</button>
 
 
-                               @* }*@
+                                }
 
 
                             </div>
@@ -249,76 +254,81 @@
                     </div>
 
                 </div><!-- /.row -->
-
-
-                <legend>Documento</legend>
-
-                <div class="col-sm-3">
-
-                </div>
-
-
-                <div class="col-sm-8">
-                    <div class="row">
-                        <fdorm class="form-horizontal" role="form">
-
-
-
-                            <div class="form-group">
-
-                                <br>
-
-                                <br>
-                                <br>
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <div class="col-sm-4">
-                                                <img src='~/Uploads/cedula_@(Model.codigo).jpg' alt="..." class="img-rounded" height="200px" width="200px"><br />
-
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <label for="InputFile">Fotocopia Cédula (jpg,png)</label>
-                                            <!--<input type="file" id=""name="UploadedFile" />-->
-                                            <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
-                                            <input type="hidden" value=@Model.estudianteId name="idEstudiante" />
-                                        </td>
-
-                                    </tr>
-                                    <tr></tr>
-                                </table>
-
-                            </div>
-
-
-
-
-                            <div class="form-group">
-                                <div class="col-sm-offset-2 col-sm-10">
-                                    <div class="pull-right">
-                                        <button type="submit" class="btn btn-primary">Guardar</button>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                        </fdorm>
-
-                    </div><!-- /.row -->
-                </div>
             </fieldset>
         </div>
+    </div>
+}
+
+    <legend>Documento</legend>
+
+    <div class="col-sm-3">
+
     </div>
 
 
 
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        <div class="col-sm-8">
+            <div class="row">
+                <fdorm class="form-horizontal" role="form">
+
+
+
+                    <div class="form-group">
+
+                        <br>
+
+                        <br>
+                        <br>
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="col-sm-4">
+                                        <img src='~/Uploads/cedula_@(Model.codigo).jpg' alt="..." class="img-rounded" height="200px" width="200px"><br />
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <label for="InputFile">Fotocopia Cédula (jpg,png)</label>
+                                    <!--<input type="file" id=""name="UploadedFile" />-->
+                                    <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
+                                    <input type="hidden" value=@Model.estudianteId name="idEstudiante" />
+                                </td>
+
+                            </tr>
+                            <tr></tr>
+                        </table>
+
+                    </div>
+
+
+
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <div class="pull-right">
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </fdorm>
+
+            </div><!-- /.row -->
+        </div>
+        
 
 
 
 
 }
+
+
 
 
 

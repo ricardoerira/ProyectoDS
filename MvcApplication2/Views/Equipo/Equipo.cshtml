@@ -126,9 +126,18 @@
                         @Html.TextAreaFor(model => model.observaciones, new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.observaciones)
                     </div>
+                    <label class="col-sm-2 control-label">Fecha Prestamo</label>
+                    <div class="col-sm-4">
+                        @Html.EditorFor(m => m.fechaPrestamo)
+                        @Html.ValidationMessageFor(model => model.fechaPrestamo)
 
+
+                    </div>
                 </div>
 
+
+
+              
 
                
 

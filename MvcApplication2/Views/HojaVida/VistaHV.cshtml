@@ -68,17 +68,15 @@
 <div class="container">
 
     <div class="alert alert-info">
-        <a href="#" class="btn btn-xs btn-primary pull-right">Revisar</a>
-        <strong>Medicina:</strong> Hojas de vida completas.
+        @Html.ActionLink("Revisar", "Index", 1, new { @class = "btn btn-xs btn-primary pull-right" }) 
+ <strong>Medicina:</strong> Hojas de vida completas.
     </div>
 
-    <div class="alert alert-info">
-        <a href="#" class="btn btn-xs btn-primary pull-right">Revisar</a>
-        <strong>Enfermería:</strong> Hojas de vida actualizadas.
-    </div>
+   
 
     <div class="alert alert-info">
-        <a href="#" class="btn btn-xs btn-primary pull-right">Revisar</a>
+        @Html.ActionLink("Revisar", "Index", 2, new { @class = "btn btn-xs btn-primary pull-right" })
+        
         <strong>Docentes:</strong> Hojas de vida actualizadas.
     </div>
 
@@ -88,16 +86,17 @@
     </div>*@
 
     <div class="alert alert-danger">
-        <a href="#" class="btn btn-xs btn-danger pull-right">Revisar</a>
+        @Html.ActionLink("Revisar", "Index", 3, new { @class = "btn btn-xs btn-primary pull-right" })
+        
         <strong>Medicina:</strong> Hojas de vida incompleta.
     </div>
 
     <div class="alert alert-danger">
-        <a href="#" class="btn btn-xs btn-danger pull-right">Revisar</a>
-        <strong>Enfermería:</strong> Hojas de vida incompleta.
+        @Html.ActionLink("Revisar", "Index", 4, new { @class = "btn btn-xs btn-primary pull-right" })     <strong>Enfermería:</strong> Hojas de vida incompleta.
     </div>
     <div class="alert alert-danger">
-        <a href="#" class="btn btn-xs btn-danger pull-right">Revisar</a>
+        @Html.ActionLink("Revisar", "Index", 5, new { @class = "btn btn-xs btn-primary pull-right" })
+        
         <strong>Docentes:</strong> Hojas de vida incompleta.
     </div>
 
