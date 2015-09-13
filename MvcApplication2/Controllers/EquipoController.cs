@@ -16,18 +16,24 @@ namespace MvcApplication2.Controllers
         //
         // GET: /Equipo/
 
-        public ActionResult Index(string searchString)
+        public ActionResult Index(string searchString, int id = 0)
         {
 
-
-
-            var cursoes = from s in db.Equipoes
-                          select s;
             if (!String.IsNullOrEmpty(searchString))
             {
-                cursoes = cursoes.Where(s => s.IPS_ESE.nombre.Contains(searchString));
+                var equipos = db.Equipoes.Where(r => r.nombre.ToUpper().Contains(searchString.ToUpper()));
+                List<Equipo> listest = equipos.ToList();
+
+                return View(equipos.ToList());
             }
-            return View(cursoes.ToList());
+            else
+            {
+                if (id > 0)
+                {
+
+                }
+                return View(db.Equipoes.ToList());
+            }
         }
         //
         // GET: /Equipo/Details/5
@@ -100,7 +106,7 @@ namespace MvcApplication2.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.IPS_ESEId = new SelectList(db.IPS_ESE, "IPS_ESEId", "origen", equipo.IPS_ESEId);
+            ViewBag.IPS_ESEId = new SelectList(db.IPS_ESE, "IPS_ESEId", "nombre", equipo.IPS_ESEId);
             return View(equipo);
         }
 
@@ -117,7 +123,7 @@ namespace MvcApplication2.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.IPS_ESEId = new SelectList(db.IPS_ESE, "IPS_ESEId", "origen", equipo.IPS_ESEId);
+            ViewBag.IPS_ESEId = new SelectList(db.IPS_ESE, "IPS_ESEId", "nombre", equipo.IPS_ESEId);
             return View(equipo);
         }
 

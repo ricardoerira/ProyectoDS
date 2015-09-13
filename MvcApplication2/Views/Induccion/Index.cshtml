@@ -61,80 +61,104 @@
         </div><!-- /.container-fluid -->
     </nav>
 </div>
-<p>
-    @Html.ActionLink("Crear Nuevo", "Create")
-</p>
+<div class="ens">
+    <p>
+        @Html.ActionLink("Crear Nuevo", "Create")
+    </p>
+</div>
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
 
-    
-        <p class="help-block">Inducción - Buscar por Nombre</p>
-        <div class="col-md-4">
-            @Html.TextBox("SearchString", ViewBag.SearchFilter as string, new { @class = "form-control", onclick = "keystroke()", id = "search" })
 
-        </div>
-        <div class="col-md-6">
-            <input type="submit" class="btn btn-primary" value="Buscar" />
-        </div>
-    
-    <table class="table">
-        <tr></tr>
-    </table>
+
+    <div class="ens">
+        <p class=" help-block">
+            <table></table>  Inducción - Buscar por Nombre:
+        </p>
+    </div>
+
+    <div class="col-md-4">
+        @Html.TextBox("SearchString", ViewBag.SearchFilter as string, new { @class = "form-control", onclick = "keystroke()", id = "search" })
+
+    </div>
+    <div class="col-md-6">
+        <input type="submit" class="btn btn-primary" value="Buscar" />
+    </div>
+
 }
-<div class="table-responsive">
-    <table class="table-bordered table-striped ">
+<div class="span7">
+    <div class="widget stacked widget-table action-table">
 
-        <tr>
-            <th>
-                Nombre
-            </th>
-            <th>
-                Frecuencia
-            </th>
-            <th>
-                Estudiantes
-            </th>
-            <th>
-                Valor
-            </th>
-            <th>
-                Observaciones
-            </th>
-            <th>
-                EPS/ESE
-            </th>
-            <th></th>
-        </tr>
+        <div class="widget-header">
+            <h4><i class="glyphicon-align-center glyphicon glyphicon-list"></i></h4>
+            <h3>Tabla de Inducciones</h3>
+        </div> <!-- /widget-header -->
 
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.nombre)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.frecuencia)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.numeroEstudiantes)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.valor)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.observaciones)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IPS_ESE.nombre)
-                </td>
-                <td>
-                    @Html.ActionLink("Delete", "Delete", new { id = item.InduccionId })
-                </td>
-            </tr>
-        }
+        <div class="widget-content">
 
-    </table>
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>
+                            Nombre
+                        </th>
+                        <th>
+                            Frecuencia
+                        </th>
+                        <th>
+                            Estudiantes
+                        </th>
+                        <th>
+                            Valor
+                        </th>
+                        <th>
+                            Observaciones
+                        </th>
+                        <th>
+                            IPS/ESE
+                        </th>
+                        <th class="td-actions">Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.nombre)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.frecuencia)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.numeroEstudiantes)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.valor)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.observaciones)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.IPS_ESE.nombre)
+                            </td>
+                            <td class="td-actions">
+                                @Html.ActionLink(" ", "Delete", new { id = item.InduccionId }, new { @class = "btn btn-sm btn-danger btn-icon-only glyphicon glyphicon-remove" })
+                                @Html.ActionLink(" ", "Edit", new { id = item.InduccionId}, new { @class = "btn btn-sm btn-success btn-icon-only glyphicon glyphicon-pencil" })
+
+
+
+
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div> <!-- /widget-content -->
+
+    </div> <!-- /widget -->
 </div>

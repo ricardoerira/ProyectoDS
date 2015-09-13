@@ -14,13 +14,15 @@ namespace MvcApplication2.Models
         public int cupos { get; set; }
 
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime fechaCreacion { get; set; }
         public string observaciones { get; set; }
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
 
         public DateTime fechaInicio { get; set; }
         [DataType(DataType.Date)]
-
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime fechaFin { get; set; }
 
         public int periodoAcademico { get; set; }

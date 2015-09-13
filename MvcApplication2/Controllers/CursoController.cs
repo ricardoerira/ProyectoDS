@@ -109,9 +109,13 @@ namespace MvcApplication2.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.IPS_ESEId = new SelectList(db.IPS_ESE, "IPS_ESEId", "origen", curso.IPS_ESEId);
+            ViewBag.IPS_ESEId = new SelectList(db.IPS_ESE, "IPS_ESEId", "nombre", curso.IPS_ESEId);
             return View(curso);
+
+
         }
+
+
 
         //
         // POST: /Curso/Edit/5
@@ -122,13 +126,30 @@ namespace MvcApplication2.Controllers
         {
             if (ModelState.IsValid)
             {
+                curso.fechaInicio = curso.fechaInicio;
+                curso.totalCapacitacion = (curso.valorUnitarioPersona + curso.valorUnitarioUniversidad) * curso.asignados;
+                curso.valorTotalPersona = curso.valorUnitarioPersona * curso.asignados;
+                curso.totalContraprestacion = curso.valorUnitarioUniversidad * curso.asignados;
+                curso.valorTotalUniversidad = curso.valorUnitarioUniversidad * curso.asignados;
+                curso.porcentajeTotalPersona = (curso.valorTotalPersona * 100) / curso.totalCapacitacion;
+                curso.porcentajeTotalUniversidad = (curso.valorTotalUniversidad * 100) / curso.totalCapacitacion;
                 db.Entry(curso).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.IPS_ESEId = new SelectList(db.IPS_ESE, "IPS_ESEId", "origen", curso.IPS_ESEId);
+            ViewBag.IPS_ESEId = new SelectList(db.IPS_ESE, "IPS_ESEId", "nombre", curso.IPS_ESEId);
             return View(curso);
         }
+           
+
+            //curso.fechaCreacion = DateTime.Now.Date;
+
+            //db.Cursoes.Add(curso);
+           
+
+
+
+
 
         //
         // GET: /Curso/Delete/5

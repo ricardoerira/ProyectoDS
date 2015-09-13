@@ -32,6 +32,8 @@
     </nav>
 </div>
 
+
+
 @using (Html.BeginForm())
 {
 
@@ -39,9 +41,13 @@
     @Html.ValidationSummary(true)
 
 
-    <p class="help-block">
-        Buscar por Materia:
-    </p>
+
+    <div class="ens">
+        <p class=" help-block">
+            <table></table>  Rotaciones - Buscar por Nombre:
+        </p>
+    </div>
+
     <div class="col-md-4">
         @Html.TextBox("SearchString", ViewBag.SearchFilter as string, new { @class = "form-control", onclick = "keystroke()", id = "search" })
 
@@ -49,93 +55,112 @@
     <div class="col-md-6">
         <input type="submit" class="btn btn-primary" value="Buscar" />
     </div>
+
+
 }
 
 
 
-<table class="table">
-    <tr></tr>
-</table>
+<div class="span7">
+    <div class="widget stacked widget-table action-table">
+
+        <div class="widget-header">
+            <h4><i class="glyphicon-align-center glyphicon glyphicon-list"></i></h4>
+            <h3>Tabla Rotaciones</h3>
+        </div> <!-- /widget-header -->
+
+        <div class="widget-content">
+
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+
+                        <th>
+                            Nombre
+                        </th>
+                        <th>
+                            Inicia
+                        </th>
+                        <th>
+                            Termina
+                        </th>
+                        <th>
+                            Cupos 
+                        </th>
+                        <th>
+                            Inscritos
+                        </th>
+
+                        <th>
+                            Periodo
+                        </th>
+                        <th>
+                            IPS/ESE
+                        </th>
+                        <th>
+                            Departamento
+                        </th>
+                        <th>
+                            Grupo
+                        </th>
+                        <th class="td-actions">Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ActividadAcademica.nombre)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.fecha_inicio)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.fecha_terminacion)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ActividadAcademica.max_estudiantes_rotacion)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.numero_estudiantes)
+                            </td>
 
 
 
-<div class="table-responsive">
-    <table class="table-bordered table-striped ">
-        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.periodo_academico)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.IPS_ESE.nombre)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ActividadAcademica.DepartamentoSalud.nombre)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.grupo)
+                            </td>
+                            <td class="td-actions">
 
-            <th>
-                Nombre
-            </th>
-            <th>
-                Fecha Inicio
-            </th>
-            <th>
-                Fecha Terminacion
-            </th>
-            <th>
-                Cupos Rotacion
-            </th>
-            <th>
-                Numero Inscritos
-            </th>
+                                <a href="javascript:;" class="btn btn-sm btn-default">
+                                    <i class="btn-icon-only glyphicon glyphicon-ok"></i>
+                                </a>
 
-            <th>
-                Periodo
-            </th>
-            <th>
-                Ips
-            </th>
-            <th>
-                Departamento
-            </th>
-            <th>
-                Grupo
-            </th>
+                                <a href="javascript:;" class="btn btn-sm btn-success">
+                                    <i class="btn-icon-only glyphicon glyphicon-pencil"></i>
+                                </a>
+                            </td>
+                        </tr>
 
+                    }
+                </tbody>
+            </table>
 
-        </tr>
+        </div> <!-- /widget-content -->
 
-        @foreach (var item in Model)
-        {
-            <tr>
-
-                <td>
-                    @Html.DisplayFor(modelItem => item.ActividadAcademica.nombre)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.fecha_inicio)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.fecha_terminacion)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ActividadAcademica.max_estudiantes_rotacion)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.numero_estudiantes)
-                </td>
+    </div> <!-- /widget -->
+</div>
 
 
-
-                <td>
-                    @Html.DisplayFor(modelItem => item.periodo_academico)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IPS_ESE.nombre)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ActividadAcademica.DepartamentoSalud.nombre)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.grupo)
-                </td>
-
-                <td>
-                    @Html.ActionLink("Editar", "Edit", new { id = item.rotacionId })  |
-                    @Html.ActionLink("Seleccionar", "../RotacionEstudiante/Index", new { id = item.rotacionId })
-                </td>
-            </tr>
-        }
-
-    </table>
-    </div>

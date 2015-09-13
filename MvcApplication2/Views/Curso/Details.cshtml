@@ -3,48 +3,116 @@
 @{
     ViewBag.Title = "Details";
 }
+<div class="container">
+    <div class="row">
+        <div class="col-xs-11">
+            <div class="invoice-title">
+                <h2>@Html.DisplayFor(model => model.tipo)</h2><h3 class="pull-right">Id: @Html.DisplayFor(model => model.CursoId)</h3>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-xs-6">
+                    <address>
+                        <strong>Nombre:</strong><br>
+                        @Html.DisplayFor(model => model.nombre)<br>
+                        <strong>Fecha Creado:</strong>@Html.DisplayFor(model => model.fechaCreacion)<br>
+                        <strong>Fecha Inicio:</strong>@Html.DisplayFor(model => model.fechaInicio)<br>
+                        <strong>Fecha Fin:</strong>@Html.DisplayFor(model => model.fechaFin)<br>
+                        <strong>Periodo Académico:</strong>@Html.DisplayFor(model => model.periodoAcademico)<br>
+                        <strong></strong><br>
+                        <strong>Observacion:</strong>@Html.DisplayFor(model => model.observaciones)<br>
+                        
+                    </address>
+                </div>
+                <div class="col-xs-6 text-right">
+                    <address>
+                        <strong>Dirigido a:</strong><br>
+                        @Html.DisplayFor(model => model.dirigido)<br>
+                        <strong>Otro:</strong><br>
+                        @Html.DisplayFor(model => model.dirigidoOtro)<br>
+                        <strong>Cupos:</strong><br>
+                        @Html.DisplayFor(model => model.cupos)<br>
+                        <strong>Asignados:</strong><br>
+                        @Html.DisplayFor(model => model.asignados)
+                    </address>
+                </div>
+            </div>
+            
+        </div>
+    </div>
 
-<h2>Details</h2>
 
-<fieldset>
-    <legend>Curso</legend>
+    <div class="row">
+        <div class="col-md-11">
+            <div class="panel panel-defaultD">
+                <div class="panel-heading">
+                    <h3 class="class=" invoice-title"><strong>@Html.DisplayFor(model => model.IPS_ESE.nombre)</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table-bordered table-condensed ">
+                            <thead>
+                                <tr>
+                                    <td class="text-center"><strong>Valor</strong></td>
+                                    <td class="text-center"><strong>% Persona</strong></td>
+                                    <td class="text-center"><strong>Valor Unitario Persona</strong></td>
+                                    <td class="text-center"><strong>Valor total persona</strong></td>
+                                    <td class="text-center"><strong>% Universidad</strong></td>
+                                    <td class="text-center"><strong>Valor Unitario Universidad</strong></td>
+                                    <td class="text-center"><strong>Valor total Universidad</strong></td>
+                                    <td class="text-center"><strong>Totales</strong></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- foreach ($order->lineItems as $line) or some such thing here -->
+                                <tr>
+                                    <td>@Html.DisplayFor(model => model.valorParticipante)</td>
+                                    <td class="text-center">@Html.DisplayFor(model => model.porcentajeTotalPersona)</td>
+                                    <td class="text-center">@Html.DisplayFor(model => model.valorUnitarioPersona)</td>
+                                    <td class="text-center">@Html.DisplayFor(model => model.valorTotalPersona)</td>
+                                    <td class="text-center">@Html.DisplayFor(model => model.porcentajeTotalUniversidad)</td>
+                                    <td class="text-center">@Html.DisplayFor(model => model.valorUnitarioUniversidad)</td>
+                                    <td class="text-center">@Html.DisplayFor(model => model.valorTotalUniversidad)</td>
+                                    <td class="text-right"></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-right"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-right"></td>
+                                    <td class="text-right"></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-right"></td>
+                                    <td class="text-right"></td>
+                                    <td class="text-center"></td>
+                                    <td class="thick-line text-center"><strong>Contraprestación</strong></td>
+                                    <td class="thick-line text-right"><strong>$@Html.DisplayFor(model => model.totalContraprestacion)</strong></td>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.tipo)
+                                </tr>
+                                <tr>
+                                    <td class="thick-line"></td>
+                                    <td class="thick-line"></td>
+                                    <td class="thick-line"></td>
+                                    <td class="thick-line"></td>
+                                    <td class="thick-line"></td>
+                                    <td class="thick-line"></td>
+                                    <td class="thick-line text-center"><strong>Total</strong></td>
+                                    <td class="thick-line text-right"><strong>$@Html.DisplayFor(model => model.totalCapacitacion)</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        @Html.ActionLink("Atras ", "Index", new { }, new { @class = "btn btn-primary" })
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.tipo)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.nombre)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.nombre)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.numeroBeneficiados)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.numeroBeneficiados)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.fecha)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.fecha)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.IPS_ESE.origen)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.IPS_ESE.origen)
-    </div>
-</fieldset>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.CursoId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+</div>
