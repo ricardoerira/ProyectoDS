@@ -5,7 +5,8 @@
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
   padding-top: 50px;
-}
+
+
 
 /* login
 ----------------------------------------------------------*/
@@ -269,7 +270,7 @@ Image placeholders: placemi.com
 }
 
 .input-group input {
-    border: 0;
+    border: 1;
     box-shadow: none;
     padding-right: 30px;
 }
@@ -470,3 +471,28 @@ margin-top:5px;
 
 
 
+    /* campos requeridos
+----------------------------------------------------------*/
+    /* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #ff0000;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid {
+    display: none;
+}

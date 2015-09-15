@@ -51,12 +51,12 @@
                     <div class="well well-sm">
                         <fosrm class="form-horizontal" action="" method="post">
                             <fieldset>
-                                <legend class="text-center">Editar Fecha Rotación</legend>
+                                <legend class="text-center">Editar fecha rotación</legend>
 
                                 <!-- Name input-->
                                 <div class="form-group">
-                                    <label class="col-md-3 control-label" for="name">Fecha Inicio</label>
-                                    <div class="col-md-9">
+                                    <label class="col-md-5 control-label" for="name">Fecha Inicio</label>
+                                    <div class="col-md-5">
                                         @Html.EditorFor(model => model.fecha_inicio)
                                         @Html.ValidationMessageFor(model => model.fecha_inicio)
 
@@ -69,8 +69,8 @@
 
                                 <!-- Email input-->
                                 <div class="form-group">
-                                    <label class="col-md-3 control-label" for="email">Fecha Terminación</label>
-                                    <div class="col-md-9">
+                                    <label class="col-md-5 control-label" for="email">Fecha Terminación</label>
+                                    <div class="col-md-5">
                                         @Html.EditorFor(model => model.fecha_terminacion)
                                         @Html.ValidationMessageFor(model => model.fecha_terminacion)
                                     </div>
@@ -78,17 +78,18 @@
 
                                 <!-- Message body -->
                                 <div class="form-group">
-                                    <label class="col-md-3 control-label" for="message">Estudiantes</label>
-                                    <div class="col-md-9">
-                                        @Html.EditorFor(model => model.numero_estudiantes, new { @class = "form-control" })
+                                    <label class="col-md-5 control-label" for="message">Estudiantes</label>
+                                    <div class="col-md-4">
+                                        @Html.TextBoxFor(model => model.numero_estudiantes, new { @class = "form-control" })
                                         @Html.ValidationMessageFor(model => model.numero_estudiantes)
                                     </div>
                                 </div>
 
                                 <!-- Form actions -->
                                 <div class="form-group">
-                                    <div class="col-md-12 text-right">
-                                        <button type="submit" class="btn btn-primary btn-lg">Guardar</button>
+                                    <div class="col-md-8 text-right">
+                                        @Html.ActionLink("Regresar ", "SeleccionRotacion", new { }, new { @class = "btn btn-primary" })
+                                        <input type="submit" class="btn btn-primary" value=" Guardar" />
                                     </div>
                                 </div>
                             </fieldset>

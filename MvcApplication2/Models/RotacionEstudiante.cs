@@ -11,6 +11,7 @@ namespace MvcApplication2.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class RotacionEstudiante
     {
@@ -29,7 +30,7 @@ namespace MvcApplication2.Models
 
 
 
-
+        
         public string horario { get; set; }
        
         public virtual IPS_ESE IPS_ESE { get; set; }

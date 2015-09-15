@@ -11,6 +11,7 @@ namespace MvcApplication2.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class HojaVida
     {
@@ -30,7 +31,9 @@ namespace MvcApplication2.Models
         public string segundo_apellido { get; set; }
         public string facultad { get; set; }
         public string departamento_procedencia { get; set; }
+        
         public string municipio_procedencia { get; set; }
+        
         public string direccion_manizales { get; set; }
         public System.DateTime fecha_nacimiento { get; set; }
         public string hemoclasificacion { get; set; }
@@ -39,6 +42,7 @@ namespace MvcApplication2.Models
         public short hijos { get; set; }
         public string imagen_DI { get; set; }        
         public string num_telefono { get; set; }
+        [Required]
         public long num_celular { get; set; }        
         public string correo { get; set; }
         public string entidad_salud { get; set; }

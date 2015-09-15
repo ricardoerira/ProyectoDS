@@ -19,9 +19,11 @@ namespace MvcApplication2
             bundles.Add(new StyleBundle("~/Content/bootstrapcss").Include(
                         "~/Content/bootstrap.min.css",
                           "~/Content/vacunas.css",
+                          "~/Content/css/vacunas.css",
                         "~/Content/bootstrap-responsive.min.css"));
 
             
+
 
 
            

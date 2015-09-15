@@ -113,9 +113,10 @@
                         <div class="input-group">
                             <div class="input-group-addon">$</div>
                             @Html.TextBoxFor(model => model.valor, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.valor)
+                            
                             <div class="input-group-addon">.00</div>
                         </div>
+                        @Html.ValidationMessageFor(model => model.valor)
                     </div>
                 </div>
 
@@ -160,7 +161,7 @@
                         <br>
 
                         <br>
-                        @Html.ActionLink("Atras ", "Index", new { }, new { @class = "btn btn-primary" })
+                        @Html.ActionLink("Regresar ", "Index", new { }, new { @class = "btn btn-primary" })
                         <input type="submit" class="btn btn-primary" value=" Guardar" />
 
                     </div>

@@ -106,12 +106,12 @@
                         <tr>
                             <th>Tipo</th>
                             <th>Nombre</th>
-                            <th>Asignados</th>
+                            <th class="text-center">Asignados</th>
                             <th>Inicio</th>
                             <th>Fin</th>
                             <th>IPS/ESE</th>
 
-                            <th class="td-actions">Acción</th>
+                            <th class="td-actions text-center">Acción</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -125,7 +125,7 @@
                                 <td>
                                     @Html.DisplayFor(modelItem => item.nombre)
                                 </td>
-                                <td>
+                                <td class="text-center">
                                     @Html.DisplayFor(modelItem => item.asignados)
                                 </td>
                                 <td>
@@ -139,11 +139,11 @@
                                 <td>
                                     @Html.DisplayFor(modelItem => item.IPS_ESE.nombre)
                                 </td>
-                                <td class="td-actions">  
+                                <td class="text-center" >
                                     @Html.ActionLink(" ", "Details", new { id = item.CursoId }, new { @class = "btn btn-sm btn-default btn-icon-only glyphicon glyphicon-ok" })
                                     @Html.ActionLink(" ", "Delete", new { id = item.CursoId }, new { @class = "btn btn-sm btn-danger btn-icon-only glyphicon glyphicon-remove" })
                                     @Html.ActionLink(" ", "Edit", new { id = item.CursoId }, new { @class = "btn btn-sm btn-success btn-icon-only glyphicon glyphicon-pencil" })
-                              
+
                                 </td>
                             </tr>
 

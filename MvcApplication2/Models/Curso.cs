@@ -11,30 +11,35 @@ namespace MvcApplication2.Models
         public int CursoId { get; set; }
         public string tipo { get; set; }
         public string nombre { get; set; }
+        [Required]
         public int cupos { get; set; }
 
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        
         public DateTime fechaCreacion { get; set; }
         public string observaciones { get; set; }
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-
+        
         public DateTime fechaInicio { get; set; }
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+       
         public DateTime fechaFin { get; set; }
 
         public int periodoAcademico { get; set; }
         public string dirigido { get; set; }
         public string dirigidoOtro { get; set; }
-
+        [Required]
         public int asignados { get; set; }
+        [Required]
         public int valorParticipante { get; set; }
+        [Required]
         public int valorUnitarioPersona { get; set; }
         public int valorTotalPersona { get; set; }
         public int porcentajeTotalPersona { get; set; }
         public int valorTotalUniversidad { get; set; }
+        [Required]
         public int valorUnitarioUniversidad { get; set; }
         public int porcentajeTotalUniversidad { get; set; }
         public int totalContraprestacion { get; set; }
