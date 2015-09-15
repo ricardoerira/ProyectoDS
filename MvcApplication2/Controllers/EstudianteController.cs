@@ -714,7 +714,7 @@ public ActionResult BuscarEnDepartamento(Estudiante estudiante)
             try
             {
                 var fromAddress = new MailAddress("ricardoerira@gmail.com", "From Name");
-                var toAddress = new MailAddress("ricardoerira@gmail.com", "To Name");
+                var toAddress = new MailAddress(estudiante.HojaVida.correo, "To Name");
                 const string fromPassword = "Descargarre20";
                 const string subject = "Subject";
                 const string body = "Body";
@@ -746,7 +746,8 @@ public ActionResult BuscarEnDepartamento(Estudiante estudiante)
                 Console.WriteLine("Ouch!" + e.ToString());
             }
 
-            return View(estudiante);
+            return RedirectToAction("../Estudiante/PersonalesDS/" + estudiante.estudianteId);
+
         }
 
         [HttpPost]

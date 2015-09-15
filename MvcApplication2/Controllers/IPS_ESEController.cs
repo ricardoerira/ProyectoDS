@@ -228,7 +228,16 @@ namespace MvcApplication2.Controllers
 
                rptH.SetParameterValue("ips", ips.nombre);
                rptH.SetParameterValue("email", ips.correo);
-               rptH.SetParameterValue("fecha", "");
+               if(mesId==13)
+               {
+                   rptH.SetParameterValue("fecha",  "Año: " + añoId);
+              
+               }
+               else
+               {
+                   rptH.SetParameterValue("fecha", "Mes: " + mesId + " Año: " + añoId);
+              
+               }
                int total = 0;
 
                if (cursos.Count > 0)
@@ -332,6 +341,11 @@ namespace MvcApplication2.Controllers
 
             rptH.SetParameterValue("ips", ips.nombre);
             rptH.SetParameterValue("fecha", "");
+
+
+                rptH.SetParameterValue("fecha", "Periodo: " + periodoId + " Año: " + añoId);
+
+            
             //rptH.SetParameterValue("correo", ips.correo);
 
             int total = 0;
@@ -465,10 +479,17 @@ namespace MvcApplication2.Controllers
 
             int total = equipos.Sum((c => c.costo));
             rptH.Database.Tables[0].SetDataSource(equipos.ToList());
+            if (mesId == 13)
+            {
+                rptH.SetParameterValue("fecha", "Año: " + añoId);
 
+            }
+            else
+            {
+                rptH.SetParameterValue("fecha", "Mes: " + mesId + " Año: " + añoId);
+
+            }
           
-
-
             rptH.SetParameterValue("ips", ips.nombre);
             rptH.SetParameterValue("total", total+"");
             rptH.SetParameterValue("correo",ips.correo);
