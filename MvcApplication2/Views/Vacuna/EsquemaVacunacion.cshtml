@@ -65,17 +65,18 @@ DOS COLUMNAS..........................
 <div class="container-fluid">
     <section class="container">
         <div class="container-page">
-            <div class="col-md-6"><!--PRIMER COLUMNA COLUMNA..........................-->
+            <div class="col-sm-offset-0"><!--PRIMER COLUMNA COLUMNA............class="col-lg-offset-0"..............-->
 
 
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-3 col-md-3">
+                        <div class="col-sm-1 col-md-3">
                             <div class="panel-group" id="accordion">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-list">
+</span>
                                                 Hepatitis B
                                             </a>
                                         </h4>
@@ -459,144 +460,141 @@ DOS COLUMNAS..........................
                                
                             </div>
                         </div>
-                        <div class="col-sm-9 col-md-9">
-                            
+                        <fosrm class="form-horizontal" role="form">
+                            <div class="col-sm-9 col-md-9">
+
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Identificación</label>
                                     <div class="col-sm-4">
                                         <input type="text" placeholder="" value=@ViewBag.num_documento class="form-control" disabled>
-                                     </div>
-                                    
+                                    </div>
+
                                     <label class="col-sm-2 control-label">Nombre</label>
                                     <div class="col-sm-4">
-                                        @Html.TextBoxFor(model => model.HojaVida.primer_nombre, new { @class = "form-control" })
+                                        @Html.TextBoxFor(model => model.HojaVida.primer_nombre, new { @class = "form-control",  @readonly = "readonly" })
                                         @Html.ValidationMessageFor(model => model.HojaVida.primer_nombre)
                                     </div>
-                                  </div>
-
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">Primer Apellido</label>
-
-                                <div class="col-sm-4">
-                                    @Html.TextBoxFor(model => model.HojaVida.primer_apellido, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.HojaVida.primer_apellido)
-                                </div>
-                                <label class="col-sm-2 control-label">Segundo Apellido</label>
-                                <div class="col-sm-4">
-                                    @Html.TextBoxFor(model => model.HojaVida.segundo_apellido, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.HojaVida.segundo_apellido)
-
                                 </div>
 
-                            </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Primer Apellido</label>
+
+                                    <div class="col-sm-4">
+                                        @Html.TextBoxFor(model => model.HojaVida.primer_apellido, new { @class = "form-control", @readonly = "readonly" })
+                                        @Html.ValidationMessageFor(model => model.HojaVida.primer_apellido)
+                                    </div>
+                                    <label class="col-sm-2 control-label">Segundo Apellido</label>
+                                    <div class="col-sm-4">
+                                        @Html.TextBoxFor(model => model.HojaVida.segundo_apellido, new { @class = "form-control", @readonly = "readonly" })
+                                        @Html.ValidationMessageFor(model => model.HojaVida.segundo_apellido)
+
+                                    </div>
+
+                                </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label"></label>
-                                    
+
                                     <label class="col-sm-2 control-label"></label>
                                     <div class="col-sm-4">
-                                        
+
                                     </div>
                                 </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label"></label>
-
-                                <label class="col-sm-2 control-label"></label>
-                                <div class="col-sm-4">
-
-                                </div>
-                            </div>
-                            
-                            
-                        </div>
-                        
-                        <script type="text/javascript">
-    $(function () { // will trigger when the document is ready
-        $('.datepicker').datepicker(); //Initialise any date pickers
-    });
-                        </script>
-
-@using (Html.BeginForm("EsquemaVacunacion", "Vacuna", FormMethod.Post, new { enctype = "multipart/form-data" }))
-{
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
-    @Html.HiddenFor(model => model.hojaVidaId)
-    @Html.HiddenFor(model => model.vacunaId)
-                        <div class="col-sm-9 col-md-9">
-                            <div class="form-group">
-                                <label class="col-sm-9 control-label">Fecha Aplicación</label>
-                                <div class="col-sm-4">
-                    
-
-
-                                        @Html.TextBoxFor(model => model.fecha_vacunacion, new { @class = "form-control" })
-                                        @Html.ValidationMessageFor(model => model.fecha_vacunacion)
-                                    </div>
-                                <label class="col-sm-10 control-label">Próxima Vacuna</label>
-                                <div class="col-sm-4">
-                                    @Html.TextBoxFor(model => model.fecha_prox_vacunacion, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.fecha_prox_vacunacion)
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-sm-9 control-label">Vacuna</label>
-                                <div class="col-sm-4">
-                                    @Html.TextBoxFor(model => model.nombre_generico  , new { @class = "form-control", placeholder="Nombre Vacuna"})
-                                    @Html.ValidationMessageFor(model => model.nombre_generico)                               
-                                 </div>
                                 
-                             </div>
 
-                            <div class="form-group">
-                                <label class="col-sm-9 control-label">Lote</label>
-                                <div class="col-sm-4">
-                                    @Html.TextBoxFor(model => model.lote, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.lote)                                  </div>
-                              
+
                             </div>
+                        </fosrm>
+                            <script type="text/javascript">
+                                $(function () { // will trigger when the document is ready
+                                    $('.datepicker').datepicker(); //Initialise any date pickers
+                                });
+                            </script>
 
-                            <div class="form-group">
-                                <label class="col-sm-9 control-label">Lugar Anatómico</label>
-                                <div class="col-sm-4">
-                                    @Html.TextBoxFor(model => model.lugar_anatomico, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.lugar_anatomico)
+                            @using (Html.BeginForm("EsquemaVacunacion", "Vacuna", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary(true)
+                                @Html.HiddenFor(model => model.hojaVidaId)
+                                @Html.HiddenFor(model => model.vacunaId)
+                                <div class="col-sm-9 col-md-9">
+
+                                    
+                                    <fosrm class="form-horizontal" role="form">
+                                        <legend>Datos vacuna</legend>
+                                        <div class="col-sm-9 col-md-9">
+
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">Aplicada</label>
+
+                                                <div class="col-sm-4">
+                                                    @Html.TextBoxFor(model => model.fecha_vacunacion, new { @class = "form-control", @readonly = "readonly" })
+                                                    @Html.ValidationMessageFor(model => model.fecha_vacunacion)
+                                                </div>
+
+                                                <label class="col-sm-2 control-label">Próxima vacuna</label>
+                                                <div class="col-sm-4">
+                                                    @Html.TextBoxFor(model => model.fecha_prox_vacunacion, new { @class = "form-control", @readonly = "readonly" })
+                                                    @Html.ValidationMessageFor(model => model.fecha_prox_vacunacion)
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">Vacuna</label>
+
+                                                <div class="col-sm-4">
+                                                    @Html.TextBoxFor(model => model.nombre_generico, new { @class = "form-control", @readonly = "readonly" })
+                                                    @Html.ValidationMessageFor(model => model.nombre_generico)
+                                                </div>
+                                                <label class="col-sm-2 control-label">Lote</label>
+                                                <div class="col-sm-4">
+                                                    @Html.TextBoxFor(model => model.lote, new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.lote)
+
+                                                </div>
+
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">Laboratorio</label>
+
+                                                <div class="col-sm-4">
+                                                    @Html.DropDownList("laboratorio_vacunacion", new List<SelectListItem>() { new SelectListItem { Text = "BIOTOSCANA", Value = "BIOTOSCANA" }, new SelectListItem { Text = "SANOFI", Value = "SANOFI" }, new SelectListItem { Text = "DELTA", Value = "DELTA" }, new SelectListItem { Text = "GLAXO", Value = "GLAXO" }, new SelectListItem { Text = "MERK", Value = "MERK" }, new SelectListItem { Text = "OTRO", Value = "OTRO" } }, new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.laboratorio_vacunacion)
+                                                </div>
+                                                <label class="col-sm-2 control-label">Lugar Anatómico</label>
+                                                <div class="col-sm-4">
+                                                    @Html.DropDownList("lugar_anatomico", new List<SelectListItem>() { new SelectListItem { Text = "Brazo derecho", Value = "Brazo derecho" }, new SelectListItem { Text = "Brazo izquierdo", Value = "Brazo izquierdo" }, new SelectListItem { Text = "Otro", Value = "Otro" } }, new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.lugar_anatomico)
+
+                                                </div>
+
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">Observaciones</label>
+
+                                                <div class="col-sm-9">
+                                                    @Html.TextAreaFor(model => model.observaciones, new { @class = "form-control" })
+                                                </div>
+
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <div class="col-sm-offset-2 col-sm-10">
+                                                    <div class="pull-right">
+                                                        <button type="submit" class="btn btn-default">Cancelar</button>
+                                                        <button type="submit" class="btn btn-primary">Guardar</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </fosrm>
+
+
+
                                 </div>
-
-                            </div>
-
-                            
-
-                            <div class="form-group">
-                                <label class="col-sm-9 control-label">Laboratorio</label>
-                                <div class="col-sm-4">
-                                    @Html.TextBoxFor(model => model.laboratorio_vacunacion, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.laboratorio_vacunacion)
-                                </div>
-
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-sm-9 control-label">Observaciones</label>
-                                <div class="col-sm-4">
-                                    @Html.TextBoxFor(model => model.observaciones, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.observaciones)
-                                </div>
-
-                            </div>
-
-                            <div class="form-group">
-                                <div class="col-sm-offset-2 col-sm-10">
-                                    <div class="pull-right">
-                                        <button type="submit" class="btn btn-default">Cancelar</button>
-                                        <button type="submit" class="btn btn-primary">Guardar</button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            
-                        </div>
-}
-                    </div>
+                            }
+</div>
                 </div>
             
             <!-- /.row hasta aqui primer columna-->

@@ -79,6 +79,7 @@ namespace MvcApplication2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Curso curso)
         {
+            
 
             
                 curso.totalCapacitacion = (curso.valorUnitarioPersona+curso.valorUnitarioUniversidad)*curso.asignados;

@@ -11,6 +11,7 @@ namespace MvcApplication2.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Vacuna
     {
@@ -20,6 +21,8 @@ namespace MvcApplication2.Models
         public string antigenos_contenidos { get; set; }
         public string lote { get; set; }
         public string lugar_anatomico { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public System.DateTime fecha_vacunacion { get; set; }
         public System.DateTime fecha_prox_vacunacion { get; set; }
 

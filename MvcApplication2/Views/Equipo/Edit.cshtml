@@ -76,10 +76,16 @@
 
             <fosrm class="form-horizontal" role="form">
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">Serial o Código</label>
+                    <label class="col-sm-2 control-label">Serial</label>
                     <div class="col-sm-4">
                         @Html.TextBoxFor(model => model.serial, new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.serial)
+                    </div>
+                    <label class="col-sm-2 control-label">Fecha Entrega</label>
+                    <div class="col-sm-4">
+                        @Html.EditorFor(m => m.fechaPrestamo)
+                        @Html.ValidationMessageFor(model => model.fechaPrestamo)
+
                     </div>
                 </div>
                 <div class="form-group">
@@ -102,9 +108,10 @@
                         <div class="input-group">
                             <div class="input-group-addon">$</div>
                             @Html.TextBoxFor(model => model.costo, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.costo)
+                            
                             <div class="input-group-addon">.00</div>
                         </div>
+                        @Html.ValidationMessageFor(model => model.costo)
                     </div>
                 </div>
 

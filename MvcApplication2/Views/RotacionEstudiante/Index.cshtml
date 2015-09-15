@@ -33,69 +33,89 @@
     </nav>
 </div>
 
-<h2> @ViewBag.nombre                                        </h2>
+<div class="ens">
+    <p>
+        @Html.ActionLink("Regresar", "../Rotacion/SeleccionRotacion")
+    </p>
+</div>
 
-@Html.ActionLink("Regresar", "../Rotacion/SeleccionRotacion")  
+<div class="span7">
+    <div class="widget stacked widget-table action-table">
 
-<table class="table">
-    <tr>
-        <th>
-          Grupo
-        </th>
-        <th>
-         Horario
-        </th>
-        <th>
-            Fecha Inicio
-        </th>
-        <th>
-            Fecha Terminacion
-        </th>
-        <th>
-           Docente
-        </th>
-        <th>
-          Estudiante
-        </th>
-        <th>
-            IPS
-        </th>
-        <th></th>
-    </tr>
+        <div class="widget-header">
+            <h4><i class="glyphicon-align-center glyphicon glyphicon-list"></i></h4>
+            <h3>@ViewBag.nombre</h3>
+        </div> <!-- /widget-header -->
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Rotacion.grupo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.horario)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Rotacion.fecha_inicio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Rotacion.fecha_terminacion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Docente.HojaVida.primer_nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Estudiante.HojaVida.primer_nombre)
-                @Html.DisplayFor(modelItem => item.Estudiante.HojaVida.primer_apellido)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IPS_ESE.nombre)
-            </td>
-            <td>
-                @Html.ActionLink("Seleccionar", "/Edit", new { id = item.rotacionEstudianteId })
+        <div class="widget-content">
+
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+
+                        <th class="text-center">
+                            Grupo
+                        </th>
+                        <th>
+                            Horario
+                        </th>
+                        <th>
+                            Fecha Inicio
+                        </th>
+                        <th>
+                            Fecha Fin
+                        </th>
+                        <th>
+                            Docente
+                        </th>
+                        <th>
+                            Estudiante
+                        </th>
+                        <th>
+                            IPS/ESE
+                        </th>
+                        <th class="td-actions text-center">Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="text-center">
+                                @Html.DisplayFor(modelItem => item.Rotacion.grupo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.horario)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Rotacion.fecha_inicio)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Rotacion.fecha_terminacion)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Docente.HojaVida.primer_nombre)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Estudiante.HojaVida.primer_nombre)
+                                @Html.DisplayFor(modelItem => item.Estudiante.HojaVida.primer_apellido)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.IPS_ESE.nombre)
+                            </td>
+
+                            <td class="text-center">
+                                @Html.ActionLink(" ", "Edit", new { id = item.rotacionEstudianteId }, new { @class = "btn btn-sm btn-success btn-icon-only glyphicon glyphicon-pencil" })
 
 
-            </td>
+                            </td>
 
+                        </tr>
+                    }
 
-        </tr>
-    }
+                </tbody>
+            </table>
+        </div> <!-- /widget-content -->
 
-</table>
+    </div> <!-- /widget -->
+</div>

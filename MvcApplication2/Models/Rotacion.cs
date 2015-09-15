@@ -37,6 +37,8 @@ namespace MvcApplication2.Models
         public string horario { get; set; }  
         public int year_academico { get; set; } 
         public short periodo_academico { get; set; }
+
+        [Required]
         public int numero_estudiantes { get; set; }//dice cuantos estudiantes estan inscritos en la rotacion
        
        

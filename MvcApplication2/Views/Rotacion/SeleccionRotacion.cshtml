@@ -103,7 +103,7 @@
                         <th>
                             Grupo
                         </th>
-                        <th class="td-actions">Acción</th>
+                        <th class="td-actions  text-center">Acción</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -121,16 +121,16 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.fecha_terminacion)
                             </td>
-                            <td>
+                            <td class="text-center">
                                 @Html.DisplayFor(modelItem => item.ActividadAcademica.max_estudiantes_rotacion)
                             </td>
-                            <td>
+                            <td class="text-center">
                                 @Html.DisplayFor(modelItem => item.numero_estudiantes)
                             </td>
 
 
 
-                            <td>
+                            <td class="text-center">
                                 @Html.DisplayFor(modelItem => item.periodo_academico)
                             </td>
                             <td>
@@ -139,18 +139,14 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.ActividadAcademica.DepartamentoSalud.nombre)
                             </td>
-                            <td>
+                            <td class="text-center">
                                 @Html.DisplayFor(modelItem => item.grupo)
                             </td>
-                            <td class="td-actions">
+                            <td class="text-center">
+                                @Html.ActionLink(" ", "../RotacionEstudiante/Index", new { id = item.rotacionId }, new { @class = "btn btn-sm btn-default btn-icon-only glyphicon glyphicon-ok" })
+                                @Html.ActionLink(" ", "Edit", new { id = item.rotacionId }, new { @class = "btn btn-sm btn-success btn-icon-only glyphicon glyphicon-pencil" })
 
-                                <a href="javascript:;" class="btn btn-sm btn-default">
-                                    <i class="btn-icon-only glyphicon glyphicon-ok"></i>
-                                </a>
 
-                                <a href="javascript:;" class="btn btn-sm btn-success">
-                                    <i class="btn-icon-only glyphicon glyphicon-pencil"></i>
-                                </a>
                             </td>
                         </tr>
 

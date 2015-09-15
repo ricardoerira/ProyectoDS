@@ -68,7 +68,7 @@ namespace MvcApplication2.Controllers
             if (ModelState.IsValid)
             {
                 IPS_ESE ips = db.IPS_ESE.Find(equipo.IPS_ESEId);
-                equipo.recibido= ips.representante_legal;
+                
                 db.Equipoes.Add(equipo);
                 db.SaveChanges();
                 return RedirectToAction("Index");

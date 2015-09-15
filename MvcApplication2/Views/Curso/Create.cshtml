@@ -64,114 +64,114 @@
     </nav>
 </div>
 
-@using (Html.BeginForm("Create", "Curso", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
-
-    <div class="col-md-8 col-md-offset-2">
-        <div class="well well-sm">
-            <legend class="text-center">Educación Continuada - Crear nuevo item</legend>
-
-
-            <fosrm class="form-horizontal" role="form">
-
-                <div class="form-group">
+    <fieldset>
+        <div class="col-md-8 col-md-offset-2">
+            <div class="well well-sm">
+                <legend class="text-center">Educación Continuada - Crear nuevo item</legend>
 
 
-                    <label class="col-sm-2 control-label">Tipo</label>
-                    <div class="col-sm-4">
-                        @Html.DropDownList("tipo", new List<SelectListItem>() { new SelectListItem { Text = "Curso", Value = "Curso" }, new SelectListItem { Text = "Diplomado", Value = "Diplomado" }, new SelectListItem { Text = "Seminario", Value = "Seminario" } }, new { @class = "form-control" })
-                    </div>
-                    <label class="col-sm-2 control-label">Nombre</label>
-                    <div class="col-sm-4">
-                        @Html.DropDownList("nombre", new List<SelectListItem>() { new SelectListItem { Text = "Primeros Auxilios", Value = "Primeros Auxilios" }, new SelectListItem { Text = "Gases arteriales", Value = "Gases arteriales" }, new SelectListItem { Text = "Manejo del paciente crítico", Value = "Manejo del paciente crítico" }, new SelectListItem { Text = "Diplomado en Reanimación", Value = "Diplomado en Reanimación" }, new SelectListItem { Text = "Seguridad del Paciente", Value = "Seguridad del Paciente" }, new SelectListItem { Text = "Cuidado intensivo del adulto", Value = "Cuidado intensivo del adulto" } }, new { @class = "form-control" })
-                    </div>
+                <fosrm class="form-horizontal" action="" method="post">
+
+                    <div class="form-group">
 
 
-
-
-
-                </div>
-
-
-
-
-
-
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Fecha inicio</label>
-                    <div class="col-sm-4">
-                        @Html.EditorFor(m => m.fechaInicio)
-                        @Html.ValidationMessageFor(model => model.fechaInicio)
-
-
-                    </div>
-                    <label class="col-sm-2 control-label">Fecha Fin</label>
-                    <div class="col-sm-4">
-                        @Html.EditorFor(m => m.fechaFin)
-                        @Html.ValidationMessageFor(model => model.fechaFin)
-                    </div>
-
-                </div>
-
-
-
-
-
-                <div class="form-group">
-
-                    <label class="col-sm-2 control-label">Periodo</label>
-                    <div class="col-sm-4">
-                        @Html.DropDownList("periodoAcademico", new List<SelectListItem>() { new SelectListItem { Text = "20151", Value = "20151" }, new SelectListItem { Text = "20152", Value = "20152" }, new SelectListItem { Text = "20161", Value = "20161" }, new SelectListItem { Text = "20162", Value = "20162" } }, new { @class = "form-control" })
-
-                    </div>
-                    <label class="col-sm-2 control-label">Observaciones</label>
-                    <div class="col-sm-4">
-                        @Html.TextAreaFor(model => model.observaciones, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.observaciones)
-                    </div>
-                </div>
-
-
-
-                <div class="form-group">
-
-                    <label class="col-sm-2 control-label">Costo</label>
-                    <div class="col-sm-4">
-                        <div class="input-group">
-                            <div class="input-group-addon">$</div>
-                            @Html.TextBoxFor(model => model.valorParticipante, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.valorParticipante)
-                            <div class="input-group-addon">.00</div>
+                        <label class="col-sm-2 control-label">Tipo</label>
+                        <div class="col-sm-4">
+                            @Html.DropDownList("tipo", new List<SelectListItem>() { new SelectListItem { Text = "Curso", Value = "Curso" }, new SelectListItem { Text = "Diplomado", Value = "Diplomado" }, new SelectListItem { Text = "Seminario", Value = "Seminario" } }, new { @class = "form-control" })
                         </div>
+                        <label class="col-sm-2 control-label">Nombre</label>
+                        <div class="col-sm-4">
+                            @Html.DropDownList("nombre", new List<SelectListItem>() { new SelectListItem { Text = "Primeros Auxilios", Value = "Primeros Auxilios" }, new SelectListItem { Text = "Gases arteriales", Value = "Gases arteriales" }, new SelectListItem { Text = "Manejo del paciente crítico", Value = "Manejo del paciente crítico" }, new SelectListItem { Text = "Diplomado en Reanimación", Value = "Diplomado en Reanimación" }, new SelectListItem { Text = "Seguridad del Paciente", Value = "Seguridad del Paciente" }, new SelectListItem { Text = "Cuidado intensivo del adulto", Value = "Cuidado intensivo del adulto" } }, new { @class = "form-control" })
+                        </div>
+
+
+
+
+
                     </div>
-                </div>
 
 
-                <div class="form-group">
 
-                    <label class="col-sm-2 control-label">Valor asumido por persona</label>
-                    <div class="col-sm-4">
-                        <div class="input-group">
-                            <div class="input-group-addon">$</div>
-                            @Html.TextBoxFor(model => model.valorUnitarioPersona, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.valorUnitarioPersona)
-                            <div class="input-group-addon">.00</div>
+
+
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Fecha inicio</label>
+                        <div class="col-sm-4">
+                            @Html.EditorFor(m => m.fechaInicio)
+                            @Html.ValidationMessageFor(model => model.fechaInicio)
+
+
+                        </div>
+                        <label class="col-sm-2 control-label">Fecha Fin</label>
+                        <div class="col-sm-4">
+                            @Html.EditorFor(m => m.fechaFin)
+                            @Html.ValidationMessageFor(model => model.fechaFin)
+                        </div>
+
+                    </div>
+
+
+
+
+
+                    <div class="form-group">
+
+                        <label class="col-sm-2 control-label">Periodo</label>
+                        <div class="col-sm-4">
+                            @Html.DropDownList("periodoAcademico", new List<SelectListItem>() { new SelectListItem { Text = "20151", Value = "20151" }, new SelectListItem { Text = "20152", Value = "20152" }, new SelectListItem { Text = "20161", Value = "20161" }, new SelectListItem { Text = "20162", Value = "20162" } }, new { @class = "form-control" })
+
+                        </div>
+                        <label class="col-sm-2 control-label">Observaciones</label>
+                        <div class="col-sm-4">
+                            @Html.TextAreaFor(model => model.observaciones, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.observaciones)
                         </div>
                     </div>
 
-                    <label class="col-sm-2 control-label">Valor asumido por Universidad</label>
-                    <div class="col-sm-4">
-                        <div class="input-group">
-                            <div class="input-group-addon">$</div>
-                            @Html.TextBoxFor(model => model.valorUnitarioUniversidad, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.valorUnitarioUniversidad)
-                            <div class="input-group-addon">.00</div>
+
+
+                    <div class="form-group">
+
+                        <label class="col-sm-2 control-label">Costo</label>
+                        <div class="col-sm-4">
+                            <div class="input-group">
+                                <div class="input-group-addon">$</div>
+                                @Html.TextBoxFor(model => model.valorParticipante, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.valorParticipante)
+                                <div class="input-group-addon">.00</div>
+                            </div>
                         </div>
                     </div>
-                    
-                </div>
+
+
+                    <div class="form-group">
+
+                        <label class="col-sm-2 control-label">Valor asumido por persona</label>
+                        <div class="col-sm-4">
+                            <div class="input-group">
+                                <div class="input-group-addon">$</div>
+                                @Html.TextBoxFor(model => model.valorUnitarioPersona, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.valorUnitarioPersona)
+                                <div class="input-group-addon">.00</div>
+                            </div>
+                        </div>
+
+                        <label class="col-sm-2 control-label">Valor asumido por Universidad</label>
+                        <div class="col-sm-4">
+                            <div class="input-group">
+                                <div class="input-group-addon">$</div>
+                                @Html.TextBoxFor(model => model.valorUnitarioUniversidad, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.valorUnitarioUniversidad)
+                                <div class="input-group-addon">.00</div>
+                            </div>
+                        </div>
+
+                    </div>
 
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Dirigido a</label>
@@ -239,7 +239,7 @@
                         </div>
                     </div>
 
-                </div>
-    </div>
-
-}
+</div>
+        </div>
+        </fieldset>
+            }

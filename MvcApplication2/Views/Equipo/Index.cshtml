@@ -105,8 +105,8 @@
                         <th>
                             Nombre
                         </th>
-                        <th>
-                            Cantidad
+                        <th class="text-center"> 
+                            n.º
                         </th>
                         <th>
                             Estado
@@ -115,13 +115,16 @@
                             Costo
                         </th>
                         <th>
+                            Entrega
+                        </th>
+                        <th>
                             Observaciones
                         </th>
                         <th>
                             IPS/ESE
                         </th>
 
-                        <th class="td-actions">Acción</th>
+                        <th class="td-actions text-center"> Acción</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -135,7 +138,7 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.nombre)
                             </td>
-                            <td>
+                            <td class="text-center">
                                 @Html.DisplayFor(modelItem => item.cantidad)
                             </td>
                             <td>
@@ -145,14 +148,17 @@
                                 @Html.DisplayFor(modelItem => item.costo)
                             </td>
                             <td>
+                                @Html.DisplayFor(modelItem => item.fechaPrestamo)
+                            </td>
+                            <td>
                                 @Html.DisplayFor(modelItem => item.observaciones)
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.IPS_ESE.nombre)
                             </td>
-                            <td class="td-actions">
+                            <td class="text-center">
                                 @Html.ActionLink(" ", "Delete", new { id = item.equipoId }, new { @class = "btn btn-sm btn-danger btn-icon-only glyphicon glyphicon-remove" })
-                                @Html.ActionLink(" ", "Edit", new { id = item.equipoId}, new { @class = "btn btn-sm btn-success btn-icon-only glyphicon glyphicon-pencil" })
+                                @Html.ActionLink(" ", "Edit", new { id = item.equipoId }, new { @class = "btn btn-sm btn-success btn-icon-only glyphicon glyphicon-pencil" })
 
 
                             </td>

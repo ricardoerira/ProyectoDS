@@ -108,11 +108,18 @@
                         <th>
                             Frecuencia
                         </th>
+                        <th class="text-center">
+                            n.º Est.
+                            </th>
                         <th>
-                            Estudiantes
-                        </th>
-                        <th>
+                        
                             Valor
+                        </th>
+                        <th class="text-center">
+                            Año
+                            </th>
+                        <th class="text-center">
+                            Período
                         </th>
                         <th>
                             Observaciones
@@ -120,7 +127,7 @@
                         <th>
                             IPS/ESE
                         </th>
-                        <th class="td-actions">Acción</th>
+                        <th class="td-actions text-center">Acción</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -133,11 +140,17 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.frecuencia)
                             </td>
-                            <td>
+                            <td class="text-center">
                                 @Html.DisplayFor(modelItem => item.numeroEstudiantes)
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.valor)
+                            </td>
+                            <td class="text-center">
+                                @Html.DisplayFor(modelItem => item.año)
+                            </td>
+                            <td class="text-center">
+                                @Html.DisplayFor(modelItem => item.periodo)
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.observaciones)
@@ -145,9 +158,10 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.IPS_ESE.nombre)
                             </td>
-                            <td class="td-actions">
+                            
+                            <td class="text-center">                                
                                 @Html.ActionLink(" ", "Delete", new { id = item.InduccionId }, new { @class = "btn btn-sm btn-danger btn-icon-only glyphicon glyphicon-remove" })
-                                @Html.ActionLink(" ", "Edit", new { id = item.InduccionId}, new { @class = "btn btn-sm btn-success btn-icon-only glyphicon glyphicon-pencil" })
+                                @Html.ActionLink(" ", "Edit", new { id = item.InduccionId }, new { @class = "btn btn-sm btn-success btn-icon-only glyphicon glyphicon-pencil" })
 
 
 
