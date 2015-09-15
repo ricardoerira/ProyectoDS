@@ -29,8 +29,7 @@ namespace MvcApplication2.Models
         public int estudianteId { get; set; }
 
 
-
-        
+        [Required]
         public string horario { get; set; }
        
         public virtual IPS_ESE IPS_ESE { get; set; }

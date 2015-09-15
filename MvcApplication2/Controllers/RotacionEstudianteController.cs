@@ -76,6 +76,7 @@ namespace MvcApplication2.Controllers
 
         public ActionResult Edit(int id = 0)
         {
+            
             RotacionEstudiante rotacionestudiante = db.RotacionEstudiantes.Find(id);
             if (rotacionestudiante == null)
             {

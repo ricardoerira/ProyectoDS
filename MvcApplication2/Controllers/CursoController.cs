@@ -79,25 +79,30 @@ namespace MvcApplication2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Curso curso)
         {
-            
+            if (ModelState.IsValid)
+            {
 
-            
-                curso.totalCapacitacion = (curso.valorUnitarioPersona+curso.valorUnitarioUniversidad)*curso.asignados;
+
+                curso.totalCapacitacion = (curso.valorUnitarioPersona + curso.valorUnitarioUniversidad) * curso.asignados;
                 curso.valorTotalPersona = curso.valorUnitarioPersona * curso.asignados;
-                curso.totalContraprestacion = curso.valorUnitarioUniversidad*curso.asignados;
-                curso.valorTotalUniversidad = curso.valorUnitarioUniversidad * curso.asignados; 
+                curso.totalContraprestacion = curso.valorUnitarioUniversidad * curso.asignados;
+                curso.valorTotalUniversidad = curso.valorUnitarioUniversidad * curso.asignados;
                 curso.porcentajeTotalPersona = (curso.valorTotalPersona * 100) / curso.totalCapacitacion;
                 curso.porcentajeTotalUniversidad = (curso.valorTotalUniversidad * 100) / curso.totalCapacitacion;
-                
+
                 curso.fechaCreacion = DateTime.Now.Date;
-             
+
                 db.Cursoes.Add(curso);
                 db.SaveChanges();
                 return RedirectToAction("Index");
-            
+            }
+            else
+            {
+                ViewBag.IPS_ESEId = new SelectList(db.IPS_ESE, "IPS_ESEId", "nombre", curso.IPS_ESEId);
+                return View(curso);
 
-            ViewBag.IPS_ESEId = new SelectList(db.IPS_ESE, "IPS_ESEId", "nombre", curso.IPS_ESEId);
-            return View(curso);
+            }
+         
         }
 
         //

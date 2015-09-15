@@ -31,9 +31,9 @@ namespace MvcApplication2.Models
         public string segundo_apellido { get; set; }
         public string facultad { get; set; }
         public string departamento_procedencia { get; set; }
-        
+          [Required]
         public string municipio_procedencia { get; set; }
-        
+          [Required]
         public string direccion_manizales { get; set; }
         public System.DateTime fecha_nacimiento { get; set; }
         public string hemoclasificacion { get; set; }

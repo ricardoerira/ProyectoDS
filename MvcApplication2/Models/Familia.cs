@@ -11,6 +11,7 @@ namespace MvcApplication2.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Familia
     {
@@ -32,11 +33,16 @@ namespace MvcApplication2.Models
         public string segundo_apellido_madre { get; set; }
         public string direccion_madre { get; set; }
         public long telefono_madre { get; set; }
+          [Required]
         public string primer_nombre_acudiente { get; set; }
         public string segundo_nombre_acudiente { get; set; }
+          [Required]
         public string primer_apellido_acudiente { get; set; }
+          [Required]
         public string segundo_apellido_acudiente { get; set; }
+          [Required]
         public string direccion_acudiente { get; set; }
+          [Required]
         public long telefono_acudiente { get; set; }
         public long celular_acudiente { get; set; }
     

@@ -639,7 +639,14 @@ public ActionResult BuscarEnDepartamento(Estudiante estudiante)
                 db.SaveChanges();
                 return View(est);
             }
-            return View(estudiante);
+            else
+            {
+
+                Estudiante estudiante2 = db.Estudiantes.Find(estudiante.estudianteId);
+                return View(estudiante2);
+           
+            }
+           
         }
 
          
@@ -754,6 +761,8 @@ public ActionResult BuscarEnDepartamento(Estudiante estudiante)
         [ValidateAntiForgeryToken]
         public ActionResult PersonalesDS(Estudiante estudiante)
         {
+             estudiante = db.Estudiantes.Find(estudiante.estudianteId);
+               
                 if (Request != null)
                 {
                     HttpPostedFileBase file = Request.Files["InputFile"];
@@ -774,7 +783,8 @@ public ActionResult BuscarEnDepartamento(Estudiante estudiante)
                 }
 
 
-
+                Boolean estado = ValidarCampos(estudiante);
+                ViewBag.estado = estado;
                 return View(estudiante);
                 
         }

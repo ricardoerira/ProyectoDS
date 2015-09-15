@@ -650,6 +650,7 @@ namespace MvcApplication2.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult PersonalesDS(Docente docente) {
+            docente = db.Docentes.Find(docente.docenteId);
             int numFiles = Request.Files.Count;
             if (Request != null)
             {
@@ -675,8 +676,9 @@ namespace MvcApplication2.Controllers
                     }
                 }
             }
-
-             docente = db.Docentes.Find(docente.docenteId);
+            Boolean estado = ValidarCamposDocente(docente);
+            ViewBag.estado = estado;
+          
             return View(docente);
            
 

@@ -156,9 +156,11 @@
                             <div class="input-group">
                                 <div class="input-group-addon">$</div>
                                 @Html.TextBoxFor(model => model.valorUnitarioPersona, new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.valorUnitarioPersona)
                                 <div class="input-group-addon">.00</div>
                             </div>
+                            @Html.ValidationMessageFor(model => model.valorUnitarioPersona)
+
+
                         </div>
 
                         <label class="col-sm-2 control-label">Valor asumido por Universidad</label>

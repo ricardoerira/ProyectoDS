@@ -267,10 +267,12 @@
 
 
 
-    @using (Html.BeginForm())
-    {
+   @using (Html.BeginForm("PersonalesDS", "Estudiante", FormMethod.Post, new { enctype = "multipart/form-data" }))
+   {
         @Html.AntiForgeryToken()
         @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.estudianteId)
+
         <div class="col-sm-8">
             <div class="row">
                 <fdorm class="form-horizontal" role="form">
