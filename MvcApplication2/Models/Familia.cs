@@ -44,6 +44,7 @@ namespace MvcApplication2.Models
         public string direccion_acudiente { get; set; }
           [Required]
         public long telefono_acudiente { get; set; }
+        [Required]
         public long celular_acudiente { get; set; }
     
         public virtual ICollection<HojaVida> HojaVida { get; set; }

@@ -55,7 +55,7 @@
 
     <div class="container">
         <div class="row">
-            <fieldset>
+            
                 <legend>Información Personal Estudiante</legend>
 
                 <!-- /.navbar-collapse aca va leyend -->
@@ -64,9 +64,10 @@
                 <div class="col-sm-2">
                     <img src="@Url.Content(Model.HojaVida.imagen_DI)" alt="..." class="img-rounded" height="200px" width="150px"><br />
 
+
                 </div>
 
-                <div class="col-sm-8">
+                <div class="col-sm-9">
 
                     <div class="row">
 
@@ -101,13 +102,13 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">Primer Apellido </label>
+                                <label class="col-sm-2 control-label">Primer apellido </label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.HojaVida.primer_apellido, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.primer_apellido)
                                 </div>
 
-                                <label class="col-sm-2 control-label">Segundo Apellido</label>
+                                <label class="col-sm-2 control-label">Segundo apellido</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.HojaVida.segundo_apellido, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.segundo_apellido)
@@ -136,126 +137,79 @@
                                 </div>
                                 <label class="col-sm-2 control-label"></label>
                                 <div class="col-sm-4">
-                                    
+                                    <button type="submit" class="btn btn-primary">Vacunar</button>
 
-                                    <input type="submit" class="btn btn-lg btn-primary btn-block" value="Vacunar" />
-                                    
                                 </div>
                             </div>
-
-                            
-
-
-
-
-
-
-
-
-
-                            <div class="form-group">
-                                <div class="col-sm-8">
-
-
-                                    <br>
-
-                                    <br>
-                                    <br>
-                                </div>
-                            </div>
-
-
-
-
-
                     </div>
-
-                </div><!-- /.row -->
-
-
-
-                <div class="col-sm-3">
-
-                </div>
-
-
-                <div class="col-sm-8">
-                    <div class="row">
-                        <fdorm class="form-horizontal" role="form">
-
-
-
-
-
-
-
-
-
-
-
-
-                        </fdorm>
-
-                    </div><!-- /<div class="col-sm-offset-1"> y subo el div.row -->
-                </div>
-            </fieldset>
+                </div><!-- /.sm8-->
+            
         </div>
     </div>
 
+    <div class=" container col-sm-1">
+        
+        <div class="span7">
+            <div class="widget stacked widget-table action-table">
+
+                <div class="widget-header">
+                    <h4><i class="glyphicon-align-center glyphicon glyphicon-list"></i></h4>
+                    <h3>Esquema vacunación</h3>
+                </div> <!-- /widget-header -->
+
+                <div class="widget-content">
+
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Biológico | Dosis</th>
+                                <th>Fecha de Aplicación    </th>
+                                <th>Proxima Vacuna</th>
+                                <th>Lote</th>
+                                <th>Lugar Anatómico</th>
+                                <th>Laboratorio</th>
+                                <th>Observaciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (var i = 0; i < Model.HojaVida.Vacunas.Count; i++)
+                            {
+
+                                <tr>
+
+                                    <th>@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).nombre_generico)</th>
+                                    @if (Model.HojaVida.Vacunas.ElementAt(i).fecha_vacunacion > DateTime.Now.Date.AddMonths(-20))
+                                    {
+                                        <td>@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).fecha_vacunacion)</td>
+                                        <td>@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).fecha_prox_vacunacion)</td>
+                                        <td>@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).lote)</td>
+                                        <td>@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).lugar_anatomico)</td>
+                                        <td>@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).laboratorio_vacunacion)</td>
+                                        <td>@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).observaciones)</td>
+
+
+
+                                    }
+                                    else
+                                    {
+
+                                    }
 
 
 
 
 
-    <div class="col-sm-offset-1">
-        <div class="table-responsive">
-            <table class="table table-striped table-bordered">
-
-                <tr>
-                    <th>Biológico | Dosis</th>
-                    <th>Fecha de Aplicación    </th>
-                    <th>Proxima Vacuna</th>
-                    <th>Lote</th>
-                    <th>Lugar Anatómico</th>
-                    <th>Laboratorio</th>
-                    <th>Observaciones</th>
-
-                </tr>
-                @for (var i = 0; i < Model.HojaVida.Vacunas.Count; i++)
-                {
-
-                    <tr>
-
-                        <th>@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).nombre_generico)</th>
-                        @if (Model.HojaVida.Vacunas.ElementAt(i).fecha_vacunacion > DateTime.Now.Date.AddMonths(-20))
-                        {
-                            <td>@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).fecha_vacunacion)</td>
-                            <td>@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).fecha_prox_vacunacion)</td>
-                            <td>@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).lote)</td>
-                            <td>@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).lugar_anatomico)</td>
-                            <td>@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).laboratorio_vacunacion)</td>
-                            <td>@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).observaciones)</td>
+                                </tr>
+                            }
 
 
+                        </tbody>
+                    </table>
+                </div> <!-- /widget-content -->
 
-                        }
-                        else
-                        {
-
-                        }
-
-
-
-
-
-                    </tr>
-                }
-
-            </table>
-
+            </div> <!-- /widget -->
         </div>
     </div>
-
 
 
 

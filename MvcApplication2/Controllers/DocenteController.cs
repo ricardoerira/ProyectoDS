@@ -152,17 +152,48 @@ namespace MvcApplication2.Controllers
         }
         public ActionResult CarnetVacunacionDocenteDS(int id = 0)
         {
+            TempData["notice"] = null;
+
             
             Docente docente = db.Docentes.Find(id);
+            HojaVida oHojaVida = db.HojaVidas.Find(docente.hojaVidaId);
 
-            if (docente == null)
+            try
             {
-                return HttpNotFound();
+                var request = WebRequest.Create(oHojaVida.imagen_DI);
+                using (var response = request.GetResponse())
+                {
+                    using (var responseStream = response.GetResponseStream())
+                    {
+                        // Process the stream
+                    }
+                }
             }
-            ViewBag.Details = docente.HojaVida.Vacunas;
+            catch (WebException ex)
+            {
+                if (ex.Status == WebExceptionStatus.ProtocolError &&
+                    ex.Response != null)
+                {
+                    var resp = (HttpWebResponse)ex.Response;
+                    if (resp.StatusCode == HttpStatusCode.NotFound)
+                    {
+                        oHojaVida.imagen_DI = "http://www.tagetik.com/intouch2015/user.png";
+                    }
+                    else
+                    {
+                        // Do something else
+                    }
+                }
+                else
+                {
+                    // Do something else
+                }
+            }
+
             return View(docente);
 
         }
+
         public ActionResult BuscarEnVacuna(Docente docente)
         {
             var docentes = from b in db.Docentes
@@ -492,6 +523,23 @@ namespace MvcApplication2.Controllers
             {
                 docente.num_libreta_militar = "NO APLICA";
             }
+
+
+            string path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), "doc_identidad" + docente.num_documento, ".jpg");
+            
+            if (System.IO.File.Exists(path1))  
+            {
+
+                ViewBag.imagen = "/Uploads/doc_identidad" + docente.num_documento + ".jpg";
+                
+            }
+            else
+            {
+                ViewBag.imagen = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+            }
+            
+            
            
             return View(docente);
 
@@ -737,8 +785,8 @@ namespace MvcApplication2.Controllers
                 docente.HojaVida = null;
                
                 db.Entry(docente1).State = EntityState.Modified;
-                int numFiles = Request.Files.Count;
 
+                int numFiles = Request.Files.Count;
                 if (Request != null)
                 {
                    

@@ -637,14 +637,16 @@ public ActionResult BuscarEnDepartamento(Estudiante estudiante)
             }
 
                 db.SaveChanges();
-                return View(est);
+                return RedirectToAction("../Estudiante/Personales/" + est.estudianteId);
+                //return View(est);
             }
             else
             {
 
                 Estudiante estudiante2 = db.Estudiantes.Find(estudiante.estudianteId);
+                //return RedirectToAction("../Estudiante/Personales/" + estudiante2.estudianteId); Este return en necesario ponerlo dado que necesitamos que redirija a la
+                //misma pagina. pero si se pone ya no valida los campos no ingresados
                 return View(estudiante2);
-           
             }
            
         }
@@ -706,10 +708,22 @@ public ActionResult BuscarEnDepartamento(Estudiante estudiante)
                 return HttpNotFound();
             }
 
-
             Boolean estado = ValidarCampos(estudiante);
             ViewBag.estado = estado;
+
+            string path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), "cedula_" + estudiante.codigo, ".jpg");
+            if (System.IO.File.Exists(path1))
+            {
+
+                ViewBag.imagen = "/Uploads/cedula_" + estudiante.codigo + ".jpg";
+            }
+            else
+            {
+                ViewBag.imagen = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+            }
             return View(estudiante);
+            
         }
 
         [HttpPost]
@@ -785,7 +799,8 @@ public ActionResult BuscarEnDepartamento(Estudiante estudiante)
 
                 Boolean estado = ValidarCampos(estudiante);
                 ViewBag.estado = estado;
-                return View(estudiante);
+                //return View(estudiante);
+                return RedirectToAction("../Estudiante/PersonalesDS/" + estudiante.estudianteId);
                 
         }
 
@@ -849,20 +864,55 @@ public ActionResult BuscarEnDepartamento(Estudiante estudiante)
 
 
         }
+        
+
+
+
+
         public ActionResult CarnetVacunacionDS(int id = 0)
         {
-
+            TempData["notice"] = null;
 
             Estudiante estudiante = db.Estudiantes.Find(id);
+            HojaVida oHojaVida = db.HojaVidas.Find(estudiante.hojaVidaId);
 
-            if (estudiante == null)
+            try
             {
-                return HttpNotFound();
+                var request = WebRequest.Create(oHojaVida.imagen_DI);
+                using (var response = request.GetResponse())
+                {
+                    using (var responseStream = response.GetResponseStream())
+                    {
+                        // Process the stream
+                    }
+                }
             }
-            ViewBag.Details = estudiante.HojaVida.Vacunas;
+            catch (WebException ex)
+            {
+                if (ex.Status == WebExceptionStatus.ProtocolError &&
+                    ex.Response != null)
+                {
+                    var resp = (HttpWebResponse)ex.Response;
+                    if (resp.StatusCode == HttpStatusCode.NotFound)
+                    {
+                        oHojaVida.imagen_DI = "http://www.tagetik.com/intouch2015/user.png";
+                    }
+                    else
+                    {
+                        // Do something else
+                    }
+                }
+                else
+                {
+                    // Do something else
+                }
+            }
+            
             return View(estudiante);
 
         }
+
+
 
         public ActionResult CarnetVacunacionODS(int id = 0)
         {

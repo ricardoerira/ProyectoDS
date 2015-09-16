@@ -243,6 +243,9 @@
                                     @Html.HiddenFor(model => model.semestre)
                                     @Html.HiddenFor(model => model.estado_academico)
 
+                                   
+
+
 
                                 </div>
                             </div>
@@ -272,6 +275,7 @@
         @Html.AntiForgeryToken()
         @Html.ValidationSummary(true)
     @Html.HiddenFor(model => model.estudianteId)
+       @Html.HiddenFor(model => model.hojaVidaId)
 
         <div class="col-sm-8">
             <div class="row">
@@ -289,7 +293,7 @@
                             <tr>
                                 <td>
                                     <div class="col-sm-4">
-                                        <img src='~/Uploads/cedula_@(Model.codigo).jpg' alt="..." class="img-rounded" height="200px" width="200px"><br />
+                                        <img src=@ViewBag.imagen alt="..." class="img-rounded" height="120px" width="200px"><br />
 
                                     </div>
                                 </td>

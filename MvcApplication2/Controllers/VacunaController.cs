@@ -129,24 +129,30 @@ namespace MvcApplication2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult EsquemaVacunacion(Vacuna vacuna, int id = 0)
         {
-            
+            if (ModelState.IsValid)
+            {
+
                 db.Entry(vacuna).State = EntityState.Modified;
                 db.SaveChanges();
 
-                return RedirectToAction("EsquemaVacunacion/"+id);
-
+                return RedirectToAction("EsquemaVacunacion/" + id);
+            }
+            return View(vacuna);
+            //ME DEBE RETORNAR TAMBIEN EL ESTUDIANTE PARA QUE SE PUEDA VISUALIZAR EN LA VISTA
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult EsquemaVacunacionDocente(Vacuna vacuna, int id = 0)
         {
-
+            if (ModelState.IsValid)
+            {
             db.Entry(vacuna).State = EntityState.Modified;
             db.SaveChanges();
 
             return RedirectToAction("EsquemaVacunacionDocente/" + id);
-
+            }
+            return View(vacuna);
         }
         
         public ActionResult VistaIPS_Universitaria()
