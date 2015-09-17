@@ -644,8 +644,8 @@ public ActionResult BuscarEnDepartamento(Estudiante estudiante)
             {
 
                 Estudiante estudiante2 = db.Estudiantes.Find(estudiante.estudianteId);
-                //return RedirectToAction("../Estudiante/Personales/" + estudiante2.estudianteId); Este return en necesario ponerlo dado que necesitamos que redirija a la
-                //misma pagina. pero si se pone ya no valida los campos no ingresados
+                
+                
                 return View(estudiante2);
             }
            

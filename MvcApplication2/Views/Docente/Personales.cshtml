@@ -223,8 +223,8 @@
                                 </div>
                                 <label class="col-sm-2 control-label">Género</label>
                                 <div class="col-sm-4">
-                                    @Html.TextBoxFor(model => model.HojaVida.genero, new { @class = "form-control", @readonly = "readonly" })
-                                    @Html.ValidationMessageFor(model => model.HojaVida.genero)
+                                    @Html.DropDownList("HojaVida.genero", new List<SelectListItem>() { new SelectListItem { Text = "M", Value = "M" }, new SelectListItem { Text = "F", Value = "F" } }, new { @class = "form-control" })
+                                    
                                 </div>
 
 

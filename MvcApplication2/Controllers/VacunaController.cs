@@ -125,21 +125,7 @@ namespace MvcApplication2.Controllers
             db.Dispose();
             base.Dispose(disposing);
         }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult EsquemaVacunacion(Vacuna vacuna, int id = 0)
-        {
-            if (ModelState.IsValid)
-            {
-
-                db.Entry(vacuna).State = EntityState.Modified;
-                db.SaveChanges();
-
-                return RedirectToAction("EsquemaVacunacion/" + id);
-            }
-            return View(vacuna);
-            //ME DEBE RETORNAR TAMBIEN EL ESTUDIANTE PARA QUE SE PUEDA VISUALIZAR EN LA VISTA
-        }
+       
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -219,7 +205,24 @@ namespace MvcApplication2.Controllers
             return View(ivacuna);
 
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EsquemaVacunacion(Vacuna vacuna, int id = 0)
+        {
+            if (ModelState.IsValid)
+            {
 
+                db.Entry(vacuna).State = EntityState.Modified;
+                db.SaveChanges();
+
+                return RedirectToAction("EsquemaVacunacion/" + id);
+            }
+            vacuna = db.Vacunas.Find(vacuna.vacunaId);
+            ViewBag.num_documento = vacuna.HojaVida.Estudiante.ElementAt(0).num_documento;
+
+            return View(vacuna);
+            //ME DEBE RETORNAR TAMBIEN EL ESTUDIANTE PARA QUE SE PUEDA VISUALIZAR EN LA VISTA
+        }
         public ActionResult EsquemaVacunacionDocente(int id = 0)
         {
             string vacuna = Request.Params["vacuna"];
