@@ -10,8 +10,9 @@
 namespace MvcApplication2.Models
 {
     using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
     
     public partial class Docente
     {
@@ -28,6 +29,7 @@ namespace MvcApplication2.Models
         public string imagen_acta_grado { get; set; }
         public string diploma_profesional { get; set; }
         public string certificado_DPE { get; set; }
+        [Required]
         public string certificado_TPDTS { get; set; }
         public string certificado_TPN { get; set; }
         public string otro_certificado { get; set; }

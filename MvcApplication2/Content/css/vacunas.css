@@ -3,9 +3,63 @@
  */
 
 /* Move down content because we have a fixed navbar that is 50px tall */
-body {
-  padding-top: 50px;
+
+/**body  padding-top: 50px;
+*/
+
+body { 
+    
+padding-top: 50px;
+ }
+    
+
+
+
+
+/* ESTE CSS DEFINE EL INICIO DE SESION DESDE LA PAGINA PRINCIPAL
+-------------------------------------------------------------------------------------------*/
+login {
+    display: block;
+    font-size: .85em;
+    margin: 0 0 10px;
+    text-align: right;
+      background-color: #eee;
+      
 }
+/* cerrar sesion de administrador
+----------*/
+#login a {
+        
+        text-decoration-color:black;
+        margin-left: 10px;
+        margin-right: 3px;
+        padding: 2px 3px;
+        text-decoration: none;
+        color:cornsilk;
+  
+    }
+   
+/* Usuario administrador
+-------------------------*/
+    #login a.username {
+        
+        text-decoration: none;
+        color:silver;
+        
+        margin: 0;
+        padding: 0;
+        
+    }
+
+    #login ul {
+        margin: 0;
+    }
+
+    #login li {
+        display: inline;
+        list-style: none;
+    }
+
 
 
 /*
@@ -89,30 +143,15 @@ body {
  * Placeholder dashboard ideas
  */
 
-.placeholders {
-  margin-bottom: 30px;
-  text-align: center;
-}
-.placeholders h4 {
-  margin-bottom: 0;
-}
-.placeholder {
-  margin-bottom: 20px;
-}
-.placeholder img {
-  display: inline-block;
-  border-radius: 50%;
-}
-
-.texto-centrado{
-    text-align:center
-} 
 
 
 
 
-/* tabla design
-----------------------------------------------------------*/
+
+
+
+/* DISEÑO DE TODAS LAS TABLAS
+-------------------------------------------------------------------------------------*/
 .table-bordered {
 border: 1px solid #dddddd;
 border-collapse: separate;
@@ -206,7 +245,7 @@ margin-left:15px;
 }
 
 
-.widget .widget-header h3 { /* baja la palabra tablet--------------------------------*/
+.widget .widget-header h3 { /* baja la palabra tablet---*/
 top: -8px;
 margin-left:-35px;
 position: relative;
@@ -220,7 +259,7 @@ line-height: 18px;
 text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
 }
 
-.widget .widget-header h4 { /* baja la palabra tablet--------------------------------*/
+.widget .widget-header h4 { /* baja la palabra tablet----*/
 top: -8px;
 margin-left:0px;
 position: relative;
@@ -246,8 +285,8 @@ vertical-align: middle;
 
 
 
-/* Curso/Detail
-----------------------------------------------------------*/
+/* ESTE MANEJA LA VISTA Curso/Detail 
+----------------------------------------------------------------------------------*/
 
 
 .invoice-title h2, .invoice-title h3 {
@@ -267,8 +306,10 @@ vertical-align: middle;
 }
 
 
-/* campos requeridos
-----------------------------------------------------------*/
+
+
+/* ESTE CSS HACE QUE SE MUESTRE EN ROJO LOS CAMPOS QUE NO SON DILIGENCIADOS
+----------------------------------------------------------.---------------------------*/
     /* Styles for validation helpers
 -----------------------------------------------------------*/
 .field-validation-error {
@@ -295,8 +336,9 @@ vertical-align: middle;
 
 
 
-/* Para texBox sin borde
-----------------------------------------------------------*/
+
+/* PARA DESAPARECER EL BORDE DE LOS CAMPOS DE TEXTO
+-----------------------------------------------------------------------------------------*/
 .TextBoxAsLabel
 {
    border: none;
@@ -305,11 +347,187 @@ vertical-align: middle;
 }
 
 
-/* Accordion Menu
-----------------------------------------------------------*/
+
+
+/*  ACCORDION MENU PARA VACUNA/ESQUEMAVACUNACION
+---------------------------------------------------------------------------------------*/
 
 
 .glyphicon { margin-right:10px; }
 .panel-body { padding:0px; }
 .panel-body table tr td { padding-left: 15px }
 .panel-body .table {margin-bottom: 0px; }
+
+
+/* LogoUcaldas
+----------------------------------------------------------*/
+.logoUcaldas{
+    margin-top:-8px;
+}
+
+
+
+
+
+
+
+/*                    ESTE CSS DA FONDO AL LOGIN DEL ESTUDIANTE
+----------------------------------------------------------------------------------*/
+.principal { 
+  background: url(../../images/fondo2Nuevo.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: 100% 100%;
+}
+
+.panel-default {
+opacity: 0.9;
+margin-top:290px;
+
+
+}
+.form-group.last { margin-bottom:0px; }
+
+
+
+/*                    ESTE CSS DA FONDO AL LOGIN DEL DOCENTE
+-------------------------------------------------------------------------------*/
+
+.principalDocente { 
+  background: url(../../images/fondo7.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: 100% 100%;
+}
+
+.panel-default {
+opacity: 0.9;
+margin-top:290px;
+
+
+}
+.form-group.last { margin-bottom:0px; }
+
+/*                    ESTE CSS DA FONDO AL LOGIN DE TODOS LOS ADMINISTRADORES
+----------------------------------------------------------*/
+
+.principalAccount { 
+  background: url(../../images/fondo6.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: 100% 100%;
+}
+
+.panel-default {
+opacity: 0.9;
+margin-top:290px;
+
+
+}
+.form-group.last { margin-bottom:0px; }
+
+
+
+
+/*                    ESTE CSS ES PARA EL ACCORDION
+----------------------------------------------------------*/
+.bodyAccordion{margin-top:50px;}
+.glyphicon { margin-right:10px; }
+.panel-body { padding:0px; }
+.panel-body table tr td { padding-left: 15px }
+.panel-body .table {margin-bottom: 0px; }
+
+
+
+
+
+/* PaginaPrincipal
+----------------------------------------------------------*/
+/*
+Free App template for Bootstrap 3
+Code snippet by maridlcrmn for Bootsnipp.com
+Follow me on Twitter @maridlcrmn
+Image credits: unsplash.com
+Image placeholders: placemi.com
+*/
+
+
+.mt-100 {
+    margin-top: 100px; 
+}
+.mb-100 {
+    margin-bottom: 100px;
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    padding: 7px 8px;
+    border: 2px solid;
+    border-radius: 50%;
+}
+
+.header {
+    padding-top: 50px;
+    background-color: #eee;
+    overflow: hidden;
+}
+.footer {
+    color: #887;
+    background-color: #eee;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.content {
+    position: relative;
+    display: table;
+    width: 100%;
+    min-height: 100vh;
+}
+.pull-middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.btn {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.btn-circle {
+    border-radius: 20px;
+}
+
+.input-group input {
+    border: 1;
+    box-shadow: none;
+    padding-right: 30px;
+}
+.input-group input:focus,
+.input-group input:active {
+    outline: 0;
+    box-shadow: none;
+}
+.input-group-btn:last-child>.btn {
+    z-index: 2;
+    margin-left: -18px;   
+    border-radius: 20px;
+}
+
+.phone {
+    position: relative;
+    max-width: 263px;
+    margin: 0 auto;
+    padding: 65px 15px 55px;
+    border: 2px solid #ddd;
+    border-radius: 20px;
+    background-color: #222;
+    box-shadow: 20px 20px 40px #887;
+}

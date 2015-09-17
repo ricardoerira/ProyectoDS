@@ -43,6 +43,7 @@ namespace MvcApplication2.Models
         public string imagen_DI { get; set; }        
         public string num_telefono { get; set; }
         [Required]
+        [Range(3000000000, 3999999999)]
         public long num_celular { get; set; }        
         public string correo { get; set; }
         public string entidad_salud { get; set; }

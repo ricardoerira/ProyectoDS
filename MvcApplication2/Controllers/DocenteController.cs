@@ -516,6 +516,7 @@ namespace MvcApplication2.Controllers
             {
                 return HttpNotFound();
             }
+          
             int edad = DateTime.Today.AddTicks(-docente.HojaVida.fecha_nacimiento.Ticks).Year - 1;
             string edadDocente = edad.ToString();
             docente.diploma_profesional = edadDocente;//Reemplaza edad
@@ -813,9 +814,18 @@ namespace MvcApplication2.Controllers
                 }
                
                 db.SaveChanges();
-                return View(docente1);
+                return RedirectToAction("../Docente/Personales/" + docente1.docenteId);
+                //return View(docente1);
             }
-            return View(docente);
+            else
+            {
+
+                Docente docente2 = db.Docentes.Find(docente.docenteId);
+               
+                
+                return View(docente2);
+            }
+            
         }
 
 

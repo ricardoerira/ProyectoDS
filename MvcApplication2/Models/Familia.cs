@@ -31,9 +31,13 @@ namespace MvcApplication2.Models
         public string segundo_nombre_madre { get; set; }
         public string primer_apellido_madre { get; set; }
         public string segundo_apellido_madre { get; set; }
-        public string direccion_madre { get; set; }
         public long telefono_madre { get; set; }
-          [Required]
+        
+        public string direccion_madre { get; set; }
+
+        
+
+        [Required]
         public string primer_nombre_acudiente { get; set; }
         public string segundo_nombre_acudiente { get; set; }
           [Required]
@@ -43,10 +47,12 @@ namespace MvcApplication2.Models
           [Required]
         public string direccion_acudiente { get; set; }
           [Required]
+          [RegularExpression("([1-9][0-9]*)", ErrorMessage = "Campo númerico")]
         public long telefono_acudiente { get; set; }
         [Required]
+        [Range(3000000000, 3999999999)]
         public long celular_acudiente { get; set; }
-    
+        
         public virtual ICollection<HojaVida> HojaVida { get; set; }
     }
 }
