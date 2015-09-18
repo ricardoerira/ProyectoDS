@@ -525,20 +525,134 @@ namespace MvcApplication2.Controllers
                 docente.num_libreta_militar = "NO APLICA";
             }
 
+              string[] documentos = { "doc_identidad", "acta_grado", "dip_prof", "dip_espe", "tp_terr", "tp_dept", "tp_nal", "otro" };
+        
 
-            string path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), "doc_identidad" + docente.num_documento, ".jpg");
+                  string path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[0] + docente.num_documento, ".jpg");
+
+                  if (System.IO.File.Exists(path1))
+                  {
+
+                      ViewBag.imagen1 = "/Uploads/" + documentos[0] + docente.num_documento + ".jpg";
+
+                  }
+                  else
+                  {
+                      ViewBag.imagen1 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+                  }
+
+                  path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[1] + docente.num_documento, ".jpg");
+
+                  if (System.IO.File.Exists(path1))
+                  {
+
+                      ViewBag.imagen2 = "/Uploads/" + documentos[1] + docente.num_documento + ".jpg";
+
+                  }
+                  else
+                  {
+                      ViewBag.imagen2 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+                  }
+                 
             
-            if (System.IO.File.Exists(path1))  
-            {
+            path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[2] + docente.num_documento, ".jpg");
 
-                ViewBag.imagen = "/Uploads/doc_identidad" + docente.num_documento + ".jpg";
-                
-            }
-            else
-            {
-                ViewBag.imagen = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+                  if (System.IO.File.Exists(path1))
+                  {
 
-            }
+                      ViewBag.imagen3 = "/Uploads/" + documentos[2] + docente.num_documento + ".jpg";
+
+                  }
+                  else
+                  {
+                      ViewBag.imagen3 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+                  }
+
+
+
+                  path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[3] + docente.num_documento, ".jpg");
+
+                  if (System.IO.File.Exists(path1))
+                  {
+
+                      ViewBag.imagen4 = "/Uploads/" + documentos[3] + docente.num_documento + ".jpg";
+
+                  }
+                  else
+                  {
+                      ViewBag.imagen4 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+                  }
+
+
+
+
+                  path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[4] + docente.num_documento, ".jpg");
+
+                  if (System.IO.File.Exists(path1))
+                  {
+
+                      ViewBag.imagen5 = "/Uploads/" + documentos[4] + docente.num_documento + ".jpg";
+
+                  }
+                  else
+                  {
+                      ViewBag.imagen5 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+                  }
+
+
+
+                  path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[5] + docente.num_documento, ".jpg");
+
+                  if (System.IO.File.Exists(path1))
+                  {
+
+                      ViewBag.imagen6 = "/Uploads/" + documentos[5] + docente.num_documento + ".jpg";
+
+                  }
+                  else
+                  {
+                      ViewBag.imagen6 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+                  }
+
+
+
+                  path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[6] + docente.num_documento, ".jpg");
+
+                  if (System.IO.File.Exists(path1))
+                  {
+
+                      ViewBag.imagen7 = "/Uploads/" + documentos[6] + docente.num_documento + ".jpg";
+
+                  }
+                  else
+                  {
+                      ViewBag.imagen7 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+                  }
+
+
+
+                  path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[7] + docente.num_documento, ".jpg");
+
+                  if (System.IO.File.Exists(path1))
+                  {
+
+                      ViewBag.imagen8 = "/Uploads/" + documentos[7] + docente.num_documento + ".jpg";
+
+                  }
+                  else
+                  {
+                      ViewBag.imagen8 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+                  }
+              
+         
             
             
            
@@ -568,6 +682,134 @@ namespace MvcApplication2.Controllers
             {
                 return HttpNotFound();
             }
+            string[] documentos = { "doc_identidad", "acta_grado", "dip_prof", "dip_espe", "tp_terr", "tp_dept", "tp_nal", "otro" };
+
+
+            string path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[0] + docente.num_documento, ".jpg");
+
+            if (System.IO.File.Exists(path1))
+            {
+
+                ViewBag.imagen1 = "/Uploads/" + documentos[0] + docente.num_documento + ".jpg";
+
+            }
+            else
+            {
+                ViewBag.imagen1 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+            }
+
+            path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[1] + docente.num_documento, ".jpg");
+
+            if (System.IO.File.Exists(path1))
+            {
+
+                ViewBag.imagen2 = "/Uploads/" + documentos[1] + docente.num_documento + ".jpg";
+
+            }
+            else
+            {
+                ViewBag.imagen2 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+            }
+
+
+            path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[2] + docente.num_documento, ".jpg");
+
+            if (System.IO.File.Exists(path1))
+            {
+
+                ViewBag.imagen3 = "/Uploads/" + documentos[2] + docente.num_documento + ".jpg";
+
+            }
+            else
+            {
+                ViewBag.imagen3 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+            }
+
+
+
+            path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[3] + docente.num_documento, ".jpg");
+
+            if (System.IO.File.Exists(path1))
+            {
+
+                ViewBag.imagen4 = "/Uploads/" + documentos[3] + docente.num_documento + ".jpg";
+
+            }
+            else
+            {
+                ViewBag.imagen4 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+            }
+
+
+
+
+            path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[4] + docente.num_documento, ".jpg");
+
+            if (System.IO.File.Exists(path1))
+            {
+
+                ViewBag.imagen5 = "/Uploads/" + documentos[4] + docente.num_documento + ".jpg";
+
+            }
+            else
+            {
+                ViewBag.imagen5 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+            }
+
+
+
+            path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[5] + docente.num_documento, ".jpg");
+
+            if (System.IO.File.Exists(path1))
+            {
+
+                ViewBag.imagen6 = "/Uploads/" + documentos[5] + docente.num_documento + ".jpg";
+
+            }
+            else
+            {
+                ViewBag.imagen6 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+            }
+
+
+
+            path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[6] + docente.num_documento, ".jpg");
+
+            if (System.IO.File.Exists(path1))
+            {
+
+                ViewBag.imagen7 = "/Uploads/" + documentos[6] + docente.num_documento + ".jpg";
+
+            }
+            else
+            {
+                ViewBag.imagen7 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+            }
+
+
+
+            path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[7] + docente.num_documento, ".jpg");
+
+            if (System.IO.File.Exists(path1))
+            {
+
+                ViewBag.imagen8 = "/Uploads/" + documentos[7] + docente.num_documento + ".jpg";
+
+            }
+            else
+            {
+                ViewBag.imagen7 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+            }
+              
+         
             return View(docente);
         }
 
@@ -647,6 +889,145 @@ namespace MvcApplication2.Controllers
             }
             Boolean estado = ValidarCamposDocente(docente);
             ViewBag.estado = estado;
+
+
+
+
+
+
+
+            string[] documentos = { "doc_identidad", "acta_grado", "dip_prof", "dip_espe", "tp_terr", "tp_dept", "tp_nal", "otro" };
+
+
+            string path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[0] + docente.num_documento, ".jpg");
+
+            if (System.IO.File.Exists(path1))
+            {
+
+                ViewBag.imagen1 = "/Uploads/" + documentos[0] + docente.num_documento + ".jpg";
+
+            }
+            else
+            {
+                ViewBag.imagen1 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+            }
+
+            path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[1] + docente.num_documento, ".jpg");
+
+            if (System.IO.File.Exists(path1))
+            {
+
+                ViewBag.imagen2 = "/Uploads/" + documentos[1] + docente.num_documento + ".jpg";
+
+            }
+            else
+            {
+                ViewBag.imagen2 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+            }
+
+
+            path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[2] + docente.num_documento, ".jpg");
+
+            if (System.IO.File.Exists(path1))
+            {
+
+                ViewBag.imagen3 = "/Uploads/" + documentos[2] + docente.num_documento + ".jpg";
+
+            }
+            else
+            {
+                ViewBag.imagen3 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+            }
+
+
+
+            path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[3] + docente.num_documento, ".jpg");
+
+            if (System.IO.File.Exists(path1))
+            {
+
+                ViewBag.imagen4 = "/Uploads/" + documentos[3] + docente.num_documento + ".jpg";
+
+            }
+            else
+            {
+                ViewBag.imagen4 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+            }
+
+
+
+
+            path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[4] + docente.num_documento, ".jpg");
+
+            if (System.IO.File.Exists(path1))
+            {
+
+                ViewBag.imagen5 = "/Uploads/" + documentos[4] + docente.num_documento + ".jpg";
+
+            }
+            else
+            {
+                ViewBag.imagen5 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+            }
+
+
+
+            path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[5] + docente.num_documento, ".jpg");
+
+            if (System.IO.File.Exists(path1))
+            {
+
+                ViewBag.imagen6 = "/Uploads/" + documentos[5] + docente.num_documento + ".jpg";
+
+            }
+            else
+            {
+                ViewBag.imagen6 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+            }
+
+
+
+            path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[6] + docente.num_documento, ".jpg");
+
+            if (System.IO.File.Exists(path1))
+            {
+
+                ViewBag.imagen7 = "/Uploads/" + documentos[6] + docente.num_documento + ".jpg";
+
+            }
+            else
+            {
+                ViewBag.imagen7 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+            }
+
+
+
+            path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[7] + docente.num_documento, ".jpg");
+
+            if (System.IO.File.Exists(path1))
+            {
+
+                ViewBag.imagen8 = "/Uploads/" + documentos[7] + docente.num_documento + ".jpg";
+
+            }
+            else
+            {
+                ViewBag.imagen8 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+            }
+              
+         
+
+
+
+
             return View(docente);
 
             

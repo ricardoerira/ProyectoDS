@@ -631,14 +631,14 @@ public ActionResult BuscarEnDepartamento(Estudiante estudiante)
                     string path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"),"cedula_"+ estudiante.codigo, ".jpg");
                     if (System.IO.File.Exists(path1))
                         System.IO.File.Delete(path1);
-
+                    ViewBag.imagen = "/Uploads/cedula_" + estudiante.codigo + ".jpg";
                     Request.Files["InputFile"].SaveAs(path1);
                 }
             }
 
                 db.SaveChanges();
-                return RedirectToAction("../Estudiante/Personales/" + est.estudianteId);
-                //return View(est);
+               return RedirectToAction("../Estudiante/Personales/" + est.estudianteId);
+               // return View(est);
             }
             else
             {

@@ -376,6 +376,13 @@
                         @Html.TextBoxFor(model => model.HojaVida.Familia.primer_nombre_acudiente, new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.HojaVida.Familia.primer_nombre_acudiente)
                     </div>
+
+                    <label class="col-sm-2 control-label">Segundo Apellido</label>
+
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.HojaVida.Familia.segundo_apellido_acudiente, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.HojaVida.Familia.segundo_apellido_acudiente)
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -385,28 +392,30 @@
                         @Html.TextBoxFor(model => model.HojaVida.Familia.primer_apellido_acudiente, new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.HojaVida.Familia.primer_apellido_acudiente)
                     </div>
-                    <label class="col-sm-2 control-label">Segundo Apellido</label>
-
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(model => model.HojaVida.Familia.segundo_apellido_acudiente, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.HojaVida.Familia.segundo_apellido_acudiente)
-                    </div>
-
-                </div>
-
-
-                <div class="form-group">
                     <label class="col-sm-2 control-label">Teléfono</label>
 
                     <div class="col-sm-4">
                         @Html.TextBoxFor(model => model.HojaVida.Familia.telefono_acudiente, new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.HojaVida.Familia.telefono_acudiente)
                     </div>
+
+                </div>
+
+
+                <div class="form-group">
+                  
                     <label class="col-sm-2 control-label">Dirección</label>
 
                     <div class="col-sm-4">
                         @Html.TextBoxFor(model => model.HojaVida.Familia.direccion_acudiente, new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.HojaVida.Familia.direccion_acudiente)
+                    </div>
+
+                    <label class="col-sm-2 control-label">Celular </label>
+
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.HojaVida.Familia.celular_acudiente, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.HojaVida.Familia.celular_acudiente)
                     </div>
 
                 </div>
