@@ -25,6 +25,8 @@ namespace MvcApplication2.Models
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public System.DateTime fecha_vacunacion { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public System.DateTime fecha_prox_vacunacion { get; set; }
 
         public string laboratorio_vacunacion { get; set; }
