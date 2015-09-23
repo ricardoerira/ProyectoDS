@@ -298,6 +298,8 @@ line-height: 18px;
 text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
 }
 
+
+
 .widget .widget-header h4 { /* baja la palabra tablet----*/
 top: -8px;
 margin-left:0px;
@@ -388,16 +390,19 @@ vertical-align: middle;
 
 
 
-/*  ACCORDION MENU PARA VACUNA/ESQUEMAVACUNACION
+/*  ACCORDION MENU PARA VACUNA/ESQUEMAVACUNACION----NO HACE NADA
 ---------------------------------------------------------------------------------------*/
 
 
+
+/*
+body{margin-top:0px;}
 .glyphicon { margin-right:10px; }
 .panel-body { padding:0px; }
 .panel-body table tr td { padding-left: 15px }
 .panel-body .table {margin-bottom: 0px; }
 
-
+*/
 /* LogoUcaldas
 ----------------------------------------------------------*/
 .logoUcaldas{
@@ -421,29 +426,10 @@ vertical-align: middle;
   background-position: 100% 100%;
 }
 
-.panel-default {
-opacity: 0.9;
-margin-top:10px;
 
 
-}
-
-cus {
-    margin-top:10px;
-}
-
-.customd {
-    margin-top:10px;
-    padding-top:-900px;
-    width: 150px !important;
-}
-
-.panel-defaultu {
-opacity: 0.9;
-margin-top:290px;
 
 
-}
 .form-group.last { margin-bottom:0px; }
 
 
@@ -459,11 +445,11 @@ margin-top:290px;
   background-size: cover;
   background-position: 100% 100%;
 }
-
+/*
 .panel-default {
 opacity: 0.9;
 margin-top:290px;
-
+*/
 
 }
 .form-group.last { margin-bottom:0px; }
@@ -479,11 +465,11 @@ margin-top:290px;
   background-size: cover;
   background-position: 100% 100%;
 }
-
+/*
 .panel-default {
 opacity: 0.9;
 margin-top:290px;
-
+¨*/
 
 }
 .panel-defaultb {
@@ -497,9 +483,9 @@ margin-top:10px;
 
 
 
-/*                    ESTE CSS ES PARA EL ACCORDION
+/*                    ESTE CSS ES PARA EL ACCORDION---NO HACE NADAAAAAAAAAAAAAAA
 ----------------------------------------------------------*/
-.body{margin-top:-500px;}
+/*    .body{margin-top:5000px;}
 .glyphicon { margin-right:10px; }
 .panel-body { padding:0px; }
 .panel-body table tr td { padding-left: 15px }
@@ -727,3 +713,34 @@ vertical-align: middle;
     margin-left:-5px;
     width: 150px !important;
 }
+
+
+
+
+
+/*                    CSS PARA Vacuna/EsquemaVacunacion     ACCORDION
+-----------------------------------------------------------------------------------------------*/
+
+.glyphicon { margin-right:10px; }
+.panel-body { padding:0px; }
+.panel-body table tr td { padding-left: 30px }/*para la letra*/
+.panel-body .table {margin-bottom: 0px; }
+
+/*                    estilo del    ACCORDION
+-----------------------------------------------------------------------------------------------*/
+.customd {
+    margin-top:-2px;
+    
+    width: 150px !important;
+}
+
+
+/*                    CSS PARA el legend de la vacuna en  /Vacuna/EsquemaVacunacion
+-----------------------------------------------------------------------------------------------*/
+.tan {
+width:700px;
+}
+
+
+
+

@@ -35,6 +35,7 @@ namespace MvcApplication2.Controllers
             return View(vacuna);
         }
 
+
         //
         // GET: /Vacuna/Create
 
@@ -169,6 +170,7 @@ namespace MvcApplication2.Controllers
             return View();
 
         }
+       
         public ActionResult EsquemaVacunacion(int id = 0)
         {
             string vacuna = Request.Params["vacuna"];

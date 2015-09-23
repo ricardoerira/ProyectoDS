@@ -1,4 +1,7 @@
-﻿@model MvcApplication2.Models.Vacuna
+﻿
+
+@model MvcApplication2.Models.Vacuna
+
 
 
 
@@ -60,20 +63,25 @@ Based on tutorial from: http://www.coders-guide.com/watch.php?v=53
 <!--
 DOS COLUMNAS..........................
 -->
-<div class="customd">
 
+<div class="customd">
+    
     <div class="container-fluid">
         <section class="container ">
+            
             <div class="container-page  ">
                 <div class="col-sm-offset-0">
                     <!--PRIMER COLUMNA COLUMNA............<div class="panel panel-default">"..............-->
 
 
                     <div class="container">
+                       
                         <div class="row">
+                           
                             <div class="col-sm-1 col-md-3">
                                 <div class="panel-group" id="accordion">
-                                    <div class="panel panel-default ">
+                                    <div class="panel panel-default">
+
                                         <div class="panel-heading">
                                             <h4 class="panel-title">
                                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
@@ -83,11 +91,11 @@ DOS COLUMNAS..........................
                                                 </a>
                                             </h4>
                                         </div>
-                                        <div id="collapseOne" class="panel-collapse collapse">
+                                        <div id="collapseOne" class="panel-collapse collapse ">
                                             <div class="panel-body">
                                                 <table class="table">
-                                                    <tr>
-                                                        <td>
+                                                    <tr >
+                                                        <td class="bn">
                                                             @Html.ActionLink(
                       linkText: " Dosis 1",
              actionName: "EsquemaVacunacion",
@@ -99,6 +107,7 @@ DOS COLUMNAS..........................
     },
     htmlAttributes: null
 )
+
 
                                                         </td>
                                                     </tr>
@@ -152,7 +161,7 @@ DOS COLUMNAS..........................
                                                     <tr>
 
                                                         <td>
-                                                            @Html.ActionLink(
+    @Html.ActionLink(
                       linkText: " Dosis 1",
              actionName: "EsquemaVacunacion",
     controllerName: "Vacuna",
@@ -163,11 +172,12 @@ DOS COLUMNAS..........................
     },
     htmlAttributes: null
 )
+
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            @Html.ActionLink(
+    @Html.ActionLink(
                       linkText: " Dosis 2",
              actionName: "EsquemaVacunacion",
     controllerName: "Vacuna",
@@ -178,7 +188,7 @@ DOS COLUMNAS..........................
     },
     htmlAttributes: null
 )
-                                                        </td>
+</td>
                                                     </tr>
                                                 </table>
                                             </div>
@@ -495,13 +505,13 @@ DOS COLUMNAS..........................
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="col-sm-2 control-label">Primer Apellido</label>
+                                        <label class="col-sm-2 control-label">Primer apellido</label>
 
                                         <div class="col-sm-4">
                                             @Html.TextBoxFor(model => model.HojaVida.primer_apellido, new { @class = "form-control", @readonly = "readonly" })
                                             @Html.ValidationMessageFor(model => model.HojaVida.primer_apellido)
                                         </div>
-                                        <label class="col-sm-2 control-label">Segundo Apellido</label>
+                                        <label class="col-sm-2 control-label">Segundo apellido</label>
                                         <div class="col-sm-4">
                                             @Html.TextBoxFor(model => model.HojaVida.segundo_apellido, new { @class = "form-control", @readonly = "readonly" })
                                             @Html.ValidationMessageFor(model => model.HojaVida.segundo_apellido)
@@ -523,8 +533,8 @@ DOS COLUMNAS..........................
                                 </div>
                             </fosrm>
                             <script type="text/javascript">
-                                $(function () { // will trigger when the document is ready
-                                    $('.datepicker').datepicker(); //Initialise any date pickers
+                                $(function () { // will trigger when the document is ready col-sm-7---<div class="col-sm-11 col-md-11">
+                                    $('.datepicker').datepicker(); //Initialise any date pickers  <div class="col-sm-10 col-md-9">
                                 });
                             </script>
 
@@ -539,85 +549,86 @@ DOS COLUMNAS..........................
 
 
 
-                                <div class="col-sm-9 col-md-9">
-                                    <fosrm class="form-horizontal" role="form">
-                                        <legend>
-                                            <h3>
-                                                @Html.TextBoxFor(model => model.nombre_generico, new { @class = "TextBoxAsLabel" })
-                                                @Html.ValidationMessageFor(model => model.nombre_generico)
-                                            </h3>
-                                        </legend>
+    <div class="col-lg-offset-4 ">
+        <fosrm class="form-horizontal" role="form">
+            <legend class="tan">
+                <h3>
+                    @Html.TextBoxFor(model => model.nombre_generico, new { @class = "TextBoxAsLabel" })
+                    @Html.ValidationMessageFor(model => model.nombre_generico)
+                </h3>
+            </legend>
 
 
 
 
-                                        <div class="col-sm-9 col-md-9">
-                                            <div class="form-group">
-                                                <label class="col-sm-2 control-label">Fecha de aplicación</label>
+            <div class="col-sm-11 col-md-11">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Fecha de aplicación</label>
 
-                                                <div class="col-sm-4">
-                                                    @Html.TextBoxFor(model => model.fecha_vacunacion, new { @class = "form-control", @readonly = "readonly" })
-                                                    @Html.ValidationMessageFor(model => model.fecha_vacunacion)
-                                                </div>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.fecha_vacunacion, new { @class = "form-control", @readonly = "readonly" })
+                        @Html.ValidationMessageFor(model => model.fecha_vacunacion)
+                    </div>
 
-                                                <label class="col-sm-2 control-label">Próxima vacuna</label>
-                                                <div class="col-sm-4">
-                                                    @Html.TextBoxFor(model => model.fecha_prox_vacunacion, new { @class = "form-control", @readonly = "readonly" })
-                                                    @Html.ValidationMessageFor(model => model.fecha_prox_vacunacion)
-                                                </div>
-                                            </div>
+                    <label class="col-sm-2 control-label">Próxima vacuna</label>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.fecha_prox_vacunacion, new { @class = "form-control", @readonly = "readonly" })
+                        @Html.ValidationMessageFor(model => model.fecha_prox_vacunacion)
+                    </div>
+                </div>
 
-                                            <div class="form-group">
-                                                <label class="col-sm-2 control-label">N° del Lote</label>
-                                                <div class="col-sm-4">
-                                                    @Html.TextBoxFor(model => model.lote, new { @class = "form-control" })
-                                                    @Html.ValidationMessageFor(model => model.lote)
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">N° del Lote</label>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.lote, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.lote)
 
-                                                </div>
+                    </div>
 
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-sm-2 control-label">Laboratorio</label>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Laboratorio</label>
 
-                                                <div class="col-sm-4">
-                                                    @Html.DropDownList("laboratorio_vacunacion", new List<SelectListItem>() { new SelectListItem { Text = "BIOTOSCANA", Value = "BIOTOSCANA" }, new SelectListItem { Text = "SANOFI", Value = "SANOFI" }, new SelectListItem { Text = "DELTA", Value = "DELTA" }, new SelectListItem { Text = "GLAXO", Value = "GLAXO" }, new SelectListItem { Text = "MERK", Value = "MERK" }, new SelectListItem { Text = "OTRO", Value = "OTRO" } }, new { @class = "form-control" })
-                                                    @Html.ValidationMessageFor(model => model.laboratorio_vacunacion)
-                                                </div>
-                                                <label class="col-sm-2 control-label">Lugar Anatómico</label>
-                                                <div class="col-sm-4">
-                                                    @Html.DropDownList("lugar_anatomico", new List<SelectListItem>() { new SelectListItem { Text = "Brazo derecho", Value = "Brazo derecho" }, new SelectListItem { Text = "Brazo izquierdo", Value = "Brazo izquierdo" }, new SelectListItem { Text = "Otro", Value = "Otro" } }, new { @class = "form-control" })
-                                                    @Html.ValidationMessageFor(model => model.lugar_anatomico)
+                    <div class="col-sm-4">
+                        @Html.DropDownList("laboratorio_vacunacion", new List<SelectListItem>() { new SelectListItem { Text = "BIOTOSCANA", Value = "BIOTOSCANA" }, new SelectListItem { Text = "SANOFI", Value = "SANOFI" }, new SelectListItem { Text = "DELTA", Value = "DELTA" }, new SelectListItem { Text = "GLAXO", Value = "GLAXO" }, new SelectListItem { Text = "MERK", Value = "MERK" }, new SelectListItem { Text = "OTRO", Value = "OTRO" } }, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.laboratorio_vacunacion)
+                    </div>
+                    <label class="col-sm-2 control-label">Lugar Anatómico</label>
+                    <div class="col-sm-4">
+                        @Html.DropDownList("lugar_anatomico", new List<SelectListItem>() { new SelectListItem { Text = "Brazo derecho", Value = "Brazo derecho" }, new SelectListItem { Text = "Brazo izquierdo", Value = "Brazo izquierdo" }, new SelectListItem { Text = "Otro", Value = "Otro" } }, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.lugar_anatomico)
 
-                                                </div>
+                    </div>
 
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-sm-2 control-label">Observaciones</label>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Observaciones</label>
 
-                                                <div class="col-sm-9">
-                                                    @Html.TextAreaFor(model => model.observaciones, new { @class = "form-control" })
-                                                </div>
+                    <div class="col-sm-9">
+                        @Html.TextAreaFor(model => model.observaciones, new { @class = "form-control" })
+                    </div>
 
-                                            </div>
+                </div>
 
-                                            <div class="form-group">
-                                                <div class="col-sm-offset-2 col-sm-10">
-                                                    <div class="pull-right">
-                                                        @Html.ActionLink("Regresar ", "../Estudiante/CarnetVacunacionDS", new { }, new { @class = "btn btn-default" })
-                                                        <button type="submit" class="btn btn-primary">Guardar</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-                                        </div>
-
-
-
-
-                                </div>
-                            }
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <div class="pull-right">
+                            
+                            @Html.ActionLink("Regresar ", "../Estudiante/CarnetVacunacionDS", new { id = @Model.HojaVida.Estudiante.ElementAt(0).estudianteId }, new { @class = "btn btn-default" })   
+                            <button type="submit" class="btn btn-primary">Guardar</button>
                         </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+
+    </div>
+                            }
+    </div>
 
                     </div>
 
