@@ -39,7 +39,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalDecisions.CrystalReports.Engine.1.0.0\lib\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.CSharp" />
@@ -232,7 +235,6 @@
     <Compile Include="HojaVidas.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -323,6 +325,104 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Antlr3.Runtime.dll" />
+    <Content Include="bin\de\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="bin\de\Microsoft.Data.OData.resources.dll" />
+    <Content Include="bin\de\System.Spatial.resources.dll" />
+    <Content Include="bin\DotNetOpenAuth.AspNet.dll" />
+    <Content Include="bin\DotNetOpenAuth.AspNet.xml" />
+    <Content Include="bin\DotNetOpenAuth.Core.dll" />
+    <Content Include="bin\DotNetOpenAuth.Core.xml" />
+    <Content Include="bin\DotNetOpenAuth.OAuth.Consumer.dll" />
+    <Content Include="bin\DotNetOpenAuth.OAuth.Consumer.xml" />
+    <Content Include="bin\DotNetOpenAuth.OAuth.dll" />
+    <Content Include="bin\DotNetOpenAuth.OAuth.xml" />
+    <Content Include="bin\DotNetOpenAuth.OpenId.dll" />
+    <Content Include="bin\DotNetOpenAuth.OpenId.RelyingParty.dll" />
+    <Content Include="bin\DotNetOpenAuth.OpenId.RelyingParty.xml" />
+    <Content Include="bin\DotNetOpenAuth.OpenId.xml" />
+    <Content Include="bin\EntityFramework.dll" />
+    <Content Include="bin\EntityFramework.xml" />
+    <Content Include="bin\es\EntityFramework.resources.dll" />
+    <Content Include="bin\es\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="bin\es\Microsoft.Data.OData.resources.dll" />
+    <Content Include="bin\es\Microsoft.Web.WebPages.OAuth.resources.dll" />
+    <Content Include="bin\es\System.Net.Http.Formatting.resources.dll" />
+    <Content Include="bin\es\System.Spatial.resources.dll" />
+    <Content Include="bin\es\System.Web.Helpers.resources.dll" />
+    <Content Include="bin\es\System.Web.Http.OData.resources.dll" />
+    <Content Include="bin\es\System.Web.Http.resources.dll" />
+    <Content Include="bin\es\System.Web.Http.WebHost.resources.dll" />
+    <Content Include="bin\es\System.Web.Mvc.resources.dll" />
+    <Content Include="bin\es\System.Web.Optimization.resources.dll" />
+    <Content Include="bin\es\System.Web.Razor.resources.dll" />
+    <Content Include="bin\es\System.Web.WebPages.Deployment.resources.dll" />
+    <Content Include="bin\es\System.Web.WebPages.Razor.resources.dll" />
+    <Content Include="bin\es\System.Web.WebPages.resources.dll" />
+    <Content Include="bin\es\WebMatrix.Data.resources.dll" />
+    <Content Include="bin\es\WebMatrix.WebData.resources.dll" />
+    <Content Include="bin\fr\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="bin\fr\Microsoft.Data.OData.resources.dll" />
+    <Content Include="bin\fr\System.Spatial.resources.dll" />
+    <Content Include="bin\it\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="bin\it\Microsoft.Data.OData.resources.dll" />
+    <Content Include="bin\it\System.Spatial.resources.dll" />
+    <Content Include="bin\ja\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="bin\ja\Microsoft.Data.OData.resources.dll" />
+    <Content Include="bin\ja\System.Spatial.resources.dll" />
+    <Content Include="bin\ko\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="bin\ko\Microsoft.Data.OData.resources.dll" />
+    <Content Include="bin\ko\System.Spatial.resources.dll" />
+    <Content Include="bin\Microsoft.Data.Edm.dll" />
+    <Content Include="bin\Microsoft.Data.Edm.xml" />
+    <Content Include="bin\Microsoft.Data.OData.dll" />
+    <Content Include="bin\Microsoft.Data.OData.xml" />
+    <Content Include="bin\Microsoft.ReportViewer.WebForms.DLL" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Microsoft.Web.Mvc.FixedDisplayModes.dll" />
+    <Content Include="bin\Microsoft.Web.WebPages.OAuth.dll" />
+    <Content Include="bin\Microsoft.Web.WebPages.OAuth.xml" />
+    <Content Include="bin\MvcApplication2.dll" />
+    <Content Include="bin\MvcApplication2.pdb" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Newtonsoft.Json.xml" />
+    <Content Include="bin\ru\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="bin\ru\Microsoft.Data.OData.resources.dll" />
+    <Content Include="bin\ru\System.Spatial.resources.dll" />
+    <Content Include="bin\System.Net.Http.Formatting.dll" />
+    <Content Include="bin\System.Net.Http.Formatting.xml" />
+    <Content Include="bin\System.Spatial.dll" />
+    <Content Include="bin\System.Spatial.xml" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Helpers.xml" />
+    <Content Include="bin\System.Web.Http.dll" />
+    <Content Include="bin\System.Web.Http.OData.dll" />
+    <Content Include="bin\System.Web.Http.OData.xml" />
+    <Content Include="bin\System.Web.Http.WebHost.dll" />
+    <Content Include="bin\System.Web.Http.WebHost.xml" />
+    <Content Include="bin\System.Web.Http.xml" />
+    <Content Include="bin\System.Web.Mvc.dll" />
+    <Content Include="bin\System.Web.Mvc.xml" />
+    <Content Include="bin\System.Web.Optimization.dll" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\System.Web.WebPages.Deployment.xml" />
+    <Content Include="bin\System.Web.WebPages.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.xml" />
+    <Content Include="bin\WebGrease.dll" />
+    <Content Include="bin\WebMatrix.Data.dll" />
+    <Content Include="bin\WebMatrix.Data.xml" />
+    <Content Include="bin\WebMatrix.WebData.dll" />
+    <Content Include="bin\WebMatrix.WebData.xml" />
+    <Content Include="bin\zh-Hans\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="bin\zh-Hans\Microsoft.Data.OData.resources.dll" />
+    <Content Include="bin\zh-Hans\System.Spatial.resources.dll" />
+    <Content Include="bin\zh-Hant\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="bin\zh-Hant\Microsoft.Data.OData.resources.dll" />
+    <Content Include="bin\zh-Hant\System.Spatial.resources.dll" />
     <Content Include="Bootstrap Html Helpers\Content\bootstrap-datepicker.css" />
     <Content Include="Bootstrap Html Helpers\Content\bootstrap-datepicker.min.css" />
     <Content Include="Bootstrap Html Helpers\Content\bootstrap-datepicker.standalone.css" />
@@ -511,6 +611,7 @@
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Content>
     <Content Include="Controllers\RotacionController.rar" />
+    <Content Include="bin\MvcApplication2.dll.config" />
     <None Include="DataSet1.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
@@ -1267,7 +1368,6 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
-    
     <EmbeddedResource Include="reporte.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>reporte.cs</LastGenOutput>
