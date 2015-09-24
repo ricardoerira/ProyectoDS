@@ -38,7 +38,8 @@ namespace MvcApplication2.Controllers
                 docentes = docentes.Where(s => s.num_documento.Equals(searchString));
             }
 
-
+            ViewBag.DepartamentoSaludId = new SelectList(db.DepartamentoSaluds, "DepartamentoSaludId", "nombre");
+           
             return View(docentes.ToList());
         }
 
@@ -1080,7 +1081,9 @@ namespace MvcApplication2.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult PersonalesDS(Docente docente) {
-            docente = db.Docentes.Find(docente.docenteId);
+            ModelState.Remove("certificado_TPDTS");
+
+             docente = db.Docentes.Find(docente.docenteId);
             int numFiles = Request.Files.Count;
             if (Request != null)
             {
@@ -1109,8 +1112,9 @@ namespace MvcApplication2.Controllers
             Boolean estado = ValidarCamposDocente(docente);
             ViewBag.estado = estado;
           
-            return View(docente);
-           
+        //           return View(docente);
+            return RedirectToAction("../Docente/PersonalesDS/" + docente.docenteId);
+              
 
             }
         
@@ -1231,39 +1235,50 @@ namespace MvcApplication2.Controllers
             {
                 return false;
             }
-        } 
+        }
 
 
+       
 
-
-        public ActionResult RotacionDocente(string searchString, int id = 0)
+        public ActionResult EstadoHV(string num_documento,string departamentoSaludId,string estado_HV )
         {
-
-            string rotacion = Request.Params["rotacion"];
-            if (rotacion == null)
+            int did = 0;
+            bool b = false;
+            if (!String.IsNullOrEmpty(departamentoSaludId))
             {
-                ViewBag.id = id;
+                 did = Int32.Parse(departamentoSaludId);
+                 b = estado_HV.Equals("True") ? true : false;
+            
+            }
+               
+            var docentes= new List<Docente>();
+            var docentesaux = new List<Docente>();
+           
+            if (!String.IsNullOrEmpty(num_documento))   
+            {
+                docentes = db.Docentes.Where(s => s.num_documento.Equals(num_documento)).Where(s => s.DepartamentoSaludId == did).Where(s => s.HojaVida.estado_HV == b).ToList();
+              
             }
             else
             {
-                Docente docente = db.Docentes.Find(id);
-                docente.rotacionId = Convert.ToInt32(rotacion);
-                Rotacion rotacionE = db.Rotacions.Find(Convert.ToInt32(rotacion));
-                docente.Rotacion = rotacionE;
-                db.Entry(rotacionE).State = EntityState.Modified;
-                db.SaveChanges();
-                db.Entry(docente).State = EntityState.Modified;
-                db.SaveChanges();
-
-            }
-            var docentes = from s in db.Docentes
-                              select s;
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                docentes = docentes.Where(s => s.num_documento.Equals(searchString));
+                if (!String.IsNullOrEmpty(departamentoSaludId))
+                {
+                    docentes = db.Docentes.Where(s => s.DepartamentoSaludId == did).Where(s => s.HojaVida.estado_HV == b).ToList();
+                    docentesaux = db.Docentes.Where(s => s.DepartamentoSaludId == did).ToList();
+            
+                }
             }
 
 
+
+
+            ViewBag.busqueda = docentes.Count() + " / " + docentesaux.Count();
+   
+
+                        
+           
+            ViewBag.DepartamentoSaludId = new SelectList(db.DepartamentoSaluds, "DepartamentoSaludId", "nombre");
+           
             return View(docentes.ToList());
         }
 

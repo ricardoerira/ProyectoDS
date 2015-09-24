@@ -21,7 +21,6 @@ namespace MvcApplication2.Controllers
         // GET: /HojaVida/
         public ActionResult vistaHV()
         {
-
             return View();
 
         }
