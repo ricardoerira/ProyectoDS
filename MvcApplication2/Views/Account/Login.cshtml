@@ -1,81 +1,182 @@
 ﻿@model MvcApplication2.Models.LoginModel
 
-<hgroup class="title">
-    <h1>@ViewBag.Title</h1>
-</hgroup>
 
-<section id="loginForm">
-    @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
-    {
-        @Html.AntiForgeryToken()
-        @Html.ValidationSummary(true)
-    <div class="principalAccount">
+
+
+@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+<div class="wrapper">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <img alt="Vacunas" class="logoUcaldas" src="../../images/Logo Universidad Dorado Grande.png" height="40">
+                </a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand text-uppercase" href="#">Docencia Servicio   </a>
+            </div>
 
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navigation">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="Account/Login">Administrar </a></li>
+                    <li><a href="#">Quiénes somos </a></li>
+                    <li><a href="#">Contacto</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="Estudiante/Login">Estudiante</a></li>
+                            <li><a href="Docente/Login">Docente</a></li>
+
+
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="header">
+        <div class="container">
             <div class="row">
+                <div class="col-md-5 col-md-offset-1">
+                    <div class="content">
+                        <div class="pull-middle">
+                            <h2 class="page-header">Login administrativo </h2>
+                            <p class="lead">Docencia Servicio.</p>
+                            <div class=" panel-default">
+                                <div class="panel-body">
+                                    <form action="#" role="form">
+                                        <div class="form-group">
+                                            <div style="margin-bottom: 5px" class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                                @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", @placeholder = "Usuario" })
 
-                <div class="col-md-5 col-md-offset-0">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <span class="glyphicon glyphicon-lock"></span> Login Administrativo
-                        </div>
-                        <div class="panel-body">
-
-                            <fosrm class="form-horizontal" role="form">
-                                <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-3 control-label">
-                                        Usuario
-                                    </label>
-                                    <div class="col-sm-9">
-                                        @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", @placeholder = "Username" })
-                                        @Html.ValidationMessageFor(model => model.UserName)
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputPassword3" class="col-sm-3 control-label">
-                                        Contraseña
-                                    </label>
-                                    <div class="col-sm-9">
-                                        @Html.PasswordFor(model => model.Password, new { @class = "form-control", @placeholder = "Password" })
-                                        @Html.ValidationMessageFor(model => model.Password)
-
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-sm-offset-3 col-sm-9">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" />
-                                                Remember me
-                                            </label>
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.UserName)
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="form-group last">
-                                    <div class="col-sm-offset-3 col-sm-9">
-                                        <button type="submit" class="btn btn-success btn-sm">
-                                            Sign in
-                                        </button>
-                                        <button type="reset" class="btn btn-default btn-sm">
-                                            Reset
-                                        </button>
-                                    </div>
-                                </div>
+                                        
+                                            
+                                            <div style="margin-bottom: 5px" class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                                @Html.PasswordFor(model => model.Password, new { @class = "form-control", @placeholder = "Contraseña" })
+                                                
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.Password)
 
+                                        <div class="form-group"></div>
+
+
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-success btn-sm">
+                                                    Ingresar
+                                                </button>
+                                                <button type="reset" class="btn btn-default btn-sm">
+                                                    Limpiar
+                                                </button>
+                                            </div>
+</form>
+                                </div>
+                            </div>
                         </div>
-                        <div class="panel-footer">
-                            Not Registred? <a href="http://www.jquery2dotnet.com">Register here</a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-md-offset-1 text-center mt-100 mb-100">
+                    <div>
+                        <img class="img-responsive img-rounded" src="../../images/fondo3.png" heigth="1000" width="1000">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1 text-center mt-100 mb-100">
+                    <div class="phone">
+                        <img class="img-responsive img-rounded" src="http://placemi.com/djlnr/263x480">
+                    </div>
+                </div>
+                <div class="col-md-5 col-md-offset-1">
+                    <div class="content">
+                        <div class="pull-middle">
+                            <h2 class="h1 page-header">Discover more about features.</h2>
+                            <ul class="media-list">
+                                <li class="media">
+                                    <a class="media-left" href="#">
+                                        <span class="glyphicon glyphicon-cloud icon text-success"></span>
+                                    </a>
+                                    <div class="media-body">
+                                        <h3 class="media-heading">Praesent porttitor urna ut enim.</h3>
+                                        <p>Maecenas vitae ex iaculis, efficitur est eu, fermentum quam.</p>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <a class="media-left" href="#">
+                                        <span class="glyphicon glyphicon-lock icon text-success"></span>
+                                    </a>
+                                    <div class="media-body">
+                                        <h3 class="media-heading">Cras consequat est et elit.</h3>
+                                        <p>Integer suscipit massa at tellus semper, at aliquam ante bibendum.</p>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <a class="media-left" href="#">
+                                        <span class="glyphicon glyphicon-user icon text-success"></span>
+                                    </a>
+                                    <div class="media-body">
+                                        <h3 class="media-heading">Aenean vel enim quis dui blandit.</h3>
+                                        <p>Maecenas vitae ex iaculis, efficitur est eu, fermentum quam.</p>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-    </div>
-    }
-</section>
-
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 text-right">
+                    <div class="content">
+                        <div class="pull-middle">
+                            <h4><strong>Describe your product.</strong></h4>
+                            <p>Proin sapien neque, consequat ac tempus aliquam, gravida in urna. Phasellus et lectus in odio imperdiet tempus. Aenean posuere, nunc a tristique imperdiet, massa dolor dictum eros, sit amet tempor turpis turpis vel tortor.</p>
+                            <small>Phasellus feugiat at lorem a tincidunt. Nam hendrerit leo vitae orci pellentesque, nec euismod dolor condimentum.</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-md-offset-1 mt-100 mb-100">
+                    <div class="phone">
+                        <img class="img-responsive img-rounded" src="http://placemi.com/djlnr/263x480">
+                    </div>
+                </div>
+                <div class="col-md-3 col-md-offset-1">
+                    <div class="content">
+                        <div class="pull-middle">
+                            <h4><strong>Even more stuff.</strong></h4>
+                            <p>Proin sapien neque, consequat ac tempus aliquam, gravida in urna. Phasellus et lectus in odio imperdiet tempus. Aenean posuere, nunc a tristique imperdiet, massa dolor dictum eros, sit amet tempor turpis turpis vel tortor.</p>
+                            <a class="btn btn-success btn-circle" href="#">Sign up for free</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer text-center">
+        <div class="container">
+            <small>© Copyright 2015. Crafted with love by <a href="https://www.twitter.com/maridlcrmn">maridlcrmn</a></small>
+        </div>
+    </footer>
+</div>
 }

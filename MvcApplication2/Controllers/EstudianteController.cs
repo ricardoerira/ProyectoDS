@@ -600,14 +600,9 @@ public ActionResult EstadoHV(string num_documento, string programaId, string est
 
         //
         //------------------------- Vista para datos personales del estudiante
-
-        public ActionResult Personales(int id = 0)
-        {
-            TempData["notice"] = null;
-
-            Estudiante estudiante = db.Estudiantes.Find(id);
+        public ActionResult cargaImagen(Estudiante estudiante) {
+            
             HojaVida oHojaVida = db.HojaVidas.Find(estudiante.hojaVidaId);
-
             try
             {
                 var request = WebRequest.Create(oHojaVida.imagen_DI);
@@ -640,10 +635,19 @@ public ActionResult EstadoHV(string num_documento, string programaId, string est
                 }
             }
             if (estudiante == null)
-
             {
                 return HttpNotFound();
-            }
+            } return View(estudiante);
+        }
+
+        public ActionResult Personales(int id = 0)
+        {
+            TempData["notice"] = null;
+
+            Estudiante estudiante = db.Estudiantes.Find(id);
+            HojaVida oHojaVida = db.HojaVidas.Find(estudiante.hojaVidaId);
+            cargaImagen(estudiante);
+           
             int edad = DateTime.Today.AddTicks(-estudiante.HojaVida.fecha_nacimiento.Ticks).Year - 1;
             string edadDocente = edad.ToString();
             estudiante.barrio_procedencia = edadDocente;//Reemplaza edad
@@ -794,6 +798,7 @@ public ActionResult EstadoHV(string num_documento, string programaId, string est
             TempData["notice"] = null;
 
             Estudiante estudiante = db.Estudiantes.Find(id);
+            cargaImagen(estudiante);
             if (estudiante == null)
             {
                 return HttpNotFound();
@@ -806,6 +811,12 @@ public ActionResult EstadoHV(string num_documento, string programaId, string est
             return View(estudiante);
             
         }
+
+
+
+
+       
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -880,6 +891,7 @@ public ActionResult EstadoHV(string num_documento, string programaId, string est
         {
 
             Estudiante estudiante = db.Estudiantes.Find(id);
+            cargaImagen(estudiante);
             if (estudiante == null)
             {
                 return HttpNotFound();
@@ -892,6 +904,7 @@ public ActionResult EstadoHV(string num_documento, string programaId, string est
         {
 
             Estudiante estudiante = db.Estudiantes.Find(id);
+            cargaImagen(estudiante);
             if (estudiante == null)
             {
                 return HttpNotFound();
@@ -999,6 +1012,7 @@ public ActionResult EstadoHV(string num_documento, string programaId, string est
         {
             string vacuna = Request.Params["vacuna"];
             Estudiante estudiante = db.Estudiantes.Find(id);
+            cargaImagen(estudiante);
             if (estudiante == null)
             {
                 return HttpNotFound();
@@ -1007,10 +1021,13 @@ public ActionResult EstadoHV(string num_documento, string programaId, string est
 
         }
 
+       
+
         public ActionResult SaludDS(int id = 0)
         {
             string vacuna = Request.Params["vacuna"];
             Estudiante estudiante = db.Estudiantes.Find(id);
+            cargaImagen(estudiante);
             if (estudiante == null)
             {
                 return HttpNotFound();
