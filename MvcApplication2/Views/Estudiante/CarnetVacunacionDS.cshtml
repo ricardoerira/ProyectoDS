@@ -56,7 +56,7 @@
     <div class="container">
         <div class="row">
             
-                <legend>Información Personal Estudiante</legend>
+                <legend>Información personal estudiante</legend>
 
                 <!-- /.navbar-collapse aca va leyend -->
 
@@ -116,10 +116,10 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">Dirección </label>
+                                <label class="col-sm-2 control-label">Email</label>
                                 <div class="col-sm-4">
-                                    @Html.TextBoxFor(model => model.HojaVida.direccion_manizales, new { @class = "form-control", @readonly = "readonly" })
-                                    @Html.ValidationMessageFor(model => model.HojaVida.direccion_manizales)
+                                    @Html.TextBoxFor(model => model.HojaVida.correo, new { @class = "form-control", @readonly = "readonly" })
+                                    @Html.ValidationMessageFor(model => model.HojaVida.correo)
                                 </div>
 
                                 <label class="col-sm-2 control-label">Teléfono</label>
@@ -129,20 +129,20 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">Email</label>
-                                <div class="col-sm-4">
-                                    @Html.TextBoxFor(model => model.HojaVida.correo, new { @class = "form-control", @readonly = "readonly" })
-                                    @Html.ValidationMessageFor(model => model.HojaVida.correo)
-                                </div>
-                                <label class="col-sm-2 control-label"></label>
-                                <div class="col-sm-4">
-                                    <button type="submit" class="btn btn-primary">Vacunar</button>
 
+                            <div class="col-sm-offset-9 col-sm-1">
+                                <div class="pull-left">
+
+                                    <button type="submit" class="btn btn-primary custom">Registrar vacuna</button>
                                 </div>
                             </div>
-                    </div>
-                </div><!-- /.sm8-->
+
+
+
+
+
+</div>
+                            </div><!-- /.sm8-->
             
         </div>
     </div>
@@ -159,12 +159,12 @@
 
                 <div class="widget-content">
 
-                    <table class="table table-striped table-bordered">
+                    <table class="table table-striped table-bordered ">
                         <thead>
                             <tr>
                                 <th>Biológico | Dosis</th>
                                 <th>Fecha de Aplicación    </th>
-                                <th>Proxima Vacuna</th>
+                                <th>Próxima Vacuna</th>
                                 <th>Lote</th>
                                 <th>Lugar Anatómico</th>
                                 <th>Laboratorio</th>
@@ -201,15 +201,61 @@
 
                                 </tr>
                             }
-
-
                         </tbody>
                     </table>
-                </div> <!-- /widget-content -->
 
-            </div> <!-- /widget -->
-        </div>
+                   
+
+                    
+                        </div> <!-- /widget-content -->
+               
+
+                    </div> <!-- /widget -->
+           
+                </div>
+
     </div>
+
+
+
+
+
+    <table>
+        <tr>
+            <td>
+
+
+                <div class="col-sm-offset-0">
+                    <label class="col-sm-2  control-label"></label>
+                    
+
+                </div>
+            </td>
+        </tr>
+
+
+    </table>
+    <table>
+        <tr>
+            <td>
+
+                <label class="col-sm-2  control-label"></label>
+
+            </td>
+        </tr>
+        <tr>
+            <br />
+
+        </tr>
+
+        <tr></tr>
+    </table>
+
+
+
+
+
+
 
 
 

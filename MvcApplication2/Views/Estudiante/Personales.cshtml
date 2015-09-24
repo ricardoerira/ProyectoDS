@@ -453,12 +453,15 @@
                     <tr>
                         <td>
                             <div class="col-sm-4">
-                                <img src=@ViewBag.imagen alt="..." class="img-rounded" height="120px" width="200px"><br />
+                                <a href='@Url.Action("Soporte", "Estudiante", new { id = @Model.estudianteId, imagen = @ViewBag.imagen})'>
+                                    <img src=@ViewBag.imagen class="img-rounded" height="120" width="200" /> 
+                                </a>
+                                
 
                             </div>
                         </td>
                         <td>
-                            <label for="InputFile">Fotocopia Documento (jpg,png)</label>
+                            <label for="InputFile">Documento de Identidad (jpg,png)</label>
                             <!--<input type="file" id=""name="UploadedFile" />-->
                             <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
                             <input type="hidden" value=@Model.estudianteId name="idEstudiante" />

@@ -39,7 +39,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalDecisions.CrystalReports.Engine.1.0.0\lib\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.CSharp" />
@@ -232,59 +235,6 @@
     <Compile Include="HojaVidas.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201506182355579_asd.cs" />
-    <Compile Include="Migrations\201506182355579_asd.Designer.cs">
-      <DependentUpon>201506182355579_asd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506190044262_sdfgsg.cs" />
-    <Compile Include="Migrations\201506190044262_sdfgsg.Designer.cs">
-      <DependentUpon>201506190044262_sdfgsg.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506190448595_sd.cs" />
-    <Compile Include="Migrations\201506190448595_sd.Designer.cs">
-      <DependentUpon>201506190448595_sd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506190514169_asdfad.cs" />
-    <Compile Include="Migrations\201506190514169_asdfad.Designer.cs">
-      <DependentUpon>201506190514169_asdfad.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506190632096_dfads.cs" />
-    <Compile Include="Migrations\201506190632096_dfads.Designer.cs">
-      <DependentUpon>201506190632096_dfads.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506190733484_sf.cs" />
-    <Compile Include="Migrations\201506190733484_sf.Designer.cs">
-      <DependentUpon>201506190733484_sf.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201507262252279_lili te amo.cs" />
-    <Compile Include="Migrations\201507262252279_lili te amo.Designer.cs">
-      <DependentUpon>201507262252279_lili te amo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201507281522369_deell.cs" />
-    <Compile Include="Migrations\201507281522369_deell.Designer.cs">
-      <DependentUpon>201507281522369_deell.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201508050038283_nada.cs" />
-    <Compile Include="Migrations\201508050038283_nada.Designer.cs">
-      <DependentUpon>201508050038283_nada.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201508081811576_ad.cs" />
-    <Compile Include="Migrations\201508081811576_ad.Designer.cs">
-      <DependentUpon>201508081811576_ad.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201508132255221_jhfg.cs" />
-    <Compile Include="Migrations\201508132255221_jhfg.Designer.cs">
-      <DependentUpon>201508132255221_jhfg.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201508280114312_hjyffd.cs" />
-    <Compile Include="Migrations\201508280114312_hjyffd.Designer.cs">
-      <DependentUpon>201508280114312_hjyffd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201509080112390_lilianita.cs" />
-    <Compile Include="Migrations\201509080112390_lilianita.Designer.cs">
-      <DependentUpon>201509080112390_lilianita.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -375,6 +325,104 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Antlr3.Runtime.dll" />
+    <Content Include="bin\de\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="bin\de\Microsoft.Data.OData.resources.dll" />
+    <Content Include="bin\de\System.Spatial.resources.dll" />
+    <Content Include="bin\DotNetOpenAuth.AspNet.dll" />
+    <Content Include="bin\DotNetOpenAuth.AspNet.xml" />
+    <Content Include="bin\DotNetOpenAuth.Core.dll" />
+    <Content Include="bin\DotNetOpenAuth.Core.xml" />
+    <Content Include="bin\DotNetOpenAuth.OAuth.Consumer.dll" />
+    <Content Include="bin\DotNetOpenAuth.OAuth.Consumer.xml" />
+    <Content Include="bin\DotNetOpenAuth.OAuth.dll" />
+    <Content Include="bin\DotNetOpenAuth.OAuth.xml" />
+    <Content Include="bin\DotNetOpenAuth.OpenId.dll" />
+    <Content Include="bin\DotNetOpenAuth.OpenId.RelyingParty.dll" />
+    <Content Include="bin\DotNetOpenAuth.OpenId.RelyingParty.xml" />
+    <Content Include="bin\DotNetOpenAuth.OpenId.xml" />
+    <Content Include="bin\EntityFramework.dll" />
+    <Content Include="bin\EntityFramework.xml" />
+    <Content Include="bin\es\EntityFramework.resources.dll" />
+    <Content Include="bin\es\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="bin\es\Microsoft.Data.OData.resources.dll" />
+    <Content Include="bin\es\Microsoft.Web.WebPages.OAuth.resources.dll" />
+    <Content Include="bin\es\System.Net.Http.Formatting.resources.dll" />
+    <Content Include="bin\es\System.Spatial.resources.dll" />
+    <Content Include="bin\es\System.Web.Helpers.resources.dll" />
+    <Content Include="bin\es\System.Web.Http.OData.resources.dll" />
+    <Content Include="bin\es\System.Web.Http.resources.dll" />
+    <Content Include="bin\es\System.Web.Http.WebHost.resources.dll" />
+    <Content Include="bin\es\System.Web.Mvc.resources.dll" />
+    <Content Include="bin\es\System.Web.Optimization.resources.dll" />
+    <Content Include="bin\es\System.Web.Razor.resources.dll" />
+    <Content Include="bin\es\System.Web.WebPages.Deployment.resources.dll" />
+    <Content Include="bin\es\System.Web.WebPages.Razor.resources.dll" />
+    <Content Include="bin\es\System.Web.WebPages.resources.dll" />
+    <Content Include="bin\es\WebMatrix.Data.resources.dll" />
+    <Content Include="bin\es\WebMatrix.WebData.resources.dll" />
+    <Content Include="bin\fr\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="bin\fr\Microsoft.Data.OData.resources.dll" />
+    <Content Include="bin\fr\System.Spatial.resources.dll" />
+    <Content Include="bin\it\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="bin\it\Microsoft.Data.OData.resources.dll" />
+    <Content Include="bin\it\System.Spatial.resources.dll" />
+    <Content Include="bin\ja\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="bin\ja\Microsoft.Data.OData.resources.dll" />
+    <Content Include="bin\ja\System.Spatial.resources.dll" />
+    <Content Include="bin\ko\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="bin\ko\Microsoft.Data.OData.resources.dll" />
+    <Content Include="bin\ko\System.Spatial.resources.dll" />
+    <Content Include="bin\Microsoft.Data.Edm.dll" />
+    <Content Include="bin\Microsoft.Data.Edm.xml" />
+    <Content Include="bin\Microsoft.Data.OData.dll" />
+    <Content Include="bin\Microsoft.Data.OData.xml" />
+    <Content Include="bin\Microsoft.ReportViewer.WebForms.DLL" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Microsoft.Web.Mvc.FixedDisplayModes.dll" />
+    <Content Include="bin\Microsoft.Web.WebPages.OAuth.dll" />
+    <Content Include="bin\Microsoft.Web.WebPages.OAuth.xml" />
+    <Content Include="bin\MvcApplication2.dll" />
+    <Content Include="bin\MvcApplication2.pdb" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Newtonsoft.Json.xml" />
+    <Content Include="bin\ru\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="bin\ru\Microsoft.Data.OData.resources.dll" />
+    <Content Include="bin\ru\System.Spatial.resources.dll" />
+    <Content Include="bin\System.Net.Http.Formatting.dll" />
+    <Content Include="bin\System.Net.Http.Formatting.xml" />
+    <Content Include="bin\System.Spatial.dll" />
+    <Content Include="bin\System.Spatial.xml" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Helpers.xml" />
+    <Content Include="bin\System.Web.Http.dll" />
+    <Content Include="bin\System.Web.Http.OData.dll" />
+    <Content Include="bin\System.Web.Http.OData.xml" />
+    <Content Include="bin\System.Web.Http.WebHost.dll" />
+    <Content Include="bin\System.Web.Http.WebHost.xml" />
+    <Content Include="bin\System.Web.Http.xml" />
+    <Content Include="bin\System.Web.Mvc.dll" />
+    <Content Include="bin\System.Web.Mvc.xml" />
+    <Content Include="bin\System.Web.Optimization.dll" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\System.Web.WebPages.Deployment.xml" />
+    <Content Include="bin\System.Web.WebPages.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.xml" />
+    <Content Include="bin\WebGrease.dll" />
+    <Content Include="bin\WebMatrix.Data.dll" />
+    <Content Include="bin\WebMatrix.Data.xml" />
+    <Content Include="bin\WebMatrix.WebData.dll" />
+    <Content Include="bin\WebMatrix.WebData.xml" />
+    <Content Include="bin\zh-Hans\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="bin\zh-Hans\Microsoft.Data.OData.resources.dll" />
+    <Content Include="bin\zh-Hans\System.Spatial.resources.dll" />
+    <Content Include="bin\zh-Hant\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="bin\zh-Hant\Microsoft.Data.OData.resources.dll" />
+    <Content Include="bin\zh-Hant\System.Spatial.resources.dll" />
     <Content Include="Bootstrap Html Helpers\Content\bootstrap-datepicker.css" />
     <Content Include="Bootstrap Html Helpers\Content\bootstrap-datepicker.min.css" />
     <Content Include="Bootstrap Html Helpers\Content\bootstrap-datepicker.standalone.css" />
@@ -457,12 +505,17 @@
     <Content Include="Content\bootstrap-datepicker3.standalone.css" />
     <Content Include="Content\bootstrap-datepicker3.standalone.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\.DS_Store" />
     <Content Include="Content\css\bootstrap-theme.css" />
+    <Content Include="Content\css\bootstrap-theme.css.map" />
     <Content Include="Content\css\bootstrap-theme.min.css" />
     <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\bootstrap.css.map" />
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\jquery-ui.css" />
     <Content Include="Content\css\jquery-ui.min.css" />
@@ -532,7 +585,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
-    <Content Include="Content\vacunas.css" />
+    <Content Include="Content\vacunasev.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Bootstrap Html Helpers\Content\bootstrap-theme.css.map" />
@@ -557,12 +610,8 @@
     <Content Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Content>
-    <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\css\.DS_Store" />
-    <Content Include="Content\css\bootstrap-theme.css.map" />
-    <Content Include="Content\css\bootstrap.css.map" />
     <Content Include="Controllers\RotacionController.rar" />
+    <Content Include="bin\MvcApplication2.dll.config" />
     <None Include="DataSet1.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
@@ -1051,6 +1100,9 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="Views\Estudiante\Partial1.ascx" />
+    <Content Include="Views\Vacuna\EsquemaVacunacion.cshtml">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -1080,7 +1132,7 @@
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\_RemoveExternalLoginsPartial.cshtml" />
     <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\LoginNo.cshtml" />
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
@@ -1122,7 +1174,6 @@
     <Content Include="Views\Estudiante\Details.cshtml" />
     <Content Include="Views\Estudiante\Edit.cshtml" />
     <Content Include="Views\Estudiante\Index.cshtml" />
-    <Content Include="Views\Estudiante\Login.cshtml" />
     <Content Include="Views\Familia\Create.cshtml" />
     <Content Include="Views\Familia\Delete.cshtml" />
     <Content Include="Views\Familia\Details.cshtml" />
@@ -1205,7 +1256,6 @@
     <Content Include="Views\Vacuna\Create.cshtml" />
     <Content Include="Views\Vacuna\Edit.cshtml" />
     <Content Include="Views\Vacuna\Delete.cshtml" />
-    <Content Include="Views\Vacuna\EsquemaVacunacion.cshtml" />
     <Content Include="Views\Estudiante\CarnetVacunacionDS.cshtml" />
     <Content Include="Views\Rotacion\SeleccionRotacion.cshtml" />
     <Content Include="Views\Estudiante\RotacionEstudiante.cshtml" />
@@ -1224,7 +1274,6 @@
     <Content Include="Views\Estudiante\SaludDS.cshtml" />
     <Content Include="Views\Docente\RotacionDocente.cshtml" />
     <Content Include="Views\Estudiante\ReporteEstudiante.cshtml" />
-    <Content Include="Views\RotacionEstudiante\Index.cshtml" />
     <Content Include="Views\RotacionEstudiante\Details.cshtml" />
     <Content Include="Views\RotacionEstudiante\Create.cshtml" />
     <Content Include="Views\RotacionEstudiante\Edit.cshtml" />
@@ -1240,7 +1289,7 @@
     <Content Include="Views\Induccion\Edit.cshtml" />
     <Content Include="Views\Induccion\Delete.cshtml" />
     <Content Include="Views\Curso\Index.cshtml" />
-    <Content Include="Views\Curso\Details.cshtml" />
+    <Content Include="Views\Curso\DetailsReal.cshtml" />
     <Content Include="Views\Curso\Create.cshtml" />
     <Content Include="Views\Curso\Edit.cshtml" />
     <Content Include="Views\Curso\Delete.cshtml" />
@@ -1253,7 +1302,6 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="Views\Docente\Soportes.cshtml" />
-    <Content Include="Views\Curso\Date.cshtml" />
     <Content Include="Views\Docente\CarnetVacunacionDocente.cshtml" />
     <Content Include="Views\Docente\BuscarEnDepartamento.cshtml" />
     <Content Include="Views\Docente\CarnetVacunacionDocenteDS.cshtml" />
@@ -1264,10 +1312,9 @@
     <Content Include="Views\Estudiante\CambioContraseña.cshtml" />
     <Content Include="Views\Estudiante\BuscarEnVacuna.cshtml" />
     <Content Include="Views\Estudiante\LoginCC.cshtml" />
-    <Content Include="Views\Estudiante\Pass.cshtml" />
     <Content Include="Views\Rotacion\VistaODS.cshtml" />
     <Content Include="Views\Docente\CarnetVacunacionDocenteODS.cshtml" />
-    <Content Include="Views\Docente\SoportesDS.cshtml" />
+    <Content Include="Views\Equipo\SoportesDSTodos.cshtml" />
     <Content Include="Views\HojaVida\VistaHV.cshtml" />
     <Content Include="Views\HojaVida\HV_IPS_Universitaria.cshtml" />
     <Content Include="Views\Vacuna\PreciosIpsU.cshtml" />
@@ -1282,6 +1329,24 @@
     <Content Include="Views\Estudiante\BuscarEnDepartamento.cshtml" />
     <Content Include="Views\Docente\BuscarEnVacuna.cshtml" />
     <Content Include="Views\HojaVida\HV_Departamento.cshtml" />
+    <Content Include="Views\Estudiante\LoginReal.cshtml" />
+    <Content Include="Views\Docente\CambioContraseña.cshtml" />
+    <Content Include="Views\Docente\LoginCC.cshtml" />
+    <Content Include="Views\Estudiante\PaginaPrincipal.cshtml" />
+    <Content Include="Views\Curso\Details - Copy.cshtml" />
+    <Content Include="Views\Curso\Details.cshtml" />
+    <Content Include="Views\Docente\Personales.cshtml" />
+    <Content Include="Views\Docente\PersonalesDS.cshtml" />
+    <Content Include="Views\RotacionEstudiante\Index.cshtml" />
+    <Content Include="Views\Estudiante\LoginparaProbar.cshtml" />
+    <Content Include="Views\Estudiante\LoginPrueba2.cshtml" />
+    <Content Include="Views\Estudiante\Login.cshtml" />
+    <Content Include="Views\Docente\SoportesDS.cshtml" />
+    <Content Include="Views\Docente\SoportesCompletosDS.cshtml" />
+    <Content Include="Views\Docente\SoportesCompletos.cshtml" />
+    <Content Include="Views\Estudiante\Soporte.cshtml" />
+    <Content Include="Views\Estudiante\SoporteDS.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
     <None Include="_aspnet_MvcApplication2_20141123095438DataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>_aspnet_MvcApplication2_20141123095438DataSet.Designer.cs</LastGenOutput>
@@ -1303,49 +1368,6 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201506182355579_asd.resx">
-      <DependentUpon>201506182355579_asd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506190044262_sdfgsg.resx">
-      <DependentUpon>201506190044262_sdfgsg.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506190448595_sd.resx">
-      <DependentUpon>201506190448595_sd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506190514169_asdfad.resx">
-      <DependentUpon>201506190514169_asdfad.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506190632096_dfads.resx">
-      <DependentUpon>201506190632096_dfads.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506190733484_sf.resx">
-      <DependentUpon>201506190733484_sf.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201507262252279_lili te amo.resx">
-      <DependentUpon>201507262252279_lili te amo.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201507281522369_deell.resx">
-      <DependentUpon>201507281522369_deell.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201508050038283_nada.resx">
-      <DependentUpon>201508050038283_nada.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201508081811576_ad.resx">
-      <DependentUpon>201508081811576_ad.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201508132255221_jhfg.resx">
-      <DependentUpon>201508132255221_jhfg.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201508280114312_hjyffd.resx">
-      <DependentUpon>201508280114312_hjyffd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201509080112390_lilianita.resx">
-      <DependentUpon>201509080112390_lilianita.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="reporte.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>reporte.cs</LastGenOutput>

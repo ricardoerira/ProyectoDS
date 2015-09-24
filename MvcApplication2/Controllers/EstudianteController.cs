@@ -133,6 +133,45 @@ public ActionResult EstadoHV(string num_documento, string programaId, string est
             }
         }
 
+        public ActionResult Soporte(int id = 0)
+        {
+            string imagen = Request.Params["imagen"];
+            imagen = imagen.Replace("%2F", "/");
+
+            Estudiante estudiante = db.Estudiantes.Find(id);
+            if (estudiante == null)
+            {
+                return HttpNotFound();
+            }
+            string[] documentos = { "doc_identidad"};
+
+
+
+            ViewBag.imagen1 = imagen;
+
+
+            return View(estudiante);
+        }
+
+        public ActionResult SoporteDS(int id = 0)
+        {
+            string imagen = Request.Params["imagen"];
+            imagen = imagen.Replace("%2F", "/");
+
+            Estudiante estudiante = db.Estudiantes.Find(id);
+            if (estudiante == null)
+            {
+                return HttpNotFound();
+            }
+            string[] documentos = { "doc_identidad" };
+
+
+
+            ViewBag.imagen1 = imagen;
+
+
+            return View(estudiante);
+        }
         public Boolean ValidarCampos(Estudiante estudiante)
         {
             HojaVida hv = db.HojaVidas.Find(estudiante.hojaVidaId);
@@ -608,11 +647,19 @@ public ActionResult EstadoHV(string num_documento, string programaId, string est
             int edad = DateTime.Today.AddTicks(-estudiante.HojaVida.fecha_nacimiento.Ticks).Year - 1;
             string edadDocente = edad.ToString();
             estudiante.barrio_procedencia = edadDocente;//Reemplaza edad
+
+            cargaDocumentoDos(estudiante);
+            return View(estudiante);
+            
+        }
+
+        //metodo que muestra imagen
+        public ActionResult cargaDocumentoDos(Estudiante estudiante) {
             string path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), "cedula_" + estudiante.codigo, ".jpg");
             if (System.IO.File.Exists(path1))
             {
 
-                ViewBag.imagen="/Uploads/cedula_"+ estudiante.codigo+".jpg";
+                ViewBag.imagen = "/Uploads/cedula_" + estudiante.codigo + ".jpg";
             }
             else
             {
@@ -620,8 +667,30 @@ public ActionResult EstadoHV(string num_documento, string programaId, string est
 
             }
             return View(estudiante);
-            
-        }   
+        }
+
+        //metodo que guarda imagen
+        public ActionResult cargaDocumento (Estudiante estudiante){ 
+           if (Request != null)
+            {
+                HttpPostedFileBase file = Request.Files["InputFile"];
+
+                if ((file != null) && (file.ContentLength > 0) && !string.IsNullOrEmpty(file.FileName))
+                {
+                    string fileName = file.FileName;
+                    string fileContentType = file.ContentType;
+                    byte[] fileBytes = new byte[file.ContentLength];
+                    file.InputStream.Read(fileBytes, 0, Convert.ToInt32(file.ContentLength));
+                    string extension = System.IO.Path.GetExtension(Request.Files["InputFile"].FileName);
+                    string path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"),"cedula_"+ estudiante.codigo, ".jpg");
+                    if (System.IO.File.Exists(path1))
+                        System.IO.File.Delete(path1);
+                    ViewBag.imagen = "/Uploads/cedula_" + estudiante.codigo + ".jpg";
+                    Request.Files["InputFile"].SaveAs(path1);
+                }
+            }
+           return View(estudiante);
+        }
                         
                      
        
@@ -656,24 +725,7 @@ public ActionResult EstadoHV(string num_documento, string programaId, string est
 
                 db.Entry(est).State = EntityState.Modified;
 
-                if (Request != null)
-            {
-                HttpPostedFileBase file = Request.Files["InputFile"];
-
-                if ((file != null) && (file.ContentLength > 0) && !string.IsNullOrEmpty(file.FileName))
-                {
-                    string fileName = file.FileName;
-                    string fileContentType = file.ContentType;
-                    byte[] fileBytes = new byte[file.ContentLength];
-                    file.InputStream.Read(fileBytes, 0, Convert.ToInt32(file.ContentLength));
-                    string extension = System.IO.Path.GetExtension(Request.Files["InputFile"].FileName);
-                    string path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"),"cedula_"+ estudiante.codigo, ".jpg");
-                    if (System.IO.File.Exists(path1))
-                        System.IO.File.Delete(path1);
-                    ViewBag.imagen = "/Uploads/cedula_" + estudiante.codigo + ".jpg";
-                    Request.Files["InputFile"].SaveAs(path1);
-                }
-            }
+                cargaDocumento(estudiante);
 
                 db.SaveChanges();
                return RedirectToAction("../Estudiante/Personales/" + est.estudianteId);
@@ -681,7 +733,7 @@ public ActionResult EstadoHV(string num_documento, string programaId, string est
             }
             else
             {
-
+                cargaDocumentoDos(estudiante);
                 Estudiante estudiante2 = db.Estudiantes.Find(estudiante.estudianteId);
                 
                 
@@ -750,17 +802,7 @@ public ActionResult EstadoHV(string num_documento, string programaId, string est
             Boolean estado = ValidarCampos(estudiante);
             ViewBag.estado = estado;
 
-            string path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), "cedula_" + estudiante.codigo, ".jpg");
-            if (System.IO.File.Exists(path1))
-            {
-
-                ViewBag.imagen = "/Uploads/cedula_" + estudiante.codigo + ".jpg";
-            }
-            else
-            {
-                ViewBag.imagen = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
-
-            }
+            cargaDocumentoDos(estudiante);
             return View(estudiante);
             
         }
@@ -815,25 +857,8 @@ public ActionResult EstadoHV(string num_documento, string programaId, string est
         public ActionResult PersonalesDS(Estudiante estudiante)
         {
              estudiante = db.Estudiantes.Find(estudiante.estudianteId);
-               
-                if (Request != null)
-                {
-                    HttpPostedFileBase file = Request.Files["InputFile"];
 
-                    if ((file != null) && (file.ContentLength > 0) && !string.IsNullOrEmpty(file.FileName))
-                    {
-                        string fileName = file.FileName;
-                        string fileContentType = file.ContentType;
-                        byte[] fileBytes = new byte[file.ContentLength];
-                        file.InputStream.Read(fileBytes, 0, Convert.ToInt32(file.ContentLength));
-                        string extension = System.IO.Path.GetExtension(Request.Files["InputFile"].FileName);
-                        string path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), "cedula_" + estudiante.codigo, ".jpg");
-                        if (System.IO.File.Exists(path1))
-                            System.IO.File.Delete(path1);
-
-                        Request.Files["InputFile"].SaveAs(path1);
-                    }
-                }
+             cargaDocumento(estudiante);
 
 
                 Boolean estado = ValidarCampos(estudiante);

@@ -31,7 +31,6 @@
 </div>
 
 @using (Html.BeginForm("SolicitarActualizacion", "Estudiante", FormMethod.Post, new { enctype = "multipart/form-data" }))
-
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
@@ -204,17 +203,14 @@
 
 
                                 @if (ViewBag.estado)
-                            
                                 {
-                                <button type="submit" class="alert-info">Actualizada</button>
+                                    <button type="submit" class="alert-info">Actualizada</button>
 
                                 }
-                           
+
                                 else
-                            
-                           
                                 {
-                                <button type="submit" class="alert-danger">Solicitar Actualizacion</button>
+                                    <button type="submit" class="alert-danger">Solicitar Actualizacion</button>
 
 
                                 }
@@ -243,7 +239,7 @@
                                     @Html.HiddenFor(model => model.semestre)
                                     @Html.HiddenFor(model => model.estado_academico)
 
-                                   
+
 
 
 
@@ -262,76 +258,88 @@
     </div>
 }
 
-    <legend>Documento</legend>
-
-    <div class="col-sm-3">
-
-    </div>
 
 
 
-   @using (Html.BeginForm("PersonalesDS", "Estudiante", FormMethod.Post, new { enctype = "multipart/form-data" }))
-   {
-        @Html.AntiForgeryToken()
-        @Html.ValidationSummary(true)
+
+@using (Html.BeginForm("PersonalesDS", "Estudiante", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
     @Html.HiddenFor(model => model.estudianteId)
-       @Html.HiddenFor(model => model.hojaVidaId)
-
-        <div class="col-sm-8">
-            <div class="row">
-                <fdorm class="form-horizontal" role="form">
+    @Html.HiddenFor(model => model.hojaVidaId)
 
 
+    <div class="container">
 
-                    <div class="form-group">
 
-                        <br>
+        <div class="row">
 
-                        <br>
-                        <br>
-                        <table>
-                            <tr>
-                                <td>
-                                    <div class="col-sm-4">
-                                        <img src=@ViewBag.imagen alt="..." class="img-rounded" height="120px" width="200px"><br />
+            <fieldset>
+                <legend>Documentos</legend>
+                <div class="col-sm-3">
+
+                </div>
+
+                <div class="col-sm-8">
+                    <div class="row">
+                        <fdorm class="form-horizontal" role="form">
+
+
+
+                            <div class="form-group">
+
+                                <br>
+
+                                <br>
+                                <br>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div class="col-sm-4">
+                                                <a href='@Url.Action("SoporteDS", "Estudiante", new { id = @Model.estudianteId, imagen = @ViewBag.imagen})'>
+                                                    <img src=@ViewBag.imagen class="img-rounded" height="120" width="200" />
+                                                </a>
+
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <label for="InputFile">Documento de Identidad (jpg,png)</label>
+                                            <!--<input type="file" id=""name="UploadedFile" />-->
+                                            <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
+                                            <input type="hidden" value=@Model.estudianteId name="idEstudiante" />
+                                        </td>
+
+                                    </tr>
+                                    <tr></tr>
+                                </table>
+
+                            </div>
+
+
+
+
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <div class="pull-right">
+                                        @if (!User.IsInRole("Departamento"))
+                                        {
+                                            <button type="submit" class="btn btn-primary">Guardar</button>
+                                        }
 
                                     </div>
-                                </td>
-                                <td>
-                                    <label for="InputFile">Fotocopia Cédula (jpg,png)</label>
-                                    <!--<input type="file" id=""name="UploadedFile" />-->
-                                    <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
-                                    <input type="hidden" value=@Model.estudianteId name="idEstudiante" />
-                                </td>
-
-                            </tr>
-                            <tr></tr>
-                        </table>
-
-                    </div>
-
-
-
-
-                    <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <div class="pull-right">
-                                    @if (!User.IsInRole("Departamento"))
-                                    {
-                                        <button type="submit" class="btn btn-primary">Guardar</button>
-                                    }
-                             
+                                </div>
                             </div>
-                        </div>
-                    </div>
 
 
 
-                </fdorm>
+                        </fdorm>
 
-            </div><!-- /.row -->
-        </div>
-        
+                    </div><!-- /.row -->
+                </div>
+        </div><!-- /.row -->
+    </div>
+
 
 
 
