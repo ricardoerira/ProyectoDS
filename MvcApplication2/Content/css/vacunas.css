@@ -283,6 +283,19 @@ margin-left:15px;
 margin-left:15px;
 }
 
+.enshv{
+    margin-top:-1px;
+
+margin-left:15px;
+}
+
+.enstbl {
+margin-top:-60px;
+}
+
+.ensbot{
+margin-top:11px;
+}
 
 .widget .widget-header h3 { /* baja la palabra tablet---*/
 top: -8px;
@@ -747,5 +760,9 @@ width:700px;
 
 .tablaFamilia {
 width:900px;
+}
+
+.hv {
+margin-left:50px;
 }
 
