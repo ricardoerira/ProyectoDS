@@ -28,7 +28,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Cuenta</b> <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Cambiar Contraseña", "LoginCC/" + Model.estudianteId, "Estudiante")</li>
+                            <li>@Html.ActionLink("Cambiar contraseña", "LoginCC/" + Model.estudianteId, "Estudiante")</li>
                             
 
                         </ul>
@@ -47,7 +47,7 @@
 <div class="container">
     <div class="row">
         <fieldset>
-    <legend>Información Personal Estudiante</legend>
+    <legend>Información personal estudiante</legend>
 
     <!-- /.navbar-collapse aca va leyend -->
 
@@ -67,7 +67,7 @@
 
 
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">Tipo Documento</label>
+                    <label class="col-sm-2 control-label">Tipo documento</label>
                     <div class="col-sm-4">
                         @Html.TextBoxFor(model => model.tipo_documento, new { @class = "form-control", @readonly = "readonly" })
                         @Html.ValidationMessageFor(model => model.tipo_documento)
@@ -97,13 +97,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">Primer Apellido</label>
+                    <label class="col-sm-2 control-label">Primer apellido</label>
                     <div class="col-sm-4">
                         @Html.TextBoxFor(model => model.HojaVida.primer_apellido, new { @class = "form-control", @readonly = "readonly" })
                         @Html.ValidationMessageFor(model => model.HojaVida.primer_apellido)
                     </div>
 
-                    <label class="col-sm-2 control-label">Segundo Apellido</label>
+                    <label class="col-sm-2 control-label">Segundo apellido</label>
                     <div class="col-sm-4">
                         @Html.TextBoxFor(model => model.HojaVida.segundo_apellido, new { @class = "form-control", @readonly = "readonly" })
                         @Html.ValidationMessageFor(model => model.HojaVida.segundo_apellido)
@@ -125,7 +125,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">Fecha de Nacimiento</label>
+                    <label class="col-sm-2 control-label">Fecha de nacimiento</label>
                     <div class="col-sm-4">
                         @Html.TextBoxFor(model => model.HojaVida.fecha_nacimiento, new { @class = "form-control", @readonly = "readonly" })
                         @Html.ValidationMessageFor(model => model.HojaVida.fecha_nacimiento)
@@ -140,13 +140,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">Lugar Nacimiento</label>
+                    <label class="col-sm-2 control-label">Lugar de nacimiento</label>
                     <div class="col-sm-4">
                         @Html.TextBoxFor(model => model.HojaVida.municipio_procedencia, new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.HojaVida.municipio_procedencia)
                         <p class="help-block">Por favor agregue Departamento y Municipio</p>
                     </div>
-                    <label class="col-sm-2 control-label">Dirección Procedencia</label>
+                    <label class="col-sm-2 control-label">Dirección procedencia</label>
                     <div class="col-sm-4">
                         @Html.TextBoxFor(model => model.direccion_procedencia, new { @class = "form-control", @readonly = "readonly" })
                         @Html.ValidationMessageFor(model => model.direccion_procedencia)
@@ -177,7 +177,7 @@
 
 
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">Teléfono Procedencia</label>
+                    <label class="col-sm-2 control-label">Teléfono procedencia</label>
                     <div class="col-sm-4">
                         @Html.TextBoxFor(model => model.HojaVida.num_telefono, new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.HojaVida.num_telefono)
@@ -193,7 +193,7 @@
 
 
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">Estado Civil</label>
+                    <label class="col-sm-2 control-label">Estado civil</label>
                     <div class="col-sm-4">
                         @Html.DropDownList("HojaVida.estado_civil", new List<SelectListItem>() { new SelectListItem { Text = "Sin Asignar", Value = "Sin Asignar" }, new SelectListItem { Text = "Soltero/a", Value = "Soltero/a" }, new SelectListItem { Text = "Casado/a", Value = "Casado/a" }, new SelectListItem { Text = "Divorciado/a", Value = "Divorciado/a" }, new SelectListItem { Text = "Viudo/a", Value = "Viudo/a" }, new SelectListItem { Text = "Unión Libre", Value = "Unión Libre" } }, new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.HojaVida.estado_civil)
@@ -201,7 +201,7 @@
 
 
                     </div>
-                    <label class="col-sm-2 control-label">Numero de Hijos</label>
+                    <label class="col-sm-2 control-label">Numero de hijos</label>
                     <div class="col-sm-4">
                         @Html.DropDownList("HojaVida.hijos", new List<SelectListItem>() { new SelectListItem { Text = "0", Value = "0" }, new SelectListItem { Text = "1", Value = "1" }, new SelectListItem { Text = "2", Value = "2" }, new SelectListItem { Text = "3", Value = "3" }, new SelectListItem { Text = "4", Value = "4" } }, new { @class = "form-control" })
                     </div>
@@ -260,7 +260,7 @@
 
     </div><!-- /.row --> <!-- /. <div class="col-sm-8"info familia>row -->
 
-    <legend>Información Familiar</legend>
+    <legend>Información familiar</legend>
 
     <div class="col-sm-3">
 
@@ -273,7 +273,7 @@
 
 
                 <div class="form-group">
-                    <legend>Datos del Padre</legend>
+                    <legend>Datos del padre</legend>
                 </div>
 
                 <div class="form-group">
@@ -287,13 +287,13 @@
 
 
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">Primer Apellido</label>
+                    <label class="col-sm-2 control-label">Primer apellido</label>
 
                     <div class="col-sm-4">
                         @Html.TextBoxFor(model => model.HojaVida.Familia.primer_apellido_padre, new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.HojaVida.Familia.primer_apellido_padre)
                     </div>
-                    <label class="col-sm-2 control-label">Segundo Apellido</label>
+                    <label class="col-sm-2 control-label">Segundo apellido</label>
                     <div class="col-sm-4">
                         @Html.TextBoxFor(model => model.HojaVida.Familia.segundo_apellido_padre, new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.HojaVida.Familia.segundo_apellido_padre)
@@ -318,7 +318,7 @@
 
                 <div class="form-group">
                     <br />
-                    <legend>Datos de la Madre</legend>
+                    <legend>Datos de la madre</legend>
                 </div>
 
 
@@ -333,13 +333,13 @@
 
 
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">Primer Apellido </label>
+                    <label class="col-sm-2 control-label">Primer apellido </label>
 
                     <div class="col-sm-4">
                         @Html.TextBoxFor(model => model.HojaVida.Familia.primer_apellido_madre, new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.HojaVida.Familia.primer_apellido_madre)
                     </div>
-                    <label class="col-sm-2 control-label">Segundo Apellido</label>
+                    <label class="col-sm-2 control-label">Segundo apellido</label>
                     <div class="col-sm-4">
                         @Html.TextBoxFor(model => model.HojaVida.Familia.segundo_apellido_madre, new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.HojaVida.Familia.segundo_apellido_madre)
@@ -365,7 +365,7 @@
 
                 <div class="form-group">
                     <br />
-                    <legend>Datos del Acudiente</legend>
+                    <legend>Datos del acudiente</legend>
                 </div>
 
 
@@ -377,20 +377,21 @@
                         @Html.ValidationMessageFor(model => model.HojaVida.Familia.primer_nombre_acudiente)
                     </div>
 
-                    <label class="col-sm-2 control-label">Segundo Apellido</label>
-
-                    <div class="col-sm-4">
-                        @Html.TextBoxFor(model => model.HojaVida.Familia.segundo_apellido_acudiente, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.HojaVida.Familia.segundo_apellido_acudiente)
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Primer Apellido</label>
+                    <label class="col-sm-2 control-label">Primer apellido</label>
 
                     <div class="col-sm-4">
                         @Html.TextBoxFor(model => model.HojaVida.Familia.primer_apellido_acudiente, new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.HojaVida.Familia.primer_apellido_acudiente)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    
+                    <label class="col-sm-2 control-label">Segundo apellido</label>
+
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.HojaVida.Familia.segundo_apellido_acudiente, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.HojaVida.Familia.segundo_apellido_acudiente)
                     </div>
                     <label class="col-sm-2 control-label">Teléfono</label>
 
@@ -427,7 +428,7 @@
 
 
 
-    <legend>Cargar Documento</legend>
+    <legend>Cargar documento</legend>
 
     <div class="col-sm-3">
 
@@ -461,7 +462,7 @@
                             </div>
                         </td>
                         <td>
-                            <label for="InputFile">Documento de Identidad (jpg,png)</label>
+                            <label for="InputFile">Documento de identidad (jpg,png)</label>
                             <!--<input type="file" id=""name="UploadedFile" />-->
                             <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
                             <input type="hidden" value=@Model.estudianteId name="idEstudiante" />

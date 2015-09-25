@@ -24,54 +24,79 @@
 <div class="container">
     <div class="row">
         <fieldset>
-            <legend>Datos Familiares</legend>
+           
+            <div class="span7">
+                <div class="widgetVacuna stacked widgetVacuna action-table">
 
-            <table class="table table-striped table-hover">
+                    <div class="widgetVacuna-headerVacuna">
+                        <h2><i class="glyphicon-align-center glyphicon glyphicon-list"></i></h2>
+                        <h4>Datos familiares</h4>
+                    </div> <!-- /widget-header"> -->
 
-                <tr>
-                    <th>Parentesco</th>
-                    <th>Nombre</th>
-                    <th>Primer Apellido</th>
-                    <th>Segundo Apellido</th>
-                    <th>Dirección</th>
-                    <th>Teléfono</th>
-                </tr>
-                <tr>
-                    <th>Padre</th>
-                    <td>@Html.DisplayFor(model => model.HojaVida.Familia.primer_nombre_padre)</td>
-                    <td>@Html.DisplayFor(model => model.HojaVida.Familia.primer_apellido_padre)</td>
-                    <td>@Html.DisplayFor(model => model.HojaVida.Familia.segundo_apellido_padre)</td>
-                    <td>@Html.DisplayFor(model => model.HojaVida.Familia.direccion_padre)</td>
-                    <td>@Html.DisplayFor(model => model.HojaVida.Familia.telefono_padre)</td>
-                </tr>
-                <tr>
-                    <th>Madre</th>
-                    <td>@Html.DisplayFor(model => model.HojaVida.Familia.primer_nombre_madre)</td>
-                    <td>@Html.DisplayFor(model => model.HojaVida.Familia.primer_apellido_madre)</td>
-                    <td>@Html.DisplayFor(model => model.HojaVida.Familia.segundo_apellido_madre)</td>
-                    <td>@Html.DisplayFor(model => model.HojaVida.Familia.direccion_madre)</td>
-                    <td>@Html.DisplayFor(model => model.HojaVida.Familia.telefono_madre)</td>
-                </tr>
-                <tr>
-                    <th>Acudiente</th>
-                    <td>@Html.DisplayFor(model => model.HojaVida.Familia.primer_nombre_acudiente)</td>
-                    <td>@Html.DisplayFor(model => model.HojaVida.Familia.primer_apellido_acudiente)</td>
-                    <td>@Html.DisplayFor(model => model.HojaVida.Familia.segundo_apellido_acudiente)</td>
-                    <td>@Html.DisplayFor(model => model.HojaVida.Familia.direccion_acudiente)</td>
-                    <td>@Html.DisplayFor(model => model.HojaVida.Familia.telefono_acudiente)</td>
-                </tr>
-            </table>
-            
+                    <div class="widgetVacuna-contentVacuna">
+
+
+                        <table class="tableVacuna  table-condensed table-striped table-bordered">
+
+                            <thead>
+                                <tr>
+                                    <th>Parentesco</th>
+                                    <th>Nombre</th>
+                                    <th>Primer apellido</th>
+                                    <th>Segundo apellido</th>
+                                    <th>Dirección</th>
+                                    <th>Teléfono</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            
+                                <tr>
+                                    <td>Padre</td>
+                                    <td>@Html.DisplayFor(model => model.HojaVida.Familia.primer_nombre_padre)</td>
+                                    <td>@Html.DisplayFor(model => model.HojaVida.Familia.primer_apellido_padre)</td>
+                                    <td>@Html.DisplayFor(model => model.HojaVida.Familia.segundo_apellido_padre)</td>
+                                    <td>@Html.DisplayFor(model => model.HojaVida.Familia.direccion_padre)</td>
+                                    <td>@Html.DisplayFor(model => model.HojaVida.Familia.telefono_padre)</td>
+                                    
+                                </tr>
+                            
+                            
+                            
+                                <tr>
+                                    <td>Madre</td>
+                                    <td>@Html.DisplayFor(model => model.HojaVida.Familia.primer_nombre_madre)</td>
+                                    <td>@Html.DisplayFor(model => model.HojaVida.Familia.primer_apellido_madre)</td>
+                                    <td>@Html.DisplayFor(model => model.HojaVida.Familia.segundo_apellido_madre)</td>
+                                    <td>@Html.DisplayFor(model => model.HojaVida.Familia.direccion_madre)</td>
+                                    <td>@Html.DisplayFor(model => model.HojaVida.Familia.telefono_madre)</td>
+                                </tr>
+                            
+                            
+                            
+                                <tr>
+                                    <td>Acudiente</td>
+                                    <td>@Html.DisplayFor(model => model.HojaVida.Familia.primer_nombre_acudiente)</td>
+                                    <td>@Html.DisplayFor(model => model.HojaVida.Familia.primer_apellido_acudiente)</td>
+                                    <td>@Html.DisplayFor(model => model.HojaVida.Familia.segundo_apellido_acudiente)</td>
+                                    <td>@Html.DisplayFor(model => model.HojaVida.Familia.direccion_acudiente)</td>
+                                    <td>@Html.DisplayFor(model => model.HojaVida.Familia.celular_acudiente)</td>
+                                </tr>
+                            
+                            
+                        </table>
+
 
 
                         <!-- Text input-->
 
 
 
-
-
+                    </div>
+                </div>
+            </div>
         </fieldset>
+
     </div>
 </div>
-
+    
 

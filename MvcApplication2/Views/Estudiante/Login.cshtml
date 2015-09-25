@@ -1,76 +1,90 @@
 ﻿@model MvcApplication2.Models.Estudiante
 
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <div class="container-fluid">
 
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-        @Html.ValidationSummary(true)
-    <div class="principal">
-        <div class="container">
+        <div class="container-page">
+            <div class=" col-sm-2">
+            </div>
+            <div class=" col-sm-3">
+                <br />
+                <br />
+                <img src="../../images/user3.jpg" height="300" width="275">
 
-            <div class="row">
+            </div>
 
-                <div class="col-md-5 col-md-offset-8">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <span class="glyphicon glyphicon-lock"></span> Login
-                        </div>
-                        <div class="panel-body">
+            <div class="col-sm-4">
+                <br />
+                <br />
+                <br />
 
-                            <fosrm class="form-horizontal" role="form">
-                                <div class="form-group"></div>
-                                    <div class="form-group">
+                <h2><p class="help-block">Iniciar sesión</p></h2>
+                <br />
+                <p>
+                    Ingresa a tu hoja de vida y esquema de vacunación.
+                </p>
+                <br />
+                @Html.TextBoxFor(model => model.codigo, new { @class = "form-control", @placeholder = "Usuario" })
+                @Html.ValidationMessageFor(model => model.codigo)
+                <p class="help-block"></p>
+                @Html.PasswordFor(model => model.clave, new { @class = "form-control", @placeholder = "Contraseña" })
+                @Html.ValidationMessageFor(model => model.clave)
 
-                                        <label for="inputPassword3" class="col-sm-3 control-label">
-                                      Usuario
-                                                </label>
+                <p class="help-block"></p>
 
-                                        <div class="col-sm-7">
-                                            @Html.TextBoxFor(model => model.codigo, new { @class = "form-control", @placeholder = "Usuario" })
-                                            @Html.ValidationMessageFor(model => model.codigo)
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="inputPassword3" class="col-sm-3 control-label">
-                                            Contraseña
-                                        </label>
-                                        <div class="col-sm-7">
-                                            @Html.PasswordFor(model => model.clave, new { @class = "form-control", @placeholder = "Contraseña" })
 
-                                            @Html.ValidationMessageFor(model => model.clave)
-
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-sm-offset-3 col-sm-9">
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" />
-                                                    Remember me
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group last">
-                                        <div class="col-sm-offset-3 col-sm-9">
-                                            <button type="submit" class="btn btn-success btn-sm">
-                                                Sign in
-                                            </button>
-                                            <button type="reset" class="btn btn-default btn-sm">
-                                                Reset
-                                            </button>
-                                        </div>
-                                    </div>
-                                <div class="form-group"></div>
-
-                                </div>
-                        <div class="panel-footer">
-                            Not Registred? <a href="http://www.jquery2dotnet.com">Register here</a>
-                        </div>
-                    </div>
-                </div>
+                <button type="submit" class="btn btn-primary">Ingresar</button>
+                <button type="reset" class="btn btn-default btn-sm">
+                    Limpiar
+                </button>
             </div>
         </div>
 
     </div>
-    }
+
+
+
+
+
+    <div class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container">
+            <p class="navbar-text pull-left">
+                © 2015 - Facultad de Ciencias para la Salud.
+                <a href="http://www.ucaldas.edu.co/portal/" target="_blank">Universidad de Caldas</a>
+            </p>
+
+            <a href="http://youtu.be/zJahlKPCL9g" class="navbar-btn  btn pull-right">
+                <span></span>  Docencia Servicio
+            </a>
+        </div>
+
+
+    </div>
+
+
+    <div class="form-group">
+
+
+
+
+        <div class="col-sm-4">
+
+            @Html.HiddenFor(model => model.estudianteId)
+            @Html.HiddenFor(model => model.hojaVidaId)
+            @Html.HiddenFor(model => model.rotacionId)
+            @Html.HiddenFor(model => model.programaId)
+            @Html.HiddenFor(model => model.clave)
+            @Html.HiddenFor(model => model.modalidad)
+
+
+            @Html.HiddenFor(model => model.semestre)
+            @Html.HiddenFor(model => model.estado_academico)
+
+
+        </div>
+    </div>
+
+}
