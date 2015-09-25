@@ -8,6 +8,8 @@ using System.Web.Mvc;
 using MvcApplication2.Models;
 using CrystalDecisions.CrystalReports.Engine;
 using System.IO;
+using System.Net.Mail;
+using System.Net;
 
 namespace MvcApplication2.Controllers
 {
@@ -97,14 +99,14 @@ namespace MvcApplication2.Controllers
                 rotaciones.Add(item.Rotacion);
                 acti.Add(item.Rotacion.ActividadAcademica);
             }
+
             rptH.Database.Tables[0].SetDataSource(re);
             rptH.Database.Tables[1].SetDataSource(docentes);
             rptH.Database.Tables[2].SetDataSource(estudiantes);
             rptH.Database.Tables[3].SetDataSource(hojas2);
             rptH.Database.Tables[4].SetDataSource(acti);
             rptH.Database.Tables[5].SetDataSource(rotaciones);
-            //    rptH.Database.Tables[6].SetDataSource(hojas);
-
+           
 
 
 
@@ -120,9 +122,12 @@ namespace MvcApplication2.Controllers
 
             if(re.Count>0)
             {
+                EnviarEstudiantes(estudiantes);
                 Stream stream = rptH.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
-
-                return File(stream, "application/pdf");
+                SaveStreamToFile(stream,"cartaPresentacion");
+                Stream stream2 = rptH.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
+               
+                return File(stream2, "application/pdf");
             }
             else
             {
@@ -142,7 +147,104 @@ namespace MvcApplication2.Controllers
          
         }
 
+        public void EnviarEstudiantes(List<Estudiante> estudiantes)
+        {
+            string body = "<h2>Coordial Saludo.</h2><h2 style=\"text-align: justify;\">Se envia la carta de presentacion asi como las hojas de vida de los estudiantes que haran su respectiva rotacion en su IPS.</h2>";
 
+            foreach(Estudiante estudiante in estudiantes)
+            {
+                body += "&nbsp;<a href=\"http://localhost:34649/Estudiante/ReporteEstudianteA/" + estudiante.estudianteId + "\">" + estudiante.num_documento + "</a>";
+            }
+
+            body += "<p><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Universidad_De_Caldas_-_Logo.jpg/180px-Universidad_De_Caldas_-_Logo.jpg\" alt=\"\" width=\"180\" height=\"180\" /></p><p>&nbsp;</p><p>Copyright &copy; <a href=\"http://www.ucaldas.edu.co/portal\"><strong>Universidad de Caldas</strong></a> - Sede Principal Calle 65 No 26 - 10 / Tel +57 6 8781500 Fax 8781501 / Apartado a&eacute;reo 275 / L&iacute;nea gratuita : 01-8000-512120 E-mail ucaldas@ucaldas.edu.co</p>";
+
+
+
+
+
+
+                var fromAddress = new MailAddress("docenciaservicioucaldas@hotmail.com", "Docencia Servicio Ucaldas");
+                var toAddress = new MailAddress("ricardoerira@gmail.com", "To Name");
+                const string fromPassword = "ucaldas2015";
+                const string subject = "Solicitud de Actualizacion ";
+                
+
+                try
+                {
+
+                    var smtp = new SmtpClient
+                    {
+                        Host = "smtp.live.com",
+                        Port = 587,
+                        EnableSsl = true,
+                        DeliveryMethod = SmtpDeliveryMethod.Network,
+                        UseDefaultCredentials = false,
+                        Timeout = 10000,
+                        Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+                    };
+                    var message = new MailMessage(fromAddress, toAddress);
+
+                    message.IsBodyHtml = true;
+                    message.Subject = subject;
+                    message.Body = body;
+                    string file = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), "CartaPresentacion", ".pdf");
+
+                    message.Attachments.Add(new System.Net.Mail.Attachment(file));
+
+
+                    smtp.EnableSsl = true;
+                    smtp.Send(message);
+
+
+                }
+
+
+                catch (Exception e)
+                {
+
+                    Console.WriteLine("Ouch!" + e.ToString());
+
+                }
+
+        
+        
+        }
+       
+        public void SaveStreamToFile(Stream stream, string filename)
+        {
+            string path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), filename, ".pdf");
+            try
+            {
+                var fileStream = new FileStream(path1, FileMode.CreateNew, FileAccess.Write);
+                stream.CopyTo(fileStream);
+                fileStream.Dispose();
+                fileStream.Flush();
+                fileStream.Close();
+            }
+            catch(Exception e)
+            {
+
+            }
+          
+        }
+       
+
+        //Typically I implement this Write method as a Stream extension method. 
+        //The framework handles buffering.
+
+        public void Write(Stream from, Stream to)
+        {
+            for (int a = from.ReadByte(); a != -1; a = from.ReadByte())
+                to.WriteByte((byte)a);
+            to.Flush();
+            to.Close();
+            from.Flush();
+            to.Flush();
+
+
+         
+        }
+        
         public ActionResult SeleccionRotacionContraPrestacionC()
         {
 

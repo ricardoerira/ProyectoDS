@@ -813,40 +813,48 @@ public ActionResult EstadoHV(string num_documento, string programaId, string est
         {
             estudiante = db.Estudiantes.Find(estudiante.estudianteId);
 
+            var fromAddress = new MailAddress("docenciaservicioucaldas@hotmail.com", "Docencia Servicio Ucaldas");
+            var toAddress = new MailAddress(estudiante.HojaVida.correo, "To Name");
+            const string fromPassword = "ucaldas2015";
+            const string subject = "Solicitud de Actualizacion ";
+            const string body = "<h2>Coordial Saludo.</h2><h2 style=\"text-align: justify;\">Para la autorizacion de sus rotaciones es necesario la actualizacion de sus datos personales asi como su carnet de vacunacion en la nueva plataforma web la cual podra acceder atraves del siguiente link.</h2><h2>&nbsp;<a href=\"http://localhost:34649/\">http://localhost:34649/</a></h2><h2>Los datosde ingreso son&nbsp;</h2><h2><strong>Usuario</strong> : Codigo de Estudiante</h2><h2><strong>Contrase&ntilde;a</strong>: Codigo de Estudiante&nbsp;</h2><p>&nbsp;</p><p>&nbsp;</p><p><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Universidad_De_Caldas_-_Logo.jpg/180px-Universidad_De_Caldas_-_Logo.jpg\" alt=\"\" width=\"180\" height=\"180\" /></p><p>&nbsp;</p><p>Copyright &copy; <a href=\"http://www.ucaldas.edu.co/portal\"><strong>Universidad de Caldas</strong></a> - Sede Principal Calle 65 No 26 - 10 / Tel +57 6 8781500 Fax 8781501 / Apartado a&eacute;reo 275 / L&iacute;nea gratuita : 01-8000-512120 E-mail ucaldas@ucaldas.edu.co</p> ";
+
+
             try
             {
-                var fromAddress = new MailAddress("ricardoerira@gmail.com", "From Name");
-                var toAddress = new MailAddress(estudiante.HojaVida.correo, "To Name");
-                const string fromPassword = "Descargarre20";
-                const string subject = "Subject";
-                const string body = "Body";
 
                 var smtp = new SmtpClient
                 {
-                    Host = "smtp.gmail.com",
+                    Host = "smtp.live.com",
                     Port = 587,
                     EnableSsl = true,
                     DeliveryMethod = SmtpDeliveryMethod.Network,
                     UseDefaultCredentials = false,
-
+                    Timeout = 10000,
                     Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
                 };
-                using (var message = new MailMessage(fromAddress, toAddress)
-                {
-                    Subject = subject,
-                    Body = body
-                })
-                {
+                var message = new MailMessage(fromAddress, toAddress);
 
-                    smtp.Send(message);
-                }
+                message.IsBodyHtml = true;
+                message.Subject = subject;
+                message.Body = body;
+
+
+
+                smtp.EnableSsl = true;
+                smtp.Send(message);
+
 
             }
+
 
             catch (Exception e)
             {
+
                 Console.WriteLine("Ouch!" + e.ToString());
+
             }
+
 
             return RedirectToAction("../Estudiante/PersonalesDS/" + estudiante.estudianteId);
 
