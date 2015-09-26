@@ -17,7 +17,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Cuenta</b> <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Cambiar Contraseña", "LoginCC/" + Model.docenteId, "Docente")</li>
+                            <li>@Html.ActionLink("Cambiar contraseña", "LoginCC/" + Model.docenteId, "Docente")</li>
 
 
                         </ul>
@@ -39,7 +39,7 @@
         <div class="row">
 
             <fieldset>
-                <legend>Información Personal Docente</legend>
+                <legend>Información personal docente</legend>
 
                 <div class="col-sm-3">
                     <img src="@Url.Content(Model.HojaVida.imagen_DI)" alt="..." class="img-rounded" height="200px" width="150px"><br />
@@ -63,7 +63,7 @@
 
 
 
-                                <label class="col-sm-2 control-label">Tipo Documento</label>
+                                <label class="col-sm-2 control-label">Tipo documento</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.tipo_documento, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.tipo_documento)
@@ -102,7 +102,7 @@
 
 
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">Fecha de Nacimiento</label>
+                                <label class="col-sm-2 control-label">Fecha de nacimiento</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.HojaVida.fecha_nacimiento, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.fecha_nacimiento)
@@ -121,7 +121,7 @@
 
 
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">Lugar de Nacimiento</label>
+                                <label class="col-sm-2 control-label">Lugar de nacimiento</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.HojaVida.municipio_procedencia, new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.municipio_procedencia)
@@ -129,7 +129,7 @@
                                 </div>
 
 
-                                <label class="col-sm-2 control-label">Num. Libreta Militar</label>
+                                <label class="col-sm-2 control-label">n.º libreta militar</label>
                                 <div class="col-sm-4">
                                 @Html.TextBoxFor(model => model.num_libreta_militar, new { @class = "form-control" })
                                 @Html.ValidationMessageFor(model => model.num_libreta_militar)  
@@ -196,14 +196,14 @@
 
 
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">Estado Civil</label>
+                                <label class="col-sm-2 control-label">Estado civil</label>
                                 <div class="col-sm-4">
                                     @Html.DropDownList("HojaVida.estado_civil", new List<SelectListItem>() { new SelectListItem { Text = "Sin Asignar", Value = "Sin Asignar" }, new SelectListItem { Text = "Soltero/a", Value = "Soltero/a" }, new SelectListItem { Text = "Casado/a", Value = "Casado/a" }, new SelectListItem { Text = "Divorciado/a", Value = "Divorciado/a" }, new SelectListItem { Text = "Viudo/a", Value = "Viudo/a" }, new SelectListItem { Text = "Unión Libre", Value = "Unión Libre" } }, new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.estado_civil)
 
 
                                 </div>
-                                <label class="col-sm-2 control-label">Numero de Hijos</label>
+                                <label class="col-sm-2 control-label">n.º de hijos</label>
                                 <div class="col-sm-4">
                                     @Html.DropDownList("HojaVida.hijos", new List<SelectListItem>() { new SelectListItem { Text = "0", Value = "0" }, new SelectListItem { Text = "1", Value = "1" }, new SelectListItem { Text = "2", Value = "2" }, new SelectListItem { Text = "3", Value = "3" }, new SelectListItem { Text = "4", Value = "4" } }, new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.hijos)
@@ -257,7 +257,7 @@
                                     @Html.TextBoxFor(model => model.HojaVida.Familia.primer_nombre_acudiente, new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.Familia.primer_nombre_acudiente)
                                 </div>
-                                <label class="col-sm-2 control-label">Primer Apellido</label>
+                                <label class="col-sm-2 control-label">Primer apellido</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.HojaVida.Familia.primer_apellido_acudiente, new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.Familia.primer_apellido_acudiente)
@@ -266,7 +266,7 @@
                             <div class="form-group">
 
 
-                                <label class="col-sm-2 control-label">Segundo Apellido</label>
+                                <label class="col-sm-2 control-label">Segundo apellido</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.HojaVida.Familia.segundo_apellido_acudiente, new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.Familia.segundo_apellido_acudiente)
@@ -302,7 +302,7 @@
                 </div>
 
 
-                <legend>Información Académica</legend>
+                <legend>Información académica y laboral</legend>
 
                 <div class="col-sm-3">
 
@@ -320,7 +320,7 @@
                                     @Html.ValidationMessageFor(model => model.DepartamentoSalud.nombre)
 
                                 </div>
-                                <label class="col-sm-2 control-label">Tipo Vinculación</label>
+                                <label class="col-sm-2 control-label">Tipo vinculación</label>
                                 <div class="col-sm-4">
                                     @Html.DropDownList("tipo_vinculacion", new List<SelectListItem>() { new SelectListItem { Text = "Sin Asignar", Value = "Sin Asignar" }, new SelectListItem { Text = "DOCENTE DE PLANTA", Value = "DOCENTE DE PLANTA" }, new SelectListItem { Text = "DOCENTE OCASIONAL", Value = "DOCENTE OCASIONAL" }, new SelectListItem { Text = "DOCENTE CATEDRÁTICO", Value = "DOCENTE CATEDRÁTICO" }, new SelectListItem { Text = "COMISION ADMINISTRATIVA", Value = "COMISION ADMINISTRATIVA" } }, new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.tipo_vinculacion)
@@ -329,7 +329,7 @@
                             
 
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">Título Pregrado</label>
+                                <label class="col-sm-2 control-label">Título pregrado</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.titulo_pregrado, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.titulo_pregrado)
@@ -354,7 +354,7 @@
                                     @Html.ValidationMessageFor(model => model.maximo_nivel_formacion)
                                 </div>
 
-                                <label class="col-sm-2 control-label">Categoria Escalafón Docente</label>
+                                <label class="col-sm-2 control-label">Categoria escalafón docente</label>
                                 <div class="col-sm-4">
                                     @Html.DropDownList("categoria_escalafon_docente", new List<SelectListItem>() { new SelectListItem { Text = "Sin Asignar", Value = "Sin Asignar" }, new SelectListItem { Text = "Auxiliar", Value = "Auxiliar" }, new SelectListItem { Text = "Asistente", Value = "Asistente" }, new SelectListItem { Text = "Asociado", Value = "Asociado" }, new SelectListItem { Text = "Titular", Value = "Titular" } }, new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.tipo_vinculacion)
@@ -363,7 +363,7 @@
 
                             <div class="form-group">
 
-                                <label class="col-sm-2 control-label">Título Postgrado</label>
+                                <label class="col-sm-2 control-label">Título postgrado</label>
                                 <div class="col-sm-8">
                                     
                                     @Html.DropDownList("certificado_DPE", new List<SelectListItem>() { new SelectListItem { Text = "Sin Asignar", Value = "Sin Asignar" }, new SelectListItem { Text = "Geriatría clínica", Value = "Geriatría clínica" }, new SelectListItem { Text = "Magister en Gerontología Envejecimiento y Vejez", Value = "Magister en Gerontología Envejecimiento y Vejez" }, new SelectListItem { Text = "Asociado", Value = "Asociado" }, new SelectListItem { Text = "Titular", Value = "Titular" } }, new { @class = "form-control" })
@@ -391,7 +391,7 @@
                         <table class="tableDocumentos table-condensed table-striped">
 
                             <tr>
-                                <th>Tipo Documento</th>
+                                <th>Tipo documento</th>
                                 <th>Acción</th>
                                 <th>Archivo</th>
                             </tr>
@@ -421,7 +421,7 @@
 
                             </tr>
                             <tr>
-                                <td class="tdDocumentos">Diploma de Profesional</td>
+                                <td class="tdDocumentos">Diploma de profesional</td>
                                 <td>
                                     <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
 
@@ -433,7 +433,7 @@
                             </tr>
                             <tr>
 
-                                <td class="tdDocumentos">Diploma de Especialista</td>
+                                <td class="tdDocumentos">Diploma de especialista</td>
                                 <td>
                                     <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
                                 </td>
@@ -444,7 +444,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="tdDocumentos">Tp de la Dirección Territorial de Salud</td>
+                                <td class="tdDocumentos">Tarjeta de profesional de la Dirección Territorial de Salud </td>
                                 <td>
                                     <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
 
@@ -455,8 +455,9 @@
                                     </a>
                                 </td>
                             </tr>
+                            
                             <tr>
-                                <td class="tdDocumentos">Tarjeta de profesional Departamental</td>
+                                <td class="tdDocumentos">Tarjeta profesional Nacional</td>
                                 <td>
                                     <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
 
@@ -468,7 +469,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="tdDocumentos">Tarjeta de profesional Nacional</td>
+                                <td class="tdDocumentos">Anexo 1</td>
                                 <td>
                                     <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
 
@@ -480,7 +481,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="tdDocumentos">Otro</td>
+                                <td class="tdDocumentos">Anexo 2</td>
                                 <td>
                                     <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
 

@@ -572,9 +572,6 @@ public ActionResult EstadoHV(string num_documento, string programaId, string est
         [ValidateAntiForgeryToken]
         public ActionResult CambioContraseña(Estudiante estudiante)
         {
-            if (ModelState.IsValid)
-            {
-
                 Estudiante est = db.Estudiantes.Find(estudiante.estudianteId);
 
                 if (estudiante.clave.Equals(estudiante.tipo_documento))
@@ -590,7 +587,8 @@ public ActionResult EstadoHV(string num_documento, string programaId, string est
                     return RedirectToAction("../Estudiante/Personales/" + est.estudianteId);
                     
                 }
-            }
+            
+
             return RedirectToAction("../Estudiante/CambioContraseña/" + estudiante.estudianteId);
         }
 

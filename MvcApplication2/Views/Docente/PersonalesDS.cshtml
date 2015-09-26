@@ -31,7 +31,7 @@
         <div class="row">
 
             <fieldset>
-                <legend>Información Personal Docente</legend>
+                <legend>Información personal docente</legend>
 
                 <div class="col-sm-3">
                     <img src="@Url.Content(Model.HojaVida.imagen_DI)" alt="..." class="img-rounded" height="200px" width="150px"><br />
@@ -411,7 +411,7 @@
                         <table class="tableDocumentos table-condensed table-striped">
 
                             <tr>
-                                <th>Tipo Documento</th>
+                                <th>Tipo documento</th>
                                 <th>Acción</th>
                                 <th>Archivo</th>
                             </tr>
@@ -421,7 +421,7 @@
                                     <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
                                 </td>
                                 <td>
-                                    <a href='@Url.Action("SoportesDS", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen1})'>
+                                    <a href='@Url.Action("Soportes", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen1 })'>
                                         <img src=@ViewBag.imagen1 class="img-rounded" height="75" width="75" />
                                     </a>
                                 </td>
@@ -433,7 +433,7 @@
                                     <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
                                 </td>
                                 <td>
-                                    <a href='@Url.Action("SoportesDS", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen2 })'>
+                                    <a href='@Url.Action("Soportes", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen2 })'>
                                         <img src=@ViewBag.imagen2 class="img-rounded" height="75" width="75" />
                                     </a>
 
@@ -441,72 +441,73 @@
 
                             </tr>
                             <tr>
-                                <td class="tdDocumentos">Diploma de Profesional</td>
+                                <td class="tdDocumentos">Diploma de profesional</td>
                                 <td>
                                     <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
 
                                 </td>
                                 <td>
-                                    <a href='@Url.Action("SoportesDS", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen3  })'>
+                                    <a href='@Url.Action("Soportes", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen3  })'>
                                         <img src=@ViewBag.imagen3 class="img-rounded" height="75" width="75" />
                                     </a>
                             </tr>
                             <tr>
 
-                                <td class="tdDocumentos">Diploma de Especialista</td>
+                                <td class="tdDocumentos">Diploma de especialista</td>
                                 <td>
                                     <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
                                 </td>
                                 <td>
-                                    <a href='@Url.Action("SoportesDS", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen4 })'>
+                                    <a href='@Url.Action("Soportes", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen4 })'>
                                         <img src=@ViewBag.imagen4 class="img-rounded" height="75" width="75" />
                                     </a>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="tdDocumentos">Tp de la Dirección Territorial de Salud</td>
+                                <td class="tdDocumentos">Tarjeta de profesional de la Dirección Territorial de Salud </td>
                                 <td>
                                     <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
 
                                 </td>
                                 <td>
-                                    <a href='@Url.Action("SoportesDS", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen5 })'>
+                                    <a href='@Url.Action("Soportes", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen5 })'>
                                         <img src=@ViewBag.imagen5 class="img-rounded" height="75" width="75" />
                                     </a>
                                 </td>
                             </tr>
+
                             <tr>
-                                <td class="tdDocumentos">Tarjeta de profesional Departamental</td>
+                                <td class="tdDocumentos">Tarjeta profesional Nacional</td>
                                 <td>
                                     <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
 
                                 </td>
                                 <td>
-                                    <a href='@Url.Action("SoportesDS", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen6 })'>
+                                    <a href='@Url.Action("Soportes", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen6 })'>
                                         <img src=@ViewBag.imagen6 class="img-rounded" height="75" width="75" />
                                     </a>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="tdDocumentos">Tarjeta de profesional Nacional</td>
+                                <td class="tdDocumentos">Anexo 1</td>
                                 <td>
                                     <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
 
                                 </td>
                                 <td>
-                                    <a href='@Url.Action("SoportesDS", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen7 })'>
+                                    <a href='@Url.Action("Soportes", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen7 })'>
                                         <img src=@ViewBag.imagen7 class="img-rounded" height="75" width="75" />
                                     </a>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="tdDocumentos">Otro</td>
+                                <td class="tdDocumentos">Anexo 2</td>
                                 <td>
                                     <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
 
                                 </td>
                                 <td>
-                                    <a href='@Url.Action("SoportesDS", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen8 })'>
+                                    <a href='@Url.Action("Soportes", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen8 })'>
                                         <img src=@ViewBag.imagen8 class="img-rounded" height="75" width="75" />
                                     </a>
                                 </td>

@@ -389,10 +389,11 @@ namespace MvcApplication2.Controllers
             }
         }
 
-        
+
         public ActionResult CambioContraseña(int id = 0)
         {
             TempData["notice"] = null;
+
             Docente docente = db.Docentes.Find(id);
             if (docente == null)
             {
@@ -406,26 +407,33 @@ namespace MvcApplication2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult CambioContraseña(Docente docente)
         {
-            if (ModelState.IsValid)
+           
+            Docente doc = db.Docentes.Find(docente.docenteId);
+
+            if (docente.clave.Equals(docente.tipo_documento))
             {
-                Docente doc = db.Docentes.Find(docente.docenteId);
-
-                if (docente.clave.Equals(docente.tipo_documento))
-                {
-                    doc.clave = docente.clave;
+                doc.clave = docente.clave;
 
 
-                    db.Entry(doc).State = EntityState.Modified;
+                db.Entry(doc).State = EntityState.Modified;
 
 
 
-                    db.SaveChanges();
-                    return RedirectToAction("../Docente/Personales/" + doc.docenteId);
+                db.SaveChanges();
+                return RedirectToAction("../Docente/Personales/" + doc.docenteId);
 
-                }
             }
+
+
             return RedirectToAction("../Docente/CambioContraseña/" + docente.docenteId);
         }
+
+        
+        
+
+
+
+      
 
 
 

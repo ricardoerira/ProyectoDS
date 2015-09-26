@@ -27,14 +27,14 @@
                 </p>
                 <br />
                 <strong> @Html.DisplayFor(model => model.HojaVida.correo) </strong>
-                @Html.PasswordFor(model => model.clave, new { @class = "form-control", @placeholder = "Nueva Contraseña" })
+                @Html.PasswordFor(model => model.clave, new { @class = "form-control", @placeholder = "Contraseña nueva" })
                 @Html.ValidationMessageFor(model => model.clave)
 
                 <p class="help-block">8 caracteres como mínimo, distingue mayúsculas de minúsculas</p>
 
-                @Html.PasswordFor(model => model.tipo_documento, new { @class = "form-control", @placeholder = "Nueva Contraseña" })
+                @Html.PasswordFor(model => model.tipo_documento, new { @class = "form-control", @placeholder = "Confirma la nueva la contraseña" })
                 
-                <p class="help-block">Vuelve a escribir la contraseña</p>
+                <p class="help-block"></p>
 
                 <button type="submit" class="btn btn-primary">Guardar</button>
             </div>
@@ -51,12 +51,13 @@
             <p class="navbar-text pull-left">
                 © 2015 - Facultad de Ciencias para la Salud.
                 <a href="http://www.ucaldas.edu.co/portal/" target="_blank">Universidad de Caldas</a>
+                
+            
+                
+                    <a class="inicio">@Html.ActionLink(" ", "Personales", new { id = @Model.estudianteId }, new { @class = "btn btn-sm btn-success btn-icon-only glyphicon glyphicon-home" }) </a>
+                
             </p>
-
-            <a href="http://youtu.be/zJahlKPCL9g" class="navbar-btn  btn pull-right">
-                <span></span>  Inicio
-            </a>
-        </div>
+</div>
 
 
     </div>
