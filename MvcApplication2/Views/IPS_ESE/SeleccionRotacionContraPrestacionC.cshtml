@@ -1,6 +1,6 @@
 ﻿@model MvcApplication2.Models.IPS_ESE
 @{
-    ViewBag.Title = "InformeEducacionContinuada";
+    ViewBag.Title = "InformeActividadacadémica ";
 }
 <div class="row">
     <nav class="navbar navbar-default" role="navigation">
@@ -10,7 +10,7 @@
                     <li>@Html.ActionLink("Inicio", "VistaContraprestacion/", "Curso")</li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            Educación Continuada<b class="caret"></b>
+                            Actividad académica <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
                             <li>@Html.ActionLink("Crear", "Create/", "Curso")</li>
@@ -43,7 +43,7 @@
                             Informes<b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Educación Continuada", "SeleccionRotacionContraPrestacionC/", "IPS_ESE")</li>
+                            <li>@Html.ActionLink("Actividad académica ", "SeleccionRotacionContraPrestacionC/", "IPS_ESE")</li>
                             <li>@Html.ActionLink("Inducciones", "SeleccionRotacionContraPrestacionI/", "IPS_ESE")</li>
                             <li>@Html.ActionLink("Inventario", "SeleccionRotacionContraPrestacionE/", "IPS_ESE")</li>
 
@@ -79,10 +79,10 @@
                 <fieldset>
 
                     <fosrm action="r" method="post" accept-charset="utf-8" class="form" role="form">
-                        <legend>Informe Educación Continuada</legend>
+                        <legend>Informe actividad académica </legend>
 
 
-                        <h4>Seleccione los Campos:</h4>
+                        <h4>Seleccione los campos:</h4>
                         <div class="row">
 
                             <div class="form-group">
@@ -98,7 +98,7 @@
                         </div>
 
                         <br />
-                        <label>Seleccione Mes y Año:</label>
+                        <label>Seleccione mes y año:</label>
                         <div class="row">
                             <div class="col-xs-4 col-md-4">
                                 <select name="mesId" id="mesId" class="form-control input-lg">
@@ -131,7 +131,7 @@
                             <br>
                         </div>
 
-                        <span class="help-block">A través de este formulario podrá visualizar el informe de Educación Continuada. Puede elegir por mes y año o simplemente por año.</span>
+                        <span class="help-block">A través de este formulario podrá visualizar el informe de Actividades académicas . Puede elegir por mes y año o simplemente por año.</span>
                         <button class="btn btn-lg btn-primary btn-block signup-btn" type="submit">
                             Ver
                         </button>

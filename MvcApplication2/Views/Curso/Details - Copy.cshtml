@@ -7,6 +7,7 @@
 
 
 
+
 <div class="row">
     <nav class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
@@ -15,11 +16,11 @@
                     <li>@Html.ActionLink("Inicio", "VistaContraprestacion/", "Curso")</li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            Educación Continuada<b class="caret"></b>
+                            Actividad académica <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
                             <li>@Html.ActionLink("Crear", "Create/", "Curso")</li>
-                            <li>@Html.ActionLink("Ver Listado", "Index/", "Curso")</li>
+                            <li>@Html.ActionLink("Ver listado", "Index/", "Curso")</li>
 
                         </ul>
                     </li>
@@ -29,7 +30,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>@Html.ActionLink("Crear", "Create/", "Induccion")</li>
-                            <li>@Html.ActionLink("Ver Listado", "Index/", "Induccion")</li>
+                            <li>@Html.ActionLink("Ver listado", "Index/", "Induccion")</li>
 
                         </ul>
                     </li>
@@ -39,7 +40,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>@Html.ActionLink("Crear", "Equipo/", "Equipo")</li>
-                            <li>@Html.ActionLink("Ver Listado", "Index/", "Equipo")</li>
+                            <li>@Html.ActionLink("Ver listado", "Index/", "Equipo")</li>
 
                         </ul>
                     </li>
@@ -48,7 +49,7 @@
                             Informes<b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Educación Continuada", "SeleccionRotacionContraPrestacionC/", "IPS_ESE")</li>
+                            <li>@Html.ActionLink("Actividad académica ", "SeleccionRotacionContraPrestacionC/", "IPS_ESE")</li>
                             <li>@Html.ActionLink("Inducciones", "SeleccionRotacionContraPrestacionI/", "IPS_ESE")</li>
                             <li>@Html.ActionLink("Inventario", "SeleccionRotacionContraPrestacionE/", "IPS_ESE")</li>
 
@@ -64,6 +65,9 @@
     </nav>
 </div>
 
+
+
+
 @using (Html.BeginForm("Create", "Curso", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
@@ -71,7 +75,7 @@
 
     <div class="col-md-8 col-md-offset-2">
         <div class="well well-sm">
-            <legend class="text-center">Educación Continuada</legend>
+            <legend class="text-center">Actividad académica </legend>
 
 
             <fosrm class="form-horizontal" role="form">

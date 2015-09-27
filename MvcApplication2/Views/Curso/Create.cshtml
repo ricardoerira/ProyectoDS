@@ -1,25 +1,25 @@
 ﻿@model MvcApplication2.Models.Curso
 
 @{
-    ViewBag.Title = "Curso";
+    ViewBag.Title = "Actividadacadémica ";
 }
 
 
 
 
 <div class="row">
-    <nav class="navbar navbar-default" role="navigation" >
-        <div class="container-fluid" >
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Inicio", "VistaContraprestacion/", "Curso")</li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            Educación Continuada<b class="caret"></b>
+                            Actividad académica <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
                             <li>@Html.ActionLink("Crear", "Create/", "Curso")</li>
-                            <li>@Html.ActionLink("Ver Listado", "Index/", "Curso")</li>
+                            <li>@Html.ActionLink("Ver listado", "Index/", "Curso")</li>
 
                         </ul>
                     </li>
@@ -29,7 +29,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>@Html.ActionLink("Crear", "Create/", "Induccion")</li>
-                            <li>@Html.ActionLink("Ver Listado", "Index/", "Induccion")</li>
+                            <li>@Html.ActionLink("Ver listado", "Index/", "Induccion")</li>
 
                         </ul>
                     </li>
@@ -39,7 +39,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>@Html.ActionLink("Crear", "Equipo/", "Equipo")</li>
-                            <li>@Html.ActionLink("Ver Listado", "Index/", "Equipo")</li>
+                            <li>@Html.ActionLink("Ver listado", "Index/", "Equipo")</li>
 
                         </ul>
                     </li>
@@ -48,7 +48,7 @@
                             Informes<b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Educación Continuada", "SeleccionRotacionContraPrestacionC/", "IPS_ESE")</li>
+                            <li>@Html.ActionLink("Actividad académica ", "SeleccionRotacionContraPrestacionC/", "IPS_ESE")</li>
                             <li>@Html.ActionLink("Inducciones", "SeleccionRotacionContraPrestacionI/", "IPS_ESE")</li>
                             <li>@Html.ActionLink("Inventario", "SeleccionRotacionContraPrestacionE/", "IPS_ESE")</li>
 
@@ -64,6 +64,9 @@
     </nav>
 </div>
 
+
+
+
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -71,7 +74,7 @@
     <fieldset>
         <div class="col-md-8 col-md-offset-2">
             <div class="well well-sm">
-                <legend class="text-center">Educación Continuada - Crear nuevo item</legend>
+                <legend class="text-center">Actividad académica  - Nuevo registro</legend>
 
 
                 <fosrm class="form-horizontal" action="" method="post">
@@ -81,11 +84,14 @@
 
                         <label class="col-sm-2 control-label">Tipo</label>
                         <div class="col-sm-4">
-                            @Html.DropDownList("tipo", new List<SelectListItem>() { new SelectListItem { Text = "Curso", Value = "Curso" }, new SelectListItem { Text = "Diplomado", Value = "Diplomado" }, new SelectListItem { Text = "Seminario", Value = "Seminario" } }, new { @class = "form-control" })
+                            @Html.DropDownList("tipo", new List<SelectListItem>() { new SelectListItem { Text = "Educación continuada", Value = "Educación continuada" }, new SelectListItem { Text = "Curso", Value = "Curso" }, new SelectListItem { Text = "Taller", Value = "Taller" }, new SelectListItem { Text = "Diplomado", Value = "Diplomado" }, new SelectListItem { Text = "Seminario", Value = "Seminario" }, new SelectListItem { Text = "Simposio", Value = "Simposio" }, new SelectListItem { Text = "Congreso", Value = "Congreso" }, new SelectListItem { Text = "Certificación", Value = "Certificación" }, new SelectListItem { Text = "Otro", Value = "Otro" }, }, new { @class = "form-control" })
                         </div>
+                    </div>
+
+                    <div class="form-group">
                         <label class="col-sm-2 control-label">Nombre</label>
-                        <div class="col-sm-4">
-                            @Html.DropDownList("nombre", new List<SelectListItem>() { new SelectListItem { Text = "Primeros Auxilios", Value = "Primeros Auxilios" }, new SelectListItem { Text = "Gases arteriales", Value = "Gases arteriales" }, new SelectListItem { Text = "Manejo del paciente crítico", Value = "Manejo del paciente crítico" }, new SelectListItem { Text = "Diplomado en Reanimación", Value = "Diplomado en Reanimación" }, new SelectListItem { Text = "Seguridad del Paciente", Value = "Seguridad del Paciente" }, new SelectListItem { Text = "Cuidado intensivo del adulto", Value = "Cuidado intensivo del adulto" } }, new { @class = "form-control" })
+                        <div class="col-sm-9">
+                            @Html.DropDownList("nombre", new List<SelectListItem>() { new SelectListItem { Text = "Ateneo Medicina Interna", Value = "Ateneo Medicina Interna" }, new SelectListItem { Text = "Gran Cátedra Medicina Interna", Value = "Gran Cátedra Medicina Interna" }, new SelectListItem { Text = "Ateneo Geriatría", Value = "Ateneo Geriatría" }, new SelectListItem { Text = "Ateneo Pediatría", Value = "Ateneo Pediatría" }, new SelectListItem { Text = "Cátedra Gustavo Isaza", Value = "Cátedra Gustavo Isaza" }, new SelectListItem { Text = "Sesión de Radiología ", Value = "Sesión de Radiología " }, new SelectListItem { Text = "Competencias para la auscultación cardíaca ", Value = "Competencias para la auscultación cardíaca " }, new SelectListItem { Text = "Entrenamiento en procedimientos básicos", Value = "Entrenamiento en procedimientos básicos" }, new SelectListItem { Text = " Entrenamiento en monitoria de signos vitales, lectura e interpretación de electrocardiograma", Value = " entrenamiento en monitoria de signos vitales, lectura e interpretación de electrocardiograma" }, new SelectListItem { Text = "Diplomado en Reanimación", Value = "Diplomado en Reanimación" }, new SelectListItem { Text = "Seguridad del Paciente", Value = "Seguridad del Paciente" }, new SelectListItem { Text = "Cuidado intensivo del adulto", Value = "Cuidado intensivo del adulto" } }, new { @class = "form-control" })
                         </div>
 
 
@@ -107,7 +113,7 @@
 
 
                         </div>
-                        <label class="col-sm-2 control-label">Fecha Fin</label>
+                        <label class="col-sm-2 control-label">Fecha fin</label>
                         <div class="col-sm-4">
                             @Html.EditorFor(m => m.fechaFin)
                             @Html.ValidationMessageFor(model => model.fechaFin)
@@ -115,16 +121,28 @@
 
                     </div>
 
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Departamento</label>
+                        <div class="col-sm-4">
+                            @Html.DropDownList("depto", new List<SelectListItem>() { new SelectListItem { Text = "Sin asignar", Value = "Sin asignar" }, new SelectListItem { Text = "Materno Infantil", Value = "Materno Infantil" }, new SelectListItem { Text = "Salud Pública", Value = "Salud Pública" }, new SelectListItem { Text = "Acción Física Humana", Value = "Acción Física Humana" }, new SelectListItem { Text = "Salud mental y comportamiento humano", Value = "Salud mental y comportamiento humano" }, new SelectListItem { Text = "Clínico", Value = "Clínico" }, new SelectListItem { Text = "Ciencias Básicas para la Salud", Value = "Ciencias Básicas para la Salud" }, new SelectListItem { Text = "Quirurgico", Value = "Quirurgico" } }, new { @class = "form-control" })
 
+
+                        </div>
+                        <label class="col-sm-2 control-label">Período</label>
+                        <div class="col-sm-4">
+                            @Html.DropDownList("periodoAcademico", new List<SelectListItem>() { new SelectListItem { Text = "20151", Value = "20151" }, new SelectListItem { Text = "20152", Value = "20152" }, new SelectListItem { Text = "20161", Value = "20161" }, new SelectListItem { Text = "20162", Value = "20162" } }, new { @class = "form-control" })
+
+                        </div>
+                    </div>
 
 
 
                     <div class="form-group">
 
-                        <label class="col-sm-2 control-label">Periodo</label>
+                        <label class="col-sm-2 control-label">Lugar</label>
                         <div class="col-sm-4">
-                            @Html.DropDownList("periodoAcademico", new List<SelectListItem>() { new SelectListItem { Text = "20151", Value = "20151" }, new SelectListItem { Text = "20152", Value = "20152" }, new SelectListItem { Text = "20161", Value = "20161" }, new SelectListItem { Text = "20162", Value = "20162" } }, new { @class = "form-control" })
-
+                            @Html.TextAreaFor(model => model.lugar, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.lugar)
                         </div>
                         <label class="col-sm-2 control-label">Observaciones</label>
                         <div class="col-sm-4">
@@ -145,6 +163,11 @@
                                 @Html.ValidationMessageFor(model => model.valorParticipante)
                                 <div class="input-group-addon">.00</div>
                             </div>
+                        </div>
+                        <label class="col-sm-2 control-label">Duración (horas)</label>
+                        <div class="col-sm-4">
+                            @Html.TextAreaFor(model => model.duracion, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.duracion)
                         </div>
                     </div>
 
@@ -178,7 +201,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Dirigido a</label>
                         <div class="col-sm-4">
-                            @Html.DropDownList("dirigido", new List<SelectListItem>() { new SelectListItem { Text = "Estudiante", Value = "Estudiante" }, new SelectListItem { Text = "Medico/a", Value = "Medico/a" }, new SelectListItem { Text = "Enfermero/a", Value = "Enfermero/a" }, new SelectListItem { Text = "Aux.Enfermeria", Value = "Aux.Enfermeria" }, new SelectListItem { Text = "Medico/a y Enfermero/a", Value = "Medico/a y Enfermero/a" }, new SelectListItem { Text = "Especialista", Value = "Especialista" }, new SelectListItem { Text = "Otro", Value = "Otro" } }, new { @class = "form-control" })
+                            @Html.DropDownList("dirigido", new List<SelectListItem>() { new SelectListItem { Text = "Estudiante", Value = "Estudiante" }, new SelectListItem { Text = "Medico/a", Value = "Medico/a" }, new SelectListItem { Text = "Enfermero/a", Value = "Enfermero/a" }, new SelectListItem { Text = "Aux.Enfermeria", Value = "Aux.Enfermeria" }, new SelectListItem { Text = "Medico/a y Enfermero/a", Value = "Medico/a y Enfermero/a" }, new SelectListItem { Text = "Especialista", Value = "Especialista" }, new SelectListItem { Text = "Profesionales y estudiantes de Medicina", Value = "Profesionales y estudiantes de Medicina" }, new SelectListItem { Text = "Profesionales, estudiantes de Enfermería y Medicina ", Value = "Profesionales, estudiantes de Enfermería y Medicina " }, new SelectListItem { Text = "Auxiliares de enfermería ", Value = "Auxiliares de enfermería " }, new SelectListItem { Text = "Profesionales de la salud ", Value = "Profesionales de la salud " }, new SelectListItem { Text = "Médicos Internistas - Nefrólogos", Value = "Médicos Internistas - Nefrólogos" }, new SelectListItem { Text = "Profesionales Médicos y de Enfermería ", Value = "Profesionales Médicos y de Enfermería " }, new SelectListItem { Text = "Médicos Pediatras y Terapeutas Respiratorias ", Value = "Médicos Pediatras y Terapeutas Respiratorias " }, new SelectListItem { Text = "Profesionales de Enfermería y Auxiliares de enfermería", Value = "Profesionales de Enfermería y Auxiliares de enfermería" }, new SelectListItem { Text = "Médicos generales y Especialistas no Anestesiólogos ", Value = "Médicos generales y Especialistas no Anestesiólogos " } , new SelectListItem { Text = "Otro", Value = "Otro" } }, new { @class = "form-control" })
 
 
                         </div>
@@ -208,8 +231,6 @@
 
                     </div>
 
-
-
                     <div class="form-group">
                         <label class="col-sm-2 control-label">IPS/ESE</label>
                         <div class="col-sm-6">
@@ -217,25 +238,11 @@
                             @Html.DropDownList("IPS_ESEId", (IEnumerable<SelectListItem>)ViewBag.IPS_ESEId, new { @class = "form-control" })
 
                             @Html.ValidationMessageFor(model => model.IPS_ESEId)
-
-
                         </div>
 
-                    </div>
+                        <div class="col-sm-offset-8 btnaa">
 
-
-
-
-
-
-
-
-                    <div class="form-group">
-                        <div class="col-sm-offset-9 col-sm-10">
-                            <br>
-
-                            <br>
-
+                            @Html.ActionLink("Regresar ", "Index", new { }, new { @class = "btn btn-default" })
                             <button type="submit" class="btn btn-primary">Guardar</button>
 
                         </div>
