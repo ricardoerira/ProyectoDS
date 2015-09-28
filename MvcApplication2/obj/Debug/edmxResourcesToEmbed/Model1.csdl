@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <ComplexType Name="Funcion_Result">
+    <Property Name="num_documento" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="primer_nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="primer_apellido" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="horario" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="fecha_inicio" Type="DateTime" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="Estudiantes">
+    <Key>
+      <PropertyRef Name="estudianteId" />
+    </Key>
+    <Property Name="estudianteId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tipo_documento" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="num_documento" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="codigo" Type="Int32" Nullable="false" />
+    <Property Name="clave" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="programaId" Type="Int32" Nullable="false" />
+    <Property Name="hojaVidaId" Type="Int32" Nullable="false" />
+    <Property Name="rotacionId" Type="Int32" Nullable="false" />
+    <Property Name="direccion_procedencia" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="barrio_procedencia" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="telefono_procedencia" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="modalidad" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="semestre" Type="Int16" Nullable="false" />
+    <Property Name="estado_academico" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HojaVidas" Relationship="Self.FK_dbo_Estudiantes_dbo_HojaVidas_hojaVidaId" FromRole="Estudiantes" ToRole="HojaVidas" />
+    <NavigationProperty Name="Rotacions" Relationship="Self.FK_dbo_Estudiantes_dbo_Rotacions_rotacionId" FromRole="Estudiantes" ToRole="Rotacions" />
+  </EntityType>
+  <EntityType Name="HojaVidas">
+    <Key>
+      <PropertyRef Name="hojaVidaId" />
+    </Key>
+    <Property Name="hojaVidaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="primer_nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="segundo_nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="primer_apellido" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="segundo_apellido" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="fecha_nacimiento" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="hemoclasificacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="genero" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="estado_civil" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="hijos" Type="Int16" Nullable="false" />
+    <Property Name="imagen_DI" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="num_telefono" Type="Int64" Nullable="false" />
+    <Property Name="num_celular" Type="Int64" Nullable="false" />
+    <Property Name="correo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="entidad_salud" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="estado_afiliacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="regimen" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tipo_afiliacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="estado_HV" Type="Boolean" Nullable="false" />
+    <Property Name="ARL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="certificado_ARL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="familiaId" Type="Int32" />
+    <Property Name="facultad" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="departamento_procedencia" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="municipio_procedencia" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="direccion_manizales" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Estudiantes" Relationship="Self.FK_dbo_Estudiantes_dbo_HojaVidas_hojaVidaId" FromRole="HojaVidas" ToRole="Estudiantes" />
+  </EntityType>
+  <EntityType Name="Rotacions">
+    <Key>
+      <PropertyRef Name="rotacionId" />
+    </Key>
+    <Property Name="rotacionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fecha_inicio" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="fecha_terminacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="horario" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="periodo_academico" Type="Int16" Nullable="false" />
+    <Property Name="IPS_ESEId" Type="Int32" Nullable="false" />
+    <Property Name="grupo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="year_academico" Type="Int32" Nullable="false" />
+    <Property Name="numero_estudiantes" Type="Int32" Nullable="false" />
+    <Property Name="actividadacademicaId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Estudiantes" Relationship="Self.FK_dbo_Estudiantes_dbo_Rotacions_rotacionId" FromRole="Rotacions" ToRole="Estudiantes" />
+  </EntityType>
+  <Association Name="FK_dbo_Estudiantes_dbo_HojaVidas_hojaVidaId">
+    <End Role="HojaVidas" Type="Self.HojaVidas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Estudiantes" Type="Self.Estudiantes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HojaVidas">
+        <PropertyRef Name="hojaVidaId" />
+      </Principal>
+      <Dependent Role="Estudiantes">
+        <PropertyRef Name="hojaVidaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Estudiantes_dbo_Rotacions_rotacionId">
+    <End Role="Rotacions" Type="Self.Rotacions" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Estudiantes" Type="Self.Estudiantes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rotacions">
+        <PropertyRef Name="rotacionId" />
+      </Principal>
+      <Dependent Role="Estudiantes">
+        <PropertyRef Name="rotacionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Estudiantes" EntityType="Self.Estudiantes" />
+    <EntitySet Name="HojaVidas" EntityType="Self.HojaVidas" />
+    <EntitySet Name="Rotacions" EntityType="Self.Rotacions" />
+    <AssociationSet Name="FK_dbo_Estudiantes_dbo_HojaVidas_hojaVidaId" Association="Self.FK_dbo_Estudiantes_dbo_HojaVidas_hojaVidaId">
+      <End Role="HojaVidas" EntitySet="HojaVidas" />
+      <End Role="Estudiantes" EntitySet="Estudiantes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Estudiantes_dbo_Rotacions_rotacionId" Association="Self.FK_dbo_Estudiantes_dbo_Rotacions_rotacionId">
+      <End Role="Rotacions" EntitySet="Rotacions" />
+      <End Role="Estudiantes" EntitySet="Estudiantes" />
+    </AssociationSet>
+    <FunctionImport Name="Funcion" IsComposable="true" ReturnType="Collection(Model.Funcion_Result)">
+      <Parameter Name="Parameter1" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>

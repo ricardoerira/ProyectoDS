@@ -17,7 +17,7 @@ namespace MvcApplication2.Controllers
     {
         private UsersContext2 db = new UsersContext2();
 
-        //
+        //C:\Users\Lili\Desktop\ProyectoDS\ProyectoDS\MvcApplication2\Controllers\IPS_ESEController.cs
         // GET: /IPS_ESE/
 
         public ActionResult Index()
@@ -330,6 +330,8 @@ namespace MvcApplication2.Controllers
 
                rptH.SetParameterValue("ips", ips.nombre);
                rptH.SetParameterValue("email", ips.correo);
+               rptH.SetParameterValue("representante", ips.representanteDS);
+
                if(mesId==13)
                {
                    rptH.SetParameterValue("fecha",  "Año: " + añoId);
@@ -443,6 +445,10 @@ namespace MvcApplication2.Controllers
 
             rptH.SetParameterValue("ips", ips.nombre);
             rptH.SetParameterValue("fecha", "");
+            rptH.SetParameterValue("representante", ips.representanteDS);
+            rptH.SetParameterValue("correo", ips.correo);
+
+            
 
 
                 rptH.SetParameterValue("fecha", "Periodo: " + periodoId + " Año: " + añoId);
@@ -595,6 +601,7 @@ namespace MvcApplication2.Controllers
             rptH.SetParameterValue("ips", ips.nombre);
             rptH.SetParameterValue("total", total+"");
             rptH.SetParameterValue("correo",ips.correo);
+            rptH.SetParameterValue("recibido",ips.representanteDS);
 
 
 

@@ -94,7 +94,7 @@
                         @Html.DropDownList("año", new List<SelectListItem>() { new SelectListItem { Text = "2015", Value = "2015" }, new SelectListItem { Text = "2016", Value = "2016" }, new SelectListItem { Text = "2017", Value = "2017" } }, new { @class = "form-control" })
 
                     </div>
-                    <label class="col-sm-1 control-label">Periodo</label>
+                    <label class="col-sm-1 control-label">Período</label>
                     <div class="col-sm-4">
                         @Html.DropDownList("periodo", new List<SelectListItem>() { new SelectListItem { Text = "1", Value = "1" }, new SelectListItem { Text = "2", Value = "2" } }, new { @class = "form-control" })
                     </div>
@@ -121,7 +121,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">Numero de Estudiantes</label>
+                    <label class="col-sm-2 control-label">n.º Estudiantes</label>
                     <div class="col-sm-4">
                         @Html.TextBoxFor(model => model.numeroEstudiantes, new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.numeroEstudiantes)
@@ -157,11 +157,11 @@
 
 
                 <div class="form-group">
-                    <div class="col-sm-offset-5 col-sm-5">
+                    <div class="col-sm-offset-4 col-sm-5">
                         <br>
 
                         <br>
-                        @Html.ActionLink("Regresar ", "Index", new { }, new { @class = "btn btn-primary" })
+                        @Html.ActionLink("Regresar", "Index", new { }, new { @class = "btn btn-default" })
                         <input type="submit" class="btn btn-primary" value=" Guardar" />
 
                     </div>

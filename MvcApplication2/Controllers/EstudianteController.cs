@@ -796,14 +796,18 @@ public ActionResult EstadoHV(string num_documento, string programaId, string est
             TempData["notice"] = null;
 
             Estudiante estudiante = db.Estudiantes.Find(id);
+           
             cargaImagen(estudiante);
             if (estudiante == null)
             {
                 return HttpNotFound();
             }
+           
 
             Boolean estado = ValidarCampos(estudiante);
             ViewBag.estado = estado;
+
+           
 
             cargaDocumentoDos(estudiante);
             return View(estudiante);
