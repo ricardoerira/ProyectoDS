@@ -122,7 +122,7 @@ namespace MvcApplication2.Controllers
 
             if(re.Count>0)
             {
-                EnviarEstudiantes(estudiantes);
+                EnviarEstudiantes(estudiantes, docentes);
                 Stream stream = rptH.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
                 SaveStreamToFile(stream,"cartaPresentacion");
                 Stream stream2 = rptH.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
@@ -147,15 +147,20 @@ namespace MvcApplication2.Controllers
          
         }
 
-        public void EnviarEstudiantes(List<Estudiante> estudiantes)
+        public void EnviarEstudiantes(List<Estudiante> estudiantes, List<Docente> docentes)
         {
             string body = "<h2>Coordial Saludo.</h2><h2 style=\"text-align: justify;\">Se envia la carta de presentacion asi como las hojas de vida de los estudiantes que haran su respectiva rotacion en su IPS.</h2>";
-
+            body += "<h2>Estudiantes</h2>";
             foreach(Estudiante estudiante in estudiantes)
             {
                 body += "&nbsp;<a href=\"http://localhost:34649/Estudiante/ReporteEstudianteA/" + estudiante.estudianteId + "\">" + estudiante.num_documento + "</a>";
             }
+            body += "<h2>Docentes</h2>";
 
+            foreach (Docente docente in docentes.Distinct())
+            {
+                body += "&nbsp;<a href=\"http://localhost:34649/Docente/ReporteDocenteA/" + docente.docenteId + "\">" + docente.num_documento + "</a>";
+            }
             body += "<p><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Universidad_De_Caldas_-_Logo.jpg/180px-Universidad_De_Caldas_-_Logo.jpg\" alt=\"\" width=\"180\" height=\"180\" /></p><p>&nbsp;</p><p>Copyright &copy; <a href=\"http://www.ucaldas.edu.co/portal\"><strong>Universidad de Caldas</strong></a> - Sede Principal Calle 65 No 26 - 10 / Tel +57 6 8781500 Fax 8781501 / Apartado a&eacute;reo 275 / L&iacute;nea gratuita : 01-8000-512120 E-mail ucaldas@ucaldas.edu.co</p>";
 
 
