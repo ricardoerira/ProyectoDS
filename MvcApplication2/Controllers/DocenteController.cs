@@ -389,10 +389,11 @@ namespace MvcApplication2.Controllers
             }
         }
 
-        
+
         public ActionResult CambioContraseña(int id = 0)
         {
             TempData["notice"] = null;
+
             Docente docente = db.Docentes.Find(id);
             if (docente == null)
             {
@@ -406,26 +407,33 @@ namespace MvcApplication2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult CambioContraseña(Docente docente)
         {
-            if (ModelState.IsValid)
+           
+            Docente doc = db.Docentes.Find(docente.docenteId);
+
+            if (docente.clave.Equals(docente.tipo_documento))
             {
-                Docente doc = db.Docentes.Find(docente.docenteId);
-
-                if (docente.clave.Equals(docente.tipo_documento))
-                {
-                    doc.clave = docente.clave;
+                doc.clave = docente.clave;
 
 
-                    db.Entry(doc).State = EntityState.Modified;
+                db.Entry(doc).State = EntityState.Modified;
 
 
 
-                    db.SaveChanges();
-                    return RedirectToAction("../Docente/Personales/" + doc.docenteId);
+                db.SaveChanges();
+                return RedirectToAction("../Docente/Personales/" + doc.docenteId);
 
-                }
             }
+
+
             return RedirectToAction("../Docente/CambioContraseña/" + docente.docenteId);
         }
+
+        
+        
+
+
+
+      
 
 
 
@@ -805,10 +813,10 @@ namespace MvcApplication2.Controllers
         {
             docente = db.Docentes.Find(docente.docenteId);
             var fromAddress = new MailAddress("docenciaservicioucaldas@hotmail.com", "Docencia Servicio Ucaldas");
-            var toAddress = new MailAddress(docente.HojaVida.correo, "To Name");
+            var toAddress = new MailAddress("mgliliana1028@gmail.com", "To Name");
             const string fromPassword = "ucaldas2015";
             const string subject = "Solicitud de Actualizacion ";
-            const string body = "<h2>Coordial Saludo.</h2><h2 style=\"text-align: justify;\">Para la autorizacion de sus rotaciones es necesario la actualizacion de sus datos personales asi como su carnet de vacunacion en la nueva plataforma web la cual podra acceder atraves del siguiente link.</h2><h2>&nbsp;<a href=\"http://localhost:34649/\">http://localhost:34649/</a></h2><h2>Los datosde ingreso son&nbsp;</h2><h2><strong>Usuario</strong> : Codigo de Estudiante</h2><h2><strong>Contrase&ntilde;a</strong>: Codigo de Estudiante&nbsp;</h2><p>&nbsp;</p><p>&nbsp;</p><p><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Universidad_De_Caldas_-_Logo.jpg/180px-Universidad_De_Caldas_-_Logo.jpg\" alt=\"\" width=\"180\" height=\"180\" /></p><p>&nbsp;</p><p>Copyright &copy; <a href=\"http://www.ucaldas.edu.co/portal\"><strong>Universidad de Caldas</strong></a> - Sede Principal Calle 65 No 26 - 10 / Tel +57 6 8781500 Fax 8781501 / Apartado a&eacute;reo 275 / L&iacute;nea gratuita : 01-8000-512120 E-mail ucaldas@ucaldas.edu.co</p> ";
+            const string body = "<h2>Coordial Saludo.</h2><h2 style=\"text-align: justify;\">La Oficina Docencia Servicio hace solicitud formal de la actualización de su hoja de vida así como su esquema de vacunación. Para ello disponemos de la nueva plataforma web la cual podrá acceder a través del siguiente enlace.</h2><h2>&nbsp;<a href=\"http://localhost:34649/Docente/Login\">http://localhost:34649/</a></h2><h2>Los datos de ingreso son:&nbsp;</h2><h2><strong>Usuario</strong>: Cédula docente</h2><h2><strong>Contrase&ntilde;a</strong>: Cédula docente&nbsp;</h2><p>&nbsp;</p><p>&nbsp;</p><p><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Universidad_De_Caldas_-_Logo.jpg/180px-Universidad_De_Caldas_-_Logo.jpg\" alt=\"\" width=\"180\" height=\"180\" /></p><p>&nbsp;</p><p>Copyright &copy; <a href=\"http://www.ucaldas.edu.co/portal\"><strong>Universidad de Caldas</strong></a> - Sede Principal Calle 65 No 26 - 10 / Tel +57 6 8781500 Fax 8781501 / Apartado a&eacute;reo 275 / L&iacute;nea gratuita : 01-8000-512120 E-mail ucaldas@ucaldas.edu.co</p> ";
 
 
             try

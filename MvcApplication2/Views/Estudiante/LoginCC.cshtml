@@ -46,20 +46,21 @@
 
 
 
-<div class="navbar navbar-default navbar-fixed-bottom">
-    <div class="container">
-        <p class="navbar-text pull-left">
-            © 2015 - Facultad de Ciencias para la Salud.
-            <a href="http://www.ucaldas.edu.co/portal/" target="_blank">Universidad de Caldas</a>
-        </p>
+    <div class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container">
+            <p class="navbar-text pull-left">
+                © 2015 - Facultad de Ciencias para la Salud.
+                <a href="http://www.ucaldas.edu.co/portal/" target="_blank">Universidad de Caldas</a>
 
-        <a href="http://youtu.be/zJahlKPCL9g" class="navbar-btn  btn pull-right">
-            <span></span>  Docencia Servicio
-        </a>
+
+
+                <a class="inicio">@Html.ActionLink(" ", "Personales", new { id = @Model.estudianteId }, new { @class = "btn btn-sm btn-success btn-icon-only glyphicon glyphicon-home" }) </a>
+
+            </p>
+        </div>
+
+
     </div>
-
-
-</div>
 
 
     <div class="form-group">

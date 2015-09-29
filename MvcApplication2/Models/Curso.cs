@@ -44,6 +44,10 @@ namespace MvcApplication2.Models
         public int porcentajeTotalUniversidad { get; set; }
         public int totalContraprestacion { get; set; }
         public int totalCapacitacion { get; set; }
+        public string depto { get; set; }
+        public string duracion { get; set; }
+        public string lugar { get; set; }
+
 
 
         public int IPS_ESEId { get; set; }

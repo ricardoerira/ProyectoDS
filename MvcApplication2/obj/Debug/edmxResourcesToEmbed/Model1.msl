@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="Estudiantes">
+      <EntityTypeMapping TypeName="Model.Estudiantes">
+        <MappingFragment StoreEntitySet="Estudiantes">
+          <ScalarProperty Name="estudianteId" ColumnName="estudianteId" />
+          <ScalarProperty Name="tipo_documento" ColumnName="tipo_documento" />
+          <ScalarProperty Name="num_documento" ColumnName="num_documento" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="clave" ColumnName="clave" />
+          <ScalarProperty Name="programaId" ColumnName="programaId" />
+          <ScalarProperty Name="hojaVidaId" ColumnName="hojaVidaId" />
+          <ScalarProperty Name="rotacionId" ColumnName="rotacionId" />
+          <ScalarProperty Name="direccion_procedencia" ColumnName="direccion_procedencia" />
+          <ScalarProperty Name="barrio_procedencia" ColumnName="barrio_procedencia" />
+          <ScalarProperty Name="telefono_procedencia" ColumnName="telefono_procedencia" />
+          <ScalarProperty Name="modalidad" ColumnName="modalidad" />
+          <ScalarProperty Name="semestre" ColumnName="semestre" />
+          <ScalarProperty Name="estado_academico" ColumnName="estado_academico" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HojaVidas">
+      <EntityTypeMapping TypeName="Model.HojaVidas">
+        <MappingFragment StoreEntitySet="HojaVidas">
+          <ScalarProperty Name="hojaVidaId" ColumnName="hojaVidaId" />
+          <ScalarProperty Name="primer_nombre" ColumnName="primer_nombre" />
+          <ScalarProperty Name="segundo_nombre" ColumnName="segundo_nombre" />
+          <ScalarProperty Name="primer_apellido" ColumnName="primer_apellido" />
+          <ScalarProperty Name="segundo_apellido" ColumnName="segundo_apellido" />
+          <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
+          <ScalarProperty Name="hemoclasificacion" ColumnName="hemoclasificacion" />
+          <ScalarProperty Name="genero" ColumnName="genero" />
+          <ScalarProperty Name="estado_civil" ColumnName="estado_civil" />
+          <ScalarProperty Name="hijos" ColumnName="hijos" />
+          <ScalarProperty Name="imagen_DI" ColumnName="imagen_DI" />
+          <ScalarProperty Name="num_telefono" ColumnName="num_telefono" />
+          <ScalarProperty Name="num_celular" ColumnName="num_celular" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="entidad_salud" ColumnName="entidad_salud" />
+          <ScalarProperty Name="estado_afiliacion" ColumnName="estado_afiliacion" />
+          <ScalarProperty Name="regimen" ColumnName="regimen" />
+          <ScalarProperty Name="tipo_afiliacion" ColumnName="tipo_afiliacion" />
+          <ScalarProperty Name="estado_HV" ColumnName="estado_HV" />
+          <ScalarProperty Name="ARL" ColumnName="ARL" />
+          <ScalarProperty Name="certificado_ARL" ColumnName="certificado_ARL" />
+          <ScalarProperty Name="familiaId" ColumnName="familiaId" />
+          <ScalarProperty Name="facultad" ColumnName="facultad" />
+          <ScalarProperty Name="departamento_procedencia" ColumnName="departamento_procedencia" />
+          <ScalarProperty Name="municipio_procedencia" ColumnName="municipio_procedencia" />
+          <ScalarProperty Name="direccion_manizales" ColumnName="direccion_manizales" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rotacions">
+      <EntityTypeMapping TypeName="Model.Rotacions">
+        <MappingFragment StoreEntitySet="Rotacions">
+          <ScalarProperty Name="rotacionId" ColumnName="rotacionId" />
+          <ScalarProperty Name="fecha_inicio" ColumnName="fecha_inicio" />
+          <ScalarProperty Name="fecha_terminacion" ColumnName="fecha_terminacion" />
+          <ScalarProperty Name="horario" ColumnName="horario" />
+          <ScalarProperty Name="periodo_academico" ColumnName="periodo_academico" />
+          <ScalarProperty Name="IPS_ESEId" ColumnName="IPS_ESEId" />
+          <ScalarProperty Name="grupo" ColumnName="grupo" />
+          <ScalarProperty Name="year_academico" ColumnName="year_academico" />
+          <ScalarProperty Name="numero_estudiantes" ColumnName="numero_estudiantes" />
+          <ScalarProperty Name="actividadacademicaId" ColumnName="actividadacademicaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionName="Model.Store.Funcion" FunctionImportName="Funcion">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.Funcion_Result">
+          <ScalarProperty Name="num_documento" ColumnName="num_documento" />
+          <ScalarProperty Name="primer_nombre" ColumnName="primer_nombre" />
+          <ScalarProperty Name="primer_apellido" ColumnName="primer_apellido" />
+          <ScalarProperty Name="horario" ColumnName="horario" />
+          <ScalarProperty Name="fecha_inicio" ColumnName="fecha_inicio" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

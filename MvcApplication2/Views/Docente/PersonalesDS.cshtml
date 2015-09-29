@@ -31,7 +31,7 @@
         <div class="row">
 
             <fieldset>
-                <legend>Información Personal Docente</legend>
+                <legend>Información personal docente</legend>
 
                 <div class="col-sm-3">
                     <img src="@Url.Content(Model.HojaVida.imagen_DI)" alt="..." class="img-rounded" height="200px" width="150px"><br />
@@ -55,7 +55,7 @@
 
 
 
-                                <label class="col-sm-2 control-label">Tipo Documento</label>
+                                <label class="col-sm-2 control-label">Tipo documento</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.tipo_documento, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.tipo_documento)
@@ -94,7 +94,7 @@
 
 
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">Fecha de Nacimiento</label>
+                                <label class="col-sm-2 control-label">Fecha de nacimiento</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.HojaVida.fecha_nacimiento, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.fecha_nacimiento)
@@ -113,7 +113,7 @@
 
 
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">Lugar de Nacimiento</label>
+                                <label class="col-sm-2 control-label">Lugar de nacimiento</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.HojaVida.municipio_procedencia, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.municipio_procedencia)
@@ -121,7 +121,7 @@
                                 </div>
 
 
-                                <label class="col-sm-2 control-label">Num. Libreta Militar</label>
+                                <label class="col-sm-2 control-label">n.º libreta militar</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.num_libreta_militar, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.num_libreta_militar)
@@ -188,12 +188,12 @@
 
 
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">Estado Civil</label>
+                                <label class="col-sm-2 control-label">Estado civil</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.HojaVida.estado_civil, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.estado_civil)
                                 </div>
-                                <label class="col-sm-2 control-label">Numero de Hijos</label>
+                                <label class="col-sm-2 control-label">n.º Hijos</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.HojaVida.hijos, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.hijos)
@@ -246,7 +246,7 @@
                                     @Html.TextBoxFor(model => model.HojaVida.Familia.primer_nombre_acudiente, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.Familia.primer_nombre_acudiente)
                                 </div>
-                                <label class="col-sm-2 control-label">Primer Apellido</label>
+                                <label class="col-sm-2 control-label">Primer apellido</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.HojaVida.Familia.primer_apellido_acudiente, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.Familia.primer_apellido_acudiente)
@@ -255,7 +255,7 @@
                             <div class="form-group">
 
 
-                                <label class="col-sm-2 control-label">Segundo Apellido</label>
+                                <label class="col-sm-2 control-label">Segundo apellido</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.HojaVida.Familia.segundo_apellido_acudiente, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.Familia.segundo_apellido_acudiente)
@@ -291,7 +291,7 @@
                 </div>
 
 
-                <legend>Información Académica</legend>
+                <legend>Información académica</legend>
 
                 <div class="col-sm-3">
 
@@ -309,7 +309,7 @@
                                     @Html.ValidationMessageFor(model => model.DepartamentoSalud.nombre)
 
                                 </div>
-                                <label class="col-sm-2 control-label">Tipo Vinculación</label>
+                                <label class="col-sm-2 control-label">Tipo vinculación</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.tipo_vinculacion, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.tipo_vinculacion)
@@ -318,7 +318,7 @@
 
 
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">Título Pregrado</label>
+                                <label class="col-sm-2 control-label">Título pregrado</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.titulo_pregrado, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.titulo_pregrado)
@@ -343,7 +343,7 @@
                                     @Html.ValidationMessageFor(model => model.maximo_nivel_formacion)
                                 </div>
 
-                                <label class="col-sm-2 control-label">Categoria Escalafón Docente</label>
+                                <label class="col-sm-2 control-label">Categoria escalafón docente</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.categoria_escalafon_docente, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.maximo_nivel_formacion)
@@ -352,7 +352,7 @@
 
                             <div class="form-group">
 
-                                <label class="col-sm-2 control-label">Título Postgrado</label>
+                                <label class="col-sm-2 control-label">Título postgrado</label>
                                 <div class="col-sm-8">
 
                                     @Html.TextBoxFor(model => model.certificado_DPE, new { @class = "form-control", @readonly = "readonly" })
@@ -411,7 +411,7 @@
                         <table class="tableDocumentos table-condensed table-striped">
 
                             <tr>
-                                <th>Tipo Documento</th>
+                                <th>Tipo documento</th>
                                 <th>Acción</th>
                                 <th>Archivo</th>
                             </tr>
@@ -421,7 +421,7 @@
                                     <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
                                 </td>
                                 <td>
-                                    <a href='@Url.Action("SoportesDS", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen1})'>
+                                    <a href='@Url.Action("Soportes", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen1 })'>
                                         <img src=@ViewBag.imagen1 class="img-rounded" height="75" width="75" />
                                     </a>
                                 </td>
@@ -433,7 +433,7 @@
                                     <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
                                 </td>
                                 <td>
-                                    <a href='@Url.Action("SoportesDS", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen2 })'>
+                                    <a href='@Url.Action("Soportes", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen2 })'>
                                         <img src=@ViewBag.imagen2 class="img-rounded" height="75" width="75" />
                                     </a>
 
@@ -441,72 +441,73 @@
 
                             </tr>
                             <tr>
-                                <td class="tdDocumentos">Diploma de Profesional</td>
+                                <td class="tdDocumentos">Diploma de profesional</td>
                                 <td>
                                     <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
 
                                 </td>
                                 <td>
-                                    <a href='@Url.Action("SoportesDS", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen3  })'>
+                                    <a href='@Url.Action("Soportes", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen3  })'>
                                         <img src=@ViewBag.imagen3 class="img-rounded" height="75" width="75" />
                                     </a>
                             </tr>
                             <tr>
 
-                                <td class="tdDocumentos">Diploma de Especialista</td>
+                                <td class="tdDocumentos">Diploma de especialista</td>
                                 <td>
                                     <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
                                 </td>
                                 <td>
-                                    <a href='@Url.Action("SoportesDS", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen4 })'>
+                                    <a href='@Url.Action("Soportes", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen4 })'>
                                         <img src=@ViewBag.imagen4 class="img-rounded" height="75" width="75" />
                                     </a>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="tdDocumentos">Tp de la Dirección Territorial de Salud</td>
+                                <td class="tdDocumentos">Tarjeta de profesional de la Dirección Territorial de Salud </td>
                                 <td>
                                     <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
 
                                 </td>
                                 <td>
-                                    <a href='@Url.Action("SoportesDS", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen5 })'>
+                                    <a href='@Url.Action("Soportes", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen5 })'>
                                         <img src=@ViewBag.imagen5 class="img-rounded" height="75" width="75" />
                                     </a>
                                 </td>
                             </tr>
+
                             <tr>
-                                <td class="tdDocumentos">Tarjeta de profesional Departamental</td>
+                                <td class="tdDocumentos">Tarjeta profesional Nacional</td>
                                 <td>
                                     <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
 
                                 </td>
                                 <td>
-                                    <a href='@Url.Action("SoportesDS", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen6 })'>
+                                    <a href='@Url.Action("Soportes", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen6 })'>
                                         <img src=@ViewBag.imagen6 class="img-rounded" height="75" width="75" />
                                     </a>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="tdDocumentos">Tarjeta de profesional Nacional</td>
+                                <td class="tdDocumentos">Anexo 1</td>
                                 <td>
                                     <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
 
                                 </td>
                                 <td>
-                                    <a href='@Url.Action("SoportesDS", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen7 })'>
+                                    <a href='@Url.Action("Soportes", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen7 })'>
                                         <img src=@ViewBag.imagen7 class="img-rounded" height="75" width="75" />
                                     </a>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="tdDocumentos">Otro</td>
+                                <td class="tdDocumentos">Anexo 2</td>
                                 <td>
                                     <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
 
                                 </td>
                                 <td>
-                                    <a href='@Url.Action("SoportesDS", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen8 })'>
+                                    <a href='@Url.Action("Soportes", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen8 })'>
                                         <img src=@ViewBag.imagen8 class="img-rounded" height="75" width="75" />
                                     </a>
                                 </td>

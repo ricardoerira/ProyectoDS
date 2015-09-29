@@ -17,7 +17,7 @@
         <div class="container-fluid">
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Inicio", "VistaODS", "Rotacion")</li>
                     <li>@Html.ActionLink("Personales", "PersonalesDS/" + Model.estudianteId, "Estudiante")</li>
                     <li>@Html.ActionLink("Familiares", "FamiliaresDS/" + Model.estudianteId, "Estudiante")</li>
                     <li>@Html.ActionLink("Académicos", "AcademicosDS/" + Model.estudianteId, "Estudiante")</li>
@@ -37,7 +37,7 @@
     <div class="container">
         <div class="row">
             <fieldset>
-                <legend>Información Personal Estudiante</legend>
+                <legend>Información personal estudiante</legend>
 
                 <!-- /.navbar-collapse aca va leyend -->
 
@@ -57,7 +57,7 @@
 
 
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">Tipo Documento</label>
+                                <label class="col-sm-2 control-label">Tipo documento</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.tipo_documento, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.tipo_documento)
@@ -87,13 +87,13 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">Primer Apellido</label>
+                                <label class="col-sm-2 control-label">Primer apellido</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.HojaVida.primer_apellido, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.primer_apellido)
                                 </div>
 
-                                <label class="col-sm-2 control-label">Segundo Apellido</label>
+                                <label class="col-sm-2 control-label">Segundo apellido</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.HojaVida.segundo_apellido, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.segundo_apellido)
@@ -107,7 +107,7 @@
                                     @Html.ValidationMessageFor(model => model.HojaVida.correo)
                                 </div>
 
-                                <label class="col-sm-2 control-label">Genero</label>
+                                <label class="col-sm-2 control-label">Género</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.HojaVida.genero, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.genero)
@@ -115,7 +115,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">Fecha de Nacimiento</label>
+                                <label class="col-sm-2 control-label">Fecha de nacimiento</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.HojaVida.fecha_nacimiento, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.fecha_nacimiento)
@@ -130,12 +130,12 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">Lugar Nacimiento</label>
+                                <label class="col-sm-2 control-label">Lugar nacimiento</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.HojaVida.municipio_procedencia, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.municipio_procedencia)
                                 </div>
-                                <label class="col-sm-2 control-label">Dirección Procedencia</label>
+                                <label class="col-sm-2 control-label">Dirección procedencia</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.direccion_procedencia, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.direccion_procedencia)
@@ -166,7 +166,7 @@
 
 
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">Teléfono Procedencia</label>
+                                <label class="col-sm-2 control-label">Teléfono procedencia</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.HojaVida.num_telefono, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.num_telefono)
@@ -182,7 +182,7 @@
 
 
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">Estado Civil</label>
+                                <label class="col-sm-2 control-label">Estado civil</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.HojaVida.estado_civil, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.estado_civil)
@@ -190,7 +190,7 @@
 
 
                                 </div>
-                                <label class="col-sm-2 control-label">Numero de Hijos</label>
+                                <label class="col-sm-2 control-label">n.º Hijos</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.HojaVida.hijos, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.hijos)
@@ -276,7 +276,7 @@
         <div class="row">
 
             <fieldset>
-                <legend>Documentos</legend>
+                <legend>Documento</legend>
                 <div class="col-sm-3">
 
                 </div>
@@ -304,7 +304,7 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <label for="InputFile">Documento de Identidad (jpg,png)</label>
+                                            <label for="InputFile">Documento de identidad (jpg,png)</label>
                                             <!--<input type="file" id=""name="UploadedFile" />-->
                                             <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
                                             <input type="hidden" value=@Model.estudianteId name="idEstudiante" />
@@ -324,6 +324,7 @@
                                     <div class="pull-right">
                                         @if (!User.IsInRole("Departamento"))
                                         {
+                                            @Html.ActionLink("Regresar ", "Buscar", new { }, new { @class = "btn btn-default" })
                                             <button type="submit" class="btn btn-primary">Guardar</button>
                                         }
 

@@ -6,21 +6,23 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-11">
-            <div class="invoice-title">
-                <h2>@Html.DisplayFor(model => model.tipo)</h2><h3 class="pull-right">Id: @Html.DisplayFor(model => model.CursoId)</h3>
+            <div class="invoice-title btnlegend">
+                <h2 btnlegend>@Html.DisplayFor(model => model.tipo)</h2><h3 class="pull-right">Id: @Html.DisplayFor(model => model.CursoId)</h3>
             </div>
-            <hr>
+            <hr class="btnleg">
             <div class="row">
                 <div class="col-xs-6">
                     <address>
-                        <strong>Nombre:</strong><br>
-                        @Html.DisplayFor(model => model.nombre)<br>
-                        <strong>Fecha Creado:</strong>@Html.DisplayFor(model => model.fechaCreacion)<br>
-                        <strong>Fecha Inicio:</strong>@Html.DisplayFor(model => model.fechaInicio)<br>
-                        <strong>Fecha Fin:</strong>@Html.DisplayFor(model => model.fechaFin)<br>
-                        <strong>Periodo Académico:</strong>@Html.DisplayFor(model => model.periodoAcademico)<br>
+                        <strong>Nombre:</strong> @Html.DisplayFor(model => model.nombre)<br>
+                        <strong>Fecha creado:</strong>@Html.DisplayFor(model => model.fechaCreacion)<br>
+                        <strong>Fecha inicio:</strong>@Html.DisplayFor(model => model.fechaInicio)<br>
+                        <strong>Fecha fin:</strong>@Html.DisplayFor(model => model.fechaFin)<br>
+                        <strong>Departamento:</strong>@Html.DisplayFor(model => model.depto)<br>
+                        <strong>Período académico:</strong>@Html.DisplayFor(model => model.periodoAcademico)<br>
                         <strong></strong><br>
-                        <strong>Observacion:</strong>@Html.DisplayFor(model => model.observaciones)<br>
+                        <strong>Lugar:</strong>@Html.DisplayFor(model => model.lugar)<br>
+                        <strong>Duración:</strong>@Html.DisplayFor(model => model.duracion)<br>
+                        <strong>Observación:</strong>@Html.DisplayFor(model => model.observaciones)<br>
                         
                     </address>
                 </div>
@@ -30,10 +32,12 @@
                         @Html.DisplayFor(model => model.dirigido)<br>
                         <strong>Otro:</strong><br>
                         @Html.DisplayFor(model => model.dirigidoOtro)<br>
-                        <strong>Cupos:</strong><br>
+                        <strong>Cupos:</strong>
                         @Html.DisplayFor(model => model.cupos)<br>
-                        <strong>Asignados:</strong><br>
-                        @Html.DisplayFor(model => model.asignados)
+                        <strong>Asignados:</strong>
+                        @Html.DisplayFor(model => model.asignados)<br />
+                        <strong>Departamento:</strong>
+                        @Html.DisplayFor(model => model.depto)
                     </address>
                 </div>
             </div>
@@ -55,10 +59,10 @@
                                 <tr>
                                     <td class="text-center"><strong>Valor</strong></td>
                                     <td class="text-center"><strong>% Persona</strong></td>
-                                    <td class="text-center"><strong>Valor Unitario Persona</strong></td>
+                                    <td class="text-center"><strong>Valor unitario persona</strong></td>
                                     <td class="text-center"><strong>Valor total personas</strong></td>
                                     <td class="text-center"><strong>% Universidad</strong></td>
-                                    <td class="text-center"><strong>Valor Unitario Universidad</strong></td>
+                                    <td class="text-center"><strong>Valor nitario Universidad</strong></td>
                                     <td class="text-center"><strong>Valor total Universidad</strong></td>
                                     <td class="text-center"><strong>Totales</strong></td>
                                 </tr>
@@ -113,8 +117,10 @@
                     </div>
                     
                 </div>
-                @Html.ActionLink("Atras ", "Index", new { }, new { @class = "btn btn-primary" })
+                
             </div>
         </div>
     </div>
 </div>
+
+@Html.ActionLink("Regresar ", "Index", new { }, new { @class = "btn btn-primary btndetail" })

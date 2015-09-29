@@ -9,7 +9,7 @@
         <br>
         <div class="alert alert-danger">¿Está seguro que desea eliminar este elemento de la base de datos?</div>
         <br>
-            <legend class="text-center">Educación Continuada</legend>
+            <legend class="text-center">Actividad académica </legend>
 </div>
 </div>
 
@@ -60,8 +60,9 @@
 
                     <div class="col-md-10 col-md-offset-5">
                         <p>
-                            <input type="submit" class="btn btn-primary" value=" Eliminar" /> |
-                            @Html.ActionLink("Regresar", "Index")
+                            @Html.ActionLink("Regresar ", "Index", new { }, new { @class = "btn btn-default" })
+                            <input type="submit" class="btn btn-primary" value=" Eliminar" /> 
+                            
                         </p>
                     </div>
                     }
