@@ -53,12 +53,12 @@
                 <div class="col-sm-6 col-md-4 col-md-offset-4" align="center">
                     <br />
                     <br />
-                    <legend>Buscar estudiante</legend>
+                    <legend>Buscar Estudiante</legend>
                 </div>
             </div>
         </div>
     </fieldset>
-
+ 
 
 
 @using (Html.BeginForm()) {
@@ -74,7 +74,7 @@
         <form class="form-horizontal" role="form">
             <fieldset>  
                     <div class="form-group">
-                        @Html.TextBoxFor(model => model.codigo, new { @class = "form-control" })
+                        @Html.TextBoxFor(model => model.codigo, new { @class = "form-control", @placeholder = "Código" })
                         <span class="help-block">El criterio de búsqueda para los estudiantes es solo a través del código </span>
                     </div>
                     <input type="submit" class="btn btn-lg btn-primary btn-block" value="Buscar" />
