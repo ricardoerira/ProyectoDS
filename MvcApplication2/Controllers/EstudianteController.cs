@@ -186,6 +186,12 @@ public ActionResult EstadoHV(string num_documento, string programaId, string est
                 (f.primer_apellido_acudiente != null) && (f.direccion_acudiente != null) &&
                 (f.telefono_acudiente != 0))
             {
+                Estudiante estudianteAux = db.Estudiantes.Find(estudiante.estudianteId);
+                estudianteAux.HojaVida.estado_HV = true;
+
+                db.Entry(estudianteAux).State = EntityState.Modified;
+                db.SaveChanges();
+
                 return true;
             }
             else
