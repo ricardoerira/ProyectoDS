@@ -84,30 +84,44 @@
                                             {
 
                                                 <tr>
+                                                    
+                                                         @if (Model.HojaVida.Vacunas.ElementAt(i).fecha_vacunacion > DateTime.Now.Date.AddMonths(-20))
+                                                         {
+                                                           
+                                                                <th height="35px">@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).nombre_generico)</th>
 
-                                                    <th height="35px">@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).nombre_generico)</th>
-                                                    @if (Model.HojaVida.Vacunas.ElementAt(i).fecha_vacunacion > DateTime.Now.Date.AddMonths(-20))
-                                                    {
-                                                        <td>@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).fecha_vacunacion)</td>
-                                                        <td>@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).fecha_prox_vacunacion)</td>
-                                                        <td>@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).lote)</td>
-                                                        <td>@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).lugar_anatomico)</td>
-                                                        <td>@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).laboratorio_vacunacion)</td>
-                                                        <td>@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).observaciones)</td>
+                                                             
+
+                                                            <td>@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).fecha_vacunacion)</td>
+                                                            <td>@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).fecha_prox_vacunacion)</td>
+                                                            <td>@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).lote)</td>
+                                                            <td>@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).lugar_anatomico)</td>
+                                                            <td>@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).laboratorio_vacunacion)</td>
+                                                            <td>@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).observaciones)</td>
+
+                                                         }
+                                                         else
+                                                         {
+                                                             if (Model.HojaVida.Vacunas.ElementAt(i).nombre_generico.Equals("Hepatitis B Dosis 1") || Model.HojaVida.Vacunas.ElementAt(i).nombre_generico.Equals("Triple Viral Dosis 1") || Model.HojaVida.Vacunas.ElementAt(i).nombre_generico.Equals("Varicela Dosis 1") || Model.HojaVida.Vacunas.ElementAt(i).nombre_generico.Equals("Toxoide Tetánico Dosis 1")
+                                                                 || Model.HojaVida.Vacunas.ElementAt(i).nombre_generico.Equals("Fiebre Amarilla Dosis 1") || Model.HojaVida.Vacunas.ElementAt(i).nombre_generico.Equals("Influenza Dosis 1") || Model.HojaVida.Vacunas.ElementAt(i).nombre_generico.Equals("DTP Acelular Dosis 1"))
+                                                             {
+                                                                <th height="35px" style="color: red">@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).nombre_generico)</th>
+
+                                                             }
+                                                             else
+                                                             {
+                                                                <th height="35px">@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).nombre_generico)</th>
+
+                                                             }
+
+                                                         }
 
 
 
-                                                    }
-                                                    else
-                                                    {
-
-                                                    }
 
 
 
-
-
-                                                </tr>
+</tr>
                                             }
 
                                         </tbody>
