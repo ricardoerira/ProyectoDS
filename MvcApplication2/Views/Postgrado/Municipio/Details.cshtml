@@ -1,0 +1,29 @@
+﻿@model MvcApplication2.Models.Municipio
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Municipio</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Departamento.nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Departamento.nombre)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.municipioId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

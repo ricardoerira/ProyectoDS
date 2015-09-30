@@ -149,7 +149,7 @@ namespace MvcApplication2.Controllers
 
         public void EnviarEstudiantes(List<Estudiante> estudiantes, List<Docente> docentes)
         {
-            string body = "<h2>Coordial Saludo.</h2><h2 style=\"text-align: justify;\">Se envia la carta de presentacion asi como las hojas de vida de los estudiantes que haran su respectiva rotacion en su IPS.</h2>";
+            string body = "<h2>Coordial Saludo.</h2><h2 style=\"text-align: justify;\">Se envía carta de presentación con sus respectivas hojas de vida</h2>";
             body += "<h2>Estudiantes</h2>";
             foreach(Estudiante estudiante in estudiantes)
             {
@@ -169,7 +169,7 @@ namespace MvcApplication2.Controllers
 
 
                 var fromAddress = new MailAddress("docenciaservicioucaldas@hotmail.com", "Docencia Servicio Ucaldas");
-                var toAddress = new MailAddress("ricardoerira@gmail.com", "To Name");
+                var toAddress = new MailAddress("mgliliana1028@gmail.com", "To Name");
                 const string fromPassword = "ucaldas2015";
                 const string subject = "Solicitud de Actualizacion ";
                 

@@ -68,6 +68,49 @@ public ActionResult BuscarEnDepartamento(Estudiante estudiante)
             }
         }
 
+
+
+public ActionResult EstadoHVdepto(string num_documento, string programaId, string estado_HV)
+{
+    int did = 0;
+    bool b = false;
+    if (!String.IsNullOrEmpty(programaId))
+    {
+        did = Int32.Parse(programaId);
+        b = estado_HV.Equals("True") ? true : false;
+
+    }
+
+    var estudiantes = new List<Estudiante>();
+    var estudiantesaux = new List<Estudiante>();
+    if (!String.IsNullOrEmpty(num_documento))
+    {
+        estudiantes = db.Estudiantes.Where(s => s.num_documento.Equals(num_documento)).Where(s => s.programaId == did).Where(s => s.HojaVida.estado_HV == b).ToList();
+
+    }
+    else
+    {
+        if (!String.IsNullOrEmpty(programaId))
+        {
+            estudiantes = db.Estudiantes.Where(s => s.programaId == did).Where(s => s.HojaVida.estado_HV == b).ToList();
+            estudiantesaux = db.Estudiantes.Where(s => s.programaId == did).ToList();
+
+        }
+    }
+
+
+
+
+
+
+    ViewBag.busqueda = estudiantes.Count() + " / " + estudiantesaux.Count();
+
+
+    ViewBag.Programas = new SelectList(db.Programas, "programaId", "nombre");
+
+    return View(estudiantes.ToList());
+}
+
 public ActionResult EstadoHV(string num_documento, string programaId, string estado_HV)
 {
     int did = 0;

@@ -1019,6 +1019,54 @@ namespace MvcApplication2.Controllers
             }
         }
 
+        //EstadoHVdepto
+
+
+        public ActionResult EstadoHVdepto(string num_documento, string departamentoSaludId, string estado_HV)
+        {
+            int did = 0;
+            bool b = false;
+            if (!String.IsNullOrEmpty(departamentoSaludId))
+            {
+                did = Int32.Parse(departamentoSaludId);
+                b = estado_HV.Equals("True") ? true : false;
+
+            }
+
+            var docentes = new List<Docente>();
+            var docentesaux = new List<Docente>();
+
+            if (!String.IsNullOrEmpty(num_documento))
+            {
+                docentes = db.Docentes.Where(s => s.num_documento.Equals(num_documento)).Where(s => s.DepartamentoSaludId == did).Where(s => s.HojaVida.estado_HV == b).ToList();
+
+            }
+            else
+            {
+                if (!String.IsNullOrEmpty(departamentoSaludId))
+                {
+                    docentes = db.Docentes.Where(s => s.DepartamentoSaludId == did).Where(s => s.HojaVida.estado_HV == b).ToList();
+                    docentesaux = db.Docentes.Where(s => s.DepartamentoSaludId == did).ToList();
+
+                }
+            }
+
+
+
+
+            ViewBag.busqueda = docentes.Count() + " / " + docentesaux.Count();
+
+
+
+
+            ViewBag.DepartamentoSaludId = new SelectList(db.DepartamentoSaluds, "DepartamentoSaludId", "nombre");
+
+            return View(docentes.ToList());
+        }
+
+
+
+
 
        
 

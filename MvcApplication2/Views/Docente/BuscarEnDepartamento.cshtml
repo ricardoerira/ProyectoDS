@@ -5,6 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";}
 
 
+
 <div class="row">
     <nav class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
@@ -21,7 +22,8 @@
                             <li>@Html.ActionLink("Estudiante", "BuscarEnDepartamento/", "Estudiante")</li>
                             <li>@Html.ActionLink("Docente", "BuscarEnDepartamento/", "Docente")</li>
                             <li class="divider"></li>
-                            <li>@Html.ActionLink("Listado Hojas de Vida", "HV_Departamento/", "HojaVida")</li>
+                            <li>@Html.ActionLink("Listado estudiantes", "EstadoHVdepto/", "Estudiante")</li>
+                            <li>@Html.ActionLink("Listado docentes", "EstadoHVdepto/", "Docente")</li>
 
                         </ul>
                     </li>
@@ -33,6 +35,7 @@
         </div><!-- /.container-fluid -->
     </nav>
 </div>
+
        
 
 

@@ -7,17 +7,19 @@
         <div class="container-fluid">
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Departamento", "VistaDepartamentoSalud/", "DepartamentoSalud")</li>
+
+                    <li>@Html.ActionLink("Inicio", "VistaDepartamentoSalud/", "DepartamentoSalud")</li>
+
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             Hoja de Vida<b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Estudiante", "BuscarEnVacuna/", "Estudiante")</li>
-                            <li>@Html.ActionLink("Docente", "BuscarEnVacuna/", "Docente")</li>
+                            <li>@Html.ActionLink("Estudiante", "BuscarEnDepartamento/", "Estudiante")</li>
+                            <li>@Html.ActionLink("Docente", "BuscarEnDepartamento/", "Docente")</li>
                             <li class="divider"></li>
-                            <li>@Html.ActionLink("Listado Hojas de Vida", "HV_IPS_Universitaria/", "HojaVida")</li>
+                            <li>@Html.ActionLink("Listado estudiantes", "EstadoHVdepto/", "Estudiante")</li>
+                            <li>@Html.ActionLink("Listado docentes", "EstadoHVdepto/", "Docente")</li>
 
                         </ul>
                     </li>
@@ -50,10 +52,10 @@
                 <fieldset>
                     
                     <fosrm action="r" method="post" accept-charset="utf-8" class="form" role="form">
-                        <legend>Carta de Presentación</legend>
+                        <legend>Carta de presentación</legend>
 
 
-                        <h4>Seleccione los Campos:</h4>
+                        <h4>Seleccione los campos:</h4>
                         <div class="row">
 
                             <div class="form-group">
