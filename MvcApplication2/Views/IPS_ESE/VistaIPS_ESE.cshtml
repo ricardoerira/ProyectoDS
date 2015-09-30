@@ -12,17 +12,18 @@
                     <li>@Html.ActionLink("Inicio", "VistaIPS_ESE/", "IPS_ESE")</li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            Pólizas<b class="caret"></b>
+                            Contraprestación<b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Responsabilidad civil", "SeleccionRotacionContraPrestacionE/", "IPS_ESE")</li>
-                            <li>@Html.ActionLink("Accidentes", "SeleccionRotacionContraPrestacion/", "IPS_ESE")</li>
-                            
+                            <li>@Html.ActionLink("Actividad académica", "SeleccionRotacionContraPrestacionC/", "IPS_ESE")</li>
+                            <li>@Html.ActionLink("Inducciones", "SeleccionRotacionContraPrestacioni/", "IPS_ESE")</li>
+                            <li>@Html.ActionLink("Inventario", "SeleccionRotacionContraPrestacionE/", "IPS_ESE")</li>
+
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            Gestión Documental<b class="caret"></b>
+                            Gestión documental<b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="http://localhost:8888/OpenKM/frontend/index.jsp">Administrar</a></li>
@@ -38,27 +39,8 @@
                         </ul>
                     </li>
                     
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            Contraprestación<b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Actividad académica", "SeleccionRotacionContraPrestacionC/", "IPS_ESE")</li>
-                            <li>@Html.ActionLink("Inducciones", "SeleccionRotacionContraPrestacioni/", "IPS_ESE")</li>
-                            <li>@Html.ActionLink("Inventario", "SeleccionRotacionContraPrestacionE/", "IPS_ESE")</li>
-                            
-                        </ul>
-                    </li>
 
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            Carta Presentación<b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Informe", "SeleccionRotacionContraPrestacionE/", "IPS_ESE")</li>
-
-                        </ul>
-                    </li>
+                   
 
                     
                     
@@ -71,61 +53,24 @@
 
 
 
-<!--
-Sticky footer example by Mr. M. - Confederation College - IMD Program
-
-Based on tutorial from: http://www.coders-guide.com/watch.php?v=53
--->
-@*<div class="navbar navbar-inverse navbar-static-top">
-
-        <div class="container">
-
-            <a href="#" class="navbar-brand">Mr. M.'s Sticky Footer Example </a> <button class="navbar-toggle"
-                                                                                         data-toggle="collapse" data-target=".navHeaderCollapse"></button>
-
-            <div class="collapse navbar-collapse navHeaderCollapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="#">Home</a></li>
-
-                    <li><a href="#">Blog</a></li>
-
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Social Media</a>
-
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Twitter</a></li>
-
-                            <li><a href="#">Facebook</a></li>
-
-                            <li><a href="#">Google+</a></li>
-
-                            <li><a href="#">Instagram</a></li>
-                        </ul>
-                    </li>
-
-                    <li><a href="#">About</a></li>
-
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>*@
 
 
 <div class="container">
 
-    <h2>EPS/ESE</h2>
+    <h2>IPS/ESE</h2>
 
 
     <div class="well well-sm">
         <p>
-            <span class="label label-warning">Decreto 2376 del Ministerio de Protección social</span>
+            <span class="label label-warning">Decreto 2376 del Ministerio de protección social</span>
             <br>
-            (JULIO 1 DE 2010) <strong>Por medio del cual se regula la relación docencia - servicio para los programas de formación de talento humano del área de la salud </strong>.
+            (JULIO 1 DE 2010) <strong>Por medio del cual se regula la relación Docencia - Servicio para los programas de formación de talento humano del área de la salud </strong>.
             <br><br>
-            <a href="https://www.minsalud.gov.co/Normatividad/DECRETO%202376%20DE%202010.pdf" target="_blank">https://www.minsalud.gov.co/Normatividad/DECRETO%202376%20DE%202010.pdf</a>
+            <a href="~/Decreto_2376_de_Julio_01_de_2010.pdf" target="_blank">Revisar decreto</a><br />
+            <a href="~/Manual de procesos Relacion docencia servicio.pdf" target="_blank">Manual de procesos relacion Docencia Servicio</a>
         </p>
     </div>
+
 
 
     <div class="row marketing">
@@ -136,19 +81,17 @@ Based on tutorial from: http://www.coders-guide.com/watch.php?v=53
         </div>
 
         <div class="col-lg-6">
-            <h4>Información</h4>
-            <p>
-                Se facicila a los usuarios información pertinente
-                acerca de la Relación Docencia Servicio.
-                Nota: Se deben cargar al servidor.
+            <h4>Importante!</h4>
+            <p class="help-block">
+                Información útil para el proceso de  la relación Docencia Servicio.
             </p>
             <div>
-                <a class="btn btn-default" href="#" role="button">Manual</a>
-                <button class="btn btn-default" type="submit">Formatos</button>
-                <input class="btn btn-default" type="button" value="Legislación">
-                <input class="btn btn-default" type="submit" value="Polizas">
-            </div>
+                <a class="btn btn-default" href="~/manual Moodel usuario administrador.pdf" role="button">Manual</a>
+                <a class="btn btn-default" href="~/PORTAFOLIO 2015.pdf" role="button">Portafolio de servicios 2015</a>
+                <a class="btn btn-default" href="~/Capacitaciones 2015.pdf" role="button">Capacitaciones 2015</a>
 
+
+            </div>
         </div>
     </div>
 
@@ -164,7 +107,7 @@ Based on tutorial from: http://www.coders-guide.com/watch.php?v=53
             <a href="http://www.ucaldas.edu.co/portal/" target="_blank">Universidad de Caldas</a>
         </p>
 
-        <a href="http://youtu.be/zJahlKPCL9g" class="navbar-btn btn-danger btn pull-right">
+        <a href="VistaIPS_ESE" class="navbar-btn btn-danger btn pull-right">
             <span class="glyphicon glyphicon-star"></span>  Página Inicial
         </a>
     </div>
