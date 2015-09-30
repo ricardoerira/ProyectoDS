@@ -199,12 +199,12 @@
 
 
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">Estado </label>
+                                <label class="col-sm-2 control-label">Datos </label>
 
 
                                 @if (ViewBag.estado)
                                 {
-                                    <button type="submit" class="alert-info">Actualizada</button>
+                                    <button type="submit" class="alert-info">Datos Actualizados</button>
 
                                 }
 
@@ -215,8 +215,25 @@
 
                                 }
 
-
                             </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Vacunas </label>
+
+                                    @if (ViewBag.estadoV)
+                                    {
+                                        <button type="submit" class="alert-info">Vacunas Actualizadas</button>
+
+                                    }
+
+                                    else
+                                    {
+                                        <button type="submit" class="alert-danger">Solicitar Actualizacion</button>
+
+
+                                    }
+
+
+                                </div>
 
 
 

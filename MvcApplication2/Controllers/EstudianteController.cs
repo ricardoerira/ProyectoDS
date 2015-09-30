@@ -215,6 +215,67 @@ public ActionResult EstadoHV(string num_documento, string programaId, string est
 
             return View(estudiante);
         }
+        public Boolean ValidarVacunas(Estudiante estudiante)
+        {
+            for (var i = 0; i < estudiante.HojaVida.Vacunas.Count; i++)
+            {
+
+                if (estudiante.HojaVida.Vacunas.ElementAt(i).fecha_vacunacion < DateTime.Now.Date.AddMonths(-20))
+                {
+                    {
+
+
+
+                        if (estudiante.HojaVida.Vacunas.ElementAt(i).nombre_generico.Equals("Hepatitis B Dosis 1") || estudiante.HojaVida.Vacunas.ElementAt(i).nombre_generico.Equals("Triple Viral Dosis 1") || estudiante.HojaVida.Vacunas.ElementAt(i).nombre_generico.Equals("Varicela Dosis 1") || estudiante.HojaVida.Vacunas.ElementAt(i).nombre_generico.Equals("Toxoide Tetánico Dosis 1")
+                              || estudiante.HojaVida.Vacunas.ElementAt(i).nombre_generico.Equals("Fiebre Amarilla Dosis 1") || estudiante.HojaVida.Vacunas.ElementAt(i).nombre_generico.Equals("Influenza Dosis 1") || estudiante.HojaVida.Vacunas.ElementAt(i).nombre_generico.Equals("DTP Acelular Dosis 1"))
+                        {
+                            return false;
+                        }
+                        else
+                        {
+                            if (estudiante.HojaVida.Vacunas.ElementAt(i).nombre_generico.Equals("Hepatitis B Dosis 2") && (estudiante.HojaVida.Vacunas.ElementAt(i - 1).fecha_vacunacion.AddMonths(1) < DateTime.Now.Date && estudiante.HojaVida.Vacunas.ElementAt(i - 1).fecha_vacunacion > DateTime.Now.Date.AddMonths(-20)))
+                            {
+
+
+                                return false;
+                            }
+                            else if (estudiante.HojaVida.Vacunas.ElementAt(i).nombre_generico.Equals("Toxoide Tetánico Dosis 2") && (estudiante.HojaVida.Vacunas.ElementAt(i - 1).fecha_vacunacion.AddMonths(1) < DateTime.Now.Date && estudiante.HojaVida.Vacunas.ElementAt(i - 1).fecha_vacunacion > DateTime.Now.Date.AddMonths(-20)))
+                            {
+                                return false;
+
+                            }
+                            else if (estudiante.HojaVida.Vacunas.ElementAt(i).nombre_generico.Equals("Toxoide Tetánico Dosis 3") && (estudiante.HojaVida.Vacunas.ElementAt(i - 1).fecha_vacunacion.AddMonths(6) < DateTime.Now.Date && estudiante.HojaVida.Vacunas.ElementAt(i - 1).fecha_vacunacion > DateTime.Now.Date.AddMonths(-20)))
+                            {
+                                return false;
+
+                            }
+                            else if (estudiante.HojaVida.Vacunas.ElementAt(i).nombre_generico.Equals("Toxoide Tetánico Dosis 4") && (estudiante.HojaVida.Vacunas.ElementAt(i - 1).fecha_vacunacion.AddMonths(12) < DateTime.Now.Date && estudiante.HojaVida.Vacunas.ElementAt(i - 1).fecha_vacunacion > DateTime.Now.Date.AddMonths(-20)))
+                            {
+                                return false;
+
+                            }
+                            else if (estudiante.HojaVida.Vacunas.ElementAt(i).nombre_generico.Equals("Toxoide Tetánico Dosis 5") && (estudiante.HojaVida.Vacunas.ElementAt(i - 1).fecha_vacunacion.AddMonths(12) < DateTime.Now.Date && estudiante.HojaVida.Vacunas.ElementAt(i - 1).fecha_vacunacion > DateTime.Now.Date.AddMonths(-20)))
+                            {
+                                return false;
+
+                            }
+
+
+
+                        }
+                    }
+
+                }
+              
+
+
+
+
+            }
+            return true;
+
+
+}
         public Boolean ValidarCampos(Estudiante estudiante)
         {
             HojaVida hv = db.HojaVidas.Find(estudiante.hojaVidaId);
@@ -855,6 +916,8 @@ public ActionResult EstadoHV(string num_documento, string programaId, string est
 
             Boolean estado = ValidarCampos(estudiante);
             ViewBag.estado = estado;
+            Boolean estadoV = ValidarVacunas(estudiante);
+            ViewBag.estadoV = estadoV;
 
             int edad = DateTime.Today.AddTicks(-estudiante.HojaVida.fecha_nacimiento.Ticks).Year - 1;
             string edadDocente = edad.ToString();

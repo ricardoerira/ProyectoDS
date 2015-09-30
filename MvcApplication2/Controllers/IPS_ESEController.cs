@@ -492,7 +492,7 @@ namespace MvcApplication2.Controllers
        
        {
       
-           if(User.Identity.Name.Equals("hcaldas"))
+           if(User.Identity.Name.Equals("hdecaldas"))
       
            {
 

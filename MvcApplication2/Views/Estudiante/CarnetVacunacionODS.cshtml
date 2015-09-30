@@ -110,7 +110,43 @@
                                                              }
                                                              else
                                                              {
-                                                                <th height="35px">@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).nombre_generico)</th>
+                                                                 if (Model.HojaVida.Vacunas.ElementAt(i).nombre_generico.Equals("Hepatitis B Dosis 2") && (Model.HojaVida.Vacunas.ElementAt(i - 1).fecha_vacunacion.AddMonths(1) < DateTime.Now.Date && Model.HojaVida.Vacunas.ElementAt(i - 1).fecha_vacunacion > DateTime.Now.Date.AddMonths(-20)))
+                                                                 {
+                                                                 
+                                                             
+                                                                       <th height="35px" style="color: red">@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).nombre_generico)</th>
+
+                                                                 }
+                                                                 else if (Model.HojaVida.Vacunas.ElementAt(i).nombre_generico.Equals("Toxoide Tetánico Dosis 2") && (Model.HojaVida.Vacunas.ElementAt(i - 1).fecha_vacunacion.AddMonths(1) < DateTime.Now.Date && Model.HojaVida.Vacunas.ElementAt(i-1).fecha_vacunacion > DateTime.Now.Date.AddMonths(-20)))
+                                                                 {
+                                                                    <th height="35px" style="color: red">@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).nombre_generico)</th>
+
+
+                                                                 }
+                                                                 else if (Model.HojaVida.Vacunas.ElementAt(i).nombre_generico.Equals("Toxoide Tetánico Dosis 3") && (Model.HojaVida.Vacunas.ElementAt(i - 1).fecha_vacunacion.AddMonths(6) < DateTime.Now.Date && Model.HojaVida.Vacunas.ElementAt(i - 1).fecha_vacunacion > DateTime.Now.Date.AddMonths(-20)))
+                                                                 {
+                                                                    <th height="35px" style="color: red">@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).nombre_generico)</th>
+
+
+                                                                 }
+                                                                 else if (Model.HojaVida.Vacunas.ElementAt(i).nombre_generico.Equals("Toxoide Tetánico Dosis 4") && (Model.HojaVida.Vacunas.ElementAt(i - 1).fecha_vacunacion.AddMonths(12) < DateTime.Now.Date && Model.HojaVida.Vacunas.ElementAt(i - 1).fecha_vacunacion > DateTime.Now.Date.AddMonths(-20)))
+                                                                 {
+                                                                    <th height="35px" style="color: red">@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).nombre_generico)</th>
+
+
+                                                                 }
+                                                                 else if (Model.HojaVida.Vacunas.ElementAt(i).nombre_generico.Equals("Toxoide Tetánico Dosis 5") && (Model.HojaVida.Vacunas.ElementAt(i - 1).fecha_vacunacion.AddMonths(12) < DateTime.Now.Date && Model.HojaVida.Vacunas.ElementAt(i - 1).fecha_vacunacion > DateTime.Now.Date.AddMonths(-20)))
+                                                                 {
+                                                                    <th height="35px" style="color: red">@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).nombre_generico)</th>
+
+
+                                                                 }
+                                                                 else
+                                                                 {
+
+                                                                      <th height="35px">@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).nombre_generico)</th>
+
+                                                                 }
 
                                                              }
 
