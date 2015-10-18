@@ -169,7 +169,7 @@ namespace MvcApplication2.Controllers
 
 
                 var fromAddress = new MailAddress("docenciaservicioucaldas@hotmail.com", "Docencia Servicio Ucaldas");
-                var toAddress = new MailAddress("mgliliana1028@gmail.com", "To Name");
+                var toAddress = new MailAddress("mlgomez1001@gmail.com", "To Name");
                 const string fromPassword = "ucaldas2015";
                 const string subject = "Solicitud de Actualizacion ";
                 

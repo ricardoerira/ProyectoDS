@@ -16,36 +16,27 @@
         <div class="container-fluid">
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li>@Html.ActionLink("IPS Universitaria", "VistaIPS_Universitaria/", "Vacuna")</li>
+                    <li>@Html.ActionLink("Inicio", "VistaIPS_Universitaria/", "Vacuna")</li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            Hoja de Vida<b class="caret"></b>
+                            Hoja de vida<b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
                             <li>@Html.ActionLink("Estudiante", "BuscarEnVacuna/", "Estudiante")</li>
                             <li>@Html.ActionLink("Docente", "BuscarEnVacuna/", "Docente")</li>
-                            <li class="divider"></li>
-                            <li>@Html.ActionLink("Listado Hojas de Vida", "HV_IPS_Universitaria/", "HojaVida")</li>
 
                         </ul>
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            Vacunacion<b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Esquema Obligatorio", "EsquemaObligatorio/", "Vacuna")</li>
-                            <li>@Html.ActionLink("Precios", "PreciosIpsU/", "Vacuna")</li>
 
-                        </ul>
-                    </li>
 
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
 </div>
+
+
+
 
 @using (Html.BeginForm("CarnetVacunacionDS", "Estudiante", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {

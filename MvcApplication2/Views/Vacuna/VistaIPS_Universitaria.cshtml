@@ -9,30 +9,18 @@
         <div class="container-fluid">
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li>@Html.ActionLink("IPS Universitaria", "VistaIPS_Universitaria/", "Vacuna")</li>
+                    <li>@Html.ActionLink("Inicio", "VistaIPS_Universitaria/", "Vacuna")</li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            Hoja de Vida<b class="caret"></b>
+                            Hoja de vida<b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
                             <li>@Html.ActionLink("Estudiante", "BuscarEnVacuna/", "Estudiante")</li>
                             <li>@Html.ActionLink("Docente", "BuscarEnVacuna/", "Docente")</li>
-                            <li class="divider"></li>
-                            <li>@Html.ActionLink("Listado Hojas de Vida", "HV_IPS_Universitaria/", "HojaVida")</li>
                            
                         </ul>
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            Vacunacion<b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Esquema Obligatorio", "EsquemaObligatorio/", "Vacuna")</li>
-                            <li>@Html.ActionLink("Precios", "PreciosIpsU/", "Vacuna")</li>
-
-                        </ul>
-                    </li>
+                    
                     
                  </ul>
             </div><!-- /.navbar-collapse -->
@@ -42,45 +30,6 @@
 
 
 
-<!--
-Sticky footer example by Mr. M. - Confederation College - IMD Program
-
-Based on tutorial from: http://www.coders-guide.com/watch.php?v=53
--->
-@*<div class="navbar navbar-inverse navbar-static-top">
-
-        <div class="container">
-
-            <a href="#" class="navbar-brand">Mr. M.'s Sticky Footer Example </a> <button class="navbar-toggle"
-                                                                                         data-toggle="collapse" data-target=".navHeaderCollapse"></button>
-
-            <div class="collapse navbar-collapse navHeaderCollapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="#">Home</a></li>
-
-                    <li><a href="#">Blog</a></li>
-
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Social Media</a>
-
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Twitter</a></li>
-
-                            <li><a href="#">Facebook</a></li>
-
-                            <li><a href="#">Google+</a></li>
-
-                            <li><a href="#">Instagram</a></li>
-                        </ul>
-                    </li>
-
-                    <li><a href="#">About</a></li>
-
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>*@
 
 
 <div class="container">
@@ -90,11 +39,12 @@ Based on tutorial from: http://www.coders-guide.com/watch.php?v=53
 
     <div class="well well-sm">
         <p>
-            <span class="label label-warning">Decreto 2376 del Ministerio de Protección social</span>
+            <span class="label label-warning">Decreto 2376 del Ministerio de protección social</span>
             <br>
-            (JULIO 1 DE 2010) <strong>Por medio del cual se regula la relación docencia - servicio para los programas de formación de talento humano del área de la salud </strong>.
+            (JULIO 1 DE 2010) <strong>Por medio del cual se regula la relación Docencia - Servicio para los programas de formación de talento humano del área de la salud </strong>.
             <br><br>
-            <a href="https://www.minsalud.gov.co/Normatividad/DECRETO%202376%20DE%202010.pdf" target="_blank">https://www.minsalud.gov.co/Normatividad/DECRETO%202376%20DE%202010.pdf</a>
+            <a href="~/Decreto_2376_de_Julio_01_de_2010.pdf" target="_blank">Revisar decreto</a><br />
+            <a href="~/Manual de procesos Relacion docencia servicio.pdf" target="_blank">Manual de procesos relacion Docencia Servicio</a>
         </p>
     </div>
 
@@ -102,25 +52,26 @@ Based on tutorial from: http://www.coders-guide.com/watch.php?v=53
     <div class="row marketing">
         <div class="col-lg-6">
             <p>
-                <img src="data:image/jpeg;base64,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" alt="sticky bun flickr.com" class="img-responsive img-rounded center-block">
+                <img src="../../images/vacuna.jpg" alt="sticky bun flickr.com" class="img-responsive img-rounded center-block">
             </p>
         </div>
 
         <div class="col-lg-6">
-            <h4>Información</h4>
-            <p>
-                Se facicila a los usuarios información pertinente
-                acerca de la Relación Docencia Servicio.
-                Nota: Se deben cargar al servidor.
+            <h4>Importante!</h4>
+            <p class="help-block">
+                Información útil para el proceso de contraprestación en la relación Docencia Servicio.
             </p>
             <div>
-                <a class="btn btn-default" href="#" role="button">Manual</a>
-                <button class="btn btn-default" type="submit">Formatos</button>
-                <input class="btn btn-default" type="button" value="Legislación">
-                <input class="btn btn-default" type="submit" value="Polizas">
-            </div>
+                <a class="btn btn-default" href="~/manual Moodel usuario administrador.pdf" role="button">Esquema Obligatorio</a>
+                <a class="btn btn-default" href="~/PORTAFOLIO 2015.pdf" role="button">Precios</a>
+                <a class="btn btn-default" href="~/Capacitaciones 2015.pdf" role="button">Manual</a>
 
+
+            </div>
         </div>
+
+
+
     </div>
 
 
@@ -135,7 +86,7 @@ Based on tutorial from: http://www.coders-guide.com/watch.php?v=53
             <a href="http://www.ucaldas.edu.co/portal/" target="_blank">Universidad de Caldas</a>
         </p>
 
-        <a href="http://youtu.be/zJahlKPCL9g" class="navbar-btn btn-danger btn pull-right">
+        <a href="VistaIPS_Universitaria" class="navbar-btn btn-danger btn pull-right">
             <span class="glyphicon glyphicon-star"></span>  Página Inicial
         </a>
     </div>

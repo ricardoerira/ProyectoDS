@@ -564,13 +564,13 @@ DOS COLUMNAS..........................
                                                 <label class="col-sm-2 control-label">Fecha de aplicación</label>
 
                                                 <div class="col-sm-4">
-                                                    @Html.TextBoxFor(model => model.fecha_vacunacion, new { @class = "form-control", @readonly = "readonly" })
+                                                    @Html.EditorFor(model => model.fecha_vacunacion, new { @class = "form-control", @readonly = "readonly" })
                                                     @Html.ValidationMessageFor(model => model.fecha_vacunacion)
                                                 </div>
 
                                                 <label class="col-sm-2 control-label">Próxima vacuna</label>
                                                 <div class="col-sm-4">
-                                                    @Html.TextBoxFor(model => model.fecha_prox_vacunacion, new { @class = "form-control", @readonly = "readonly" })
+                                                    @Html.EditorFor(model => model.fecha_prox_vacunacion, new { @class = "form-control", @readonly = "readonly" })
                                                     @Html.ValidationMessageFor(model => model.fecha_prox_vacunacion)
                                                 </div>
                                             </div>
