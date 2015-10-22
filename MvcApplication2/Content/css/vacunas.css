@@ -400,6 +400,15 @@ vertical-align: middle;
    background: transparent;
 }
 
+.TextBoxAsLabelAcademicos
+{
+   border: none;
+   background-color: #fff;
+   background: transparent;
+   margin-top:7px;
+   width:900px;
+}
+
 
 
 
@@ -753,6 +762,7 @@ vertical-align: middle;
 .tan {
 width:700px;
 }
+
 
 
 /*                   tabla estudiantes familia
