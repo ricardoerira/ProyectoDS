@@ -1,0 +1,217 @@
+﻿@model MvcApplication2.Models.IPS_ESE
+
+
+
+
+<div class="row">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Inicio", "VistaODS/", "Rotacion")</li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Hoja de vida<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Estudiante", "Buscar/", "Estudiante")</li>
+                            <li>@Html.ActionLink("Docente", "Buscar/", "Docente")</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Listado estudiantes", "EstadoHV/", "Estudiante")</li>
+                            <li>@Html.ActionLink("Listado docentes", "EstadoHV/", "Docente")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Gestión documental<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="http://localhost:8888/OpenKM/frontend/index.jsp">Administrar</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Inducciones<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="http://cvirtual.campusvirtualudecaldas.edu.co/moodle/login/index.php">Administrar</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</div>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <fieldset>
+        <div class="col-md-8 col-md-offset-2">
+            <div class="well well-sm">
+                <legend class="text-center">IPS/ESE - Nuevo registro</legend>
+
+
+                <fosrm class="form-horizontal" action="" method="post">
+
+                    
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Nombre</label>
+                        <div class="col-sm-4">
+                            @Html.TextBoxFor(model => model.nombre, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.nombre)
+                        </div>
+                        <label class="col-sm-2 control-label">Naturaleza Jurídica</label>
+                        <div class="col-sm-4">
+                            @Html.DropDownList("naturaleza_juridica", new List<SelectListItem>() { new SelectListItem { Text = "Sin asignar", Value = "Sin asignar" }, new SelectListItem { Text = "Pública", Value = "Pública" }, new SelectListItem { Text = "Privada", Value = "Privada" }, new SelectListItem { Text = "Mixta", Value = "Mixta" } }, new { @class = "form-control" })
+
+                        </div>
+                    </div>               
+
+
+
+
+
+
+                   
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Representante legal</label>
+                        <div class="col-sm-4">
+                            @Html.TextBoxFor(model => model.representante_legal, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.representante_legal)
+                        </div>
+                        <label class="col-sm-2 control-label">Cargo</label>
+                        <div class="col-sm-4">
+                            @Html.TextBoxFor(model => model.cargo, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.cargo)
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label class="col-sm-2 control-label">Nivel complejidad</label>
+                        <div class="col-sm-4">
+                            @Html.DropDownList("nivel_complejidad", new List<SelectListItem>() { new SelectListItem { Text = "0", Value = "0" }, new SelectListItem { Text = "1", Value = "1" }, new SelectListItem { Text = "2", Value = "2" }, new SelectListItem { Text = "3", Value = "3" }, new SelectListItem { Text = "4", Value = "4" } }, new { @class = "form-control" })
+
+                        </div>
+                        <label class="col-sm-2 control-label">Correo</label>
+                        <div class="col-sm-4">
+                            @Html.TextBoxFor(model => model.correo, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.correo)
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label class="col-sm-2 control-label">Representante DS</label>
+                        <div class="col-sm-4">
+                                @Html.TextBoxFor(model => model.representanteDS, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.representanteDS)
+                                
+                            </div>
+                        
+                        <label class="col-sm-2 control-label">Cargo DS</label>
+                        <div class="col-sm-4">
+                            @Html.TextBoxFor(model => model.cargo_representanteDS, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.cargo_representanteDS)
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label class="col-sm-2 control-label">Municipio</label>
+                        <div class="col-sm-4">
+                            
+
+                            
+
+                            @Html.DropDownList("municipioId", new List<SelectListItem>() { new SelectListItem { Text = "Sin asignar", Value = "1" }, new SelectListItem { Text = "Manizales", Value = "2" }, new SelectListItem { Text = "Chinchina", Value = "4" } }, new { @class = "form-control" })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+
+                        <label class="col-sm-2 control-label">Corregimiento</label>
+                        <div class="col-sm-4">
+                            @Html.DropDownList("corregimiento_o_vereda", new List<SelectListItem>() { new SelectListItem { Text = "Sin asignar", Value = "Sin asignar" }, new SelectListItem { Text = "Colombia", Value = "Colombia" }, new SelectListItem { Text = "La Cristalina", Value = "La Cristalina" }, new SelectListItem { Text = "El Remanso", Value = "El Remanso" } }, new { @class = "form-control" })
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        
+                        <label class="col-sm-2 control-label">Objeto convenio</label>
+                        <div class="col-sm-10">
+                            @Html.TextAreaFor(model => model.objeto_convenio, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.objeto_convenio)
+                        </div> 
+
+                    </div>
+                    <div class="col-xs-offset-2">
+                        <span class="help-block">A continuación establezca un usuario y contraseña para la IPS/ESE De acuerdo al estándar; <p>Tenga en cuenta que el sistema reconoce entre mayúsculas y minúsculas.</p></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Usuario</label>
+                        <div class="col-sm-4">
+                            @Html.TextBoxFor(model => model.cargo_representanteDS, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.cargo_representanteDS)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                         <label class="col-sm-2 control-label">Contraseña</label>
+                        <div class="col-sm-4">
+                            @Html.TextBoxFor(model => model.cargo_representanteDS, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.cargo_representanteDS)
+                        </div>
+
+                        <label class="col-sm-2 control-label">Confirme contraseña</label>
+                        <div class="col-sm-4">
+                            @Html.TextBoxFor(model => model.cargo_representanteDS, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.cargo_representanteDS)
+                        </div>
+                    </div>
+
+                   
+
+                    <div class="form-group">
+                        
+
+                        <div class="col-sm-offset-8 btnaa">
+
+                            @Html.ActionLink("Regresar ", "Index", new { }, new { @class = "btn btn-default" })
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

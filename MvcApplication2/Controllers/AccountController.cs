@@ -66,7 +66,7 @@ namespace MvcApplication2.Controllers
         public ActionResult Register()
         {
             return View();
-        }
+        } 
 
         //
         // POST: /Account/Register
@@ -93,6 +93,13 @@ namespace MvcApplication2.Controllers
 
             // Si llegamos a este punto, es que se ha producido un error y volvemos a mostrar el formulario
             return View(model);
+        }
+
+
+        [AllowAnonymous]
+        public ActionResult RegistroEPS()
+        {
+            return View();
         }
 
         //
