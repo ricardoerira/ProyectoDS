@@ -169,8 +169,74 @@ namespace MvcApplication2.Controllers
 
             return View();
 
+        } //anticuerposVaricela
+
+        
+
+
+
+        
+
+
+        public ActionResult anticuerposVaricela(int id = 0)
+        {
+            string vacuna = Request.Params["vacuna"];
+
+            Estudiante estudiante = db.Estudiantes.Find(id);
+            int i = 0;
+            foreach (Vacuna item in estudiante.HojaVida.Vacunas)
+            {
+                i++;
+                if (item.nombre_generico.Equals(vacuna))
+                {
+                    break;
+
+
+                }
+            }
+            if (estudiante == null)
+            {
+                return HttpNotFound();
+            }
+            Vacuna ivacuna;
+            try
+            {
+                ivacuna = estudiante.HojaVida.Vacunas.ElementAt(i - 1);
+            }
+            catch (Exception e)
+            {
+                ivacuna = estudiante.HojaVida.Vacunas.ElementAt(0);
+            }
+            ivacuna.fecha_vacunacion = DateTime.Now.Date;
+            ivacuna.fecha_prox_vacunacion = DateTime.Now.Date.AddMonths(1);
+
+            ViewBag.num_documento = estudiante.num_documento;
+            return View(ivacuna);
+
         }
-       
+
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult anticuerposVaricela(Vacuna vacuna, int id = 0)
+        {
+            if (ModelState.IsValid)
+            {
+
+                db.Entry(vacuna).State = EntityState.Modified;
+                db.SaveChanges();
+
+                return RedirectToAction("anticuerposVaricela/" + id);
+            }
+            vacuna = db.Vacunas.Find(vacuna.vacunaId);
+            ViewBag.num_documento = vacuna.HojaVida.Estudiante.ElementAt(0).num_documento;
+
+            return View(vacuna);
+            //ME DEBE RETORNAR TAMBIEN EL ESTUDIANTE PARA QUE SE PUEDA VISUALIZAR EN LA VISTA
+        }
+
+
         public ActionResult EsquemaVacunacion(int id = 0)
         {
             string vacuna = Request.Params["vacuna"];
@@ -207,6 +273,8 @@ namespace MvcApplication2.Controllers
             return View(ivacuna);
 
         }
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult EsquemaVacunacion(Vacuna vacuna, int id = 0)

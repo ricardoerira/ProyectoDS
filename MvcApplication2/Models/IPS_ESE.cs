@@ -11,6 +11,7 @@ namespace MvcApplication2.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class IPS_ESE
     {
@@ -21,16 +22,35 @@ namespace MvcApplication2.Models
         }
 
         public int IPS_ESEId { get; set; }
-        public string origen { get; set; }
+        [Required]
+        public string direccion { get; set; }
+        [Required]
         public string nombre { get; set; }
-        public string representante_legal { get; set; }
-        public string cargo { get; set; }
+        [Required]             
+        public string telefono { get; set; }
+        public string fax { get; set; }
+        [Required]
         public string correo { get; set; }
         public string naturaleza_juridica { get; set; }
         public short nivel_complejidad { get; set; }
+        [Required]
+        public string representante { get; set; }
+        
+       
+        [Required]
         public string representanteDS { get; set; }
         public string cargo_representanteDS { get; set; }
-        public string corregimiento_o_vereda { get; set; }
+       
+        [Required]
+        public string representante_legal { get; set; }
+        [Required]
+        public string cargo { get; set; }
+
+
+        
+        [Required]
+        [Range(3000000000, 3999999999)]
+        public long num_celular { get; set; }
         public string objeto_convenio { get; set; }
         public int municipioId { get; set; }
     

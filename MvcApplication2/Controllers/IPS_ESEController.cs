@@ -27,7 +27,11 @@ namespace MvcApplication2.Controllers
             return View(ips_ese.ToList());
         }
 
-
+        [AllowAnonymous]
+        public ActionResult RegistroEPS()
+        {
+            return View();
+        }
 
         
 
@@ -113,7 +117,7 @@ namespace MvcApplication2.Controllers
             rptH.SetParameterValue("presentacion", "A continuación le relaciono las rotaciones de los estudiantes del Programa de "+pr.nombre+" Departamento "+ds.nombre+" que realizaran su rotación en su institución y los profesores con su horario.");
             rptH.SetParameterValue("fecha", "");
             rptH.SetParameterValue("dr", ips.representante_legal);
-            rptH.SetParameterValue("cargo",ips.cargo);
+            rptH.SetParameterValue("cargo",ips.cargo); 
             rptH.SetParameterValue("nombreIPS", ips.nombre);
             
 
@@ -691,6 +695,8 @@ namespace MvcApplication2.Controllers
             
             return View();
         }
+
+       
 
         //
         // POST: /IPS_ESE/Create

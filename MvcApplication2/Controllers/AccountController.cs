@@ -96,14 +96,10 @@ namespace MvcApplication2.Controllers
         }
 
 
-        [AllowAnonymous]
-        public ActionResult RegistroEPS()
-        {
-            return View();
-        }
+       
 
-        //
-        // POST: /Account/Disassociate
+        
+         //POST: /Account/Disassociate
 
         [HttpPost]
         [ValidateAntiForgeryToken]
