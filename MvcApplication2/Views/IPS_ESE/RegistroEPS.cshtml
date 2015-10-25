@@ -46,11 +46,15 @@
     </nav>
 </div>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("RegistroEPS", "IPS_ESE", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary()
+   if (!string.IsNullOrEmpty(ViewBag.AlertMessage))
+    {
+<script>alert("@ViewBag.AlertMessage");</script>
 
+    }
     <div class="container">
 
 
@@ -71,14 +75,7 @@
 
                             <!-- Text input-->
                             <div class="form-group">
-                                @*@Html.HiddenFor(model => model.hojaVidaId)
-                                @Html.HiddenFor(model => model.rotacionId)
-                                @Html.HiddenFor(model => model.docenteId)
-                                @Html.HiddenFor(model => model.DepartamentoSaludId)
-                                @Html.HiddenFor(model => model.clave)*@
-
-
-
+                               
 
 
                                 <label class="col-sm-1 control-label">Nombre Intitución</label>
@@ -274,8 +271,8 @@
                             <div class="form-group">
                                 <label class="col-sm-1 control-label">Usuario</label>
                                 <div class="col-sm-4">
-                                    @Html.TextBoxFor(model => model.fax, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.fax)
+                                    @Html.TextBoxFor(model => model.user, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.user)
                                 </div>
                             </div>
 
@@ -283,14 +280,14 @@
                             <div class="form-group">
                                 <label class="col-sm-1 control-label">Contraseña</label>
                                 <div class="col-sm-4">
-                                    @Html.TextBoxFor(model => model.fax, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.fax)
+                                    @Html.PasswordFor(model => model.pass, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.pass)
                                 </div>
 
                                 <label class="col-sm-2 control-label">Confirme contraseña</label>
                                 <div class="col-sm-4">
-                                    @Html.TextBoxFor(model => model.fax, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.fax)
+                                    @Html.PasswordFor(model => model.passC, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.passC)
                                 </div>
 
                             </div>

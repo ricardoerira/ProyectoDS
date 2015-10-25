@@ -10,6 +10,7 @@ using CrystalDecisions.CrystalReports.Engine;
 using System.IO;
 using System.Net.Mail;
 using System.Net;
+using WebMatrix.WebData;
 
 namespace MvcApplication2.Controllers
 {
@@ -30,9 +31,77 @@ namespace MvcApplication2.Controllers
         [AllowAnonymous]
         public ActionResult RegistroEPS()
         {
+            var municipios = db.Municipios.Include(h => h.Departamento);
+            List<Municipio> lista = municipios.ToList();
+
+            ViewBag.municipioId = new SelectList(lista, "municipioId", "nombre");
+
             return View();
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult RegistroEPS(IPS_ESE ips_ese)
+        {
+            if (ModelState.IsValid)
+            {
+                if(ips_ese.pass.Equals(ips_ese.passC))
+                {
+                    db.IPS_ESE.Add(ips_ese);
+                    if (!WebSecurity.Initialized)
+                    {
+ 
+                        WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+           
+                    }
+                       
+                    WebSecurity.CreateUserAndAccount(ips_ese.user, ips_ese.passC);
+                    db.SaveChanges();
 
+                    if (Request != null)
+                    {
+
+
+                        int uploadedCount = 0;
+                        string[] documentos = { "resolucion", "cedularl", "actap", "rut", "habilitacion" };
+                        int numFiles = Request.Files.Count;
+                 
+                        for (int i = 0; i < numFiles; i++)
+                        {
+
+                            HttpPostedFileBase file = Request.Files[i];
+                            if (file.ContentLength > 0)
+                            {
+                                string fileName = file.FileName;
+                                string fileContentType = file.ContentType;
+                                byte[] fileBytes = new byte[file.ContentLength];
+                                file.InputStream.Read(fileBytes, 0, Convert.ToInt32(file.ContentLength));
+                                string path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[i] + ips_ese.IPS_ESEId , ".jpg");
+                                if (System.IO.File.Exists(path1))
+                                    System.IO.File.Delete(path1);
+
+                                file.SaveAs(path1);
+                                uploadedCount++;
+                            }
+                        }
+                    }
+                    return RedirectToAction("VistaIPS_EPS");
+
+                }
+                else
+                {
+                    ViewBag.AlertMessage = "Las contrasenias deben de coincidir";
+                    return View();
+                }
+              
+            }
+
+            ViewBag.municipioId = new SelectList(db.Municipios, "municipioId", "nombre", ips_ese.municipioId);
+            return View(ips_ese);
+        }
+
+
+
+       
         
 
         public ActionResult VistaIPS_ESE()
