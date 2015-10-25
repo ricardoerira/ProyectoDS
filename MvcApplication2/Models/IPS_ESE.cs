@@ -46,8 +46,16 @@ namespace MvcApplication2.Models
         [Required]
         public string cargo { get; set; }
 
+        [Required]
+        public string user { get; set; }
 
+        [Required]
+        public string pass { get; set; }
+
+        [Required]
+        public string passC { get; set; }
         
+       
         [Required]
         [Range(3000000000, 3999999999)]
         public long num_celular { get; set; }
