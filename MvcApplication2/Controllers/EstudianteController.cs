@@ -683,7 +683,8 @@ public ActionResult EstadoHV(string num_documento, string programaId, string est
         public ActionResult CambioContraseña(Estudiante estudiante)
         {
                 Estudiante est = db.Estudiantes.Find(estudiante.estudianteId);
-
+            if(estudiante.clave!=null)
+            {
                 if (estudiante.clave.Equals(estudiante.tipo_documento))
                 {
                     est.clave = estudiante.clave;
@@ -692,14 +693,17 @@ public ActionResult EstadoHV(string num_documento, string programaId, string est
                     db.Entry(est).State = EntityState.Modified;
 
 
-
+                    ViewBag.AlertMessage = null;
                     db.SaveChanges();
                     return RedirectToAction("../Estudiante/Personales/" + est.estudianteId);
-                    
-                }
-            
 
-            return RedirectToAction("../Estudiante/CambioContraseña/" + estudiante.estudianteId);
+                }
+            }
+
+
+            ViewBag.AlertMessage = "Las contrasenias deben coincidir";
+            return View(estudiante);
+          //  return RedirectToAction("../Estudiante/CambioContraseña/" + estudiante.estudianteId);
         }
 
         

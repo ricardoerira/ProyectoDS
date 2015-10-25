@@ -4,6 +4,11 @@
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
+    if (!string.IsNullOrEmpty(ViewBag.AlertMessage))
+    {
+        <script>alert("@ViewBag.AlertMessage");</script>
+
+    }
     <div class="container-fluid">
 
         <div class="container-page">

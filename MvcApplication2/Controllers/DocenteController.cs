@@ -409,7 +409,8 @@ namespace MvcApplication2.Controllers
         {
            
             Docente doc = db.Docentes.Find(docente.docenteId);
-
+            if (docente.clave != null)
+            {
             if (docente.clave.Equals(docente.tipo_documento))
             {
                 doc.clave = docente.clave;
@@ -423,9 +424,11 @@ namespace MvcApplication2.Controllers
                 return RedirectToAction("../Docente/Personales/" + doc.docenteId);
 
             }
+                 }
 
-
-            return RedirectToAction("../Docente/CambioContraseña/" + docente.docenteId);
+            ViewBag.AlertMessage = "Las contrasenias deben coincidir";
+            return View(docente);
+        
         }
 
         
