@@ -1,0 +1,407 @@
+﻿@model MvcApplication2.Models.IPS_ESE
+
+
+@{
+    ViewBag.Title = "Registrarse";
+}
+
+<div class="row">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Inicio", "VistaODS/", "Rotacion")</li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Hoja de vida<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Estudiante", "Buscar/", "Estudiante")</li>
+                            <li>@Html.ActionLink("Docente", "Buscar/", "Docente")</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Listado estudiantes", "EstadoHV/", "Estudiante")</li>
+                            <li>@Html.ActionLink("Listado docentes", "EstadoHV/", "Docente")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Gestión documental<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="http://localhost:8888/OpenKM/frontend/index.jsp">Administrar</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Inducciones<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="http://cvirtual.campusvirtualudecaldas.edu.co/moodle/login/index.php">Administrar</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <div class="container">
+
+
+        <div class="row">
+
+            <fieldset>
+                <legend>Información IPS/ESE</legend>
+
+                <div class="col-sm-1">
+                    
+
+                </div>
+
+                <div class="col-sm-12">
+
+                    <div class="row">
+                        <fosrm class="form-horizontal" role="form">
+
+                            <!-- Text input-->
+                            <div class="form-group">
+                                @*@Html.HiddenFor(model => model.hojaVidaId)
+                                @Html.HiddenFor(model => model.rotacionId)
+                                @Html.HiddenFor(model => model.docenteId)
+                                @Html.HiddenFor(model => model.DepartamentoSaludId)
+                                @Html.HiddenFor(model => model.clave)*@
+
+
+
+
+
+                                <label class="col-sm-1 control-label">Nombre Intitución</label>
+                                
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.nombre, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.nombre)
+
+                                </div>
+                                <label class="col-sm-2 control-label">Nivel de complejidad</label>
+                                <div class="col-sm-4">
+                                    @Html.DropDownList("nivel_complejidad", new List<SelectListItem>() { new SelectListItem { Text = "0", Value = "0" }, new SelectListItem { Text = "1", Value = "1" }, new SelectListItem { Text = "2", Value = "2" }, new SelectListItem { Text = "3", Value = "3" }, new SelectListItem { Text = "4", Value = "4" } }, new { @class = "form-control" })
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label">Representante legal</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.representante, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.representante)
+
+                                </div>
+                                <label class="col-sm-2 control-label">Naturaleza jurídica</label>
+                                <div class="col-sm-4">
+                                    @Html.DropDownList("naturaleza_juridica", new List<SelectListItem>() { new SelectListItem { Text = "Sin asignar", Value = "Sin asignar" }, new SelectListItem { Text = "Pública", Value = "Pública" }, new SelectListItem { Text = "Privada", Value = "Privada" }, new SelectListItem { Text = "Mixta", Value = "Mixta" } }, new { @class = "form-control" })
+
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label">Coordinador CODA</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.representanteDS, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.representanteDS)
+                                </div>
+                                <label class="col-sm-2 control-label">Cargo</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.cargo_representanteDS, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.cargo_representanteDS)
+                                </div>
+
+                            </div>
+
+
+
+
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label">Representante para CP</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.representante_legal, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.representante_legal)
+                                </div>
+
+
+                                <label class="col-sm-2 control-label">Cargo</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.cargo, new { @class = "form-control"})
+                                    @Html.ValidationMessageFor(model => model.cargo)
+                                </div>
+                            </div>
+
+
+                        </fosrm>
+
+
+                    </div><!-- /.row -->
+                </div>
+
+
+
+                <legend>Objeto del convenio</legend>
+
+
+                <div class="col-sm-3">
+
+                </div>
+
+
+                <div class="col-sm-12">
+
+                    <div class="row">
+                        <fofrm class="form-horizontal" role="form">
+                            <div class="form-group">
+
+
+                                <label class="col-sm-1 control-label"></label>
+                                <div class="col-sm-4">
+                                    @Html.TextAreaFor(model => model.objeto_convenio, new { @class = "form-control" })
+
+                                </div>
+
+
+                            </div>
+
+                        </fofrm>
+
+                    </div><!-- /.row -->
+                </div>
+
+
+                <legend>Datos de contacto:</legend>
+
+
+                <div class="col-sm-3">
+
+                </div>
+
+
+                <div class="col-sm-12">
+
+                    <div class="row">
+                        <fofrm class="form-horizontal" role="form">
+
+
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label">Departamento</label>
+                                <div class="col-sm-4">
+                                    @Html.DropDownList("Municipios.departamentoId", new List<SelectListItem>() { new SelectListItem { Text = "Sin asignar", Value = "1" }, new SelectListItem { Text = "Caldas", Value = "2" }, new SelectListItem { Text = "Antioquia", Value = "4" } }, new { @class = "form-control" })
+
+                                </div>
+                                <label class="col-sm-2 control-label">Municipio</label>
+                                <div class="col-sm-4">
+                                    @Html.DropDownList("municipioId", new List<SelectListItem>() { new SelectListItem { Text = "Sin asignar", Value = "1" }, new SelectListItem { Text = "Manizales", Value = "2" }, new SelectListItem { Text = "Chinchina", Value = "4" } }, new { @class = "form-control" })
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+
+
+                                <label class="col-sm-1 control-label">Dirección</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.direccion, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.direccion)
+                                </div>
+
+                                <label class="col-sm-2 control-label">Correo</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.correo, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.correo)
+                                </div>
+
+
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label">Teléfono</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.telefono, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.telefono)
+
+
+                                </div>
+
+                                <label class="col-sm-2 control-label">Celular</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.num_celular, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.num_celular)
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label">Fax</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.fax, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.fax)
+
+
+                                </div>
+                            </div>
+
+                        </fofrm>
+
+                    </div><!-- /.row -->
+                </div>
+
+               
+
+
+                <legend>Información de Logueo</legend>
+
+                <div class="col-sm-3">
+
+                </div>
+                
+
+                <div class="col-sm-12">
+                    <fodrm class="form-horizontal" role="form">
+                        <div class="col-xs-offset-0">
+                            <span class="help-block">A continuación establezca un usuario y contraseña para la IPS/ESE De acuerdo al estándar; <p>Tenga en cuenta que el sistema reconoce entre mayúsculas y minúsculas.</p></span>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label">Usuario</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.fax, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.fax)
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label">Contraseña</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.fax, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.fax)
+                                </div>
+
+                                <label class="col-sm-2 control-label">Confirme contraseña</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.fax, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.fax)
+                                </div>
+
+                            </div>
+                        </div>
+                    </fodrm>
+
+                </div><!-- /.row -->
+
+
+                <legend>Documentos Representante legal</legend>
+
+               
+
+                <div class="col-sm-12">
+
+                    <div class="row">
+
+                        <table class="tableDocumentos table-condensed table-striped">
+
+                            <tr>
+                                <th>Copia</th>
+                                <th>Acción</th>
+                                <th>Archivo</th>
+                            </tr>
+                            <tr>
+                                <td class="tdDocumentos">Resolución de nombramiento del Representante Legal</td>
+                                <td>
+                                    <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
+                                </td>
+                                <td>
+                                    <a href=''>
+                                        <img src="" class="img-rounded" height="75" width="75" />
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="tdDocumentos">Cédula de ciudadanía del representante legal</td>
+                                <td>
+                                    <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
+                                </td>
+                                <td>
+                                    <a href=''>
+                                        <img src="" class="img-rounded" height="75" width="75" />
+                                    </a>   
+
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td class="tdDocumentos">Acta de posesión</td>
+                                <td>
+                                    <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
+
+                                </td>
+                                <td>
+                                    <a href=''>
+                                        <img src="" class="img-rounded" height="75" width="75" />
+                                    </a>
+                                    </td>
+                                    
+                            </tr>
+                            <tr>
+
+                                <td class="tdDocumentos">RUT representante legal</td>
+                                <td>
+                                    <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
+                                </td>
+                                <td>
+                                    <a href=''>
+                                        <img src="" class="img-rounded" height="75" width="75" />
+                                    </a>  
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdDocumentos">Copia de Habilitación de la Institución</td>
+                                <td>
+                                    <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
+
+                                </td>
+                                <td>
+                                    <a href=''>
+                                        <img src="" class="img-rounded" height="75" width="75" />
+                                    </a>  
+                                </td>
+                            </tr>
+
+
+                        </table>
+                        <div class="form-group">
+                        </div>
+                        <div class="form-group">
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-4">
+                                <div class="pull-right">
+                                    <button type="submit" class="btn btn-primary">Guardar</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </fieldset>
+        </div>
+    </div>
+
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

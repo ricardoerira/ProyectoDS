@@ -60,6 +60,8 @@ namespace MvcApplication2.Controllers
 
             ViewBag.departamentoId = new SelectList(db.Departamentoes, "departamentoID", "nombre", municipio.departamentoId);
             return View(municipio);
+
+
         }
 
         //

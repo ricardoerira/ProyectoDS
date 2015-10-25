@@ -13,13 +13,7 @@
     <fieldset>
         <legend>IPS_ESE</legend>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.origen)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.origen)
-            @Html.ValidationMessageFor(model => model.origen)
-        </div>
+        
 
         <div class="editor-label">
             @Html.LabelFor(model => model.nombre)
@@ -81,17 +75,11 @@
             @Html.LabelFor(model => model.cargo_representanteDS)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.cargo_representanteDS)
+            @Html.TextBoxFor(model => model.cargo_representanteDS)
             @Html.ValidationMessageFor(model => model.cargo_representanteDS)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.corregimiento_o_vereda)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.corregimiento_o_vereda)
-            @Html.ValidationMessageFor(model => model.corregimiento_o_vereda)
-        </div>
+        
 
         <div class="editor-label">
             @Html.LabelFor(model => model.objeto_convenio)

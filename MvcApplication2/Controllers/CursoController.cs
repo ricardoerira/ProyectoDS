@@ -63,6 +63,8 @@ namespace MvcApplication2.Controllers
             return View();
         }
 
+
+
         //
         // GET: /Curso/VistaContraprestacion
         public ActionResult VistaContraprestacion()
