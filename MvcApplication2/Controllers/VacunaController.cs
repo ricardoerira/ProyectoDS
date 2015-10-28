@@ -171,14 +171,14 @@ namespace MvcApplication2.Controllers
 
         } //anticuerposVaricela
 
-        
 
 
 
-        
 
 
-        public ActionResult anticuerposVaricela(int id = 0)
+
+
+        public ActionResult Anticuerpos(int id = 0)
         {
             string vacuna = Request.Params["vacuna"];
 
@@ -212,14 +212,14 @@ namespace MvcApplication2.Controllers
 
             ViewBag.num_documento = estudiante.num_documento;
             return View(ivacuna);
-
+            
         }
 
 
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult anticuerposVaricela(Vacuna vacuna, int id = 0)
+        public ActionResult Anticuerpos(Vacuna vacuna, int id = 0)
         {
             if (ModelState.IsValid)
             {

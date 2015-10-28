@@ -339,6 +339,40 @@ DOS COLUMNAS..........................
                                         </div>
                                     </div>
 
+
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseEight">
+                                                    <span class="glyphicon glyphicon-list">
+                                                    </span>
+                                                    DPT Acelular
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseEight" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <table class="table">
+                                                    <tr>
+                                                        <td>
+                                                            @Html.ActionLink(
+                      linkText: " Dosis 1",
+             actionName: "EsquemaVacunacion",
+    controllerName: "Vacuna",
+    routeValues: new
+    {
+        // id = Model.estudianteId,
+        vacuna = "DTP Acelular Dosis 1"
+    },
+    htmlAttributes: null
+)
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <div class="panel panel-default">
                                         <div class="panel-heading">
                                             <h4 class="panel-title">
@@ -405,38 +439,6 @@ DOS COLUMNAS..........................
                                         </div>
                                     </div>
 
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h4 class="panel-title">
-                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseEight">
-                                                    <span class="glyphicon glyphicon-list">
-                                                    </span>
-                                                    DPT Acelular
-                                                </a>
-                                            </h4>
-                                        </div>
-                                        <div id="collapseEight" class="panel-collapse collapse">
-                                            <div class="panel-body">
-                                                <table class="table">
-                                                    <tr>
-                                                        <td>
-                                                            @Html.ActionLink(
-                      linkText: " Dosis 1",
-             actionName: "EsquemaVacunacion",
-    controllerName: "Vacuna",
-    routeValues: new
-    {
-        // id = Model.estudianteId,
-        vacuna = "DTP Acelular Dosis 1"
-    },
-    htmlAttributes: null
-)
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
 
                                     <div class="panel panel-default">
                                         <div class="panel-heading">
@@ -471,7 +473,63 @@ DOS COLUMNAS..........................
                                         </div>
                                     </div>
 
-                                </div>
+
+
+
+
+
+
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTen">
+                                                    <span class="glyphicon glyphicon-list">
+                                                    </span>
+                                                    Titulación de anticuerpos
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseTen" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <table class="table">
+                                                    <tr>
+
+                                                        <td>
+                                                            @Html.ActionLink(
+                      linkText: "Varicela",
+             actionName: "EsquemaVacunacion",
+    controllerName: "Vacuna",
+    routeValues: new
+    {
+        // id = Model.estudianteId,
+        vacuna = "Anticuerpos contra varicela"
+    },
+    htmlAttributes: null
+)
+
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            @Html.ActionLink(
+                      linkText: "Hepatitis B",
+             actionName: "EsquemaVacunacion",
+    controllerName: "Vacuna",
+    routeValues: new
+    {
+        // id = Model.estudianteId,
+        vacuna = "Anticuerpos contra hepatitis B "
+    },
+    htmlAttributes: null
+)
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div><!--termina accordio -->
                             </div>
                             <fosrm class="form-horizontal" role="form">
                                 <div class="col-sm-9 col-md-9">
@@ -569,6 +627,12 @@ DOS COLUMNAS..........................
                                                     @Html.ValidationMessageFor(model => model.lote)
 
                                                 </div>
+                                                <label class="col-sm-2 control-label">Lugar Anatómico</label>
+                                                <div class="col-sm-4">
+                                                    @Html.DropDownList("lugar_anatomico", new List<SelectListItem>() { new SelectListItem { Text = "Brazo derecho", Value = "Brazo derecho" }, new SelectListItem { Text = "Brazo izquierdo", Value = "Brazo izquierdo" }, new SelectListItem { Text = "Otro", Value = "Otro" } }, new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.lugar_anatomico)
+
+                                                </div>
 
                                             </div>
                                             <div class="form-group">
@@ -578,10 +642,10 @@ DOS COLUMNAS..........................
                                                     @Html.DropDownList("laboratorio_vacunacion", new List<SelectListItem>() { new SelectListItem { Text = "BIOTOSCANA", Value = "BIOTOSCANA" }, new SelectListItem { Text = "SANOFI", Value = "SANOFI" }, new SelectListItem { Text = "DELTA", Value = "DELTA" }, new SelectListItem { Text = "GLAXO", Value = "GLAXO" }, new SelectListItem { Text = "MERK", Value = "MERK" }, new SelectListItem { Text = "OTRO", Value = "OTRO" } }, new { @class = "form-control" })
                                                     @Html.ValidationMessageFor(model => model.laboratorio_vacunacion)
                                                 </div>
-                                                <label class="col-sm-2 control-label">Lugar Anatómico</label>
+                                                <label class="col-sm-2 control-label">¿Cuál?</label>
                                                 <div class="col-sm-4">
-                                                    @Html.DropDownList("lugar_anatomico", new List<SelectListItem>() { new SelectListItem { Text = "Brazo derecho", Value = "Brazo derecho" }, new SelectListItem { Text = "Brazo izquierdo", Value = "Brazo izquierdo" }, new SelectListItem { Text = "Otro", Value = "Otro" } }, new { @class = "form-control" })
-                                                    @Html.ValidationMessageFor(model => model.lugar_anatomico)
+                                                    @Html.TextBoxFor(model => model.laboratorioOtro, new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.laboratorioOtro)
 
                                                 </div>
 

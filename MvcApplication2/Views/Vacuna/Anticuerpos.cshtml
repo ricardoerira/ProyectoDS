@@ -65,7 +65,7 @@ DOS COLUMNAS..........................
                     <div class="container">
                        
                         <div class="row">
-
+                           
                             <div class="col-sm-1 col-md-3">
                                 <div class="panel-group" id="accordion">
                                     <div class="panel panel-default">
@@ -82,7 +82,7 @@ DOS COLUMNAS..........................
                                         <div id="collapseOne" class="panel-collapse collapse ">
                                             <div class="panel-body">
                                                 <table class="table">
-                                                    <tr>
+                                                    <tr >
                                                         <td class="bn">
                                                             @Html.ActionLink(
                       linkText: " Dosis 1",
@@ -149,7 +149,7 @@ DOS COLUMNAS..........................
                                                     <tr>
 
                                                         <td>
-                                                            @Html.ActionLink(
+    @Html.ActionLink(
                       linkText: " Dosis 1",
              actionName: "EsquemaVacunacion",
     controllerName: "Vacuna",
@@ -165,7 +165,7 @@ DOS COLUMNAS..........................
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            @Html.ActionLink(
+    @Html.ActionLink(
                       linkText: " Dosis 2",
              actionName: "EsquemaVacunacion",
     controllerName: "Vacuna",
@@ -176,7 +176,7 @@ DOS COLUMNAS..........................
     },
     htmlAttributes: null
 )
-                                                        </td>
+</td>
                                                     </tr>
                                                 </table>
                                             </div>
@@ -521,7 +521,7 @@ DOS COLUMNAS..........................
     routeValues: new
     {
         // id = Model.estudianteId,
-        vacuna = "Anticuerpos contra hepatitis B "
+        vacuna = "Anticuerpos contra hepatitis B"
     },
     htmlAttributes: null
 )
@@ -595,94 +595,197 @@ DOS COLUMNAS..........................
 
 
 
-                                <div class="col-lg-offset-4 ">
-                                    <fosrm class="form-horizontal" role="form">
-                                        <legend class="tan">
-                                            <h3>
-                                                @Html.TextBoxFor(model => model.nombre_generico, new { @class = "TextBoxAsLabel" })
-                                                @Html.ValidationMessageFor(model => model.nombre_generico)
-                                            </h3>
-                                        </legend>
+    <div class="col-lg-offset-4 ">
+        <fosrm class="form-horizontal" role="form">
+            <legend class="tan">
+                <h3>
+                    @Html.TextBoxFor(model => model.nombre_generico, new { @class = "TextBoxAsLabel" })
+                    @Html.ValidationMessageFor(model => model.nombre_generico)
+                </h3>
+            </legend>
 
 
 
 
-                                        <div class="col-sm-11 col-md-11">
+            <div class="col-sm-11 col-md-11">
 
 
-                                            <div class="form-group">
-                                                <label class="col-sm-2 control-label">Fecha de aplicación</label>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Fecha de aplicación</label>
 
-                                                <div class="col-sm-4">
-                                                    @Html.EditorFor(model => model.fecha_vacunacion, new { @class = "form-control" })
-                                                    @Html.ValidationMessageFor(model => model.fecha_vacunacion)
-                                                </div>
+                    <div class="col-sm-4">
+                        @Html.EditorFor(model => model.fecha_vacunacion, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.fecha_vacunacion)
+                    </div>
 
-                                                <label class="col-sm-2 control-label">Próxima vacuna</label>
-                                                <div class="col-sm-4">
-                                                    @Html.EditorFor(model => model.fecha_prox_vacunacion, new { @class = "form-control" })
-                                                    @Html.ValidationMessageFor(model => model.fecha_prox_vacunacion)
-                                                </div>
+                    <label class="col-sm-2 control-label">Próxima vacuna</label>
+                    <div class="col-sm-4">
+                        @Html.EditorFor(model => model.fecha_prox_vacunacion, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.fecha_prox_vacunacion)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">N° del Lote</label>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.lote, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.lote)
+
+                    </div>
+                    <label class="col-sm-2 control-label">Lugar Anatómico</label>
+                    <div class="col-sm-4">
+                        @Html.DropDownList("lugar_anatomico", new List<SelectListItem>() { new SelectListItem { Text = "Brazo derecho", Value = "Brazo derecho" }, new SelectListItem { Text = "Brazo izquierdo", Value = "Brazo izquierdo" }, new SelectListItem { Text = "Otro", Value = "Otro" } }, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.lugar_anatomico)
+
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Laboratorio</label>
+
+                    <div class="col-sm-4">
+                        @Html.DropDownList("laboratorio_vacunacion", new List<SelectListItem>() { new SelectListItem { Text = "BIOTOSCANA", Value = "BIOTOSCANA" }, new SelectListItem { Text = "SANOFI", Value = "SANOFI" }, new SelectListItem { Text = "DELTA", Value = "DELTA" }, new SelectListItem { Text = "GLAXO", Value = "GLAXO" }, new SelectListItem { Text = "MERK", Value = "MERK" }, new SelectListItem { Text = "OTRO", Value = "OTRO" } }, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.laboratorio_vacunacion)
+                    </div>
+                    <label class="col-sm-2 control-label">¿Cuál?</label>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.laboratorioOtro, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.laboratorioOtro)
+
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Observaciones</label>
+
+                    <div class="col-sm-9">
+                        @Html.TextAreaFor(model => model.observaciones, new { @class = "form-control" })
+                    </div>
+
+                </div>
+
+                
+
+
+            </div>
+
+
+
+
+            <legend>Cargar Titulación</legend>
+
+            <div class="col-sm-3">
+
+            </div>
+
+
+            <div class="col-sm-11">
+                <div class="row">
+
+
+
+
+
+
+
+
+
+
+                    <div class="form-group">
+
+
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="col-sm-6">
+                                        
+
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Registrar titulación</label>
+
+                                            <div class="col-sm-">
+                                                @Html.TextAreaFor(model => model.titulacionVaricela, new { @class = "form-control" })
                                             </div>
-
-                                            <div class="form-group">
-                                                <label class="col-sm-2 control-label">N° del Lote</label>
-                                                <div class="col-sm-4">
-                                                    @Html.TextBoxFor(model => model.lote, new { @class = "form-control" })
-                                                    @Html.ValidationMessageFor(model => model.lote)
-
-                                                </div>
-                                                <label class="col-sm-2 control-label">Lugar Anatómico</label>
-                                                <div class="col-sm-4">
-                                                    @Html.DropDownList("lugar_anatomico", new List<SelectListItem>() { new SelectListItem { Text = "Brazo derecho", Value = "Brazo derecho" }, new SelectListItem { Text = "Brazo izquierdo", Value = "Brazo izquierdo" }, new SelectListItem { Text = "Otro", Value = "Otro" } }, new { @class = "form-control" })
-                                                    @Html.ValidationMessageFor(model => model.lugar_anatomico)
-
-                                                </div>
-
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-sm-2 control-label">Laboratorio</label>
-
-                                                <div class="col-sm-4">
-                                                    @Html.DropDownList("laboratorio_vacunacion", new List<SelectListItem>() { new SelectListItem { Text = "BIOTOSCANA", Value = "BIOTOSCANA" }, new SelectListItem { Text = "SANOFI", Value = "SANOFI" }, new SelectListItem { Text = "DELTA", Value = "DELTA" }, new SelectListItem { Text = "GLAXO", Value = "GLAXO" }, new SelectListItem { Text = "MERK", Value = "MERK" }, new SelectListItem { Text = "OTRO", Value = "OTRO" } }, new { @class = "form-control" })
-                                                    @Html.ValidationMessageFor(model => model.laboratorio_vacunacion)
-                                                </div>
-                                                <label class="col-sm-2 control-label">¿Cuál?</label>
-                                                <div class="col-sm-4">
-                                                    @Html.TextBoxFor(model => model.laboratorioOtro, new { @class = "form-control" })
-                                                    @Html.ValidationMessageFor(model => model.laboratorioOtro)
-
-                                                </div>
-
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-sm-2 control-label">Observaciones</label>
-
-                                                <div class="col-sm-9">
-                                                    @Html.TextAreaFor(model => model.observaciones, new { @class = "form-control" })
-                                                </div>
-
-                                            </div>
-
-                                            <div class="form-group">
-                                                <div class="col-sm-offset-2 col-sm-10">
-                                                    <div class="pull-right">
-
-                                                        @Html.ActionLink("Regresar ", "../Estudiante/CarnetVacunacionDS", new { id = @Model.HojaVida.Estudiante.ElementAt(0).estudianteId }, new { @class = "btn btn-default" })
-                                                        <button type="submit" class="btn btn-primary">Guardar</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
 
                                         </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <label for="InputFile">Anticuerpos contra varicela (jpg,png)</label>
+                                    <!--<input type="file" id=""name="UploadedFile" />-->
+                                    <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
+                                    <input type="hidden" value=@Model.vacunaId name="idEstudiante" />
+                                </td>
+
+                            </tr>
+                            <t
+                            <tr>
+                                <td>
+                                    <div class="col-sm-6">
+
+
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Registrar titulación</label>
+
+                                            <div class="col-sm-">
+                                                @Html.TextAreaFor(model => model.titulacionHepatitisB, new { @class = "form-control" })
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <label for="InputFile">Anticuerpos contra hepatitis B (jpg,png)</label>
+                                    <!--<input type="file" id=""name="UploadedFile" />-->
+                                    <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
+                                    <input type="hidden" value=@Model.vacunaId name="idEstudiante" />
+                                </td>
+
+                            </tr>
+                            <tr></tr>
+                        </table>
+
+                    </div>
 
 
 
 
-                                </div>
-                            }
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <div class="pull-right">
+
+                                @Html.ActionLink("Regresar ", "../Estudiante/CarnetVacunacionDS", new { id = @Model.HojaVida.Estudiante.ElementAt(0).estudianteId }, new { @class = "btn btn-default" })
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+                            </div>
                         </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div><!-- /. <div class="row""info familia>row -->
+
+            </div><!-- /. <div class="col-sm-8"info familia>row -->
+
+
+
+
+    </div>
+                            }
+    </div>
 
                     </div>
 

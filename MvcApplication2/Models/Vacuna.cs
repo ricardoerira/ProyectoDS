@@ -18,7 +18,7 @@ namespace MvcApplication2.Models
    
         public int vacunaId { get; set; }
         public string nombre_generico { get; set; }
-        public string antigenos_contenidos { get; set; }
+        public string laboratorioOtro { get; set; }//antes:antigenos_contenidos
         [Required]
         public string lote { get; set; }
         public string lugar_anatomico { get; set; }
@@ -31,6 +31,9 @@ namespace MvcApplication2.Models
 
         public string laboratorio_vacunacion { get; set; }
         public string observaciones { get; set; }
+        public string titulacionVaricela { get; set; }
+        public string titulacionHepatitisB { get; set; }
+
         public int hojaVidaId { get; set; }
 
         

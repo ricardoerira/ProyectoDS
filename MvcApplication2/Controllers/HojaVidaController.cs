@@ -292,6 +292,14 @@ namespace MvcApplication2.Controllers
                                 vacuna.nombre_generico = ("Virus del papiloma humano Dosis 1");
                                 db.Vacunas.Add(vacuna);
                                 db.SaveChanges();
+
+                                vacuna.nombre_generico = ("Anticuerpos contra varicela");
+                                db.Vacunas.Add(vacuna);
+                                db.SaveChanges();
+
+                                vacuna.nombre_generico = ("Anticuerpos contra hepatitis B");
+                                db.Vacunas.Add(vacuna);
+                                db.SaveChanges();
                             }
                             }
                         }
@@ -530,6 +538,14 @@ namespace MvcApplication2.Controllers
                             db.SaveChanges();
 
                             vacuna.nombre_generico = ("Virus del papiloma humano Dosis 1");
+                            db.Vacunas.Add(vacuna);
+                            db.SaveChanges();
+
+                            vacuna.nombre_generico = ("Anticuerpos contra varicela");
+                            db.Vacunas.Add(vacuna);
+                            db.SaveChanges();
+
+                            vacuna.nombre_generico = ("Anticuerpos contra hepatitis B");
                             db.Vacunas.Add(vacuna);
                             db.SaveChanges();
                             }
@@ -804,6 +820,14 @@ namespace MvcApplication2.Controllers
                 db.Vacunas.Add(vacuna);
                 db.SaveChanges();
 
+                vacuna.nombre_generico = ("Anticuerpos contra varicela");
+                db.Vacunas.Add(vacuna);
+                db.SaveChanges();
+
+                vacuna.nombre_generico = ("Anticuerpos contra hepatitis B");
+                db.Vacunas.Add(vacuna);
+                db.SaveChanges();
+
 
 
 
@@ -937,6 +961,14 @@ namespace MvcApplication2.Controllers
                 db.Vacunas.Add(vacuna);
                 db.SaveChanges();
 
+                vacuna.nombre_generico = ("Anticuerpos contra varicela");
+                db.Vacunas.Add(vacuna);
+                db.SaveChanges();
+
+                vacuna.nombre_generico = ("Anticuerpos contra hepatitis B");
+                db.Vacunas.Add(vacuna);
+                db.SaveChanges();
+
 
 
 
@@ -947,6 +979,39 @@ namespace MvcApplication2.Controllers
             }
             return RedirectToAction("Index");
         }
+
+
+        //
+        // Adicionar anticuerpos
+        public ActionResult adicionarAnticuerpo()
+        {
+            List<HojaVida> listaHV = db.HojaVidas.ToList();
+            foreach (var item in listaHV)
+            {
+                Vacuna vacuna = new Vacuna();
+
+                //Vacuna.hojaVidaId = listaHV.ElementAt(0).hojaVidaId;
+
+                vacuna.nombre_generico = "Anticuerpos contra varicela"; 
+                vacuna.fecha_vacunacion = SqlDateTime.MinValue.Value;
+                vacuna.fecha_prox_vacunacion = SqlDateTime.MinValue.Value;
+
+                db.Vacunas.Add(vacuna);
+                db.SaveChanges();
+
+
+                vacuna.nombre_generico = "Anticuerpos contra hepatitis B "; 
+                vacuna.fecha_vacunacion = SqlDateTime.MinValue.Value;
+                vacuna.fecha_prox_vacunacion = SqlDateTime.MinValue.Value;
+
+                db.Vacunas.Add(vacuna);
+                db.SaveChanges();
+                
+            }
+                 
+           return RedirectToAction("Index");
+        }
+
         //
         // GET: /HojaVida/Edit/5
 
