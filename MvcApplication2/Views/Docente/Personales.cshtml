@@ -164,12 +164,14 @@
 
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">EPS</label>
-                                <div class="col-sm-4">
+                                <div class="col-sm-10">
                                     @Html.TextBoxFor(model => model.HojaVida.entidad_salud, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.entidad_salud)
                                 </div>
+                            </div>
+                            <div class="form-group">
                                 <label class="col-sm-2 control-label">ARL</label>
-                                <div class="col-sm-4">
+                                <div class="col-sm-10">
                                     @Html.DropDownList("HojaVida.ARL", new List<SelectListItem>() { new SelectListItem { Text = "Sin Asignar", Value = "Sin Asignar" }, new SelectListItem { Text = "POSITIVA COMPAÑIA DE SEGUROS S.A.", Value = "POSITIVA COMPAÑIA DE SEGUROS S.A." }, new SelectListItem { Text = "SEGUROS DE VIDA COLPATRIA S.A.", Value = "SEGUROS DE VIDA COLPATRIA S.A." }, new SelectListItem { Text = "COMPAÑÍA DE SEGUROS BOLIVAR S.A.", Value = "COMPAÑÍA DE SEGUROS BOLIVAR S.A." }, new SelectListItem { Text = "ARL SURA", Value = "ARL SURA" }, new SelectListItem { Text = "COMPAÑÍA DE SEGUROS DE VIDA ALFA S.A.", Value = "COMPAÑÍA DE SEGUROS DE VIDA ALFA S.A." }, new SelectListItem { Text = "LIBERTY SEGUROS DE VIDA S.A.", Value = "LIBERTY SEGUROS DE VIDA S.A." }, new SelectListItem { Text = "COMPAÑIA DE SEGUROS DE VIDA COLMENA S.A.", Value = "COMPAÑIA DE SEGUROS DE VIDA COLMENA S.A." }, new SelectListItem { Text = "LA EQUIDAD SEGUROS DE VIDA", Value = "LA EQUIDAD SEGUROS DE VIDA" }, new SelectListItem { Text = "MAPFRE COLOMBIA VIDA SEGUROS S.A.", Value = "MAPFRE COLOMBIA VIDA SEGUROS S.A." }, new SelectListItem { Text = "SEGUROS DE VIDA AURORA S.A.", Value = "SEGUROS DE VIDA AURORA S.A." }, new SelectListItem { Text = "OTRA", Value = "OTRA" } }, new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.ARL)
                                 </div>

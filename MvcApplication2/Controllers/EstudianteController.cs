@@ -599,19 +599,25 @@ public ActionResult EstadoHV(string num_documento, string programaId, string est
 
             if (estudianteList.Count == 0)
             {
-
+                ViewBag.AlertMessage = "no hay coincidencia";
                return RedirectToAction("../Estudiante/Login/");
             }
             else 
             {
+                ViewBag.AlertMessage = null;
                 Estudiante docente_aux = estudianteList.ElementAt(0);
           
                 return RedirectToAction("../Estudiante/Personales/" + docente_aux.estudianteId);
+
             }
         }
 
+
+        
+
         public ActionResult LoginCC(int id=0)
         {
+            TempData["notice"] = null;
             Estudiante estudiante = db.Estudiantes.Find(id);
             if (estudiante == null)
             {
@@ -628,12 +634,16 @@ public ActionResult EstadoHV(string num_documento, string programaId, string est
             Estudiante estudianteReal = db.Estudiantes.Find(estudiante.estudianteId);
             if(estudiante.clave.Equals(estudianteReal.clave))
             {
+                
+                ViewBag.AlertMessage = null;
                 return RedirectToAction("../Estudiante/CambioContraseña/" + estudianteReal.estudianteId);  
             }
             else
             {
-
-                return RedirectToAction("../Estudiante/LoginCC/" + estudianteReal.estudianteId);
+                
+                ViewBag.AlertMessage = "no hay coincidencia";
+                return View(estudiante);
+               // return RedirectToAction("../Estudiante/LoginCC/" + estudianteReal.estudianteId);
                 
             }
         }

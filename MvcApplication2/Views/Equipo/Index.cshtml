@@ -13,11 +13,12 @@
                     <li>@Html.ActionLink("Inicio", "VistaContraprestacion/", "Curso")</li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            Actividad académica <b class="caret"></b>
+                            Portafolio de servicios<b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Ver listado", "Index/", "Curso")</li>
                             <li>@Html.ActionLink("Crear", "Create/", "Curso")</li>
-                            <li>@Html.ActionLink("Ver Listado", "Index/", "Curso")</li>
+                            
 
                         </ul>
                     </li>
@@ -26,8 +27,9 @@
                             Inducción<b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Ver listado", "Index/", "Induccion")</li>
                             <li>@Html.ActionLink("Crear", "Create/", "Induccion")</li>
-                            <li>@Html.ActionLink("Ver Listado", "Index/", "Induccion")</li>
+                            
 
                         </ul>
                     </li>
@@ -36,8 +38,9 @@
                             Inventario<b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Ver listado", "Index/", "Equipo")</li>
                             <li>@Html.ActionLink("Crear", "Equipo/", "Equipo")</li>
-                            <li>@Html.ActionLink("Ver Listado", "Index/", "Equipo")</li>
+                            
 
                         </ul>
                     </li>
@@ -46,7 +49,7 @@
                             Informes<b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Actividad académica ", "SeleccionRotacionContraPrestacionC/", "IPS_ESE")</li>
+                            <li>@Html.ActionLink("Portafolio de servicios", "SeleccionRotacionContraPrestacionC/", "IPS_ESE")</li>
                             <li>@Html.ActionLink("Inducciones", "SeleccionRotacionContraPrestacionI/", "IPS_ESE")</li>
                             <li>@Html.ActionLink("Inventario", "SeleccionRotacionContraPrestacionE/", "IPS_ESE")</li>
 
@@ -157,8 +160,8 @@
                                 @Html.DisplayFor(modelItem => item.IPS_ESE.nombre)
                             </td>
                             <td class="text-center">
-                                @Html.ActionLink(" ", "Delete", new { id = item.equipoId }, new { @class = "btn btn-sm btn-danger btn-icon-only glyphicon glyphicon-remove" })
-                                @Html.ActionLink(" ", "Edit", new { id = item.equipoId }, new { @class = "btn btn-sm btn-success btn-icon-only glyphicon glyphicon-pencil" })
+                                @Html.ActionLink(" ", "Delete", new { id = item.equipoId }, new { @class = "btn btn-sm btn-danger btn-icon-only glyphicon glyphicon-remove", title = "Eliminar" })
+                                @Html.ActionLink(" ", "Edit", new { id = item.equipoId }, new { @class = "btn btn-sm btn-success btn-icon-only glyphicon glyphicon-pencil", title = "Editar" })
 
 
                             </td>
