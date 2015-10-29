@@ -599,8 +599,8 @@ public ActionResult EstadoHV(string num_documento, string programaId, string est
 
             if (estudianteList.Count == 0)
             {
-                ViewBag.AlertMessage = "no hay coincidencia";
-               return RedirectToAction("../Estudiante/Login/");
+                ViewBag.AlertMessage = "El usuario y la contraseña que has introducido no coinciden.";
+                return View(estudiante);
             }
             else 
             {
@@ -640,8 +640,8 @@ public ActionResult EstadoHV(string num_documento, string programaId, string est
             }
             else
             {
-                
-                ViewBag.AlertMessage = "no hay coincidencia";
+
+                ViewBag.AlertMessage = "La contraseña que has introducido no coincide.";
                 return View(estudiante);
                // return RedirectToAction("../Estudiante/LoginCC/" + estudianteReal.estudianteId);
                 
@@ -711,7 +711,7 @@ public ActionResult EstadoHV(string num_documento, string programaId, string est
             }
 
 
-            ViewBag.AlertMessage = "Las contrasenias deben coincidir";
+            ViewBag.AlertMessage = "Las contrasenias no coinciden";
             return View(estudiante);
           //  return RedirectToAction("../Estudiante/CambioContraseña/" + estudiante.estudianteId);
         }
