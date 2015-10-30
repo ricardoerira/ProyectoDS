@@ -561,6 +561,112 @@ namespace MvcApplication2.Controllers
           
 
         }
+
+
+
+        //--------------SeleccionRotacionContraPrestacionPeriodoCurso  1
+
+        public ActionResult SeleccionRotacionContraPrestacionPeriodoCurso()
+        {
+            List<IPS_ESE> lista = null;
+            if (User.Identity.IsAuthenticated)
+            {
+                if (User.IsInRole("IPS"))
+                {
+                    int res = consultaIPS(User.Identity.Name);
+
+                    var municipios = db.IPS_ESE.Include(h => h.Municipio).Where(r => r.IPS_ESEId == res);
+
+                    lista = municipios.ToList();
+
+
+
+                }
+                else
+                {
+                    var municipios = db.IPS_ESE.Include(h => h.Municipio);
+                    lista = municipios.ToList();
+
+
+                }
+
+
+            }
+            else
+            {
+
+                var municipios = db.IPS_ESE.Include(h => h.Municipio);
+                lista = municipios.ToList();
+
+            }
+            ViewBag.IPS_ESEId = new SelectList(lista, "IPS_ESEId", "nombre");
+
+            return View();
+        }
+
+
+        //---------- //--------------SeleccionRotacionContraPrestacionPeriodoCurso 2
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult SeleccionRotacionContraPrestacionPeriodoCurso(IPS_ESE ipss, FormCollection value)
+        {
+
+            IPS_ESE ips = db.IPS_ESE.Find(ipss.IPS_ESEId);
+            string fecha = ViewBag.fecha;
+
+
+            List<Curso> cursos = new List<Curso>();
+            ReportDocument rptH = new ReportDocument();
+            string strRptPath = System.Web.HttpContext.Current.Server.MapPath("~/ReporteContraPrestacionPeriodoCurso.rpt");
+            rptH.Load(strRptPath);
+
+            int periodoId = Int32.Parse(value["periodoId"]);
+            var date = DateTime.MinValue;
+
+            cursos = db.Cursoes.Where(r => r.IPS_ESEId == ips.IPS_ESEId).Where(r => r.periodoAcademico == periodoId).ToList();
+            
+
+            rptH.Database.Tables[0].SetDataSource(cursos);
+
+
+            rptH.SetParameterValue("ips", ips.nombre);
+            rptH.SetParameterValue("email", ips.correo);
+            rptH.SetParameterValue("representante", ips.representanteDS);
+
+
+
+
+            rptH.SetParameterValue("fecha", "Periodo: " + periodoId + " Año: " );
+
+
+            int total = 0;
+
+            if (cursos.ToList().Count > 0)
+            {
+                total += cursos.Sum(d => d.totalContraprestacion);
+                rptH.SetParameterValue("total", total);
+
+                Stream stream = rptH.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
+
+                return File(stream, "application/pdf");
+            }
+            else
+            {
+                ViewBag.AlertMessage = "No se encontraron resultados";
+
+
+                var municipios = db.IPS_ESE.Include(h => h.Municipio);
+                List<IPS_ESE> lista = municipios.ToList();
+                ViewBag.IPS_ESEId = new SelectList(lista, "IPS_ESEId", "nombre");
+
+                return View();
+            }
+
+
+
+
+        }
        public int consultaIPS(string nombre)
        
        {

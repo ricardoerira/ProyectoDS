@@ -379,10 +379,12 @@ namespace MvcApplication2.Controllers
          if (docenteList.Count == 0)
             {
 
-               return RedirectToAction("../Docente/Login/");
+                ViewBag.AlertMessage = "El usuario y la contraseña que has introducido no coinciden.";
+                return View(docente);
             }
             else
             {
+                ViewBag.AlertMessage = null;
                 Docente docente_aux = docenteList.ElementAt(0);
           
                 return RedirectToAction("../Docente/Personales/" + docente_aux.docenteId);
@@ -458,12 +460,15 @@ namespace MvcApplication2.Controllers
             Docente docenteReal = db.Docentes.Find(docente.docenteId);
             if (docente.clave.Equals(docenteReal.clave))
             {
+                ViewBag.AlertMessage = null;
                 return RedirectToAction("../Docente/CambioContraseña/" + docenteReal.docenteId);
             }
             else
             {
 
-                return RedirectToAction("../Docente/LoginCC/" + docenteReal.docenteId);
+                ViewBag.AlertMessage = "La contraseña que has introducido no coincide.";
+                return View(docente);
+                //return RedirectToAction("../Docente/LoginCC/" + docenteReal.docenteId);
 
             }
         }
