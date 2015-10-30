@@ -56,8 +56,8 @@
                             </li>
                             <li>@Html.ActionLink("Inducciones", "SeleccionRotacionContraPrestacionI/", "IPS_ESE")</li>
                             <li>@Html.ActionLink("Inventario", "SeleccionRotacionContraPrestacionE/", "IPS_ESE")</li>
-
-
+                            
+                            
 
                         </ul>
                     </li>
@@ -87,7 +87,7 @@
                 <fieldset>
 
                     <fosrm action="r" method="post" accept-charset="utf-8" class="form" role="form">
-                        <legend>Informe mes y año - Portafolio de servicios</legend>
+                        <legend>Informe período académico - Portafolio de servicios</legend>
 
 
                         <h4>Seleccione los campos:</h4>
@@ -106,40 +106,34 @@
                         </div>
 
                         <br />
-                        <label>Seleccione mes y año:</label>
+                        <label>Seleccione período:</label>
                         <div class="row">
-                            <div class="col-xs-4 col-md-4">
-                                <select name="mesId" id="mesId" class="form-control input-lg">
-                                    <option value="01">Enero</option>
-                                    <option value="02">Febrero</option>
-                                    <option value="03">Marzo</option>
-                                    <option value="04">Abril</option>
-                                    <option value="05">Mayo</option>
-                                    <option value="06">Junio</option>
-                                    <option value="07">Julio</option>
-                                    <option value="08">Agosto</option>
-                                    <option value="09">Septiembre</option>
-                                    <option value="10">Octubre</option>
-                                    <option value="11">Noviembre</option>
-                                    <option value="12">Diciembre</option>
-                                    <option value="13">Informe Anual</option>
+                            <div class="col-xs-6 col-md-6 col-lg-offset-2">
+                                <select name="periodoId" id="periodoId" class="form-control input-lg">
+                                    <option value="20151">20151</option>
+                                    <option value="20152">20152</option>
+                                    <option value="20161">20161</option>
+                                    <option value="20162">20162</option>
+                                    <option value="20171">20171</option>
+                                    <option value="20172">20172</option>
+
                                 </select>
                             </div>
 
-                            <div class="col-xs-4 col-md-4">
+                            @*<div class="col-xs-4 col-md-4">
                                 <select name="añoId" class="form-control input-lg">
-                                    <option value="2015">2015</option>
-                                    <option value="2016">2016</option>
-                                    <option value="2017">2017</option>
+                                    <option value="2015">20151</option>
+                                    <option value="2016">20152</option>
                                     
-                                    
+
+
                                 </select>
-                            </div>
+                            </div>*@
                             <br />
                             <br>
                         </div>
 
-                        <span class="help-block">A través de este formulario podrá visualizar el informe de portafolio de servicios. Puede elegir por mes y año o simplemente por año.</span>
+                        <span class="help-block">A través de este formulario podrá visualizar el informe de portafolio de servicios. <p>Puede elegir por año y período académico .</p></span>
                         <button class="btn btn-lg btn-primary btn-block signup-btn" type="submit">
                             Ver
                         </button>
@@ -158,24 +152,3 @@
     </div>
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

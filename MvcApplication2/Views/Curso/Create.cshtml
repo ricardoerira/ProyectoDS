@@ -50,18 +50,24 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             Informes<b class="caret"></b>
                         </a>
-                        <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Portafolio de servicios", "SeleccionRotacionContraPrestacionC/", "IPS_ESE")</li>
+                        <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                            <li class="dropdown-submenu">
+                                <a tabindex="-1" href="#">Portafolio de servicios </a>
+                                <ul class="dropdown-menu">
+                                    <li><a tabindex="-1" @Html.ActionLink("Período académico", "SeleccionRotacionContraPrestacionPeriodoCurso/", "IPS_ESE")</a></li>
+                                    <li><a tabindex="-1" @Html.ActionLink("Mes y año", "SeleccionRotacionContraPrestacionC/", "IPS_ESE")</a></li>
+
+                                </ul>
+                            </li>
                             <li>@Html.ActionLink("Inducciones", "SeleccionRotacionContraPrestacionI/", "IPS_ESE")</li>
                             <li>@Html.ActionLink("Inventario", "SeleccionRotacionContraPrestacionE/", "IPS_ESE")</li>
-
 
 
 
                         </ul>
                     </li>
 
-                </ul>
+                
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
