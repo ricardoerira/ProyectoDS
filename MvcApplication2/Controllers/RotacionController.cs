@@ -24,7 +24,7 @@ namespace MvcApplication2.Controllers
 
         public ActionResult Index()
         {
-         //    importaGruposMateria();
+             importaGruposMateria();
             //importaEstudiantesRotacion();
             var rotacions = db.Rotacions.Include(r => r.ActividadAcademica).Include(r => r.IPS_ESE);
             return View(rotacions.ToList());
@@ -115,7 +115,7 @@ namespace MvcApplication2.Controllers
                         Rotacion rotacion = new Rotacion();
                         rotacion.year_academico = item2.ANO;
                         rotacion.periodo_academico = item2.PERIODO;
-                        if (rotacion.year_academico > 2014 && rotacion.periodo_academico < 2)
+                        if (rotacion.year_academico >= 2015 && rotacion.periodo_academico == 2)
                         {
                             rotacion.grupo = item2.GRUPO;
 

@@ -1,6 +1,4 @@
-﻿
-
-@model MvcApplication2.Models.Vacuna
+﻿@model MvcApplication2.Models.Vacuna
 
 
 
@@ -53,17 +51,17 @@ DOS COLUMNAS..........................
 -->
 
 <div class="customd">
-    
+
     <div class="container-fluid">
         <section class="container ">
-            
+
             <div class="container-page  ">
                 <div class="col-sm-offset-0">
                     <!--PRIMER COLUMNA COLUMNA............<div class="panel panel-default">"..............-->
 
 
                     <div class="container">
-                       
+
                         <div class="row">
 
                             <div class="col-sm-1 col-md-3">
@@ -663,28 +661,63 @@ DOS COLUMNAS..........................
                                                 </div>
 
                                             </div>
+                                          
+                                                <div class="form-group">
 
-                                            <div class="form-group">
-                                                <div class="col-sm-offset-2 col-sm-10">
-                                                    <div class="pull-right">
 
-                                                        @Html.ActionLink("Regresar ", "../Estudiante/CarnetVacunacionDS", new { id = @Model.HojaVida.Estudiante.ElementAt(0).estudianteId }, new { @class = "btn btn-default" })
-                                                        <button type="submit" class="btn btn-primary">Guardar</button>
+                                                    <table>
+                                                        <tr>
+@if (Model.nombre_generico.Equals("Anticuerpos contra varicela") )
+                                            {
+                                                            <td>
+                                                                <label for="InputFile">Anticuerpos contra varicela (jpg,png)</label>
+                                                                <!--<input type="file" id=""name="UploadedFile" />-->
+                                                                <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
+                                                                <input type="hidden" value=@Model.vacunaId name="idEstudiante" />
+                                                            </td>
+
+                                                            }
+                                                        </tr>
+                                                        @if ( Model.nombre_generico.Equals("Anticuerpos contra hepatitis B "))
+                                            {
+                                                            <tr>
+
+                                                                <td>
+                                                                    <label for="InputFile">Anticuerpos contra hepatitis B (jpg,png)</label>
+                                                                    <!--<input type="file" id=""name="UploadedFile" />-->
+                                                                    <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
+                                                                    <input type="hidden" value=@Model.vacunaId name="idEstudiante" />
+                                                                </td>
+
+                                                            </tr>
+                                            }
+                                             
+                                                            <tr></tr>
+                                                        </table>
+
                                                     </div>
-                                                </div>
+
+                                                    <div class="form-group">
+                                                            <div class="col-sm-offset-2 col-sm-10">
+                                                                <div class="pull-right">
+
+                                                                    @Html.ActionLink("Regresar ", "../Estudiante/CarnetVacunacionDS", new { id = @Model.HojaVida.Estudiante.ElementAt(0).estudianteId }, new { @class = "btn btn-default" })
+                                                                    <button type="submit" class="btn btn-primary">Guardar</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+
+
+
+
                                             </div>
-
-
+                            }
                                         </div>
 
-
-
-
-                                </div>
-                            }
-                        </div>
-
-                    </div>
+                                    </div>
 
                     <!-- /.row hasta aqui primer columna-->
                     <!-- /.row SEGUNDA COLUMNA  ACCORDION-->
@@ -693,10 +726,10 @@ DOS COLUMNAS..........................
 
 
 
+                                </div>
+                            </div>
+                        </section>
+                    </div>
                 </div>
-            </div>
-        </section>
-    </div>
-</div>
 
 

@@ -31,9 +31,7 @@ namespace MvcApplication2.Models
 
         public string laboratorio_vacunacion { get; set; }
         public string observaciones { get; set; }
-        public string titulacionVaricela { get; set; }
-        public string titulacionHepatitisB { get; set; }
-
+ 
         public int hojaVidaId { get; set; }
 
         

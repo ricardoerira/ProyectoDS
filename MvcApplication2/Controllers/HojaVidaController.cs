@@ -10,6 +10,7 @@ using System.Data.SqlTypes;
 using System.Net;
 using System.IO;
 using System.Text;
+using System.Data.Entity.Validation;
 
 namespace MvcApplication2.Controllers
 {
@@ -21,6 +22,7 @@ namespace MvcApplication2.Controllers
         // GET: /HojaVida/
         public ActionResult vistaHV()
         {
+            
             return View();
 
         }
@@ -983,33 +985,53 @@ namespace MvcApplication2.Controllers
 
         //
         // Adicionar anticuerpos
-        public ActionResult adicionarAnticuerpo()
+        public void AdicionarAnticuerpo()
         {
             List<HojaVida> listaHV = db.HojaVidas.ToList();
             foreach (var item in listaHV)
             {
                 Vacuna vacuna = new Vacuna();
 
-                //Vacuna.hojaVidaId = listaHV.ElementAt(0).hojaVidaId;
+                vacuna.hojaVidaId = item.hojaVidaId;
 
                 vacuna.nombre_generico = "Anticuerpos contra varicela"; 
                 vacuna.fecha_vacunacion = SqlDateTime.MinValue.Value;
                 vacuna.fecha_prox_vacunacion = SqlDateTime.MinValue.Value;
-
+                vacuna.laboratorio_vacunacion = "";
+                vacuna.laboratorioOtro = "";
+                vacuna.lote = "0";
+              try
+{
                 db.Vacunas.Add(vacuna);
                 db.SaveChanges();
 
-
+}
+              catch (DbEntityValidationException e)
+              {
+                  foreach (var eve in e.EntityValidationErrors)
+                  {
+                      Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                          eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                      foreach (var ve in eve.ValidationErrors)
+                      {
+                          Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                              ve.PropertyName, ve.ErrorMessage);
+                      }
+                  }
+                  throw;
+              }
                 vacuna.nombre_generico = "Anticuerpos contra hepatitis B "; 
                 vacuna.fecha_vacunacion = SqlDateTime.MinValue.Value;
                 vacuna.fecha_prox_vacunacion = SqlDateTime.MinValue.Value;
-
+                vacuna.laboratorio_vacunacion = "";
+                vacuna.laboratorioOtro = "";
+                vacuna.lote = "0";
                 db.Vacunas.Add(vacuna);
                 db.SaveChanges();
                 
             }
                  
-           return RedirectToAction("Index");
+          
         }
 
         //

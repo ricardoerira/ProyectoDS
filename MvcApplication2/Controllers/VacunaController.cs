@@ -284,15 +284,48 @@ namespace MvcApplication2.Controllers
 
                 db.Entry(vacuna).State = EntityState.Modified;
                 db.SaveChanges();
-
+                cargaDocumento(vacuna);
                 return RedirectToAction("EsquemaVacunacion/" + id);
             }
             vacuna = db.Vacunas.Find(vacuna.vacunaId);
             ViewBag.num_documento = vacuna.HojaVida.Estudiante.ElementAt(0).num_documento;
-
+         
             return View(vacuna);
             //ME DEBE RETORNAR TAMBIEN EL ESTUDIANTE PARA QUE SE PUEDA VISUALIZAR EN LA VISTA
         }
+
+        public ActionResult cargaDocumento(Vacuna vacuna)
+        {
+            if (Request != null)
+            {
+                HttpPostedFileBase file = Request.Files["InputFile"];
+
+                if ((file != null) && (file.ContentLength > 0) && !string.IsNullOrEmpty(file.FileName))
+                {
+                    string fileName = file.FileName;
+                    string fileContentType = file.ContentType;
+                    byte[] fileBytes = new byte[file.ContentLength];
+                    file.InputStream.Read(fileBytes, 0, Convert.ToInt32(file.ContentLength));
+                    string extension = System.IO.Path.GetExtension(Request.Files["InputFile"].FileName);
+                    string path1="";
+                    if (vacuna.nombre_generico.Equals("Anticuerpos contra hepatitis B "))
+                     path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), "anticuerpoHepatitis_" + vacuna.hojaVidaId, ".jpg");
+                    else
+
+                        path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), "anticuerpoVaricela_" + vacuna.hojaVidaId, ".jpg");
+                  
+                    if (System.IO.File.Exists(path1))
+                        System.IO.File.Delete(path1);
+                     Request.Files["InputFile"].SaveAs(path1);
+                }
+            }
+            return View(vacuna);
+        }
+                        
+                     
+       
+                
+
         public ActionResult EsquemaVacunacionDocente(int id = 0)
         {
             string vacuna = Request.Params["vacuna"];
