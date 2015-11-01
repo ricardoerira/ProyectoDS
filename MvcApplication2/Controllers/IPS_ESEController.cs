@@ -31,6 +31,7 @@ namespace MvcApplication2.Controllers
         [AllowAnonymous]
         public ActionResult RegistroEPS()
         {
+            
             var municipios = db.Municipios.Include(h => h.Departamento);
             List<Municipio> lista = municipios.ToList();
 
@@ -84,7 +85,7 @@ namespace MvcApplication2.Controllers
                             }
                         }
                     }
-                    return RedirectToAction("VistaIPS_EPS");
+                    return RedirectToAction("RegistroEPS");
 
                 }
                 else
@@ -99,6 +100,145 @@ namespace MvcApplication2.Controllers
             return View(ips_ese);
         }
 
+
+
+        public ActionResult cargaDocumentos(IPS_ESE ips_ese)
+        {
+            string[] documentos = { "resolucion", "cedularl", "actap", "rut", "habilitacion" };
+
+
+            string path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[0] + ips_ese.IPS_ESEId, ".jpg");
+
+            if (System.IO.File.Exists(path1))
+            {
+
+                ViewBag.imagen1 = "/Uploads/" + documentos[0] + ips_ese.IPS_ESEId + ".jpg";
+
+            }
+            else
+            {
+                ViewBag.imagen1 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+            }
+
+            path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[1] + ips_ese.IPS_ESEId, ".jpg");
+
+            if (System.IO.File.Exists(path1))
+            {
+
+                ViewBag.imagen2 = "/Uploads/" + documentos[1] + ips_ese.IPS_ESEId + ".jpg";
+
+            }
+            else
+            {
+                ViewBag.imagen2 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+            }
+
+
+            path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[2] + ips_ese.IPS_ESEId, ".jpg");
+
+            if (System.IO.File.Exists(path1))
+            {
+
+                ViewBag.imagen3 = "/Uploads/" + documentos[2] + ips_ese.IPS_ESEId + ".jpg";
+
+            }
+            else
+            {
+                ViewBag.imagen3 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+            }
+
+
+
+            path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[3] + ips_ese.IPS_ESEId, ".jpg");
+
+            if (System.IO.File.Exists(path1))
+            {
+
+                ViewBag.imagen4 = "/Uploads/" + documentos[3] + ips_ese.IPS_ESEId + ".jpg";
+
+            }
+            else
+            {
+                ViewBag.imagen4 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+            }
+
+
+
+
+            path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[4] + ips_ese.IPS_ESEId, ".jpg");
+
+            if (System.IO.File.Exists(path1))
+            {
+
+                ViewBag.imagen5 = "/Uploads/" + documentos[4] + ips_ese.IPS_ESEId + ".jpg";
+
+            }
+            else
+            {
+                ViewBag.imagen5 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+            }
+
+
+
+            //path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[5] + docente.num_documento, ".jpg");
+
+            //if (System.IO.File.Exists(path1))
+            //{
+
+            //    ViewBag.imagen6 = "/Uploads/" + documentos[5] + docente.num_documento + ".jpg";
+
+            //}
+            //else
+            //{
+            //    ViewBag.imagen6 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+            //}
+
+
+
+            //path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[6] + docente.num_documento, ".jpg");
+
+            //if (System.IO.File.Exists(path1))
+            //{
+
+            //    ViewBag.imagen7 = "/Uploads/" + documentos[6] + docente.num_documento + ".jpg";
+
+            //}
+            //else
+            //{
+            //    ViewBag.imagen7 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+            //}
+
+
+
+            //path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[7] + docente.num_documento, ".jpg");
+
+            //if (System.IO.File.Exists(path1))
+            //{
+
+            //    ViewBag.imagen8 = "/Uploads/" + documentos[7] + docente.num_documento + ".jpg";
+
+            //}
+            //else
+            //{
+            //    ViewBag.imagen8 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+            //}
+
+
+
+
+
+            return View(ips_ese);
+
+
+        }
 
 
        
@@ -920,6 +1060,40 @@ namespace MvcApplication2.Controllers
             }
             ViewBag.municipioId = new SelectList(db.Municipios, "municipioId", "nombre", ips_ese.municipioId);
             return View(ips_ese);
+        }
+
+        
+         //
+        // GET: /IPS_ESE/Edit/5---------------------
+
+        public ActionResult EditEPS(int id = 0)
+        {
+            IPS_ESE ips_ese = db.IPS_ESE.Find(id);
+            if (ips_ese == null)
+            {
+                return HttpNotFound();
+            }
+            cargaDocumentos(ips_ese);
+            ViewBag.municipioId = new SelectList(db.Municipios, "municipioId", "nombre", ips_ese.municipioId);
+            return View(ips_ese);
+        }
+
+        //
+        // POST: /IPS_ESE/Edit/5
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditEPS(IPS_ESE ips_ese)
+        {
+            if (ips_ese!=null)
+            {
+                db.Entry(ips_ese).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("../Rotacion/VistaODS");
+                //return RedirectToAction("RegistroEPS");
+            }
+            ViewBag.municipioId = new SelectList(db.Municipios, "municipioId", "nombre", ips_ese.municipioId);
+            return RedirectToAction("./Rotacion/VistaODS");
         }
 
         //
