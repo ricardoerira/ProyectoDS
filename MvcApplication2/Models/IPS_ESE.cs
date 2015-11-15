@@ -26,7 +26,8 @@ namespace MvcApplication2.Models
         public string direccion { get; set; }
         [Required]
         public string nombre { get; set; }
-        [Required]             
+        [Required]
+        [RegularExpression("([1-9][0-9]*)", ErrorMessage = "Campo númerico")]            
         public string telefono { get; set; }
         public string fax { get; set; }
         [Required]
@@ -42,9 +43,9 @@ namespace MvcApplication2.Models
         public string cargo_representanteDS { get; set; }
        
         [Required]
-        public string representante_legal { get; set; }
+        public string representante_legal { get; set; }//Para carta de presentacion
         [Required]
-        public string cargo { get; set; }
+        public string cargo { get; set; }//cargo para carta de presentacion
 
         [Required]
         public string user { get; set; }
@@ -56,7 +57,7 @@ namespace MvcApplication2.Models
         public string passC { get; set; }
         
        
-        [Required]
+        
         [Range(3000000000, 3999999999)]
         public long num_celular { get; set; }
         public string objeto_convenio { get; set; }

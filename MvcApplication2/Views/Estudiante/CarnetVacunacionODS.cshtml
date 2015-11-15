@@ -19,10 +19,11 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Inicio", "VistaODS", "Rotacion")</li>
                     <li>@Html.ActionLink("Personales", "PersonalesDS/" + Model.estudianteId, "Estudiante")</li>
+                    <li>@Html.ActionLink("Documentos", "SoportesCompletosDS/" + Model.estudianteId, "Estudiante")</li>
                     <li>@Html.ActionLink("Académicos", "AcademicosDS/" + Model.estudianteId, "Estudiante")</li>
                     <li>@Html.ActionLink("Vacunación", "CarnetVacunacionODS/" + Model.estudianteId, "Estudiante")</li>
                     <li>@Html.ActionLink("Salud", "SaludDS/" + Model.estudianteId, "Estudiante")</li>
-                    <li>@Html.ActionLink("Reporte", "ReporteEstudianteA/" + Model.estudianteId, "Estudiante")</li>
+                    <li>@Html.ActionLink("Reporte", "ReporteEstudianteA/" + Model.estudianteId, "Estudiante", new { target = "_blank" })</li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->

@@ -85,6 +85,7 @@ namespace MvcApplication2.Controllers
                             }
                         }
                     }
+                    
                     return RedirectToAction("RegistroEPS");
 
                 }
@@ -325,7 +326,7 @@ namespace MvcApplication2.Controllers
 
             rptH.SetParameterValue("presentacion", "A continuación le relaciono las rotaciones de los estudiantes del Programa de "+pr.nombre+" Departamento "+ds.nombre+" que realizaran su rotación en su institución y los profesores con su horario.");
             rptH.SetParameterValue("fecha", "");
-            rptH.SetParameterValue("dr", ips.representante_legal);
+            rptH.SetParameterValue("dr", ips.representante);
             rptH.SetParameterValue("cargo",ips.cargo); 
             rptH.SetParameterValue("nombreIPS", ips.nombre);
             
@@ -548,7 +549,7 @@ namespace MvcApplication2.Controllers
 
                rptH.SetParameterValue("ips", ips.nombre);
                rptH.SetParameterValue("email", ips.correo);
-               rptH.SetParameterValue("representante", ips.representanteDS);
+               rptH.SetParameterValue("representante", ips.representante);
 
                if(mesId==13)
                {
@@ -663,7 +664,7 @@ namespace MvcApplication2.Controllers
 
             rptH.SetParameterValue("ips", ips.nombre);
             rptH.SetParameterValue("fecha", "");
-            rptH.SetParameterValue("representante", ips.representanteDS);
+            rptH.SetParameterValue("representante", ips.representante);
             rptH.SetParameterValue("correo", ips.correo);
 
             
@@ -772,7 +773,7 @@ namespace MvcApplication2.Controllers
 
             rptH.SetParameterValue("ips", ips.nombre);
             rptH.SetParameterValue("email", ips.correo);
-            rptH.SetParameterValue("representante", ips.representanteDS);
+            rptH.SetParameterValue("representante", ips.representante);
 
 
 
@@ -925,7 +926,7 @@ namespace MvcApplication2.Controllers
             rptH.SetParameterValue("ips", ips.nombre);
             rptH.SetParameterValue("total", total+"");
             rptH.SetParameterValue("correo",ips.correo);
-            rptH.SetParameterValue("recibido",ips.representanteDS);
+            rptH.SetParameterValue("recibido",ips.representante);
 
 
 
@@ -1059,7 +1060,10 @@ namespace MvcApplication2.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.municipioId = new SelectList(db.Municipios, "municipioId", "nombre", ips_ese.municipioId);
+            
             return View(ips_ese);
+
+            
         }
 
         
@@ -1085,15 +1089,46 @@ namespace MvcApplication2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult EditEPS(IPS_ESE ips_ese)
         {
-            if (ips_ese!=null)
+            if (ModelState.IsValid)
             {
                 db.Entry(ips_ese).State = EntityState.Modified;
+
+
+                int numFiles = Request.Files.Count;
+                if (Request != null)
+                {
+
+
+                    int uploadedCount = 0;
+                    string[] documentos = { "resolucion", "cedularl", "actap", "rut", "habilitacion" };
+                    for (int i = 0; i < numFiles; i++)
+                    {
+                        HttpPostedFileBase file = Request.Files[i];
+                        if (file.ContentLength > 0)
+                        {
+                            string fileName = file.FileName;
+                            string fileContentType = file.ContentType;
+                            byte[] fileBytes = new byte[file.ContentLength];
+                            file.InputStream.Read(fileBytes, 0, Convert.ToInt32(file.ContentLength));
+                            string path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[i] + ips_ese.IPS_ESEId, ".jpg");
+                            if (System.IO.File.Exists(path1))
+                                System.IO.File.Delete(path1);
+
+                            file.SaveAs(path1);
+                            uploadedCount++;
+                        }
+                    }
+                }
+
+
                 db.SaveChanges();
-                return RedirectToAction("../Rotacion/VistaODS");
+                //return RedirectToAction("../Rotacion/VistaODS");
+                return RedirectToAction("EditEPS/" + ips_ese.IPS_ESEId);
                 //return RedirectToAction("RegistroEPS");
             }
             ViewBag.municipioId = new SelectList(db.Municipios, "municipioId", "nombre", ips_ese.municipioId);
-            return RedirectToAction("./Rotacion/VistaODS");
+            return RedirectToAction("EditEPS/" + ips_ese.IPS_ESEId);
+            //return RedirectToAction("./Rotacion/VistaODS");
         }
 
         //

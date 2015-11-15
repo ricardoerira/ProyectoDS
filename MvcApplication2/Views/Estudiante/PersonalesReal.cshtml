@@ -1,0 +1,432 @@
+﻿@model MvcApplication2.Models.Estudiante
+<script>
+    $(document).ready(function () {
+        $("#submitButton").on("click", function () {
+            alert('Your Message');
+        });
+
+    });
+
+</script>
+
+
+
+
+<div class="row">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>                    
+                    <li>@Html.ActionLink("Personales", "Personales/" + Model.estudianteId, "Estudiante")</li>
+                    <li>@Html.ActionLink("Académicos", "Academicos/" + Model.estudianteId, "Estudiante")</li>
+                    <li>@Html.ActionLink("Vacunación", "CarnetVacunacion/" + Model.estudianteId, "Estudiante")</li>
+                    <li>@Html.ActionLink("Salud", "Salud/" + Model.estudianteId, "Estudiante")</li>
+                    <li>@Html.ActionLink("Reporte", "ReporteEstudianteA/" + Model.estudianteId, "Estudiante")</li>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Cuenta</b> <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Cambiar contraseña", "LoginCC/" + Model.estudianteId, "Estudiante")</li>
+                            
+
+                        </ul>
+                    </li>
+
+</ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</div>
+
+@using (Html.BeginForm("Personales", "Estudiante", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+        @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+<div class="container">
+    <div class="row">
+        <fieldset>
+    <legend>Información personal estudiante</legend>
+
+    <!-- /.navbar-collapse aca va leyend -->
+
+
+    <div class="col-sm-3">
+        <img src="@Url.Content(Model.HojaVida.imagen_DI)" alt="..." class="img-rounded" height="200px" width="150px"><br />
+
+    </div>
+
+    <div class="col-sm-8">
+
+        <div class="row">
+
+            <!-- Text input-->
+
+            <fosrm class="form-horizontal" role="form">
+
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Tipo documento</label>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.tipo_documento, new { @class = "form-control", @readonly = "readonly" })
+                        @Html.ValidationMessageFor(model => model.tipo_documento)
+
+                    </div>
+
+                    <label class="col-sm-2 control-label">Número</label>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.num_documento, new { @class = "form-control", @readonly = "readonly" })
+                        @Html.ValidationMessageFor(model => model.HojaVida.primer_nombre)
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Código </label>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.codigo, new { @class = "form-control", @readonly = "readonly" })
+                        @Html.ValidationMessageFor(model => model.HojaVida.primer_apellido)
+                    </div>
+
+                    <label class="col-sm-2 control-label">Nombre</label>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.HojaVida.primer_nombre, new { @class = "form-control", @readonly = "readonly" })
+                        @Html.ValidationMessageFor(model => model.HojaVida.primer_nombre)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Primer apellido</label>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.HojaVida.primer_apellido, new { @class = "form-control", @readonly = "readonly" })
+                        @Html.ValidationMessageFor(model => model.HojaVida.primer_apellido)
+                    </div>
+
+                    <label class="col-sm-2 control-label">Segundo apellido</label>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.HojaVida.segundo_apellido, new { @class = "form-control", @readonly = "readonly" })
+                        @Html.ValidationMessageFor(model => model.HojaVida.segundo_apellido)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Correo Institucional</label>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.HojaVida.correo, new { @class = "form-control", @readonly = "readonly" })
+                        @Html.ValidationMessageFor(model => model.HojaVida.correo)
+                    </div>
+
+                    <label class="col-sm-2 control-label">Genero</label>
+                    <div class="col-sm-4">
+                        @Html.DropDownList("HojaVida.genero", new List<SelectListItem>() { new SelectListItem { Text = "M", Value = "M" }, new SelectListItem { Text = "F", Value = "F" } }, new { @class = "form-control" })
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Fecha de nacimiento</label>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.HojaVida.fecha_nacimiento, new { @class = "form-control", @readonly = "readonly" })
+                        @Html.ValidationMessageFor(model => model.HojaVida.fecha_nacimiento)
+                    </div>
+                    <label class="col-sm-2 control-label">Edad</label>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.barrio_procedencia, new { @class = "form-control", @readonly = "readonly" })
+                        @Html.ValidationMessageFor(model => model.barrio_procedencia)
+
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Lugar de nacimiento</label>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.HojaVida.municipio_procedencia, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.HojaVida.municipio_procedencia)
+                        <p class="help-block">Por favor agregue Departamento y Municipio</p>
+                    </div>
+                    <label class="col-sm-2 control-label">Dirección procedencia</label>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.direccion_procedencia, new { @class = "form-control", @readonly = "readonly" })
+                        @Html.ValidationMessageFor(model => model.direccion_procedencia)
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Dirección Manizales</label>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.HojaVida.direccion_manizales, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.HojaVida.direccion_manizales)
+                    </div>
+                    <label class="col-sm-2 control-label">RH</label>
+                    <div class="col-sm-4">
+                        @Html.DropDownList("HojaVida.hemoclasificacion", new List<SelectListItem>() { new SelectListItem { Text = "Sin Asignar", Value = "Sin Asignar" }, new SelectListItem { Text = "AB+", Value = "AB+" }, new SelectListItem { Text = "AB-", Value = "AB-" }, new SelectListItem { Text = "A+", Value = "A+" }, new SelectListItem { Text = "A-", Value = "A-" }, new SelectListItem { Text = "B+", Value = "B+" }, new SelectListItem { Text = "B-", Value = "B-" }, new SelectListItem { Text = "O+", Value = "O+" }, new SelectListItem { Text = "O-", Value = "O-" } }, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.HojaVida.hemoclasificacion)
+                    </div>
+
+                </div>
+
+
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Teléfono procedencia</label>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.HojaVida.num_telefono, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.HojaVida.num_telefono)
+                    </div>
+                    <label class="col-sm-2 control-label">Celular</label>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.HojaVida.num_celular, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.HojaVida.num_celular)
+                    </div>
+                </div>
+
+
+
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Estado civil</label>
+                    <div class="col-sm-4">
+                        @Html.DropDownList("HojaVida.estado_civil", new List<SelectListItem>() { new SelectListItem { Text = "Sin Asignar", Value = "Sin Asignar" }, new SelectListItem { Text = "Soltero/a", Value = "Soltero/a" }, new SelectListItem { Text = "Casado/a", Value = "Casado/a" }, new SelectListItem { Text = "Divorciado/a", Value = "Divorciado/a" }, new SelectListItem { Text = "Viudo/a", Value = "Viudo/a" }, new SelectListItem { Text = "Unión Libre", Value = "Unión Libre" } }, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.HojaVida.estado_civil)
+
+
+
+                    </div>
+                    <label class="col-sm-2 control-label">n.º Hijos</label>
+                    <div class="col-sm-4">
+                        @Html.DropDownList("HojaVida.hijos", new List<SelectListItem>() { new SelectListItem { Text = "0", Value = "0" }, new SelectListItem { Text = "1", Value = "1" }, new SelectListItem { Text = "2", Value = "2" }, new SelectListItem { Text = "3", Value = "3" }, new SelectListItem { Text = "4", Value = "4" } }, new { @class = "form-control" })
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="form-group">
+
+
+
+
+                    <div class="col-sm-4">
+
+                        @Html.HiddenFor(model => model.estudianteId)
+                        @Html.HiddenFor(model => model.hojaVidaId)
+                        @Html.HiddenFor(model => model.rotacionId)
+                        @Html.HiddenFor(model => model.programaId)
+                        @Html.HiddenFor(model => model.clave)
+                        @Html.HiddenFor(model => model.modalidad)
+
+
+                        @Html.HiddenFor(model => model.semestre)
+                        @Html.HiddenFor(model => model.estado_academico)
+
+
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    <div class="col-sm-4">
+
+
+                    </div>
+                </div>
+
+
+
+</div>
+
+    </div><!-- /.row --> <!-- /. <div class="col-sm-8"info familia>row -->
+
+    <legend>Datos de contacto en caso de emergencia:</legend>
+
+    <div class="col-sm-3">
+
+    </div>
+
+
+    <div class="col-sm-8">
+        <div class="row">
+            <fdorm class="form-horizontal" role="form">
+
+
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Nombre</label>
+
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.HojaVida.Familia.primer_nombre_acudiente, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.HojaVida.Familia.primer_nombre_acudiente)
+                    </div>
+
+                    <label class="col-sm-2 control-label">Primer apellido</label>
+
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.HojaVida.Familia.primer_apellido_acudiente, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.HojaVida.Familia.primer_apellido_acudiente)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    
+                    <label class="col-sm-2 control-label">Segundo apellido</label>
+
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.HojaVida.Familia.segundo_apellido_acudiente, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.HojaVida.Familia.segundo_apellido_acudiente)
+                    </div>
+                    <label class="col-sm-2 control-label">Teléfono</label>
+
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.HojaVida.Familia.telefono_acudiente, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.HojaVida.Familia.telefono_acudiente)
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+                  
+                    <label class="col-sm-2 control-label">Dirección</label>
+
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.HojaVida.Familia.direccion_acudiente, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.HojaVida.Familia.direccion_acudiente)
+                    </div>
+
+                    <label class="col-sm-2 control-label">Celular </label>
+
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.HojaVida.Familia.celular_acudiente, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.HojaVida.Familia.celular_acudiente)
+                    </div>
+
+                </div>
+            </fdorm>
+
+        </div><!-- /. <div class="row""info familia>row -->
+
+    </div><!-- /. <div class="col-sm-8"info familia>row -->
+
+
+
+    <legend>Cargar documento</legend>
+
+    <div class="col-sm-3">
+
+    </div>
+
+
+    <div class="col-sm-8">
+        <div class="row">
+
+
+
+
+
+
+
+
+
+
+            <div class="form-group">
+
+
+                <table>
+                    <tr>
+                        <td>
+                            <div class="col-sm-4">
+                                <a href='@Url.Action("Soporte", "Estudiante", new { id = @Model.estudianteId, imagen = @ViewBag.imagen})'>
+                                    <img src=@ViewBag.imagen class="img-rounded" height="120" width="200" /> 
+                                </a>
+                                
+
+                            </div>
+                        </td>
+                        <td>
+                            <label for="InputFile">Documento de identidad (jpg,png)</label>
+                            <!--<input type="file" id=""name="UploadedFile" />-->
+                            <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
+                            <input type="hidden" value=@Model.estudianteId name="idEstudiante" />
+                        </td>
+
+                    </tr>
+                    <tr></tr>
+                </table>
+
+            </div>
+
+
+
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <div class="pull-right">
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+            </div><!-- /. <div class="row""info familia>row -->
+
+        </div><!-- /. <div class="col-sm-8"info familia>row -->
+
+
+
+
+
+    </fieldset>
+    </div>
+</div> 
+}   
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+

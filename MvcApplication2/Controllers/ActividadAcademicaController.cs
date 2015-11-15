@@ -35,18 +35,19 @@ namespace MvcApplication2.Controllers
             string json = ser.getMaterias();
             string dato = ",\"GRUPOS_MAXIMO\":\"\"";
             string dato2 = ",\"CUPOS_MAXIMO\":\"\"";
+            string dato5 = ",\"PMO_NOMBRE\":\"\"";
             string dato3 = "\"AMARTYA SEN\"";
             string dato4 = "\"PROFUNDIZACION EN SISTEMAS DE PRODUCCION\"";
 
-            json = json.Replace(dato, " ");
-            json = json.Replace(dato2, " ");
-            json = json.Replace(dato3, " ");
-            json = json.Replace(dato4, " ");
-            json = json.Replace("\"\"", " ");
+            json = json.Replace(dato5, " ");
+            //json = json.Replace(dato2, " ");
+            //json = json.Replace(dato3, " ");
+            //json = json.Replace(dato4, " ");
+            //json = json.Replace("\"\"", " ");
 
-            json = json.Substring(0, 699957);
+            //json = json.Substring(0, 699957);
 
-            json += "}]}";
+            //json += "}]}";
 
             MvcApplication2.Models.Materia.ESObject0 listmaterias = new System.Web.Script.Serialization.JavaScriptSerializer().Deserialize<MvcApplication2.Models.Materia.ESObject0>(json);
             List<DepartamentoSalud> departamentos = db.DepartamentoSaluds.ToList();
@@ -59,7 +60,7 @@ namespace MvcApplication2.Controllers
                 foreach (var item2 in departamentos)
                 {
 
-                    if (item.NOM_DEPTO.Equals(item2.nombre.ToUpper()))
+                    if (item.NOM_DEPTO.Equals("QUIRÚRGICO".ToUpper()))
                     {
                         estado = true;
                         iddept = item2.DepartamentoSaludId;

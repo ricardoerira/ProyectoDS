@@ -186,6 +186,8 @@
 
 
                 <legend>Datos de contacto:</legend>
+                @*@Html.DropDownList("municipioId", null, String.Empty, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.IPS_ESEId)*@
 
 
                 <div class="col-sm-3">
@@ -200,30 +202,30 @@
 
 
                             <div class="form-group">
-                                <label class="col-sm-1 control-label">Departamento</label>
+
+                                <label class="col-sm-1 control-label">Municipio</label>
                                 <div class="col-sm-4">
-                                    @Html.DropDownList("Municipios.departamentoId", new List<SelectListItem>() { new SelectListItem { Text = "Sin asignar", Value = "1" }, new SelectListItem { Text = "Caldas", Value = "2" }, new SelectListItem { Text = "Antioquia", Value = "4" } }, new { @class = "form-control" })
+                                    @Html.DropDownList("municipioId", null, String.Empty, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.IPS_ESEId)
 
                                 </div>
-                                <label class="col-sm-2 control-label">Municipio</label>
-                                <div class="col-sm-4">
-                                    @Html.DropDownList("municipioId", new List<SelectListItem>() { new SelectListItem { Text = "Sin asignar", Value = "1" }, new SelectListItem { Text = "Manizales", Value = "2" }, new SelectListItem { Text = "Chinchina", Value = "4" } }, new { @class = "form-control" })
-
-                                </div>
-                            </div>
-                            <div class="form-group">
-
-
-                                <label class="col-sm-1 control-label">Dirección</label>
+                                <label class="col-sm-2 control-label">Dirección</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.direccion, new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.direccion)
                                 </div>
+                            </div>
+                            <div class="form-group">
 
-                                <label class="col-sm-2 control-label">Correo</label>
+                                <label class="col-sm-1 control-label">Correo</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.correo, new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.correo)
+                                </div>
+                                <label class="col-sm-2 control-label">Celular</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.num_celular, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.num_celular)
                                 </div>
 
 
@@ -236,22 +238,19 @@
 
 
                                 </div>
-
-                                <label class="col-sm-2 control-label">Celular</label>
-                                <div class="col-sm-4">
-                                    @Html.TextBoxFor(model => model.num_celular, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.num_celular)
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-sm-1 control-label">Fax</label>
+                                <label class="col-sm-2 control-label">Fax</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.fax, new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.fax)
 
 
                                 </div>
+
+
+                            </div>
+
+                            <div class="form-group">
+
                             </div>
 
                         </fofrm>

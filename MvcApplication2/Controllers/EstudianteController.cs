@@ -45,6 +45,7 @@ namespace MvcApplication2.Controllers
 
 
 
+
 public ActionResult BuscarEnDepartamento(Estudiante estudiante) 
         {
             var estudiantes = from b in db.Estudiantes
@@ -781,42 +782,213 @@ public ActionResult EstadoHV(string num_documento, string programaId, string est
 
         //metodo que muestra imagen
         public ActionResult cargaDocumentoDos(Estudiante estudiante) {
-            string path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), "cedula_" + estudiante.codigo, ".jpg");
-            if (System.IO.File.Exists(path1))
             {
+                string[] documentos = { "doc_identidad", "carne_LS", "carne_estudiantil", "carne_EPS", "carne_ARL", "EV1", "EV2", "ant_varicela", "ant_hepatitisB" };
 
-                ViewBag.imagen = "/Uploads/cedula_" + estudiante.codigo + ".jpg";
+
+                string path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[0] + estudiante.codigo, ".jpg");
+
+                if (System.IO.File.Exists(path1))
+                {
+
+                    ViewBag.imagen1 = "/Uploads/" + documentos[0] + estudiante.codigo + ".jpg";
+
+                }
+                else
+                {
+                    ViewBag.imagen1 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+                }
+
+                path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[1] + estudiante.codigo, ".jpg");
+
+                if (System.IO.File.Exists(path1))
+                {
+
+                    ViewBag.imagen2 = "/Uploads/" + documentos[1] + estudiante.codigo + ".jpg";
+
+                }
+                else
+                {
+                    ViewBag.imagen2 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+                }
+
+
+                path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[2] + estudiante.codigo, ".jpg");
+
+                if (System.IO.File.Exists(path1))
+                {
+
+                    ViewBag.imagen3 = "/Uploads/" + documentos[2] + estudiante.codigo + ".jpg";
+
+                }
+                else
+                {
+                    ViewBag.imagen3 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+                }
+
+
+
+                path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[3] + estudiante.codigo, ".jpg");
+
+                if (System.IO.File.Exists(path1))
+                {
+
+                    ViewBag.imagen4 = "/Uploads/" + documentos[3] + estudiante.codigo + ".jpg";
+
+                }
+                else
+                {
+                    ViewBag.imagen4 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+                }
+
+
+
+
+                path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[4] + estudiante.codigo, ".jpg");
+
+                if (System.IO.File.Exists(path1))
+                {
+
+                    ViewBag.imagen5 = "/Uploads/" + documentos[4] + estudiante.codigo + ".jpg";
+
+                }
+                else
+                {
+                    ViewBag.imagen5 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+                }
+
+
+
+                path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[5] + estudiante.codigo, ".jpg");
+
+                if (System.IO.File.Exists(path1))
+                {
+
+                    ViewBag.imagen6 = "/Uploads/" + documentos[5] + estudiante.codigo + ".jpg";
+
+                }
+                else
+                {
+                    ViewBag.imagen6 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+                }
+
+
+
+                path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[6] + estudiante.codigo, ".jpg");
+
+                if (System.IO.File.Exists(path1))
+                {
+
+                    ViewBag.imagen7 = "/Uploads/" + documentos[6] + estudiante.codigo + ".jpg";
+
+                }
+                else
+                {
+                    ViewBag.imagen7 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+                }
+
+
+
+                path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[7] + estudiante.codigo, ".jpg");
+
+                if (System.IO.File.Exists(path1))
+                {
+
+                    ViewBag.imagen8 = "/Uploads/" + documentos[7] + estudiante.codigo + ".jpg";
+
+                }
+                else
+                {
+                    ViewBag.imagen8 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+                }
+
+
+                path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[7] + estudiante.codigo, ".jpg");
+
+                if (System.IO.File.Exists(path1))
+                {
+
+                    ViewBag.imagen9 = "/Uploads/" + documentos[8] + estudiante.codigo + ".jpg";
+
+                }
+                else
+                {
+                    ViewBag.imagen9 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+                }
+
+
+
+
+
+
+                return View(estudiante);
+
+
             }
-            else
-            {
-                ViewBag.imagen = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+        }
 
+        //metodo que guarda imagen
+        //public ActionResult cargaDocumento (Estudiante estudiante){ 
+        //   if (Request != null)
+        //    {
+        //        HttpPostedFileBase file = Request.Files["InputFile"];
+
+        //        if ((file != null) && (file.ContentLength > 0) && !string.IsNullOrEmpty(file.FileName))
+        //        {
+        //            string fileName = file.FileName;
+        //            string fileContentType = file.ContentType;
+        //            byte[] fileBytes = new byte[file.ContentLength];
+        //            file.InputStream.Read(fileBytes, 0, Convert.ToInt32(file.ContentLength));
+        //            string extension = System.IO.Path.GetExtension(Request.Files["InputFile"].FileName);
+        //            string path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"),"cedula_"+ estudiante.codigo, ".jpg");
+        //            if (System.IO.File.Exists(path1))
+        //                System.IO.File.Delete(path1);
+        //            ViewBag.imagen = "/Uploads/cedula_" + estudiante.codigo + ".jpg";
+        //            Request.Files["InputFile"].SaveAs(path1);
+        //        }
+        //    }
+        //   return View(estudiante);
+        //}
+        public ActionResult guardaDocumentos(Estudiante estudiante)//GUARDA ARCHIVOS
+        {
+            int numFiles = Request.Files.Count;
+            if (Request != null)
+            {
+
+
+                int uploadedCount = 0;
+                string[] documentos = { "doc_identidad", "carne_LS", "carne_estudiantil", "carne_EPS", "carne_ARL", "EV1", "EV2", "ant_varicela", "ant_hepatitisB" };
+                for (int i = 0; i < numFiles; i++)
+                {
+                    HttpPostedFileBase file = Request.Files[i];
+                    if (file.ContentLength > 0)
+                    {
+                        string fileName = file.FileName;
+                        string fileContentType = file.ContentType;
+                        byte[] fileBytes = new byte[file.ContentLength];
+                        file.InputStream.Read(fileBytes, 0, Convert.ToInt32(file.ContentLength));
+                        string path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[i] + estudiante.codigo, ".jpg");
+                        if (System.IO.File.Exists(path1))
+                            System.IO.File.Delete(path1);
+
+                        file.SaveAs(path1);
+                        uploadedCount++;
+                    }
+                }
             }
             return View(estudiante);
         }
 
-        //metodo que guarda imagen
-        public ActionResult cargaDocumento (Estudiante estudiante){ 
-           if (Request != null)
-            {
-                HttpPostedFileBase file = Request.Files["InputFile"];
 
-                if ((file != null) && (file.ContentLength > 0) && !string.IsNullOrEmpty(file.FileName))
-                {
-                    string fileName = file.FileName;
-                    string fileContentType = file.ContentType;
-                    byte[] fileBytes = new byte[file.ContentLength];
-                    file.InputStream.Read(fileBytes, 0, Convert.ToInt32(file.ContentLength));
-                    string extension = System.IO.Path.GetExtension(Request.Files["InputFile"].FileName);
-                    string path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"),"cedula_"+ estudiante.codigo, ".jpg");
-                    if (System.IO.File.Exists(path1))
-                        System.IO.File.Delete(path1);
-                    ViewBag.imagen = "/Uploads/cedula_" + estudiante.codigo + ".jpg";
-                    Request.Files["InputFile"].SaveAs(path1);
-                }
-            }
-           return View(estudiante);
-        }
                         
                      
        
@@ -851,7 +1023,8 @@ public ActionResult EstadoHV(string num_documento, string programaId, string est
 
                 db.Entry(est).State = EntityState.Modified;
 
-                cargaDocumento(estudiante);
+                //cargaDocumento(estudiante);
+                guardaDocumentos(estudiante);
 
                 db.SaveChanges();
                return RedirectToAction("../Estudiante/Personales/" + est.estudianteId);
@@ -986,9 +1159,10 @@ public ActionResult EstadoHV(string num_documento, string programaId, string est
         [ValidateAntiForgeryToken]
         public ActionResult PersonalesDS(Estudiante estudiante)
         {
+            
              estudiante = db.Estudiantes.Find(estudiante.estudianteId);
 
-             cargaDocumento(estudiante);
+             guardaDocumentos(estudiante);
 
 
                 Boolean estado = ValidarCampos(estudiante);
@@ -996,6 +1170,32 @@ public ActionResult EstadoHV(string num_documento, string programaId, string est
                 //return View(estudiante);
                 return RedirectToAction("../Estudiante/PersonalesDS/" + estudiante.estudianteId);
                 
+        }
+
+        public ActionResult SoportesCompletos(int id = 0)
+        {
+            //TempData["notice"] = null;
+
+            Estudiante estudiante = db.Estudiantes.Find(id);
+            if (estudiante == null)
+            {
+                return HttpNotFound();
+            }
+            cargaDocumentoDos(estudiante);
+            return View(estudiante);
+        }
+
+        public ActionResult SoportesCompletosDS(int id = 0)
+        {
+            //TempData["notice"] = null;
+
+            Estudiante estudiante = db.Estudiantes.Find(id);
+            if (estudiante == null)
+            {
+                return HttpNotFound();
+            }
+            cargaDocumentoDos(estudiante);
+            return View(estudiante);
         }
 
 

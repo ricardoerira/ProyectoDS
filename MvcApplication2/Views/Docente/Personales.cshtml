@@ -151,7 +151,7 @@
 
 
                                 </div>
-                                <label class="col-sm-2 control-label">Correo</label>
+                                <label class="col-sm-2 control-label">Correo Institucional</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.HojaVida.correo, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.correo)
@@ -374,6 +374,18 @@
 
                                 
                             </div>
+                            <div class="form-group">
+
+                                <label class="col-sm-2 control-label">Otros Títulos </label>
+                                <div class="col-sm-8">
+
+                                    @Html.TextAreaFor(model => model.maximo_nivel_formacion, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.maximo_nivel_formacion)
+                                    <p class="help-block">En esta caja de texto el docente debe ingresar otros títulos obtenidos </p>
+                                </div>
+
+
+                            </div>
                         </div>
                     </fodrm>
 
@@ -396,6 +408,7 @@
                                 <th>Tipo documento</th>
                                 <th>Acción</th>
                                 <th>Archivo</th>
+                                <th>Obligatorio</th>
                             </tr>
                             <tr>
                                 <td class="tdDocumentos">Documento de identidad</td>
@@ -407,10 +420,11 @@
                                         <img src=@ViewBag.imagen1 class="img-rounded" height="75" width="75" />
                                     </a>
                                 </td>
+                                <td align="center"><strong>Si</strong></td>
                             </tr>
 
                             <tr>
-                                <td class="tdDocumentos">Acta de grado</td>
+                                <td class="tdDocumentos">Acta de grado - Pregrado</td>
                                 <td>
                                     <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
                                 </td>
@@ -420,10 +434,11 @@
                                     </a>
 
                                 </td>
+                                <td align="center"><strong>Si</strong></td>
 
                             </tr>
                             <tr>
-                                <td class="tdDocumentos">Diploma de profesional</td>
+                                <td class="tdDocumentos">Diploma de profesional - Pregrado</td>
                                 <td>
                                     <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
 
@@ -432,10 +447,25 @@
                                     <a href='@Url.Action("Soportes", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen3  })'>
                                         <img src=@ViewBag.imagen3 class="img-rounded" height="75" width="75" />
                                     </a>
+                                </td>
+                                <td align="center"><strong>Si</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="tdDocumentos">Acta de grado - Postgrado</td>
+                                <td>
+                                    <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
+
+                                </td>
+                                <td>
+                                    <a href='@Url.Action("Soportes", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen3  })'>
+                                        <img src=@ViewBag.imagen3 class="img-rounded" height="75" width="75" />
+                                    </a>
+                                </td>
+                                <td align="center"><strong>No</strong></td>
                             </tr>
                             <tr>
 
-                                <td class="tdDocumentos">Diploma de especialista</td>
+                                <td class="tdDocumentos">Diploma - Postgrado</td>
                                 <td>
                                     <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
                                 </td>
@@ -444,9 +474,10 @@
                                         <img src=@ViewBag.imagen4 class="img-rounded" height="75" width="75" />
                                     </a>
                                 </td>
+                                <td align="center"><strong>No</strong></td>
                             </tr>
                             <tr>
-                                <td class="tdDocumentos">Tarjeta de profesional de la Dirección Territorial de Salud </td>
+                                <td class="tdDocumentos">Registro de título Profesional Departamental</td>
                                 <td>
                                     <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
 
@@ -456,6 +487,7 @@
                                         <img src=@ViewBag.imagen5 class="img-rounded" height="75" width="75" />
                                     </a>
                                 </td>
+                                <td align="center"><strong>No</strong></td>
                             </tr>
                             
                             <tr>
@@ -469,9 +501,10 @@
                                         <img src=@ViewBag.imagen6 class="img-rounded" height="75" width="75" />
                                     </a>
                                 </td>
+                                <td align="center"><strong>Si</strong></td>
                             </tr>
                             <tr>
-                                <td class="tdDocumentos">Anexo 1</td>
+                                <td class="tdDocumentos">Carné vacunación 1</td>
                                 <td>
                                     <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
 
@@ -481,9 +514,10 @@
                                         <img src=@ViewBag.imagen7 class="img-rounded" height="75" width="75" />
                                     </a>
                                 </td>
+                                <td align="center"><strong>Si</strong></td>
                             </tr>
                             <tr>
-                                <td class="tdDocumentos">Anexo 2</td>
+                                <td class="tdDocumentos">Carné vacunación 2</td>
                                 <td>
                                     <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
 
@@ -493,7 +527,61 @@
                                         <img src=@ViewBag.imagen8 class="img-rounded" height="75" width="75" />
                                     </a>
                                 </td>
+                                <td align="center"><strong>No</strong></td>
                             </tr>
+                            <tr>
+                                <td class="tdDocumentos">Anticuerpos contra varicela </td>
+                                <td>
+                                    <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
+
+                                </td>
+                                <td>
+                                    <a href='@Url.Action("Soportes", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen8 })'>
+                                        <img src=@ViewBag.imagen8 class="img-rounded" height="75" width="75" />
+                                    </a>
+                                </td>
+                                <td align="center"><strong>No</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="tdDocumentos">Anticuerpos contra hepatitis B </td>
+                                <td>
+                                    <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
+
+                                </td>
+                                <td>
+                                    <a href='@Url.Action("Soportes", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen8 })'>
+                                        <img src=@ViewBag.imagen8 class="img-rounded" height="75" width="75" />
+                                    </a>
+                                </td>
+                                <td align="center"><strong>No</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="tdDocumentos">Carné EPS</td>
+                                <td>
+                                    <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
+
+                                </td>
+                                <td>
+                                    <a href='@Url.Action("Soportes", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen8 })'>
+                                        <img src=@ViewBag.imagen8 class="img-rounded" height="75" width="75" />
+                                    </a>
+                                </td>
+                                <td align="center"><strong>No</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="tdDocumentos">Carné ARL</td>
+                                <td>
+                                    <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
+
+                                </td>
+                                <td>
+                                    <a href='@Url.Action("Soportes", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen8 })'>
+                                        <img src=@ViewBag.imagen8 class="img-rounded" height="75" width="75" />
+                                    </a>
+                                </td>
+                                <td align="center"><strong>No</strong></td>
+                            </tr>
+
 
 
                         </table>

@@ -1,4 +1,4 @@
-﻿@model MvcApplication2.Models.IPS_ESE
+﻿ @model MvcApplication2.Models.IPS_ESE
 
 
 @{
@@ -94,8 +94,8 @@
                             <div class="form-group">
                                 <label class="col-sm-1 control-label">Representante legal</label>
                                 <div class="col-sm-4">
-                                    @Html.TextBoxFor(model => model.representante, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.representante)
+                                    @Html.TextBoxFor(model => model.representante_legal, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.representante_legal)
 
                                 </div>
                                 <label class="col-sm-2 control-label">Naturaleza jurídica</label>
@@ -124,10 +124,10 @@
 
 
                             <div class="form-group">
-                                <label class="col-sm-1 control-label">Representante para CP</label>
+                                <label class="col-sm-1 control-label">Representante para carta</label>
                                 <div class="col-sm-4">
-                                    @Html.TextBoxFor(model => model.representante_legal, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.representante_legal)
+                                    @Html.TextBoxFor(model => model.representante, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.representante)
                                 </div>
 
 
@@ -192,30 +192,30 @@
 
 
                             <div class="form-group">
-                                <label class="col-sm-1 control-label">Departamento</label>
+                               
+                                <label class="col-sm-1 control-label">Municipio</label>
                                 <div class="col-sm-4">
-                                    @Html.DropDownList("Municipios.departamentoId", new List<SelectListItem>() { new SelectListItem { Text = "Sin asignar", Value = "1" }, new SelectListItem { Text = "Caldas", Value = "2" }, new SelectListItem { Text = "Antioquia", Value = "4" } }, new { @class = "form-control" })
+                                    @Html.DropDownList("municipioId", null, String.Empty, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.municipioId)
 
                                 </div>
-                                <label class="col-sm-2 control-label">Municipio</label>
-                                <div class="col-sm-4">
-                                    @Html.DropDownList("municipioId", new List<SelectListItem>() { new SelectListItem { Text = "Sin asignar", Value = "1" }, new SelectListItem { Text = "Manizales", Value = "2" }, new SelectListItem { Text = "Chinchina", Value = "4" } }, new { @class = "form-control" })
-
-                                </div>
-                            </div>
-                            <div class="form-group">
-
-
-                                <label class="col-sm-1 control-label">Dirección</label>
+                                <label class="col-sm-2 control-label">Dirección</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.direccion, new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.direccion)
                                 </div>
+                            </div>
+                            <div class="form-group">
 
-                                <label class="col-sm-2 control-label">Correo</label>
+                                <label class="col-sm-1 control-label">Correo</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.correo, new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.correo)
+                                </div>
+                                <label class="col-sm-2 control-label">Celular</label>
+                                <div class="col-sm-4">
+                                    @Html.TextBoxFor(model => model.num_celular, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.num_celular)
                                 </div>
 
 
@@ -228,22 +228,19 @@
 
 
                                 </div>
-
-                                <label class="col-sm-2 control-label">Celular</label>
-                                <div class="col-sm-4">
-                                    @Html.TextBoxFor(model => model.num_celular, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.num_celular)
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-sm-1 control-label">Fax</label>
+                                <label class="col-sm-2 control-label">Fax</label>
                                 <div class="col-sm-4">
                                     @Html.TextBoxFor(model => model.fax, new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.fax)
 
 
                                 </div>
+
+                                
+                            </div>
+
+                            <div class="form-group">
+                               
                             </div>
 
                         </fofrm>

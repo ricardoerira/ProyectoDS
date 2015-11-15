@@ -37,11 +37,11 @@ namespace MvcApplication2.Models
         [Required]
         public int valorUnitarioPersona { get; set; }
         public int valorTotalPersona { get; set; }
-        public int porcentajeTotalPersona { get; set; }
+        public double porcentajeTotalPersona { get; set; }
         public int valorTotalUniversidad { get; set; }
         [Required]
         public int valorUnitarioUniversidad { get; set; }
-        public int porcentajeTotalUniversidad { get; set; }
+        public double porcentajeTotalUniversidad { get; set; }
         public int totalContraprestacion { get; set; }
         public int totalCapacitacion { get; set; }
         public string depto { get; set; }

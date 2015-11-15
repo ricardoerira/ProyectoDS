@@ -1,0 +1,241 @@
+﻿@{
+    ViewBag.Title = "SoportesCompletos";
+}
+
+@model MvcApplication2.Models.Estudiante
+
+<div class="row">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Personales", "Personales/" + Model.estudianteId, "Estudiante")</li>
+                    <li>@Html.ActionLink("Documentos", "SoportesCompletos/" + Model.estudianteId, "Estudiante")</li>
+                    <li>@Html.ActionLink("Académicos", "Academicos/" + Model.estudianteId, "Estudiante")</li>
+                    <li>@Html.ActionLink("Vacunación", "CarnetVacunacion/" + Model.estudianteId, "Estudiante")</li>
+                    <li>@Html.ActionLink("Salud", "Salud/" + Model.estudianteId, "Estudiante")</li>
+                    <li>@Html.ActionLink("Reporte", "ReporteEstudianteA/" + Model.estudianteId, "Estudiante",new { target="_blank" })</li>
+                    
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Cuenta</b> <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Cambiar Contraseña", "LoginCC/" + Model.estudianteId, "Estudiante")</li>
+
+
+                        </ul>
+                    </li>
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</div>
+@using (Html.BeginForm("SoportesTodos", "Estudiante", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <div class="container">
+
+
+        <div class="row">
+
+            <fieldset>
+
+
+
+
+                <div class="col-sm-8">
+
+                    <div class="row">
+                        <fosrm class="form-horizontal" role="form">
+
+                            <!-- Text input-->
+                            <div class="form-group">
+                                @Html.HiddenFor(model => model.hojaVidaId)
+                                @Html.HiddenFor(model => model.rotacionId)
+                                @Html.HiddenFor(model => model.estudianteId)
+                                
+                                @Html.HiddenFor(model => model.clave)
+                            </div>
+                        </fosrm>
+                    </div><!-- /.row -->
+                </div>
+
+
+
+                <div class="col-sm-10 col-md-offset-1">
+
+                    <div class="row">
+                        <legend>Soportes hoja de vida</legend>
+
+                        <table class="tableSoportesTodos table-condensed">
+                            <tr> <th class="thSop">Documento de identidad  <th /></tr>
+                            <tr>
+                                <th>
+                                    <img src=@ViewBag.imagen1 alt="..." class="img-rounded" width="950"><br />
+                                </th>
+                            </tr>
+                        </table>
+
+
+                        <table class="tableSoportesTodos table-condensed">
+                            <tr><th class="thSop">Carné Liberty Seguros<th /></tr>
+                            <tr>
+                                <th>
+                                    <img src=@ViewBag.imagen2 alt="..." class="img-rounded" width="950"><br />
+                                </th>
+                            </tr>
+
+                            <tr>
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                            </tr>
+
+                            <tr></tr>
+                        </table>
+
+                        <table class="tableSoportesTodos table-condensed">
+                            <tr><th class="thSop">Carné estudiantil<th /></tr>
+                            <tr>
+                                <th>
+                                    <img src=@ViewBag.imagen3 alt="..." class="img-rounded" width="950"><br />
+                                </th>
+                            </tr>
+
+                            <tr>
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                            </tr>
+
+                            <tr></tr>
+                        </table>
+
+                        <table class="tableSoportesTodos table-condensed">
+                            <tr> <th class="thSop">Carné EPS<th /></tr>
+                            <tr>
+                                <th>
+                                    <img src=@ViewBag.imagen4 alt="..." class="img-rounded" width="950"><br />
+                                </th>
+                            </tr>
+                            <tr>
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                            </tr>
+
+                            <tr></tr>
+                        </table>
+
+                        <table class="tableSoportesTodos table-condensed">
+                            <tr> <th class="thSop">Carné ARL (Residente)<th /></tr>
+                            <tr>
+                                <th>
+                                    <img src=@ViewBag.imagen5 alt="..." class="img-rounded" width="950"><br />
+                                </th>
+                            </tr>
+                            <tr>
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                            </tr>
+
+                            <tr></tr>
+                        </table>
+
+                        <table class="tableSoportesTodos table-condensed">
+                            <tr> <th class="thSop">Carné vacunación 1<th /></tr>
+                            <tr>
+                                <th>
+                                    <img src=@ViewBag.imagen6 alt="..." class="img-rounded" width="950"><br />
+                                </th>
+                            </tr>
+                            <tr>
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                            </tr>
+
+                            <tr></tr>
+                        </table>
+
+                        <table class="tableSoportesTodos table-condensed">
+                            <tr> <th class="thSop">Carné vacunación 2<th /></tr>
+                            <tr>
+                                <th>
+                                    <img src=@ViewBag.imagen7 alt="..." class="img-rounded" width="950"><br />
+                                </th>
+                            </tr>
+                            <tr>
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                            </tr>
+
+                            <tr></tr>
+                        </table>
+
+                        <table class="tableSoportesTodos table-condensed">
+                            <tr> <th class="thSop">Anticuerpos contra varicela<th /></tr>
+                            <tr>
+                                <th>
+                                    <img src=@ViewBag.imagen8 alt="..." class="img-rounded" width="950"><br />
+                                </th>
+                            </tr>
+                            <tr>
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                            </tr>
+
+                            <tr></tr>
+                        </table>
+
+                        <table class="tableSoportesTodos table-condensed">
+                            <tr> <th class="thSop">Anticuerpos contra hepatitis B<th /></tr>
+                            <tr>
+                                <th>
+                                    <img src=@ViewBag.imagen9 alt="..." class="img-rounded" width="950"><br />
+                                </th>
+                            </tr>
+                            <tr>
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                            </tr>
+
+                            <tr></tr>
+                        </table>
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+
+            </fieldset>
+        </div>
+    </div>
+
+
+}
+
