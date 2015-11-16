@@ -132,6 +132,9 @@
                         <th>
                             IPS/ESE
                         </th>
+                        <th>
+                            Responsable
+                        </th>
 
                         <th class="td-actions text-center"> Acción</th>
                     </tr>
@@ -164,6 +167,9 @@
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.IPS_ESE.nombre)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.responsable)
                             </td>
                             <td class="text-center">
                                 @Html.ActionLink(" ", "Delete", new { id = item.equipoId }, new { @class = "btn btn-sm btn-danger btn-icon-only glyphicon glyphicon-remove", title = "Eliminar" })

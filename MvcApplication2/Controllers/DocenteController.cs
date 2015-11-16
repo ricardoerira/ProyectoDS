@@ -937,6 +937,7 @@ namespace MvcApplication2.Controllers
                 docente1.certificado_TPDTS = docente.certificado_TPDTS;
                 docente1.certificado_TPN = docente.certificado_TPN;
                 docente1.certificado_DPE = docente.certificado_DPE; //Reemplaza titulo postgrado
+                docente1.otro_titulo = docente.otro_titulo;
 
                
 

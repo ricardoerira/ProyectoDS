@@ -32,7 +32,7 @@ using System.ComponentModel.DataAnnotations.Schema;
        
         public string certificado_TPDTS { get; set; }
         public string certificado_TPN { get; set; }
-        public string otro_certificado { get; set; }
+        public string otro_titulo { get; set; }
       
         public int hojaVidaId { get; set; }
         public int DepartamentoSaludId { get; set; } 

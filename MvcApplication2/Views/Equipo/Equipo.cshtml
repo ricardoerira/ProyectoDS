@@ -144,6 +144,15 @@
                     </div>
 
                 </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Responsable</label>
+                    <div class="col-sm-9">
+                        @Html.TextBoxFor(model => model.responsable, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.responsable)
+                    </div>
+
+                </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Observaciones</label>
                     <div class="col-sm-9">

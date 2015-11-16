@@ -26,6 +26,9 @@ namespace MvcApplication2.Models
         
         public string observaciones { get; set; }
 
+        public string responsable { get; set; }
+
+
 
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
