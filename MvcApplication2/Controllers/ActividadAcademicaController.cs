@@ -33,21 +33,26 @@ namespace MvcApplication2.Controllers
             ServiceReference1.WSFacultadSaludSoapClient ser = new ServiceReference1.WSFacultadSaludSoapClient();
 
             string json = ser.getMaterias();
-            string dato = ",\"GRUPOS_MAXIMO\":\"\"";
-            string dato2 = ",\"CUPOS_MAXIMO\":\"\"";
-            string dato5 = ",\"PMO_NOMBRE\":\"\"";
-            string dato3 = "\"AMARTYA SEN\"";
-            string dato4 = "\"PROFUNDIZACION EN SISTEMAS DE PRODUCCION\"";
+         
+            json = json.Replace("\"materias\"", "6@");
+      
+            json = json.Replace("\":\"", "1@");
+      json = json.Replace("\",\"", "2@");
+      json = json.Replace("{\"", "3@");
+      json = json.Replace("\"}", "4@");
+      json = json.Replace("\"\"", "5@");
+     
+            json = json.Replace("\"", "");
 
-            json = json.Replace(dato5, " ");
-            //json = json.Replace(dato2, " ");
-            //json = json.Replace(dato3, " ");
-            //json = json.Replace(dato4, " ");
-            //json = json.Replace("\"\"", " ");
 
-            //json = json.Substring(0, 699957);
-
-            //json += "}]}";
+      json = json.Replace("1@", "\":\"");
+      json = json.Replace("2@", "\",\"");
+      json = json.Replace("3@", "{\"");
+      json = json.Replace("4@", "\"}");
+      json = json.Replace("5@","\"\"" );
+      json = json.Replace("6@","\"materias\"" );
+     
+          
 
             MvcApplication2.Models.Materia.ESObject0 listmaterias = new System.Web.Script.Serialization.JavaScriptSerializer().Deserialize<MvcApplication2.Models.Materia.ESObject0>(json);
             List<DepartamentoSalud> departamentos = db.DepartamentoSaluds.ToList();
@@ -60,10 +65,11 @@ namespace MvcApplication2.Controllers
                 foreach (var item2 in departamentos)
                 {
 
-                    if (item.NOM_DEPTO.Equals("QUIRÚRGICO".ToUpper()))
+                    if (item.NOM_DEPTO!=null && item.NOM_DEPTO.Equals("QUIRÚRGICO".ToUpper()) )
                     {
                         estado = true;
-                        iddept = item2.DepartamentoSaludId;
+
+                        iddept = 4;
                     }
 
                 }
@@ -79,13 +85,9 @@ namespace MvcApplication2.Controllers
                     academica.asignatura = item.NOM_MATERIA;
                     academica.nombre = item.NOM_MATERIA;
                     academica.codigo_AA = item.COD_MATERIA;
-                    if (item.CUPOS_MAXIMO != null)
-                    {
-                        academica.max_estudiantes_rotacion = Int32.Parse(item.CUPOS_MAXIMO);
-
-                    }
+                    
                     academica.modalidad_practica = item.PMO_NOMBRE;
-                    if (item.GRUPOS_MAXIMO != null)
+                    if (item.GRUPOS_MAXIMO != null && !item.GRUPOS_MAXIMO.Equals(String.Empty))
                     {
                         academica.grupo_maximo = Int32.Parse(item.GRUPOS_MAXIMO);
 

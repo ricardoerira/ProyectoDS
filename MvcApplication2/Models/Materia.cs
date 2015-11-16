@@ -20,7 +20,6 @@ namespace MvcApplication2.Models
         public string PMO_NOMBRE { get; set; }
       
         public string GRUPOS_MAXIMO { get; set; }
-         public string CUPOS_MAXIMO { get; set; }
          public string CUPOS_MINIMO { get; set; }
         public class ESObject0
         {
