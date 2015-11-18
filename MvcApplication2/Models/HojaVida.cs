@@ -31,9 +31,9 @@ namespace MvcApplication2.Models
         public string segundo_apellido { get; set; }
         public string facultad { get; set; }
         public string departamento_procedencia { get; set; }
-          [Required]
+          //[Required]
         public string municipio_procedencia { get; set; }
-          [Required]
+          //[Required]
         public string direccion_manizales { get; set; }
         public System.DateTime fecha_nacimiento { get; set; }
         public string hemoclasificacion { get; set; }
@@ -42,8 +42,8 @@ namespace MvcApplication2.Models
         public short hijos { get; set; }
         public string imagen_DI { get; set; }        
         public string num_telefono { get; set; }
-        [Required]
-        [Range(3000000000, 3999999999)]
+        //[Required]
+        //[Range(3000000000, 3999999999)]
         public long num_celular { get; set; }        
         public string correo { get; set; }
         public string entidad_salud { get; set; }

@@ -21,7 +21,7 @@ namespace MvcApplication2.Controllers
 
         public ActionResult Index()
         {
-            importaMaterias();
+            //importaMaterias();
             var actividadacademicas = db.ActividadAcademicas.Include(a => a.DepartamentoSalud);
             return View(actividadacademicas.ToList());
         }
@@ -65,12 +65,14 @@ namespace MvcApplication2.Controllers
                 foreach (var item2 in departamentos)
                 {
 
-                    if (item.NOM_DEPTO!=null && item.NOM_DEPTO.Equals("QUIRÚRGICO".ToUpper()) )
-                    {
-                        estado = true;
+                   if(item2.nombre.ToUpper().Equals(item.NOM_DEPTO))
+                   {
+                       estado = true;
 
-                        iddept = 4;
-                    }
+                       iddept = item2.DepartamentoSaludId;
+                   }
+     
+                   
 
                 }
                 if (estado)
