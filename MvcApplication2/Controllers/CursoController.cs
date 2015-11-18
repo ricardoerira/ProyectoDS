@@ -63,12 +63,15 @@ namespace MvcApplication2.Controllers
 
             List<SelectListItem> li = new List<SelectListItem>();
             li.Add(new SelectListItem { Text = "Select", Value = "Select" });
-            li.Add(new SelectListItem { Text = "India", Value = "India" });
-            li.Add(new SelectListItem { Text = "Srilanka", Value = "Srilanka" });
-            li.Add(new SelectListItem { Text = "China", Value = "3" });
-            li.Add(new SelectListItem { Text = "Austrila", Value = "4" });
-            li.Add(new SelectListItem { Text = "USA", Value = "5" });
-            li.Add(new SelectListItem { Text = "UK", Value = "6" });
+            li.Add(new SelectListItem { Text = "Educación continuada", Value = "Educación continuada" });
+            li.Add(new SelectListItem { Text = "Curso", Value = "Curso" });
+            li.Add(new SelectListItem { Text = "Taller", Value = "Taller" });
+            li.Add(new SelectListItem { Text = "Curso – Taller", Value = "Curso – Taller" });
+            li.Add(new SelectListItem { Text = "Diplomado", Value = "Diplomado" });
+            li.Add(new SelectListItem { Text = "Conferencia", Value = "Conferencia" });
+            li.Add(new SelectListItem { Text = "Seminario", Value = "Seminario" });
+            li.Add(new SelectListItem { Text = "Congreso", Value = "Congreso" });
+            li.Add(new SelectListItem { Text = "Simposio", Value = "Simposio" });
             ViewData["country"] = li;
             
             return View();
@@ -81,83 +84,72 @@ namespace MvcApplication2.Controllers
             List<SelectListItem> states = new List<SelectListItem>();
             switch (id)
             {
-                case "India":
+                case "Educación continuada":
                     states.Add(new SelectListItem { Text = "Select", Value = "0" });
-                    states.Add(new SelectListItem { Text = "ANDAMAN & NIKOBAR ISLANDS", Value = "1" });
-                    states.Add(new SelectListItem { Text = "ANDHRA PRADESH", Value = "2" });
-                    states.Add(new SelectListItem { Text = "ARUNACHAL PRADESH", Value = "3" });
-                    states.Add(new SelectListItem { Text = "ASSAM", Value = "4" });
-                    states.Add(new SelectListItem { Text = "BIHAR", Value = "5" });
-                    states.Add(new SelectListItem { Text = "CHANDIGARH", Value = "6" });
-                    states.Add(new SelectListItem { Text = "CHHATTISGARH", Value = "7" });
-                    states.Add(new SelectListItem { Text = "DADRA & NAGAR HAVELI", Value = "8" });
-                    states.Add(new SelectListItem { Text = "DAMAN & DIU", Value = "9" });
-                    states.Add(new SelectListItem { Text = "GOA", Value = "10" });
-                    states.Add(new SelectListItem { Text = "GUJARAT", Value = "11" });
-                    states.Add(new SelectListItem { Text = "HARYANA", Value = "12" });
-                    states.Add(new SelectListItem { Text = "HIMACHAL PRADESH", Value = "13" });
-                    states.Add(new SelectListItem { Text = "JAMMU & KASHMIR", Value = "14" });
-                    states.Add(new SelectListItem { Text = "JHARKHAND", Value = "15" });
-                    states.Add(new SelectListItem { Text = "KARNATAKA", Value = "16" });
-                    states.Add(new SelectListItem { Text = "KERALA", Value = "17" });
-                    states.Add(new SelectListItem { Text = "LAKSHADWEEP", Value = "18" });
-                    states.Add(new SelectListItem { Text = "MADHYA PRADESH", Value = "19" });
-                    states.Add(new SelectListItem { Text = "MAHARASHTRA", Value = "20" });
-                    states.Add(new SelectListItem { Text = "MANIPUR", Value = "21" });
-                    states.Add(new SelectListItem { Text = "MEGHALAYA", Value = "22" });
-                    states.Add(new SelectListItem { Text = "MIZORAM", Value = "23" });
-                    states.Add(new SelectListItem { Text = "NAGALAND", Value = "24" });
-                    states.Add(new SelectListItem { Text = "NCT OF DELHI", Value = "25" });
-                    states.Add(new SelectListItem { Text = "ORISSA", Value = "26" });
-                    states.Add(new SelectListItem { Text = "PUDUCHERRY", Value = "27" });
-                    states.Add(new SelectListItem { Text = "PUNJAB", Value = "28" });
-                    states.Add(new SelectListItem { Text = "RAJASTHAN", Value = "29" });
-                    states.Add(new SelectListItem { Text = "SIKKIM", Value = "30" });
-                    states.Add(new SelectListItem { Text = "TAMIL NADU", Value = "31" });
-                    states.Add(new SelectListItem { Text = "TRIPURA", Value = "32" });
-                    states.Add(new SelectListItem { Text = "UTTAR PRADESH", Value = "33" });
-                    states.Add(new SelectListItem { Text = "UTTARAKHAND", Value = "34" });
-                    states.Add(new SelectListItem { Text = "WEST BENGAL", Value = "35" });
+                    states.Add(new SelectListItem { Text = "Ateneo de medicina de urgencias", Value = "Ateneo de medicina de urgencias" });
+                    states.Add(new SelectListItem { Text = "Ateneo medicina interna", Value = "Ateneo medicina interna" });
+                    states.Add(new SelectListItem { Text = "Gran cátedra medicina interna", Value = "Gran cátedra medicina interna" });
+                    states.Add(new SelectListItem { Text = "Ateneo geriatría", Value = "Ateneo geriatría" });
+                    states.Add(new SelectListItem { Text = "Ateneo pediatría", Value = "Ateneo pediatría" });
+                    states.Add(new SelectListItem { Text = "Cátedra Gustavo Isaza", Value = "Cátedra Gustavo Isaza" });
+                    states.Add(new SelectListItem { Text = "Sesión de radiología", Value = "Sesión de radiología" });
+                    states.Add(new SelectListItem { Text = "Imagenología para todos", Value = "Imagenología para todos" });
+                    states.Add(new SelectListItem { Text = "Sesión conjunta del programa de medicina", Value = "Sesión conjunta del programa de medicina" });
+                    states.Add(new SelectListItem { Text = "Clínica interinstitucional de maltrato infantil", Value = "Clínica interinstitucional de maltrato infantil" });
+                    
                     break;
-                case "Srilanka":
+                case "Curso":
                     states.Add(new SelectListItem { Text = "Select", Value = "0" });
-                    states.Add(new SelectListItem { Text = "dsadjash", Value = "1" });
-                    states.Add(new SelectListItem { Text = "dos", Value = "2" });
-                    states.Add(new SelectListItem { Text = "ARUNACHAL PRADESH", Value = "3" });
-                    states.Add(new SelectListItem { Text = "ASSAM", Value = "4" });
-                    states.Add(new SelectListItem { Text = "BIHAR", Value = "5" });
-                    states.Add(new SelectListItem { Text = "CHANDIGARH", Value = "6" });
-                    states.Add(new SelectListItem { Text = "CHHATTISGARH", Value = "7" });
-                    states.Add(new SelectListItem { Text = "DADRA & NAGAR HAVELI", Value = "8" });
-                    states.Add(new SelectListItem { Text = "DAMAN & DIU", Value = "9" });
-                    states.Add(new SelectListItem { Text = "GOA", Value = "10" });
-                    states.Add(new SelectListItem { Text = "GUJARAT", Value = "11" });
-                    states.Add(new SelectListItem { Text = "HARYANA", Value = "12" });
-                    states.Add(new SelectListItem { Text = "HIMACHAL PRADESH", Value = "13" });
-                    states.Add(new SelectListItem { Text = "JAMMU & KASHMIR", Value = "14" });
-                    states.Add(new SelectListItem { Text = "JHARKHAND", Value = "15" });
-                    states.Add(new SelectListItem { Text = "KARNATAKA", Value = "16" });
-                    states.Add(new SelectListItem { Text = "KERALA", Value = "17" });
-                    states.Add(new SelectListItem { Text = "LAKSHADWEEP", Value = "18" });
-                    states.Add(new SelectListItem { Text = "MADHYA PRADESH", Value = "19" });
-                    states.Add(new SelectListItem { Text = "MAHARASHTRA", Value = "20" });
-                    states.Add(new SelectListItem { Text = "MANIPUR", Value = "21" });
-                    states.Add(new SelectListItem { Text = "MEGHALAYA", Value = "22" });
-                    states.Add(new SelectListItem { Text = "MIZORAM", Value = "23" });
-                    states.Add(new SelectListItem { Text = "NAGALAND", Value = "24" });
-                    states.Add(new SelectListItem { Text = "NCT OF DELHI", Value = "25" });
-                    states.Add(new SelectListItem { Text = "ORISSA", Value = "26" });
-                    states.Add(new SelectListItem { Text = "PUDUCHERRY", Value = "27" });
-                    states.Add(new SelectListItem { Text = "PUNJAB", Value = "28" });
-                    states.Add(new SelectListItem { Text = "RAJASTHAN", Value = "29" });
-                    states.Add(new SelectListItem { Text = "SIKKIM", Value = "30" });
-                    states.Add(new SelectListItem { Text = "TAMIL NADU", Value = "31" });
-                    states.Add(new SelectListItem { Text = "TRIPURA", Value = "32" });
-                    states.Add(new SelectListItem { Text = "UTTAR PRADESH", Value = "33" });
-                    states.Add(new SelectListItem { Text = "UTTARAKHAND", Value = "34" });
-                    states.Add(new SelectListItem { Text = "WEST BENGAL", Value = "35" });
+                    states.Add(new SelectListItem { Text = "Educación en diabetes", Value = "Educación en diabetes" });
+                    states.Add(new SelectListItem { Text = "Dolor torácico: análisis: cardiovascular/gastrointestinal y pulmonar", Value = "Dolor torácico: análisis: cardiovascular/gastrointestinal y pulmonar" });
+                    states.Add(new SelectListItem { Text = "Atención integral  en salud a las personas con VIH/SIDA", Value = "Atención integral  en salud a las personas con VIH/SIDA" });
+                    states.Add(new SelectListItem { Text = "Buenas prácticas clínicas", Value = "Buenas prácticas clínicas" });
+                    states.Add(new SelectListItem { Text = "Certificación de formación en las estrategias clínicas comunitarias y locales de intervención social", Value = "Certificación de formación en las estrategias clínicas comunitarias y locales de intervención social" });
+                    states.Add(new SelectListItem { Text = "Atención integral de las víctimas de violencia  sexual", Value = "Atención integral de las víctimas de violencia  sexual" });
+                    states.Add(new SelectListItem { Text = "Educación para la maternidad  a la familia gestante", Value = "Educación para la maternidad  a la familia gestante" });
+                    states.Add(new SelectListItem { Text = "Actualización en buenas prácticas de esterilización en el área quirúrgica", Value = "Actualización en buenas prácticas de esterilización en el área quirúrgica" });
+                    states.Add(new SelectListItem { Text = "Certificación  en cuidado a la persona en estado crítico de salud", Value = "Certificación  en cuidado a la persona en estado crítico de salud" });
+                    states.Add(new SelectListItem { Text = "Certificación en urgencias", Value = "Certificación en urgencias" });
+                    states.Add(new SelectListItem { Text = "Fundamentación teórica para la investigación  ", Value = "Fundamentación teórica para la investigación  " });
+                    states.Add(new SelectListItem { Text = "Jornada de fármaco vigilancia", Value = "Jornada de fármaco vigilancia" });
+                    states.Add(new SelectListItem { Text = "Certificación instructores BLS AHA", Value = "Certificación instructores BLS AHA" });
+                    states.Add(new SelectListItem { Text = "Certificación instructores ACLS AHA", Value = "Certificación instructores ACLS AHA" });
+                    states.Add(new SelectListItem { Text = "Primeros auxilios salva corazones DEA- AHA", Value = "Primeros auxilios salva corazones DEA- AHA" });
+                    states.Add(new SelectListItem { Text = "BLS – AHA", Value = "BLS – AHA" });
+                    states.Add(new SelectListItem { Text = "ACLS – AHA", Value = "ACLS – AHA" });
+                    states.Add(new SelectListItem { Text = "RCP con apoyo al avanzado", Value = "RCP con apoyo al avanzado" });
+                    states.Add(new SelectListItem { Text = "Básico y avanzado del manejo del trauma en el paciente adulto", Value = "Básico y avanzado del manejo del trauma en el paciente adulto" });
+                    
                     break;
-                case "UK":
+                case "Taller":
+                    states.Add(new SelectListItem { Text = "Select", Value = "0" });
+                    states.Add(new SelectListItem { Text = "Sobre la estrategia AIEPI ", Value = "Sobre la estrategia AIEPI " });
+                    states.Add(new SelectListItem { Text = "Capacitación en los contenidos de la resolución 412 y en el Plan Decenal de Salud Publica", Value = "Capacitación en los contenidos de la resolución 412 y en el Plan Decenal de Salud Publica" });
+                    states.Add(new SelectListItem { Text = "Higiene de manos en el marco del Sistema Obligatorio de Garantía de la Calidad", Value = "Higiene de manos en el marco del Sistema Obligatorio de Garantía de la Calidad" });
+                    states.Add(new SelectListItem { Text = "Uso y reúso de dispositivos médicos", Value = "Uso y reúso de dispositivos médicos" });
+                    states.Add(new SelectListItem { Text = "Manejo de residuos intrahospitalarios", Value = "Manejo de residuos intrahospitalarios" });
+                    states.Add(new SelectListItem { Text = "Garantía de Calidad en central de esterilización", Value = "Garantía de Calidad en central de esterilización" });
+                    states.Add(new SelectListItem { Text = "Humanización de la atención en salud", Value = "Humanización de la atención en salud" });
+                    break;
+                case "Curso – Taller":
+                    states.Add(new SelectListItem { Text = "Select", Value = "0" });
+                    states.Add(new SelectListItem { Text = "Competencias para la auscultación cardíaca", Value = "Competencias para la auscultación cardíaca" });
+                    states.Add(new SelectListItem { Text = "Entrenamiento en procedimientos básicos", Value = "Entrenamiento en procedimientos básicos" });
+                    states.Add(new SelectListItem { Text = "Entrenamiento en monitoria de signos vitales, lectura e interpretación de electrocardiograma", Value = "Entrenamiento en monitoria de signos vitales, lectura e interpretación de electrocardiograma" });
+                    states.Add(new SelectListItem { Text = "Formación en la competencia de la toma de muestras de laboratorio", Value = "Formación en la competencia de la toma de muestras de laboratorio" });
+                    states.Add(new SelectListItem { Text = "Administración segura de medicamentos", Value = "Administración segura de medicamentos" });
+                    states.Add(new SelectListItem { Text = "Gases Arterio- venosos", Value = "Gases Arterio- venosos" });
+                    states.Add(new SelectListItem { Text = "Básico de terapias de  reemplazo renal continuo", Value = "Básico de terapias de  reemplazo renal continuo" });
+                    states.Add(new SelectListItem { Text = "Competencias en terapia intravenosa cardiovascular apoyada en simulación", Value = "Competencias en terapia intravenosa cardiovascular apoyada en simulación" });
+                    states.Add(new SelectListItem { Text = "Actualización en atención al paciente de cuidado intensivo neonatal", Value = "Actualización en atención al paciente de cuidado intensivo neonatal" });
+                    states.Add(new SelectListItem { Text = "Soporte ventilatorio en el recién nacido", Value = "Soporte ventilatorio en el recién nacido" });
+                    states.Add(new SelectListItem { Text = "Reanimación pediátrica", Value = "Reanimación pediátrica" });
+                    states.Add(new SelectListItem { Text = "Reanimación neonatal básico ( minuto de oro)", Value = "Reanimación neonatal básico ( minuto de oro)" });
+                    states.Add(new SelectListItem { Text = "Ayudando a los bebes a sobrevivir", Value = "Ayudando a los bebes a sobrevivir" });
+                    states.Add(new SelectListItem { Text = "Reanimación neonatal avanzada", Value = "Reanimación neonatal avanzada" });
+                    states.Add(new SelectListItem { Text = "Gestión del riesgo en desastres, dirigido a líderes comunitarios", Value = "Gestión del riesgo en desastres, dirigido a líderes comunitarios" });
+                    states.Add(new SelectListItem { Text = "Entrenamiento certificado en toma de citologías del cuello uterino", Value = "Entrenamiento certificado en toma de citologías del cuello uterino" });
+                    states.Add(new SelectListItem { Text = "Anatomía y terminología médica", Value = "Anatomía y terminología médica" });
                     break;
                 case "Indias":
                     break;
