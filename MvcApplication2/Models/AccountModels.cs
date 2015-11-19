@@ -51,6 +51,8 @@ namespace MvcApplication2.Models
 
         public DbSet<Curso> Cursoes { get; set; }
 
+        public DbSet<nombreCurso> nombreCursoes { get; set; }
+
      
 
 

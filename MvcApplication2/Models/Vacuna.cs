@@ -19,7 +19,7 @@ namespace MvcApplication2.Models
         public int vacunaId { get; set; }
         public string nombre_generico { get; set; }
         public string laboratorioOtro { get; set; }//antes:antigenos_contenidos
-        //[Required]
+        [Required]
         public string lote { get; set; }
         public string lugar_anatomico { get; set; }
         [DataType(DataType.Date)]

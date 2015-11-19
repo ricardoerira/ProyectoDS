@@ -52,6 +52,7 @@ namespace MvcApplication2.Models
 
         public int IPS_ESEId { get; set; }
         public virtual IPS_ESE IPS_ESE { get; set; }
+        public virtual ICollection<nombreCurso> nombresCursos { get; set; }
 
     }
 
