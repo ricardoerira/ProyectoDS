@@ -79,12 +79,12 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Tarjeta Profesional Departamental</label>
                                 <div class="col-sm-4">
-                                    @Html.TextBoxFor(model => model.certificado_TPDTS, new { @class = "form-control"})
+                                    @Html.TextBoxFor(model => model.certificado_TPDTS, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.certificado_TPDTS)
                                 </div>
                                 <label class="col-sm-2 control-label">Tarjeta Profesional Nacional</label>
                                 <div class="col-sm-4">
-                                    @Html.TextBoxFor(model => model.certificado_TPN, new { @class = "form-control" })
+                                    @Html.TextBoxFor(model => model.certificado_TPN, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.certificado_TPN)
                                 </div>
 
@@ -115,7 +115,7 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Lugar de nacimiento</label>
                                 <div class="col-sm-4">
-                                    @Html.TextBoxFor(model => model.HojaVida.municipio_procedencia, new { @class = "form-control" })
+                                    @Html.TextBoxFor(model => model.HojaVida.municipio_procedencia, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.municipio_procedencia)
                                     <p class="help-block">Por favor agregue Departamento y Municipio</p>
                                 </div>
@@ -123,7 +123,7 @@
 
                                 <label class="col-sm-2 control-label">n.º libreta militar</label>
                                 <div class="col-sm-4">
-                                    @Html.TextBoxFor(model => model.num_libreta_militar, new { @class = "form-control" })
+                                    @Html.TextBoxFor(model => model.num_libreta_militar, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.num_libreta_militar)
 
                                 </div>
@@ -136,7 +136,7 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Dirección</label>
                                 <div class="col-sm-4">
-                                    @Html.TextBoxFor(model => model.HojaVida.direccion_manizales, new { @class = "form-control" })
+                                    @Html.TextBoxFor(model => model.HojaVida.direccion_manizales, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.direccion_manizales)
 
 
@@ -164,7 +164,7 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">ARL</label>
                                 <div class="col-sm-10">
-                                    @Html.DropDownList("HojaVida.ARL", new List<SelectListItem>() { new SelectListItem { Text = "Sin Asignar", Value = "Sin Asignar" }, new SelectListItem { Text = "POSITIVA COMPAÑIA DE SEGUROS S.A.", Value = "POSITIVA COMPAÑIA DE SEGUROS S.A." }, new SelectListItem { Text = "SEGUROS DE VIDA COLPATRIA S.A.", Value = "SEGUROS DE VIDA COLPATRIA S.A." }, new SelectListItem { Text = "COMPAÑÍA DE SEGUROS BOLIVAR S.A.", Value = "COMPAÑÍA DE SEGUROS BOLIVAR S.A." }, new SelectListItem { Text = "ARL SURA", Value = "ARL SURA" }, new SelectListItem { Text = "COMPAÑÍA DE SEGUROS DE VIDA ALFA S.A.", Value = "COMPAÑÍA DE SEGUROS DE VIDA ALFA S.A." }, new SelectListItem { Text = "LIBERTY SEGUROS DE VIDA S.A.", Value = "LIBERTY SEGUROS DE VIDA S.A." }, new SelectListItem { Text = "COMPAÑIA DE SEGUROS DE VIDA COLMENA S.A.", Value = "COMPAÑIA DE SEGUROS DE VIDA COLMENA S.A." }, new SelectListItem { Text = "LA EQUIDAD SEGUROS DE VIDA", Value = "LA EQUIDAD SEGUROS DE VIDA" }, new SelectListItem { Text = "MAPFRE COLOMBIA VIDA SEGUROS S.A.", Value = "MAPFRE COLOMBIA VIDA SEGUROS S.A." }, new SelectListItem { Text = "SEGUROS DE VIDA AURORA S.A.", Value = "SEGUROS DE VIDA AURORA S.A." }, new SelectListItem { Text = "OTRA", Value = "OTRA" } }, new { @class = "form-control" })
+                                    @Html.TextBoxFor(model => model.HojaVida.ARL, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.ARL)
                                 </div>
 
@@ -175,12 +175,12 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Teléfono  fijo</label>
                                 <div class="col-sm-4">
-                                    @Html.TextBoxFor(model => model.HojaVida.num_telefono, new { @class = "form-control"})
+                                    @Html.TextBoxFor(model => model.HojaVida.num_telefono, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.num_telefono)
                                 </div>
                                 <label class="col-sm-2 control-label">Celular</label>
                                 <div class="col-sm-4">
-                                    @Html.TextBoxFor(model => model.HojaVida.num_celular, new { @class = "form-control" })
+                                    @Html.TextBoxFor(model => model.HojaVida.num_celular, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.num_celular)
                                 </div>
                             </div>
@@ -192,13 +192,13 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Estado civil</label>
                                 <div class="col-sm-4">
-                                    @Html.DropDownList("HojaVida.estado_civil", new List<SelectListItem>() { new SelectListItem { Text = "Sin Asignar", Value = "Sin Asignar" }, new SelectListItem { Text = "Soltero/a", Value = "Soltero/a" }, new SelectListItem { Text = "Casado/a", Value = "Casado/a" }, new SelectListItem { Text = "Divorciado/a", Value = "Divorciado/a" }, new SelectListItem { Text = "Viudo/a", Value = "Viudo/a" }, new SelectListItem { Text = "Unión Libre", Value = "Unión Libre" } }, new { @class = "form-control" })
-                                    
+                                    @Html.TextBoxFor(model => model.HojaVida.estado_civil, new { @class = "form-control", @readonly = "readonly" })
+                                    @Html.ValidationMessageFor(model => model.HojaVida.estado_civil)
                                 </div>
                                 <label class="col-sm-2 control-label">n.º Hijos</label>
                                 <div class="col-sm-4">
-                                    @Html.DropDownList("HojaVida.hijos", new List<SelectListItem>() { new SelectListItem { Text = "0", Value = "0" }, new SelectListItem { Text = "1", Value = "1" }, new SelectListItem { Text = "2", Value = "2" }, new SelectListItem { Text = "3", Value = "3" }, new SelectListItem { Text = "4", Value = "4" } }, new { @class = "form-control" })
-                                    
+                                    @Html.TextBoxFor(model => model.HojaVida.hijos, new { @class = "form-control", @readonly = "readonly" })
+                                    @Html.ValidationMessageFor(model => model.HojaVida.hijos)
                                 </div>
                             </div>
 
@@ -209,14 +209,13 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">RH</label>
                                 <div class="col-sm-4">
-                                    @Html.DropDownList("HojaVida.hemoclasificacion", new List<SelectListItem>() { new SelectListItem { Text = "Sin Asignar", Value = "Sin Asignar" }, new SelectListItem { Text = "AB+", Value = "AB+" }, new SelectListItem { Text = "AB-", Value = "AB-" }, new SelectListItem { Text = "A+", Value = "A+" }, new SelectListItem { Text = "A-", Value = "A-" }, new SelectListItem { Text = "B+", Value = "B+" }, new SelectListItem { Text = "B-", Value = "B-" }, new SelectListItem { Text = "O+", Value = "O+" }, new SelectListItem { Text = "O-", Value = "O-" } }, new { @class = "form-control" })
-                                    
+                                    @Html.TextBoxFor(model => model.HojaVida.hemoclasificacion, new { @class = "form-control", @readonly = "readonly" })
+                                    @Html.ValidationMessageFor(model => model.HojaVida.hemoclasificacion)
                                 </div>
                                 <label class="col-sm-2 control-label">Género</label>
                                 <div class="col-sm-4">
-                                    @Html.DropDownList("HojaVida.genero", new List<SelectListItem>() { new SelectListItem { Text = "M", Value = "M" }, new SelectListItem { Text = "F", Value = "F" } }, new { @class = "form-control" })
-
-                                
+                                    @Html.TextBoxFor(model => model.HojaVida.genero, new { @class = "form-control", @readonly = "readonly" })
+                                @Html.ValidationMessageFor(model => model.HojaVida.genero)
                                 </div>
 
 
@@ -246,12 +245,12 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Nombre</label>
                                 <div class="col-sm-4">
-                                    @Html.TextBoxFor(model => model.HojaVida.Familia.primer_nombre_acudiente, new { @class = "form-control" })
+                                    @Html.TextBoxFor(model => model.HojaVida.Familia.primer_nombre_acudiente, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.Familia.primer_nombre_acudiente)
                                 </div>
                                 <label class="col-sm-2 control-label">Primer apellido</label>
                                 <div class="col-sm-4">
-                                    @Html.TextBoxFor(model => model.HojaVida.Familia.primer_apellido_acudiente, new { @class = "form-control" })
+                                    @Html.TextBoxFor(model => model.HojaVida.Familia.primer_apellido_acudiente, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.Familia.primer_apellido_acudiente)
                                 </div>
                             </div>
@@ -260,13 +259,13 @@
 
                                 <label class="col-sm-2 control-label">Segundo apellido</label>
                                 <div class="col-sm-4">
-                                    @Html.TextBoxFor(model => model.HojaVida.Familia.segundo_apellido_acudiente, new { @class = "form-control" })
+                                    @Html.TextBoxFor(model => model.HojaVida.Familia.segundo_apellido_acudiente, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.Familia.segundo_apellido_acudiente)
                                 </div>
 
                                 <label class="col-sm-2 control-label">Dirección</label>
                                 <div class="col-sm-4">
-                                    @Html.TextBoxFor(model => model.HojaVida.Familia.direccion_acudiente, new { @class = "form-control" })
+                                    @Html.TextBoxFor(model => model.HojaVida.Familia.direccion_acudiente, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.Familia.direccion_acudiente)
                                 </div>
 
@@ -275,7 +274,7 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Teléfono</label>
                                 <div class="col-sm-4">
-                                    @Html.TextBoxFor(model => model.HojaVida.Familia.telefono_acudiente, new { @class = "form-control"})
+                                    @Html.TextBoxFor(model => model.HojaVida.Familia.telefono_acudiente, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.Familia.telefono_acudiente)
 
 
@@ -283,7 +282,7 @@
 
                                 <label class="col-sm-2 control-label">Celular</label>
                                 <div class="col-sm-4">
-                                    @Html.TextBoxFor(model => model.HojaVida.Familia.celular_acudiente, new { @class = "form-control" })
+                                    @Html.TextBoxFor(model => model.HojaVida.Familia.celular_acudiente, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.HojaVida.Familia.celular_acudiente)
                                 </div>
                             </div>
@@ -314,7 +313,7 @@
                                 </div>
                                 <label class="col-sm-2 control-label">Tipo vinculación</label>
                                 <div class="col-sm-4">
-                                    @Html.DropDownList("tipo_vinculacion", new List<SelectListItem>() { new SelectListItem { Text = "Sin Asignar", Value = "Sin Asignar" }, new SelectListItem { Text = "DOCENTE DE PLANTA", Value = "DOCENTE DE PLANTA" }, new SelectListItem { Text = "DOCENTE OCASIONAL", Value = "DOCENTE OCASIONAL" }, new SelectListItem { Text = "DOCENTE CATEDRÁTICO", Value = "DOCENTE CATEDRÁTICO" }, new SelectListItem { Text = "COMISION ADMINISTRATIVA", Value = "COMISION ADMINISTRATIVA" } }, new { @class = "form-control" })
+                                    @Html.TextBoxFor(model => model.tipo_vinculacion, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.tipo_vinculacion)
                                 </div>
                             </div>
@@ -329,8 +328,8 @@
 
                                 <label class="col-sm-2 control-label">Dedicación</label>
                                 <div class="col-sm-4">
-                                    @Html.DropDownList("dedicacion", new List<SelectListItem>() { new SelectListItem { Text = "Sin Asignar", Value = "Sin Asignar" }, new SelectListItem { Text = "TIEMPO COMPLETO", Value = "TIEMPO COMPLETO" }, new SelectListItem { Text = "MEDIO TIEMPO", Value = "MEDIO TIEMPO" }, new SelectListItem { Text = "HORAS", Value = "HORAS" } }, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.tipo_vinculacion)
+                                    @Html.TextBoxFor(model => model.dedicacion, new { @class = "form-control", @readonly = "readonly" })
+                                    @Html.ValidationMessageFor(model => model.dedicacion)
                                 </div>
 
                             </div>
@@ -348,8 +347,8 @@
 
                                 <label class="col-sm-2 control-label">Categoria escalafón docente</label>
                                 <div class="col-sm-4">
-                                    @Html.DropDownList("categoria_escalafon_docente", new List<SelectListItem>() { new SelectListItem { Text = "Sin Asignar", Value = "Sin Asignar" }, new SelectListItem { Text = "Auxiliar", Value = "Auxiliar" }, new SelectListItem { Text = "Asistente", Value = "Asistente" }, new SelectListItem { Text = "Asociado", Value = "Asociado" }, new SelectListItem { Text = "Titular", Value = "Titular" } }, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.tipo_vinculacion)
+                                    @Html.TextBoxFor(model => model.categoria_escalafon_docente, new { @class = "form-control", @readonly = "readonly" })
+                                    @Html.ValidationMessageFor(model => model.categoria_escalafon_docente)
                                 </div>
                             </div>
 
@@ -357,8 +356,8 @@
 
                                 <label class="col-sm-2 control-label">Título postgrado</label>
                                 <div class="col-sm-8">
-                                @Html.DropDownList("certificado_DPE", new List<SelectListItem>() { new SelectListItem { Text = "Sin Asignar", Value = "Sin Asignar" }, new SelectListItem { Text = "Geriatría clínica", Value = "Geriatría clínica" }, new SelectListItem { Text = "Magister en Gerontología Envejecimiento y Vejez", Value = "Magister en Gerontología Envejecimiento y Vejez" }, new SelectListItem { Text = "Asociado", Value = "Asociado" }, new SelectListItem { Text = "Titular", Value = "Titular" } }, new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.tipo_vinculacion)
+                                    @Html.TextBoxFor(model => model.certificado_DPE, new { @class = "form-control", @readonly = "readonly" })
+                                    @Html.ValidationMessageFor(model => model.certificado_DPE)
                                 </div>
 
 
@@ -368,7 +367,7 @@
                                 <label class="col-sm-2 control-label">Otros Títulos </label>
                                 <div class="col-sm-8">
 
-                                    @Html.TextAreaFor(model => model.otro_titulo, new { @class = "form-control" })
+                                    @Html.TextAreaFor(model => model.otro_titulo, new { @class = "form-control", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(model => model.otro_titulo)
                                     <p class="help-block">En esta caja de texto el docente debe ingresar otros títulos obtenidos </p>
                                 </div>
@@ -428,6 +427,7 @@
                                 <th>Tipo documento</th>
                                 <th>Acción</th>
                                 <th>Archivo</th>
+                                <th>Obligatorio</th>
                             </tr>
                             <tr>
                                 <td class="tdDocumentos">Documento de identidad</td>
@@ -439,10 +439,11 @@
                                         <img src=@ViewBag.imagen1 class="img-rounded" height="75" width="75" />
                                     </a>
                                 </td>
+                                <td align="center"><strong>Si</strong></td>
                             </tr>
 
                             <tr>
-                                <td class="tdDocumentos">Acta de grado</td>
+                                <td class="tdDocumentos">Acta de grado - Pregrado</td>
                                 <td>
                                     <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
                                 </td>
@@ -452,10 +453,11 @@
                                     </a>
 
                                 </td>
+                                <td align="center"><strong>Si</strong></td>
 
                             </tr>
                             <tr>
-                                <td class="tdDocumentos">Diploma de profesional</td>
+                                <td class="tdDocumentos">Diploma de profesional - Pregrado</td>
                                 <td>
                                     <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
 
@@ -464,34 +466,37 @@
                                     <a href='@Url.Action("Soportes", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen3  })'>
                                         <img src=@ViewBag.imagen3 class="img-rounded" height="75" width="75" />
                                     </a>
+                                </td>
+                                <td align="center"><strong>Si</strong></td>
                             </tr>
                             <tr>
-
-                                <td class="tdDocumentos">Diploma de especialista</td>
+                                <td class="tdDocumentos">Acta de grado - Postgrado</td>
                                 <td>
                                     <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
+
                                 </td>
                                 <td>
-                                    <a href='@Url.Action("Soportes", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen4 })'>
+                                    <a href='@Url.Action("Soportes", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen4  })'>
                                         <img src=@ViewBag.imagen4 class="img-rounded" height="75" width="75" />
                                     </a>
                                 </td>
+                                <td align="center"><strong>No</strong></td>
                             </tr>
                             <tr>
-                                <td class="tdDocumentos">Tarjeta de profesional de la Dirección Territorial de Salud </td>
+
+                                <td class="tdDocumentos">Diploma - Postgrado</td>
                                 <td>
                                     <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
-
                                 </td>
                                 <td>
                                     <a href='@Url.Action("Soportes", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen5 })'>
                                         <img src=@ViewBag.imagen5 class="img-rounded" height="75" width="75" />
                                     </a>
                                 </td>
+                                <td align="center"><strong>No</strong></td>
                             </tr>
-
                             <tr>
-                                <td class="tdDocumentos">Tarjeta profesional Nacional</td>
+                                <td class="tdDocumentos">Registro de título Profesional Departamental</td>
                                 <td>
                                     <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
 
@@ -501,9 +506,11 @@
                                         <img src=@ViewBag.imagen6 class="img-rounded" height="75" width="75" />
                                     </a>
                                 </td>
+                                <td align="center"><strong>No</strong></td>
                             </tr>
+
                             <tr>
-                                <td class="tdDocumentos">Anexo 1</td>
+                                <td class="tdDocumentos">Tarjeta profesional Nacional</td>
                                 <td>
                                     <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
 
@@ -513,9 +520,10 @@
                                         <img src=@ViewBag.imagen7 class="img-rounded" height="75" width="75" />
                                     </a>
                                 </td>
+                                <td align="center"><strong>Si</strong></td>
                             </tr>
                             <tr>
-                                <td class="tdDocumentos">Anexo 2</td>
+                                <td class="tdDocumentos">Carné vacunación 1</td>
                                 <td>
                                     <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
 
@@ -525,9 +533,48 @@
                                         <img src=@ViewBag.imagen8 class="img-rounded" height="75" width="75" />
                                     </a>
                                 </td>
+                                <td align="center"><strong>Si</strong></td>
                             </tr>
+                            <tr>
+                                <td class="tdDocumentos">Carné vacunación 2</td>
+                                <td>
+                                    <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
 
+                                </td>
+                                <td>
+                                    <a href='@Url.Action("Soportes", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen9 })'>
+                                        <img src=@ViewBag.imagen9 class="img-rounded" height="75" width="75" />
+                                    </a>
+                                </td>
+                                <td align="center"><strong>No</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="tdDocumentos">Anticuerpos contra varicela </td>
+                                <td>
+                                    <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
 
+                                </td>
+                                <td>
+                                    <a href='@Url.Action("Soportes", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen10 })'>
+                                        <img src=@ViewBag.imagen10 class="img-rounded" height="75" width="75" />
+                                    </a>
+                                </td>
+                                <td align="center"><strong>No</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="tdDocumentos">Anticuerpos contra hepatitis B </td>
+                                <td>
+                                    <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
+
+                                </td>
+                                <td>
+                                    <a href='@Url.Action("Soportes", "Docente", new { id = @Model.docenteId, imagen = @ViewBag.imagen11 })'>
+                                        <img src=@ViewBag.imagen11 class="img-rounded" height="75" width="75" />
+                                    </a>
+                                </td>
+                                <td align="center"><strong>No</strong></td>
+                            </tr>
+                            
                         </table>
                         <div class="form-group">
                         </div>

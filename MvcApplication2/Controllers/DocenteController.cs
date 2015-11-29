@@ -559,7 +559,7 @@ namespace MvcApplication2.Controllers
 
 
         public ActionResult cargaDocumentos(Docente docente){
-             string[] documentos = { "doc_identidad", "acta_grado", "dip_prof", "dip_espe", "tp_terr", "tp_dept", "tp_nal", "otro" };
+            string[] documentos = {"doc_identidad", "acta_grado", "dip_prof", "acta_grado_post", "dip_espe", "tpd", "tpn", "cv1", "cv2", "ant_varicela", "ant_hp"};
         
 
                   string path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[0] + docente.num_documento, ".jpg");
@@ -683,6 +683,48 @@ namespace MvcApplication2.Controllers
                   else
                   {
                       ViewBag.imagen8 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+                  }
+
+                  path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[8] + docente.num_documento, ".jpg");
+
+                  if (System.IO.File.Exists(path1))
+                  {
+
+                      ViewBag.imagen9 = "/Uploads/" + documentos[8] + docente.num_documento + ".jpg";
+
+                  }
+                  else
+                  {
+                      ViewBag.imagen9 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+                  }
+
+                  path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[9] + docente.num_documento, ".jpg");
+
+                  if (System.IO.File.Exists(path1))
+                  {
+
+                      ViewBag.imagen10 = "/Uploads/" + documentos[9] + docente.num_documento + ".jpg";
+
+                  }
+                  else
+                  {
+                      ViewBag.imagen10 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
+
+                  }
+
+                  path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[10] + docente.num_documento, ".jpg");
+
+                  if (System.IO.File.Exists(path1))
+                  {
+
+                      ViewBag.imagen11 = "/Uploads/" + documentos[10] + docente.num_documento + ".jpg";
+
+                  }
+                  else
+                  {
+                      ViewBag.imagen11 = "http://www.logan.es/wp-content/themes/logan/images/dummy-image.jpg";
 
                   }
               
@@ -877,7 +919,7 @@ namespace MvcApplication2.Controllers
 
 
                 int uploadedCount = 0;
-                string[] documentos = { "doc_identidad", "acta_grado", "dip_prof", "dip_espe", "tp_terr", "tp_dept", "tp_nal", "otro" };
+                string[] documentos = {"doc_identidad", "acta_grado", "dip_prof", "acta_grado_post", "dip_espe", "tpd", "tpn", "cv1", "cv2", "ant_varicela", "ant_hp"};
                 for (int i = 0; i < numFiles; i++)
                 {
                     HttpPostedFileBase file = Request.Files[i];
@@ -900,7 +942,7 @@ namespace MvcApplication2.Controllers
             ViewBag.estado = estado;
 
             cargaImagen(docente);
-            cargaDocumentos(docente);
+            cargaDocumentos(docente); 
             return View(docente);
            
 
@@ -968,7 +1010,7 @@ namespace MvcApplication2.Controllers
                    
                    
                     int uploadedCount = 0;
-                    string[] documentos={"doc_identidad","acta_grado","dip_prof","dip_espe","tp_terr","tp_dept","tp_nal","otro"};
+                    string[] documentos = { "doc_identidad", "acta_grado", "dip_prof", "acta_grado_post", "dip_espe", "tpd", "tpn", "cv1", "cv2", "ant_varicela", "ant_hp"};
                     for (int i = 0; i < numFiles; i++)
                     {
                          HttpPostedFileBase  file = Request.Files[i];

@@ -18,7 +18,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Personales", "Personales/" + Model.estudianteId, "Estudiante")</li>
+                    <li>@Html.ActionLink("Personales", "PersonalesResidentes/" + Model.estudianteId, "Estudiante")</li>
                     <li>@Html.ActionLink("Documentos", "SoportesCompletos/" + Model.estudianteId, "Estudiante")</li>
                     <li>@Html.ActionLink("Académicos", "Academicos/" + Model.estudianteId, "Estudiante")</li>
                     <li>@Html.ActionLink("Vacunación", "CarnetVacunacion/" + Model.estudianteId, "Estudiante")</li>
@@ -40,7 +40,7 @@
     </nav>
 </div>
 
-@using (Html.BeginForm("Personales", "Estudiante", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("PersonalesResidentes", "Estudiante", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
         @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
@@ -417,7 +417,7 @@
                         <td align="center"><strong>Si</strong></td>
                     </tr>
                     <tr>
-                        <td class="tdDocumentos">Carné ARL (Residente)</td>
+                        <td class="tdDocumentos">Carné ARL</td>
                         <td>
                             <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
 
@@ -484,6 +484,76 @@
                     </tr>
 
 
+                    <tr>
+                        <td class="tdDocumentos">Diploma de profesional </td>
+                        <td>
+                            <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
+
+                        </td>
+                        <td>
+                            <a href='@Url.Action("Soporte", "Estudiante", new { id = @Model.estudianteId, imagen = @ViewBag.imagen10 })'>
+                                <img src=@ViewBag.imagen10 class="img-rounded" height="75" width="75" />
+                            </a>
+                        </td>
+                        <td align="center"><strong>No</strong></td>
+                    </tr>
+
+                    <tr>
+                        <td class="tdDocumentos">Tarjeta de profesional</td>
+                        <td>
+                            <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
+
+                        </td>
+                        <td>
+                            <a href='@Url.Action("Soporte", "Estudiante", new { id = @Model.estudianteId, imagen = @ViewBag.imagen11 })'>
+                                <img src=@ViewBag.imagen11 class="img-rounded" height="75" width="75" />
+                            </a>
+                        </td>
+                        <td align="center"><strong>No</strong></td>
+                    </tr>
+
+
+                    <tr>
+                        <td class="tdDocumentos">Acta de grado</td>
+                        <td>
+                            <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
+
+                        </td>
+                        <td>
+                            <a href='@Url.Action("Soporte", "Estudiante", new { id = @Model.estudianteId, imagen = @ViewBag.imagen12 })'>
+                                <img src=@ViewBag.imagen12 class="img-rounded" height="75" width="75" />
+                            </a>
+                        </td>
+                        <td align="center"><strong>No</strong></td>
+                    </tr>
+
+                    <tr>
+                        <td class="tdDocumentos">Curso RCP : Básico </td>
+                        <td>
+                            <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
+
+                        </td>
+                        <td>
+                            <a href='@Url.Action("Soporte", "Estudiante", new { id = @Model.estudianteId, imagen = @ViewBag.imagen13 })'>
+                                <img src=@ViewBag.imagen13 class="img-rounded" height="75" width="75" />
+                            </a>
+                        </td>
+                        <td align="center"><strong>No</strong></td>
+                    </tr>
+
+                    <tr>
+                        <td class="tdDocumentos">Curso RCP : Avanzado </td>
+                        <td>
+                            <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
+
+                        </td>
+                        <td>
+                            <a href='@Url.Action("Soporte", "Estudiante", new { id = @Model.estudianteId, imagen = @ViewBag.imagen14 })'>
+                                <img src=@ViewBag.imagen14 class="img-rounded" height="75" width="75" />
+                            </a>
+                        </td>
+                        <td align="center"><strong>No</strong></td>
+                    </tr>
                 </table>
 
             </div>
