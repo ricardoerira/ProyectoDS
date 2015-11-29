@@ -25,8 +25,7 @@ namespace MvcApplication2.Controllers
 
         public ActionResult Index()
         {
-            //  importaGruposMateria();
-            importaEstudiantesRotacion();
+          
             var rotacions = db.Rotacions.Include(r => r.ActividadAcademica).Include(r => r.IPS_ESE);
             return View(rotacions.ToList());
         }

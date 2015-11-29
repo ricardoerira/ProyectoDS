@@ -57,6 +57,7 @@ namespace MvcApplication2.Controllers
             WebSecurity.Logout();
 
             return RedirectToAction("Index", "Home");
+           
         }
 
         //

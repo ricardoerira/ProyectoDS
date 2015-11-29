@@ -375,7 +375,7 @@ namespace MvcApplication2.Controllers
         {
             
          var  b =   db.Docentes.Where(s => s.num_documento.Equals(docente.num_documento)).Where(s => s.clave.Equals(docente.clave));
-          List<Docente> docenteList=b.ToList();
+          List<Docente> docenteList=b.ToList(); 
          if (docenteList.Count == 0)
             {
 

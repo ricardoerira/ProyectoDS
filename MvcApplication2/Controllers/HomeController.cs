@@ -29,11 +29,15 @@ namespace MvcApplication2.Controllers
                 {
                     return RedirectToAction("../Vacuna/VistaIPS_Universitaria");
                 }
+                if (User.IsInRole("ContraPrestacion"))
+                {
+                    return RedirectToAction("../Curso/VistaContraprestacion");
+                }
                 
             }
             else
             {
-                return RedirectToAction("../Account/Login");
+               // return RedirectToAction("../Account/Login");
                 
             }
            
