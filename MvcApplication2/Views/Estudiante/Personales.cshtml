@@ -416,8 +416,9 @@
                         </td>
                         <td align="center"><strong>Si</strong></td>
                     </tr>
+
                     <tr>
-                        <td class="tdDocumentos">Carné ARL (Residente)</td>
+                        <td class="tdDocumentos">Carné vacunación 1</td>
                         <td>
                             <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
 
@@ -427,11 +428,10 @@
                                 <img src=@ViewBag.imagen5 class="img-rounded" height="75" width="75" />
                             </a>
                         </td>
-                        <td align="center"><strong>No</strong></td>
+                        <td align="center"><strong>Si</strong></td>
                     </tr>
-
                     <tr>
-                        <td class="tdDocumentos">Carné vacunación 1</td>
+                        <td class="tdDocumentos">Carné vacunación 2</td>
                         <td>
                             <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
 
@@ -441,10 +441,10 @@
                                 <img src=@ViewBag.imagen6 class="img-rounded" height="75" width="75" />
                             </a>
                         </td>
-                        <td align="center"><strong>Si</strong></td>
+                        <td align="center"><strong>No</strong></td>
                     </tr>
                     <tr>
-                        <td class="tdDocumentos">Carné vacunación 2</td>
+                        <td class="tdDocumentos">Anticuerpos contra varicela </td>
                         <td>
                             <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
 
@@ -457,7 +457,7 @@
                         <td align="center"><strong>No</strong></td>
                     </tr>
                     <tr>
-                        <td class="tdDocumentos">Anticuerpos contra varicela </td>
+                        <td class="tdDocumentos">Anticuerpos contra hepatitis B </td>
                         <td>
                             <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
 
@@ -465,19 +465,6 @@
                         <td>
                             <a href='@Url.Action("Soporte", "Estudiante", new { id = @Model.estudianteId, imagen = @ViewBag.imagen8 })'>
                                 <img src=@ViewBag.imagen8 class="img-rounded" height="75" width="75" />
-                            </a>
-                        </td>
-                        <td align="center"><strong>No</strong></td>
-                    </tr>
-                    <tr>
-                        <td class="tdDocumentos">Anticuerpos contra hepatitis B </td>
-                        <td>
-                            <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
-
-                        </td>
-                        <td>
-                            <a href='@Url.Action("Soporte", "Estudiante", new { id = @Model.estudianteId, imagen = @ViewBag.imagen9 })'>
-                                <img src=@ViewBag.imagen9 class="img-rounded" height="75" width="75" />
                             </a>
                         </td>
                         <td align="center"><strong>No</strong></td>

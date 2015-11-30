@@ -10,7 +10,7 @@
 </script>
 
 
-
+ 
 
 <div class="row">
     <nav class="navbar navbar-default" role="navigation">
@@ -19,10 +19,10 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
                     <li>@Html.ActionLink("Personales", "PersonalesResidentes/" + Model.estudianteId, "Estudiante")</li>
-                    <li>@Html.ActionLink("Documentos", "SoportesCompletos/" + Model.estudianteId, "Estudiante")</li>
-                    <li>@Html.ActionLink("Académicos", "Academicos/" + Model.estudianteId, "Estudiante")</li>
-                    <li>@Html.ActionLink("Vacunación", "CarnetVacunacion/" + Model.estudianteId, "Estudiante")</li>
-                    <li>@Html.ActionLink("Salud", "Salud/" + Model.estudianteId, "Estudiante")</li>
+                    <li>@Html.ActionLink("Documentos", "SoportesCompletosResidentes/" + Model.estudianteId, "Estudiante")</li>
+                    <li>@Html.ActionLink("Académicos", "AcademicosResidentes/" + Model.estudianteId, "Estudiante")</li>
+                    <li>@Html.ActionLink("Vacunación", "CarnetVacunacionResidentes/" + Model.estudianteId, "Estudiante")</li>
+                    <li>@Html.ActionLink("Salud", "SaludResidentes/" + Model.estudianteId, "Estudiante")</li>
                     <li>@Html.ActionLink("Reporte", "ReporteEstudianteA/" + Model.estudianteId, "Estudiante", new { target = "_blank" })</li>
                     
                     <li class="dropdown">
@@ -369,12 +369,13 @@
                             <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
                         </td>
                         <td>
-                            <a href='@Url.Action("Soporte", "Estudiante", new { id = @Model.estudianteId, imagen = @ViewBag.imagen1 })'>
+                            <a href='@Url.Action("SoporteResidente", "Estudiante", new { id = @Model.estudianteId, imagen = @ViewBag.imagen1 })'>
                                 <img src=@ViewBag.imagen1 class="img-rounded" height="75" width="75" />
                             </a>
                         </td>
                         <td align="center"><strong>Si</strong></td>
                     </tr>
+
 
                     <tr>
                         <td class="tdDocumentos">Carné Liberty Seguros</td>
@@ -382,7 +383,7 @@
                             <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
                         </td>
                         <td>
-                            <a href='@Url.Action("Soporte", "Estudiante", new { id = @Model.estudianteId, imagen = @ViewBag.imagen2 })'>
+                            <a href='@Url.Action("SoporteResidente", "Estudiante", new { id = @Model.estudianteId, imagen = @ViewBag.imagen2 })'>
                                 <img src=@ViewBag.imagen2 class="img-rounded" height="75" width="75" />
                             </a>
 
@@ -397,7 +398,7 @@
 
                         </td>
                         <td>
-                            <a href='@Url.Action("Soporte", "Estudiante", new { id = @Model.estudianteId, imagen = @ViewBag.imagen3 })'>
+                            <a href='@Url.Action("SoporteResidente", "Estudiante", new { id = @Model.estudianteId, imagen = @ViewBag.imagen3 })'>
                                 <img src=@ViewBag.imagen3 class="img-rounded" height="75" width="75" />
                             </a>
                             </td>
@@ -410,7 +411,7 @@
                             <input type="file" name="InputFile" accept="image/x-png, image/gif, image/jpeg">
                         </td>
                         <td>
-                            <a href='@Url.Action("Soporte", "Estudiante", new { id = @Model.estudianteId, imagen = @ViewBag.imagen4 })'>
+                            <a href='@Url.Action("SoporteResidente", "Estudiante", new { id = @Model.estudianteId, imagen = @ViewBag.imagen4 })'>
                                 <img src=@ViewBag.imagen4 class="img-rounded" height="75" width="75" />
                             </a>
                         </td>
@@ -423,7 +424,7 @@
 
                         </td>
                         <td>
-                            <a href='@Url.Action("Soporte", "Estudiante", new { id = @Model.estudianteId, imagen = @ViewBag.imagen5 })'>
+                            <a href='@Url.Action("SoporteResidente", "Estudiante", new { id = @Model.estudianteId, imagen = @ViewBag.imagen5 })'>
                                 <img src=@ViewBag.imagen5 class="img-rounded" height="75" width="75" />
                             </a>
                         </td>
@@ -437,7 +438,7 @@
 
                         </td>
                         <td>
-                            <a href='@Url.Action("Soporte", "Estudiante", new { id = @Model.estudianteId, imagen = @ViewBag.imagen6 })'>
+                            <a href='@Url.Action("SoporteResidente", "Estudiante", new { id = @Model.estudianteId, imagen = @ViewBag.imagen6 })'>
                                 <img src=@ViewBag.imagen6 class="img-rounded" height="75" width="75" />
                             </a>
                         </td>
@@ -450,7 +451,7 @@
 
                         </td>
                         <td>
-                            <a href='@Url.Action("Soporte", "Estudiante", new { id = @Model.estudianteId, imagen = @ViewBag.imagen7 })'>
+                            <a href='@Url.Action("SoporteResidente", "Estudiante", new { id = @Model.estudianteId, imagen = @ViewBag.imagen7 })'>
                                 <img src=@ViewBag.imagen7 class="img-rounded" height="75" width="75" />
                             </a>
                         </td>
@@ -463,7 +464,7 @@
 
                         </td>
                         <td>
-                            <a href='@Url.Action("Soporte", "Estudiante", new { id = @Model.estudianteId, imagen = @ViewBag.imagen8 })'>
+                            <a href='@Url.Action("SoporteResidente", "Estudiante", new { id = @Model.estudianteId, imagen = @ViewBag.imagen8 })'>
                                 <img src=@ViewBag.imagen8 class="img-rounded" height="75" width="75" />
                             </a>
                         </td>
@@ -476,7 +477,7 @@
 
                         </td>
                         <td>
-                            <a href='@Url.Action("Soporte", "Estudiante", new { id = @Model.estudianteId, imagen = @ViewBag.imagen9 })'>
+                            <a href='@Url.Action("SoporteResidente", "Estudiante", new { id = @Model.estudianteId, imagen = @ViewBag.imagen9 })'>
                                 <img src=@ViewBag.imagen9 class="img-rounded" height="75" width="75" />
                             </a>
                         </td>
@@ -491,7 +492,7 @@
 
                         </td>
                         <td>
-                            <a href='@Url.Action("Soporte", "Estudiante", new { id = @Model.estudianteId, imagen = @ViewBag.imagen10 })'>
+                            <a href='@Url.Action("SoporteResidente", "Estudiante", new { id = @Model.estudianteId, imagen = @ViewBag.imagen10 })'>
                                 <img src=@ViewBag.imagen10 class="img-rounded" height="75" width="75" />
                             </a>
                         </td>
@@ -505,7 +506,7 @@
 
                         </td>
                         <td>
-                            <a href='@Url.Action("Soporte", "Estudiante", new { id = @Model.estudianteId, imagen = @ViewBag.imagen11 })'>
+                            <a href='@Url.Action("SoporteResidente", "Estudiante", new { id = @Model.estudianteId, imagen = @ViewBag.imagen11 })'>
                                 <img src=@ViewBag.imagen11 class="img-rounded" height="75" width="75" />
                             </a>
                         </td>
@@ -520,7 +521,7 @@
 
                         </td>
                         <td>
-                            <a href='@Url.Action("Soporte", "Estudiante", new { id = @Model.estudianteId, imagen = @ViewBag.imagen12 })'>
+                            <a href='@Url.Action("SoporteResidente", "Estudiante", new { id = @Model.estudianteId, imagen = @ViewBag.imagen12 })'>
                                 <img src=@ViewBag.imagen12 class="img-rounded" height="75" width="75" />
                             </a>
                         </td>
@@ -534,7 +535,7 @@
 
                         </td>
                         <td>
-                            <a href='@Url.Action("Soporte", "Estudiante", new { id = @Model.estudianteId, imagen = @ViewBag.imagen13 })'>
+                            <a href='@Url.Action("SoporteResidente", "Estudiante", new { id = @Model.estudianteId, imagen = @ViewBag.imagen13 })'>
                                 <img src=@ViewBag.imagen13 class="img-rounded" height="75" width="75" />
                             </a>
                         </td>
@@ -548,7 +549,7 @@
 
                         </td>
                         <td>
-                            <a href='@Url.Action("Soporte", "Estudiante", new { id = @Model.estudianteId, imagen = @ViewBag.imagen14 })'>
+                            <a href='@Url.Action("SoporteResidente", "Estudiante", new { id = @Model.estudianteId, imagen = @ViewBag.imagen14 })'>
                                 <img src=@ViewBag.imagen14 class="img-rounded" height="75" width="75" />
                             </a>
                         </td>

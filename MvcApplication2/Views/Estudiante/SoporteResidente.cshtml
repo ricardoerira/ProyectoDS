@@ -10,11 +10,11 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Personales", "Personales/" + Model.estudianteId, "Estudiante")</li>
-                    <li>@Html.ActionLink("Documentos", "SoportesCompletos/" + Model.estudianteId, "Estudiante")</li>
-                    <li>@Html.ActionLink("Académicos", "Academicos/" + Model.estudianteId, "Estudiante")</li>
-                    <li>@Html.ActionLink("Vacunación", "CarnetVacunacion/" + Model.estudianteId, "Estudiante")</li>
-                    <li>@Html.ActionLink("Salud", "Salud/" + Model.estudianteId, "Estudiante")</li>
+                    <li>@Html.ActionLink("Personales", "PersonalesResidentes/" + Model.estudianteId, "Estudiante")</li>
+                    <li>@Html.ActionLink("Documentos", "SoportesCompletosResidentes/" + Model.estudianteId, "Estudiante")</li>
+                    <li>@Html.ActionLink("Académicos", "AcademicosResidentes/" + Model.estudianteId, "Estudiante")</li>
+                    <li>@Html.ActionLink("Vacunación", "CarnetVacunacionResidentes/" + Model.estudianteId, "Estudiante")</li>
+                    <li>@Html.ActionLink("Salud", "SaludResidentes/" + Model.estudianteId, "Estudiante")</li>
                     <li>@Html.ActionLink("Reporte", "ReporteEstudianteA/" + Model.estudianteId, "Estudiante", new { target = "_blank" })</li>
 
 
@@ -23,7 +23,7 @@
         </div><!-- /.container-fluid -->
     </nav>
 </div>
-@using (Html.BeginForm("Soporte", "Estudiante", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("SoporteResidente", "Estudiante", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
 
     @Html.AntiForgeryToken()
@@ -79,7 +79,7 @@
                         <div class="form-group">
                             <div class="col-sm-offset-3 col-sm-4">
                                 <div class="pull-right">
-                                    @Html.ActionLink("Regresar ", "Personales", new { id = @Model.estudianteId }, new { @class = "btn btn-primary" })
+                                    @Html.ActionLink("Regresar ", "PersonalesResidentes", new { id = @Model.estudianteId }, new { @class = "btn btn-primary" })
                                 </div>
                             </div>
                         </div>

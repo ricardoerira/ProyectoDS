@@ -1,0 +1,154 @@
+﻿@model MvcApplication2.Models.Estudiante
+<script>
+    $(document).ready(function () {
+        $("#submitButton").on("click", function () {
+            alert('Your Message');
+        });
+
+    });
+
+</script>
+
+
+
+
+<div class="row">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Personales", "PersonalesResidentes/" + Model.estudianteId, "Estudiante")</li>
+                    <li>@Html.ActionLink("Documentos", "SoportesCompletosResidentes/" + Model.estudianteId, "Estudiante")</li>
+                    <li>@Html.ActionLink("Académicos", "AcademicosResidentes/" + Model.estudianteId, "Estudiante")</li>
+                    <li>@Html.ActionLink("Vacunación", "CarnetVacunacionResidentes/" + Model.estudianteId, "Estudiante")</li>
+                    <li>@Html.ActionLink("Salud", "SaludResidentes/" + Model.estudianteId, "Estudiante")</li>
+                    <li>@Html.ActionLink("Reporte", "ReporteEstudianteA/" + Model.estudianteId, "Estudiante", new { target = "_blank" })</li>
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</div>
+
+@using (Html.BeginForm("PersonalesResidentes", "Estudiante", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <div class="container">
+        <div class="row">
+
+
+
+            <!-- /.navbar-collapse aca va leyend -->
+
+
+
+
+            <div class="col-sm-5">
+
+                <div class="row">
+
+                    <!-- Text input-->
+
+                    <fosrm class="form-horizontal" role="form">
+
+
+                        <div class="span7">
+                            <div class="widgetVacuna stacked widgetVacuna action-table">
+
+                                <div class="widgetVacuna-headerVacuna">
+                                    <h2><i class="glyphicon-align-center glyphicon glyphicon-list"></i></h2>
+                                    <h4>Esquema de vacunación</h4>
+                                </div> <!-- /widget-header"> -->
+
+                                <div class="widgetVacuna-contentVacuna">
+
+
+                                    <table class="tableVacuna  table-condensed table-striped table-bordered">
+
+                                        <thead>
+                                            <tr>
+                                                <th height="40px">Biológico | Dosis</th>
+                                                <th>Fecha aplicación</th>
+                                                <th>Próxima vacuna</th>
+                                                <th>Lote</th>
+                                                <th>Lugar anatómico</th>
+                                                <th>Laboratorio</th>
+                                                <th>Observaciones</th>
+
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @for (var i = 0; i < Model.HojaVida.Vacunas.Count; i++)
+                                            {
+
+                                                <tr>
+
+                                                    <th height="35px">@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).nombre_generico)</th>
+                                                    @if (Model.HojaVida.Vacunas.ElementAt(i).fecha_vacunacion > DateTime.Now.Date.AddMonths(-20))
+                                                    {
+                                                        <td>@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).fecha_vacunacion)</td>
+                                                        <td>@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).fecha_prox_vacunacion)</td>
+                                                        <td>@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).lote)</td>
+                                                        <td height="35px">@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).lugar_anatomico)</td>
+                                                        <td>@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).laboratorio_vacunacion)</td>
+                                                        <td>@Html.DisplayFor(m => Model.HojaVida.Vacunas.ElementAt(i).observaciones)</td>
+
+
+
+                                                    }
+                                                    else
+                                                    {
+
+                                                    }
+
+
+
+
+
+                                                </tr>
+                                            }
+
+                                        </tbody>
+                                    </table>
+
+
+
+                                </div> <!-- /widget-content -->
+
+                            </div> <!-- /widget -->
+                        </div>
+                </div>
+
+            </div>
+
+        </div><!-- /.row -->
+
+    </div>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Soporte";
+    ViewBag.Title = "SoporteResidenteDS";
 }
 
 @model MvcApplication2.Models.Estudiante
@@ -9,21 +9,20 @@
         <div class="container-fluid">
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Personales", "Personales/" + Model.estudianteId, "Estudiante")</li>
-                    <li>@Html.ActionLink("Documentos", "SoportesCompletos/" + Model.estudianteId, "Estudiante")</li>
-                    <li>@Html.ActionLink("Académicos", "Academicos/" + Model.estudianteId, "Estudiante")</li>
-                    <li>@Html.ActionLink("Vacunación", "CarnetVacunacion/" + Model.estudianteId, "Estudiante")</li>
-                    <li>@Html.ActionLink("Salud", "Salud/" + Model.estudianteId, "Estudiante")</li>
+                    <li>@Html.ActionLink("Inicio", "VistaODS", "Rotacion")</li>
+                    <li>@Html.ActionLink("Personales", "PersonalesResidentesDS/" + Model.estudianteId, "Estudiante")</li>
+                    <li>@Html.ActionLink("Documentos", "SoportesCompletosResidentesDS/" + Model.estudianteId, "Estudiante")</li>
+                    <li>@Html.ActionLink("Académicos", "AcademicosResidentesDS/" + Model.estudianteId, "Estudiante")</li>
+                    <li>@Html.ActionLink("Vacunación", "CarnetVacunacionResidentesODS/" + Model.estudianteId, "Estudiante")</li>
+                    <li>@Html.ActionLink("Salud", "SaludResidentesDS/" + Model.estudianteId, "Estudiante")</li>
                     <li>@Html.ActionLink("Reporte", "ReporteEstudianteA/" + Model.estudianteId, "Estudiante", new { target = "_blank" })</li>
-
 
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
 </div>
-@using (Html.BeginForm("Soporte", "Estudiante", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("SoporteResidenteDS", "Estudiante", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
 
     @Html.AntiForgeryToken()
@@ -79,7 +78,7 @@
                         <div class="form-group">
                             <div class="col-sm-offset-3 col-sm-4">
                                 <div class="pull-right">
-                                    @Html.ActionLink("Regresar ", "Personales", new { id = @Model.estudianteId }, new { @class = "btn btn-primary" })
+                                    @Html.ActionLink("Regresar ", "PersonalesResidentesDS", new { id = @Model.estudianteId }, new { @class = "btn btn-primary" })
                                 </div>
                             </div>
                         </div>

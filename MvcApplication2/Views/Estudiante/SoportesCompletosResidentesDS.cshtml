@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "SoportesCompletos";
+    ViewBag.Title = "SoportesCompletosResidentesDS";
 }
 
 @model MvcApplication2.Models.Estudiante
@@ -10,13 +10,12 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Inicio", "VistaODS", "Rotacion")</li>
-                    <li>@Html.ActionLink("Personales", "PersonalesDS/" + Model.estudianteId, "Estudiante")</li>
-                    <li>@Html.ActionLink("Documentos", "SoportesCompletosDS/" + Model.estudianteId, "Estudiante")</li>
-                    <li>@Html.ActionLink("Académicos", "AcademicosDS/" + Model.estudianteId, "Estudiante")</li>
-                    <li>@Html.ActionLink("Vacunación", "CarnetVacunacionODS/" + Model.estudianteId, "Estudiante")</li>
-                    <li>@Html.ActionLink("Salud", "SaludDS/" + Model.estudianteId, "Estudiante")</li>
+                    <li>@Html.ActionLink("Personales", "PersonalesResidentesDS/" + Model.estudianteId, "Estudiante")</li>
+                    <li>@Html.ActionLink("Documentos", "SoportesCompletosResidentesDS/" + Model.estudianteId, "Estudiante")</li>
+                    <li>@Html.ActionLink("Académicos", "AcademicosResidentesDS/" + Model.estudianteId, "Estudiante")</li>
+                    <li>@Html.ActionLink("Vacunación", "CarnetVacunacionResidentesODS/" + Model.estudianteId, "Estudiante")</li>
+                    <li>@Html.ActionLink("Salud", "SaludResidentesDS/" + Model.estudianteId, "Estudiante")</li>
                     <li>@Html.ActionLink("Reporte", "ReporteEstudianteA/" + Model.estudianteId, "Estudiante", new { target = "_blank" })</li>
-
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -47,7 +46,7 @@
                                 @Html.HiddenFor(model => model.hojaVidaId)
                                 @Html.HiddenFor(model => model.rotacionId)
                                 @Html.HiddenFor(model => model.estudianteId)
-
+                                
                                 @Html.HiddenFor(model => model.clave)
                             </div>
                         </fosrm>
@@ -125,7 +124,7 @@
                         </table>
 
                         <table class="tableSoportesTodos table-condensed">
-                            <tr> <th class="thSop">Carné ARL (Residente)<th /></tr>
+                            <tr> <th class="thSop">Carné ARL <th /></tr>
                             <tr>
                                 <th>
                                     <img src=@ViewBag.imagen5 alt="..." class="img-rounded" width="950"><br />
@@ -210,7 +209,93 @@
                         </table>
 
 
+                        <table class="tableSoportesTodos table-condensed">
+                            <tr> <th class="thSop">Diploma de Profesional<th /></tr>
+                            <tr>
+                                <th>
+                                    <img src=@ViewBag.imagen10 alt="..." class="img-rounded" width="950"><br />
+                                </th>
+                            </tr>
+                            <tr>
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                            </tr>
 
+                            <tr></tr>
+                        </table>
+
+                        <table class="tableSoportesTodos table-condensed">
+                            <tr> <th class="thSop">Tarjeta de profesional<th /></tr>
+                            <tr>
+                                <th>
+                                    <img src=@ViewBag.imagen11 alt="..." class="img-rounded" width="950"><br />
+                                </th>
+                            </tr>
+                            <tr>
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                            </tr>
+
+                            <tr></tr>
+                        </table>
+
+
+                        <table class="tableSoportesTodos table-condensed">
+                            <tr> <th class="thSop">Acta de grado<th /></tr>
+                            <tr>
+                                <th>
+                                    <img src=@ViewBag.imagen12 alt="..." class="img-rounded" width="950"><br />
+                                </th>
+                            </tr>
+                            <tr>
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                            </tr>
+
+                            <tr></tr>
+                        </table>
+
+
+                        <table class="tableSoportesTodos table-condensed">
+                            <tr> <th class="thSop">Curso RCP : Básico<th /></tr>
+                            <tr>
+                                <th>
+                                    <img src=@ViewBag.imagen13 alt="..." class="img-rounded" width="950"><br />
+                                </th>
+                            </tr>
+                            <tr>
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                            </tr>
+
+                            <tr></tr>
+                        </table>
+
+
+                        <table class="tableSoportesTodos table-condensed">
+                            <tr> <th class="thSop">Curso RCP : Avanzado<th /></tr>
+                            <tr>
+                                <th>
+                                    <img src=@ViewBag.imagen14 alt="..." class="img-rounded" width="950"><br />
+                                </th>
+                            </tr>
+                            <tr>
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                            </tr>
+
+                            <tr></tr>
+                        </table>
 
 
 
