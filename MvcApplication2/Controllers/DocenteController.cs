@@ -862,11 +862,11 @@ namespace MvcApplication2.Controllers
         public ActionResult SolicitarActualizacion(Docente docente)
         {
             docente = db.Docentes.Find(docente.docenteId);
-            var fromAddress = new MailAddress("docenciaservicioucaldas@hotmail.com", "Docencia Servicio Ucaldas");
-            var toAddress = new MailAddress("mlgomez1001@gmail.com", "To Name");
-            const string fromPassword = "ucaldas2015";
+            var fromAddress = new MailAddress("info@salud.ucaldas.edu.co", "Decanatura – Oficina Docencia Servicio");
+            var toAddress = new MailAddress("ricardoerira@gmail.com", "To Name");
+            const string fromPassword = "descargar";
             const string subject = "Solicitud actualizacion hoja de vida";
-            const string body = "<h3>Cordial saludo</h3><h3 style=\"text-align: justify;\">La Facultad de Ciencias para la Salud a través de su Oficina Docencia Servicio le solicita actualizar su hoja de vida; para ello disponemos de la nueva plataforma web la cual podrá acceder a través del siguiente enlace.</h3><h3>&nbsp;<a href=\"http://localhost:34649/Docente/Login\">http://localhost:34649/</a></h3><h3>Los datos de ingreso son:&nbsp;</h3><h3><strong>Usuario</strong>: Cédula Docente </h3><h3><strong>Contrase&ntilde;a</strong>: Cédula docente&nbsp;</h3><p>&nbsp;</p><p>&nbsp;</p><p><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Universidad_De_Caldas_-_Logo.jpg/180px-Universidad_De_Caldas_-_Logo.jpg\" alt=\"\" width=\"160\" height=\"160\" /></p><p>&nbsp;</p><p>Copyright &copy; <a href=\"http://www.ucaldas.edu.co/portal\"><strong>Facultad de Ciencias para la Salud </strong></a> - Sede Versalles Carrera 25  48-57 / Tel +57 878 30 60 Ext. 31255 / E-mail docencia.servicio@ucaldas.edu.co</p> ";
+            const string body = "<h3>Cordial saludo</h3><h3 style=\"text-align: justify;\">La Facultad de Ciencias para la Salud a través de su Oficina Docencia Servicio le solicita actualizar su hoja de vida; para ello disponemos de la nueva plataforma web la cual podrá acceder a través del siguiente enlace.</h3><h3>&nbsp;<a href=\"http://salud.ucaldas.edu.co\">http://salud.ucaldas.edu.co/</a></h3><h3>Los datos de ingreso son:&nbsp;</h3><h3><strong>Usuario</strong>: Cédula Docente </h3><h3><strong>Contrase&ntilde;a</strong>: Cédula docente&nbsp;</h3><p>&nbsp;</p><p>&nbsp;</p><p><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Universidad_De_Caldas_-_Logo.jpg/180px-Universidad_De_Caldas_-_Logo.jpg\" alt=\"\" width=\"160\" height=\"160\" /></p><p>&nbsp;</p><p>Copyright &copy; <a href=\"http://www.ucaldas.edu.co/portal\"><strong>Facultad de Ciencias para la Salud </strong></a> - Sede Versalles Carrera 25  48-57 / Tel +57 878 30 60 Ext. 31255 / E-mail docencia.servicio@ucaldas.edu.co</p> ";
 
 
             try
@@ -874,9 +874,9 @@ namespace MvcApplication2.Controllers
 
                 var smtp = new SmtpClient
                 {
-                    Host = "smtp.live.com",
-                    Port = 587,
-                    EnableSsl = true,
+                    Host = "72.29.75.91",
+                    Port = 25,
+                    EnableSsl = false,
                     DeliveryMethod = SmtpDeliveryMethod.Network,
                     UseDefaultCredentials = false,
                     Timeout = 10000,
@@ -890,7 +890,7 @@ namespace MvcApplication2.Controllers
 
 
 
-                smtp.EnableSsl = true;
+                smtp.EnableSsl = false;
                 smtp.Send(message);
 
 
@@ -929,7 +929,7 @@ namespace MvcApplication2.Controllers
                         string fileContentType = file.ContentType;
                         byte[] fileBytes = new byte[file.ContentLength];
                         file.InputStream.Read(fileBytes, 0, Convert.ToInt32(file.ContentLength));
-                        string path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[i] + docente.num_documento, ".jpg");
+                        string path1 = string.Format("{0}/{1}{2}", Server.MapPath("../../Uploads/"), documentos[i] + docente.num_documento, ".jpg");
                         if (System.IO.File.Exists(path1))
                             System.IO.File.Delete(path1);
 
@@ -1020,7 +1020,7 @@ namespace MvcApplication2.Controllers
                             string fileContentType = file.ContentType;
                             byte[] fileBytes = new byte[file.ContentLength];
                             file.InputStream.Read(fileBytes, 0, Convert.ToInt32(file.ContentLength));
-                            string path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[i] + docente.num_documento, ".jpg");
+                            string path1 = string.Format("{0}/{1}{2}", Server.MapPath("../../Uploads/"), documentos[i] + docente.num_documento, ".jpg");
                             if (System.IO.File.Exists(path1))
                                 System.IO.File.Delete(path1);
 

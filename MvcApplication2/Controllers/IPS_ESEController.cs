@@ -92,6 +92,7 @@ namespace MvcApplication2.Controllers
                 }
                 else
                 {
+                    cargaDocumentos(ips_ese);
                     var municipios = db.Municipios.Include(h => h.Departamento);
                     List<Municipio> lista = municipios.ToList();
 
@@ -114,11 +115,11 @@ namespace MvcApplication2.Controllers
 
 
             string path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[0] + ips_ese.IPS_ESEId, ".jpg");
-
             if (System.IO.File.Exists(path1))
             {
+                path1 = string.Format("{0}/{1}{2}", "http://salud.ucaldas.edu.co/Proyecto/Uploads", documentos[0] + ips_ese.IPS_ESEId, ".jpg");
 
-                ViewBag.imagen1 = "/Uploads/" + documentos[0] + ips_ese.IPS_ESEId + ".jpg";
+                ViewBag.imagen1 = path1;
 
             }
             else
@@ -127,13 +128,14 @@ namespace MvcApplication2.Controllers
 
             }
 
+
             path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[1] + ips_ese.IPS_ESEId, ".jpg");
 
             if (System.IO.File.Exists(path1))
             {
 
-                ViewBag.imagen2 = "/Uploads/" + documentos[1] + ips_ese.IPS_ESEId + ".jpg";
-
+                path1 = string.Format("{0}/{1}{2}", "http://salud.ucaldas.edu.co/Proyecto/Uploads", documentos[1] + ips_ese.IPS_ESEId, ".jpg");
+                ViewBag.imagen2 = path1;
             }
             else
             {
@@ -147,7 +149,8 @@ namespace MvcApplication2.Controllers
             if (System.IO.File.Exists(path1))
             {
 
-                ViewBag.imagen3 = "/Uploads/" + documentos[2] + ips_ese.IPS_ESEId + ".jpg";
+                path1 = string.Format("{0}/{1}{2}", "http://salud.ucaldas.edu.co/Proyecto/Uploads", documentos[2] + ips_ese.IPS_ESEId, ".jpg");
+                ViewBag.imagen3 = path1;
 
             }
             else
@@ -163,7 +166,8 @@ namespace MvcApplication2.Controllers
             if (System.IO.File.Exists(path1))
             {
 
-                ViewBag.imagen4 = "/Uploads/" + documentos[3] + ips_ese.IPS_ESEId + ".jpg";
+                path1 = string.Format("{0}/{1}{2}", "http://salud.ucaldas.edu.co/Proyecto/Uploads", documentos[3] + ips_ese.IPS_ESEId, ".jpg");
+                ViewBag.imagen4 = path1;
 
             }
             else
@@ -180,7 +184,8 @@ namespace MvcApplication2.Controllers
             if (System.IO.File.Exists(path1))
             {
 
-                ViewBag.imagen5 = "/Uploads/" + documentos[4] + ips_ese.IPS_ESEId + ".jpg";
+                path1 = string.Format("{0}/{1}{2}", "http://salud.ucaldas.edu.co/Proyecto/Uploads", documentos[4] + ips_ese.IPS_ESEId, ".jpg");
+                ViewBag.imagen5 = path1;
 
             }
             else
@@ -387,10 +392,10 @@ namespace MvcApplication2.Controllers
 
 
 
-                var fromAddress = new MailAddress("docenciaservicioucaldas@hotmail.com", "Docencia Servicio Ucaldas");
-                var toAddress = new MailAddress("mlgomez1001@gmail.com", "To Name");
-                const string fromPassword = "ucaldas2015";
-                const string subject = "Solicitud de Actualizacion ";
+            var fromAddress = new MailAddress("info@salud.ucaldas.edu.co", "Decanatura – Oficina Docencia Servicio");
+            var toAddress = new MailAddress("ricardoerira@gmail.com", "To Name");
+            const string fromPassword = "descargar";
+            const string subject = "Carta de presentación";
                 
 
                 try
@@ -398,9 +403,9 @@ namespace MvcApplication2.Controllers
 
                     var smtp = new SmtpClient
                     {
-                        Host = "smtp.live.com",
-                        Port = 587,
-                        EnableSsl = true,
+                        Host = "72.29.75.91",
+                        Port = 25,
+                        EnableSsl = false,
                         DeliveryMethod = SmtpDeliveryMethod.Network,
                         UseDefaultCredentials = false,
                         Timeout = 10000,
@@ -416,7 +421,7 @@ namespace MvcApplication2.Controllers
                     message.Attachments.Add(new System.Net.Mail.Attachment(file));
 
 
-                    smtp.EnableSsl = true;
+                    smtp.EnableSsl = false;
                     smtp.Send(message);
 
 
@@ -1115,7 +1120,7 @@ namespace MvcApplication2.Controllers
                             string fileContentType = file.ContentType;
                             byte[] fileBytes = new byte[file.ContentLength];
                             file.InputStream.Read(fileBytes, 0, Convert.ToInt32(file.ContentLength));
-                            string path1 = string.Format("{0}/{1}{2}", Server.MapPath("~/Uploads/"), documentos[i] + ips_ese.IPS_ESEId, ".jpg");
+                            string path1 = string.Format("{0}/{1}{2}", Server.MapPath("../../Uploads/" ), documentos[i] + ips_ese.IPS_ESEId, ".jpg");
                             if (System.IO.File.Exists(path1))
                                 System.IO.File.Delete(path1);
 
