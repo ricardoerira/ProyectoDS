@@ -37,6 +37,7 @@ namespace MvcApplication2.Controllers
 
             ViewBag.municipioId = new SelectList(lista, "municipioId", "nombre");
 
+
             return View();
         }
         [HttpPost]
@@ -91,6 +92,10 @@ namespace MvcApplication2.Controllers
                 }
                 else
                 {
+                    var municipios = db.Municipios.Include(h => h.Departamento);
+                    List<Municipio> lista = municipios.ToList();
+
+                    ViewBag.municipioId = new SelectList(lista, "municipioId", "nombre");
                     ViewBag.AlertMessage = "Las contrasenias deben de coincidir";
                     return View();
                 }

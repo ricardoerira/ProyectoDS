@@ -24,6 +24,13 @@ namespace MvcApplication2.Controllers
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
+            if (!WebSecurity.Initialized)
+            {
+
+                WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+
+            }
+                       
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
