@@ -26,6 +26,7 @@ namespace MvcApplication2.Models
         public string director_departamento { get; set; }
 
         public string codigo { get; set; }
+        public string user { get; set; }
         public virtual ICollection<ActividadAcademica> ActividadAcademica { get; set; }
         
         public virtual ICollection<Docente> Docente { get; set; }

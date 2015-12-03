@@ -239,6 +239,14 @@ namespace MvcApplication2.Controllers
 
         public ActionResult SeleccionRotacion()
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                //var rotaciones= db.Rotacions.Where(r => r.ActividadAcademica.DepartamentoSalud.user.Equals(User.Identity.Name));
+                var rotaciones = db.Rotacions.Where(r => r.ActividadAcademica.DepartamentoSalud.user.Equals(User.Identity.Name));
+                List<Rotacion> listest = rotaciones.ToList();
+                return View(listest);
+
+            }
             return View(db.Rotacions.ToList());
         }
         public ActionResult SeleccionRotacionCarta()
